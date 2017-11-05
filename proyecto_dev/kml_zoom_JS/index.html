@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KML Layers</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="map"></div>
+  
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center:{lat: 4.6308316, lng: -74.1596599},
+          zoom: 18
+        });
+
+        var ctaLayer = new google.maps.KmlLayer({
+          //var src = 'http://serviciosgis.catastrobogota.gov.co/arcgis/rest/services/educacion/bienestarestudiantil/MapServer/0/query?where=1=1&outFields=*&f=kmz';
+
+          url: 'http://serviciosgis.catastrobogota.gov.co/arcgis/rest/services/educacion/bienestarestudiantil/MapServer/0/query?where=1=1&outFields=*&f=kmz',
+          suppressInfoWindows: true,
+                      map: map,
+                      preserveViewport: true
+        });
+
+      }
+
+
+    </script>
+    <script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N4d0SwbHcT_IIr6Pxx8H3LtURZzPZng&callback=initMap"></script>
+  </body>
+</html>
