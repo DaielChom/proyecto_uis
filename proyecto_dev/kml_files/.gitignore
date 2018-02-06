@@ -1,0 +1,3 @@
+# ignore kml or kmz file
+*.kml
+*.kmz
