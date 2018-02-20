@@ -1,4 +1,4 @@
-# Detección automática del nivel de estratificación socioeconómico urbano usando redes neuronales convolucionales sobre imágenes satelitales con información aumentada. **[DEV]**
+~~# Detección automática del nivel de estratificación socioeconómico urbano usando redes neuronales convolucionales sobre imágenes satelitales con información aumentada. **[DEV]**
 
 ### Objetivo general:
 * Diseñar, desarrollar y evaluar redes convolucionales para la determinación del nivel socio económico urbano mediante el uso de imágenes satelitales e información adicional.
@@ -29,4 +29,6 @@ Por tanto, el objetivo de este trabajo es desarrollar métodos basados en redes 
 [2] Metodología propuesta por el DANE. (http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica#metodolog%C3%ADa)
 [3] Procedimiento del cálculo
 (http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf
-)
+)~~
+# ?? 
+nota: cambio de planes
