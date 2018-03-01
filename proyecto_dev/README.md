@@ -27,3 +27,6 @@ Imagen satelital, Nivel Socio-económico, Estrato Social, Clasificador.
 [2] Metodología propuesta por el DANE. (http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica#metodolog%C3%ADa)
 [3] Procedimiento del cálculo
 (http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf)
+
+#### Plan
+El plan del proyecto se puede encontrar en [Drive](https://drive.google.com/open?id=1yA5oFJI8OuvTws1Iu5F4vVfdCalXFfKHkt-DQbwAB4o)
