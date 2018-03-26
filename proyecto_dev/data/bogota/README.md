@@ -1,9 +1,8 @@
 # DATASET
-Se creará una copia de los datos en la carpeta de [Drive](https://drive.google.com/open?id=1XEgCJ6I5MNf84vwempFXAJf59X-gDZCW)
 
 ### Paquetes
 
-* **bogota_dataset_raw**: En primera medida y con SASplanet se obtuvieron las imagenes del archivo `bogota_dataset_raw` el cual consiste en imagenes satelitales e imagenes de la informacion del estrato. Las imagenes satelitales estan sin etiquetar y son de tamaño bastante considerable, en el notebook `dataset` se transforman (reducen) y etiquetan dichas imagenes usando las imagnes de los estratos. Estas imagenes estan descritas de la siguiente manera
+* **bogota_dataset_raw**: [Drive](https://drive.google.com/open?id=1XEgCJ6I5MNf84vwempFXAJf59X-gDZCW) En primera medida y con SASplanet se obtuvieron las imagenes del archivo `bogota_dataset_raw` el cual consiste en imagenes satelitales e imagenes de la informacion del estrato. Las imagenes satelitales estan sin etiquetar y son de tamaño bastante considerable, en el notebook `dataset` se transforman (reducen) y etiquetan dichas imagenes usando las imagnes de los estratos. Estas imagenes estan descritas de la siguiente manera
 
 zoom|satelital_count|satelital_size|estrato_count|estrato_size
 -|-|-|-|-
@@ -23,7 +22,7 @@ zoom|satelital_count|satelital_size|estrato_count|estrato_size
 
 Como se menciono este es el dataset que en su mayoria se usa para el notebook `dataset`
 
-* **bogota_dataset_without_target: ** Igualmente dos tipos de imagenes satelitales, pero esta vez dividas en imagenes más pequeñas lo siguiente es etiquetarlas en el notebook `target_dataset`.
+* **bogota_dataset_without_target: ** [Drive]() Igualmente dos tipos de imagenes satelitales, pero esta vez dividas en imagenes más pequeñas lo siguiente es etiquetarlas en el notebook `target_dataset`.
 
 zoom|satelital_count|satelital_size|estrato_count|estrato_size
 -|-|-|-|-
