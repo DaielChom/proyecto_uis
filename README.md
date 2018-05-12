@@ -1,4 +1,4 @@
-# **DAIELCHOM TG - UIS EISI**
+﻿# **DAIELCHOM TG - UIS EISI**
 Trabajo de grado - DaielChom.
 
 ## Presentación:
@@ -6,7 +6,7 @@ En este repositorio se encuentra todo lo referente al desarrollo del poryecto de
 
 **Realizado por:** Daniel Carvajal Patiño <br/>
 **Dirigido por:** Raul Ramos Pollan. <br/>
-** Apoyado por:** Muchas personas que me han ayudado en pequeñas cosas.
+ **Apoyado por:** Muchas personas que me han ayudado en pequeñas cosas.
 
 ## Descripción:
 
