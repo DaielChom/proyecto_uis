@@ -12,8 +12,3 @@ En este repositorio se encuentra todo lo referente al desarrollo del poryecto de
 
 * **Bitácoras:** En este directorio se lleva un seguimiento de las tareas realizadas y por realizar, un control de las concluciones de las reuiniones y una anotacion de las disintas ideas e inquitudes que surgan.
 * **proyecto_dev:** En este  directorio se encuentra las soluciones planteadas y las desarrolladas para cada uno de los "items" para la culminacion del proyecto.
-
-## Dependencias:
-* arcGIS Python API:
-> `conda install -c esri arcgis ` <br>
-`conda install -c esri/label/beta2 arcgis `
