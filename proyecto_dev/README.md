@@ -6,7 +6,7 @@
 ### Objetivos específicos:
 
 * **[OK]** Identificar fuentes de datos de imágenes satelitales e información adicional. `Voy a sacar las imagenes de SASplanet y a usar KMLs echos por mi basados en los de mapas.bogota`
-* **[OK]** Diseñar y construir datasets integrando los datos obtenidos de las fuentes identificadas. `El dataset ya esta creado con el nombre de OVERLAECOBO y se encuentra en ![mega](https://mega.nz/#!NKZz2RqL!hyl7dupDaqpNBNI8npsF6PTBRcc_7sfoDj4fADcXHe8)` 
+* **[OK]** Diseñar y construir datasets integrando los datos obtenidos de las fuentes identificadas. `El dataset ya esta creado con el nombre de OVERLAECOBO y se encuentra en` ![MEGA](https://mega.nz/#!NKZz2RqL!hyl7dupDaqpNBNI8npsF6PTBRcc_7sfoDj4fADcXHe8) 
 * **[Dev]** Diseñar distintas arquitecturas de redes convolucionales.    
 * Entrenar las redes convolucionales probando configuraciones de datasets.
 * Evaluar el desempeño de las redes convolucionales con el uso de los distintos dataset.    
