@@ -1,14 +1,15 @@
-﻿# Detección automática del nivel de estratificación socioeconómico urbano usando redes neuronales convolucionales sobre imágenes satelitales con información aumentada. **[DEV]**
+
+#  **[DEV]** Detección automática del nivel de estratificación socioeconómico urbano usando redes neuronales convolucionales sobre imágenes satelitales con información aumentada.
 
 ### Objetivo general:
-* Diseñar, desarrollar y evaluar redes convolucionales para la determinación del nivel socio económico urbano mediante el uso de imágenes satelitales e información adicional.
+* ●	Seleccionar y evaluar redes convolucionales para la determinación del nivel socio económico urbano mediante el uso de imágenes satelitales e información adicional.
 
 ### Objetivos específicos:
 
 * **[OK]** Identificar fuentes de datos de imágenes satelitales e información adicional. `Voy a sacar las imagenes de SASplanet y a usar KMLs echos por mi basados en los de mapas.bogota`
-* **[OK]** Diseñar y construir datasets integrando los datos obtenidos de las fuentes identificadas. `El dataset ya esta creado con el nombre de OVERLAECOBO y se encuentra en` ![MEGA](https://mega.nz/#!NKZz2RqL!hyl7dupDaqpNBNI8npsF6PTBRcc_7sfoDj4fADcXHe8) 
-* **[Dev]** Diseñar distintas arquitecturas de redes convolucionales.    
-* Entrenar las redes convolucionales probando configuraciones de datasets.
+* **[OK]** Diseñar y construir datasets integrando los datos obtenidos de las fuentes identificadas. `El dataset ya esta creado con el nombre de OVERLAECOBO y se encuentra en` [MEGA](https://mega.nz/#!NKZz2RqL!hyl7dupDaqpNBNI8npsF6PTBRcc_7sfoDj4fADcXHe8)
+* **[OK]** Seleccionar entre distintas arquitecturas de redes neuronales convolucionales existentes en la literatura y repositorios tecnológicos. `Se trabajará con las redes neuronales presentes en el siguiente` [Framework](https://github.com/GeorgeSeif/Semantic-Segmentation-Suite)
+* **[DEV]** Entrenar las redes convolucionales probando configuraciones de datasets.
 * Evaluar el desempeño de las redes convolucionales con el uso de los distintos dataset.    
 * Elegir la mejor configuración tanto de red convolucional como de     conjunto de datos, teniendo en cuenta el desempeño obtenido.
 
@@ -23,8 +24,8 @@ Imagen satelital, Nivel Socio-económico, Estrato Social, Clasificador.
 
 ### Referencias:
 [1] Preguntas frecuentes
-(https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf)
-[2] Metodología propuesta por el DANE. (http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica#metodolog%C3%ADa)
+(https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf) <br/>
+[2] Metodología propuesta por el DANE. (http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica#metodolog%C3%ADa)<br/>
 [3] Procedimiento del cálculo
 (http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf)
 
