@@ -1,0 +1,887 @@
+\input{Anexos/LATEX/source/structure.tex}
+\addbibresource{Anexos/LATEX/source/bib/referenciasejemplo.bib}
+
+% \usepackage{showframe}
+\usepackage{lipsum}
+\usepackage{CJKutf8}
+
+
+
+\title{DETECCIÓN AUTOMÁTICA DEL NIVEL DE ESTRATIFICACIÓN SOCIOECONÓMICO URBANO USANDO REDES NEURONALES CONVOLUCIONALES SOBRE IMÁGENES SATELITALES CON INFORMACIÓN AUMENTADA}
+\author{DANIEL ALCIDES CARVAJAL PATIÑO}
+
+\legend{TRABAJO DE GRADO PARA OPTAR POR EL TITULO DE INGENIERIA DE SISTEMAS}
+\director{FABIO MARTINEZ CARRILLO\\Ph.D. EN INGENIERÍA DE SISTEMAS Y COMPUTACIÓN}
+\directortitle{Codirector\\Ph.D RAUL RAMOS POLLAN}
+\institution {UNIVERSIDAD INDUSTRIAL DE SANTANDER}
+\faculty {FACULTAD DE INGENIERIAS FISICOMECANICAS\\{ESCUELA DE INGENIERIA DE SISTEMAS E INFORMÁTICA}}
+\city{BUCARAMANGA}
+\date{2018}
+
+
+
+\begin{document}
+
+
+	\onehalfspace
+	\maketitle
+%    % para incluir la nota y/o autorización de uso de datos
+	\chapter*{ESPACIO PARA NOTA}
+    \newpage
+    \chapter*{ESPACIO PARA CARTA AUTORIZACIÓN USO DE DATOS}
+    \newpage
+	\tableofcontents
+	\newpage \listoffigures
+	\newpage \listoftables
+
+	\setlength{\parskip}{\baselineskip} % cambia el espacio entre parrafos
+%%	\setcounter{\thecharter}{2}
+	\newpage\chapter*{RESUMEN}
+    \textbf{TITULO:} DETECCIÓN AUTOMÁTICA DEL NIVEL DE ESTRATIFICACIÓN SOCIOECONÓMICO URBANO USANDO REDES NEURONALES CONVOLUCIONALES SOBRE IMÁGENES SATELITALES CON INFORMACIÓN AUMENTADA.
+    
+    \textbf{AUTORES:} DANIEL ALCIDES CARVAJAL PATIÑO.
+    
+    \textbf{PALABRAS CLAVE:} Contenedores, Cloud Computing, OpenStack, modulos y servicios.	
+    
+    \textbf{DESCRIPCION:} 
+    
+    La finalidad de este proyecto de grado, es continuar con la investigación  que el grupo Conuss ha venido desarrollando durante varios semestres en la creación de una infraestructura nube para la comunidad estudiantil, que permita su uso para el desarrollo de otros proyectos e investigaciones.
+    
+    Debido a la necesidad de crear diplomados y laboratorios virtuales de computación para fomentar el avance en la formación de ingenieros de calidad, se decide utilizar soluciones de código abierto que permitan el fácil acceso y administración de los servidores físicos y virtualización. Entre las muchas soluciones, se decide optar por OpenStack gracias a su amplia gama de módulos y su abundante comunidad por el cual es respaldado, a su vez, integrando docker como solución para la creación de contenedores.
+    
+    Todo esto con el fin de que la comunidad estudiantil tenga acceso a recursos de computo que no están al alcance de sus manos, otorgándoles la capacidad de conocer, además de disfrutar, las nuevas tecnologías que hoy por hoy están mejorando y automatizando los procesos de las grandes industrias tecnológicas.
+    
+  
+	\newpage\chapter*{ABSTRACT}
+    \textbf{TITLE:} AUTOMATIC DETECTION OF THE URBAN SOCIOECONOMIC STRATIFICATION LEVEL USING CONVOLUTIONAL NEURAL NETWORKS ON SATELLITE IMAGES WITH INCREASED INFORMATION.
+    
+    \textbf{AUTHORS:} DANIEL ALCIDES CARVAJAL PATIÑO.
+    
+    \textbf{KEYWORDS:} Container, Cloud Computing, OpenStack, modules and services.
+    
+    \textbf{DESCRIPTION:} 
+    
+    The purpose of this thesis is to continue with the research that the Conuss group has incorporated during several semesters in the creation of an infrastructure for the student community that allows its use for the development of other projects and research.
+    
+    Due to the need to create certified courses and virtual computer labs to promote the advancement in the training of quality engineers, it is decided to use open source solutions that allow easy access and administration of physical servers and virtualization. Among the many solutions, it is decided to opt for OpenStack thanks to its wide range of modules and its abundant community for which it is backed, in turn, integrating docker as a solution for the creation of containers.
+    
+    All this in order that the student community has access to computing resources that are not available to them, that they can know as well as enjoy the new technologies that are improving today and automating the processes of the large technological industries.
+    
+	\newpage\chapter*{INTRODUCCION}
+    La medición del nivel económico de una zona urbana, actualmente, conlleva un trabajo extenso, como lo expresa el DANE, “en el caso de las revisiones generales urbanas, así como en la estratificación rural se apoya en censos de vivienda”\footnote{DANE. Estratificación - Preguntas frecuentes. [en línea]. (Recuperado en 05 oct 2017). Disponible en \url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf} .}. Es decir, se requiere la elaboración de una encuesta de gran tamaño, la cual consume mucho tiempo y personal. Posteriormente, si la encuesta no se realizó usando software de recolección de datos, es necesario realizar su tipeo. Según la metodología que usa el DANE\footnote{DANE. Metodología de estratificación. [en línea]. (Recuperado en 05 oct 2017). \url{http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica}.}\footnote{DANE. Procedimiento del cálculo. [en línea]. (Recuperado en 05 oct 2017). \url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf} .}, el cálculo final del estrato se realiza mediante modelos estadísticos y económicos especialmente calibrados para esta tarea.
+    
+    En este contexto surgen varias interrogantes respecto a la capacidad de actualización de esta metodología: ¿Qué sucede cuando una ciudad tiene una alta tasa de desarrollo urbano?, ¿Cómo mantiene el gobierno actualizada la información de los estratos ante éstas circunstancias?, ¿Que tan efectiva es la metodología actual ante estos casos de alto desarrollo urbano?
+    
+    Por tanto, el objetivo de este trabajo seleccionar redes neuronales convolucionales y evaluar su capacidad para determinar automáticamente el estrato socioeconómico usando imágenes satelitales e información adicional (información catastral, presencia y consumo de servicios, etc.). No es la primera vez que se realiza una predicción del nivel social, han habido varias. Neal Jean en colaboración con otras personas y varias instituciones realizó un modelo \footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Linea]. (Recuperado en 10 oct 2017) \url{http://sustain.stanford.edu/predicting-poverty/} }\footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en linea]. (Recuperado en 10 oct 2017) \url{https://github.com/nealjean/predicting-poverty }}\footnote{NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016},  para predecir la pobreza en cinco países de África usando imágenes satelitales y datos extra para dicha tarea. En Colombia, más específicamente en Medellín, también se han realizado modelos\footnote{EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en linea]. (Recuperado en 10 oct 2017) \url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx> }}\footnote{NOREÑA Miguel. Deteccion y caracterizacion de zonas marginales en la ciudad de Medellın mediante el analisis exploratorio de datos espaciales [en linea]. (citado: 10 oct 2017) \url{http://www.banrep.gov.co/sites/default/files/eventos/archivos/TesisMiguelNorena_0.pdf} }o estudios para determinar los índices de pobreza en dicha ciudad, uno fue elaborado por  Miguel Noreña, aunque este estudio no se centra en la utilización de técnicas de machine learning si  se centra en la predicción de la pobreza. La diferencia del proyecto actual, con los proyectos aquí mensionados es lograr la predicción del “estrato social Colombiano” mediante el uso de técnicas de Deep Learning como lo son las CNN, por sus sigls en ingles. Convolutional Neural Network
+    
+    
+    
+    \addcontentsline{toc}{chapter}{INTRODUCCION}
+    
+
+    \newpage\chapter{OBJETIVOS} 
+	\section{OBJETIVO GENERAL}
+	\begin{enumerate}
+	\item Seleccionar y evaluar redes convolucionales para la determinación del nivel socio económico urbano mediante el uso de imágenes satelitales e información adicional.
+	\end{enumerate}
+    \section{OBJETIVOS ESPECIFICOS}
+    \begin{enumerate}
+      \item Identificar fuentes de datos de imágenes satelitales e información adicional.
+      \item Diseñar y construir datasets integrando los datos obtenidos de las fuentes identificadas.
+      \item Seleccionar entre distintas arquitecturas de redes neuronales convolucionales existentes en la literatura y repositorios tecnológicos    .
+      \item Entrenar las redes convolucionales probando configuraciones de datasets.
+      \item Evaluar el desempeño de las redes convolucionales con el uso de los distintos dataset. 
+      \item Elegir la mejor configuración tanto de red convolucional como de conjunto de datos, teniendo en cuenta el desempeño obtenido.   
+    \end{enumerate}
+    \newpage\chapter{MARCO TEÓRICO} 
+	\section{ESTRATO SOCIAL}
+    A través de los años el paradigma de la computación en la nube ha permitido que las empresas tengan un gran beneficio al ahorrarse múltiples costos en los departamentos de TI y organización en general, costos como el almacenamiento, procesamiento, redes y muchas otras, todo esto gracias a otras compañías que proveen estos servicios por un coste mensual que se establece según el tipo de servicio requerido y la cantidad de este mismo. Es decir las compañías proveedoras cobran por el número de gigabytes de almacenamiento que la organización vaya a requerir, así mismo funciona para el número de núcleos de procesador y gigabytes de ram entre otros. Actualmente existen diferentes tipos de nubes que proveen distintos tipos de servicio, estos pueden ser clasificados de la siguiente manera:
+    \begin{itemize}
+    \item IaaS - Infraestructura as a service:
+    
+    Infraestructura como servicio es una forma de computación en la nube donde se ofrecen a lo clientes recursos, físicos y virtuales, como máquinas virtuales, cortafuegos, sistemas de almacenamiento o balanceadores de carga, entre otros. Para poder ofrecer estos elementos se utilizan hipervisores como Xen, KVM, VMware ESX / ESXi o Hyper-V, entre otros. IaaS es la parte elemental de la computación en la nube, ya que es la que se encarga de proporcionar los recursos informáticos sobre los que se seguirán implementando el resto de conceptos.\footcite[][]{IaaS}
+
+	\item Paas - Infraestructure as a Service:
+
+Plataforma como servicio es un concepto de computación en la nube mediante la cual los usuarios pueden desarrollar, ejecutar y administrar aplicaciones sin preocuparse por la infraestructura que haya por debajo. De esta manera, los desarrolladores solo tienen que preocuparse por la programación de las aplicaciones, nunca por la configuración ni el hardware que hay por debajo, ahorrando tiempo y recursos. Por ejemplo, PaaS puede ejecutarse por encima del IaaS en máquinas físicas e incluso en contenedores.\footcite[][]{IaaS}
+
+	\item SaaS - Software as a Service:
+
+Software como servicio es un modelo de distribución de software por el que terceros desarrolladores ofrecen ciertas aplicaciones a través de Internet accesibles sólo a través de un cliente propio. Aunque no lo sepamos, este tipo de computación en la nube la utilizamos casi a diario, por ejemplo, al conectarnos a Twitter o Facebook desde sus respectivos clientes o al ver un vídeo o una película en streaming, por ejemplo, desde Netflix. \footcite[][]{IaaS}
+    \end{itemize}
+    
+
+    
+    \section{MACHINE LEARNING}
+    Para entrar en el amplio mundo de la computación en la nube, debemos conocer algunos conceptos básicos:
+    
+   La computación en la nube es un paradigma informático que permite utilizar las aplicaciones comunes de un computador y ofrecerlas como servicio, es decir, bases de datos, firewall, recursos de cómputo y almacenamiento, entre otros. Los usuarios de estos servicios pueden hacer uso de ellos a través de internet en donde ademas podrán tener un control total de estos servicios que hayan adquirido.
+    
+    Para ello se utiliza la tecnología de virtualización, partiendo de que un servidor cuenta con un hypervisor, es decir, una capa de abstracción del hardware para corresponder a un sistema operativo invitado (véase virtualbox, qemu-kvm, vmware) en maquinas virtuales. También existe una alternativa  a las maquinas virtuales, los contenedores, en los cuales se utiliza un almacenamiento compartido entre el host y el contenedor, y se ejecuta un servicio aisladamente del resto del sistema operativo, proporcionando una fácil ejecución en cualquier entorno físico.
+    
+    \subsection{OPENSTACK}
+    es un proyecto que integra varios módulos para conformar una infraestructura de nube que controla grandes cantidades de recursos computacionales, de almacenamiento y de red en todo un centro de datos, esto es posible de administrar  gracias a un panel que brinda control a los administradores y permite a los usuarios aprovisionar recursos a través de una interfaz web. al ser un sistema operativo en la nube, requiere de la comunicación de muchos servicios a través de la red entre distintos hosts. Estos servicios reciben el nombre de módulos, pues su implementación se puede realizar en un host independiente cada uno, y utilizar un protocolo de intercambio de datos, permitiendo escalabilidad.
+    
+  \ref{fig:Logo OpenStack}
+  \label{openstackIMG}
+  \figura{img/openstack.jpg}{Logo OpenStack}{0.4}{\textbf{Fuente}: \cite[][]{openstackIMG} }
+  
+    
+  
+    \subsubsection{KEYSTONE:}
+    es uno de los componentes centrales de OpenStack, ya que comunica casi todos los servicios, ofrece el servicio de identidad integrando servicios de autenticación, catálogo y creación de políticas para administrar los usuarios "tenants" en los proyectos de OpenStack.
+    
+    Podemos observar a Keystone como si estuvieramos en un parque de atracciones. Keystone otorga un token, un boleto para acceder a las distintas atracciones, cada vez que se quiere subir a alguna atracción, se debe mostrar el boleto para que sea validado. Una vez validado se puede ingresar en la atracción y disfrutar de ella. En OpenStack, Keystone autentica cada usuario o servicio que quiera hacer uso de un servicio de OpenStack.
+    
+    KEYSTONE no solo posee autenticación por token, tambien posee autenticacion por nombre de usuario / contraseña, y  el uso de backends tales como LDAP (lighweigth access directory) y PAM (Pluggable Authenticatión Modules)
+    
+    \subsubsection{GLANCE}
+    
+    GLANCE es el servicio de imagenes, funciona como un almacenamiento para los archivos de distintos formatos de imagenes de discos virtuales tales como iso, qcow2, raw, vdi, vmdk, entre otros. Con Glance se busca un facil acceso a las imagenes para lanzar instancias de una maquina virtual o un contenedor. Glance puede utilizar como almacenamiento otro tipo de back-ends como Swift, ya que por defecto viene configurado para utilizar un directorio de archivos en el sistema.
+    
+    Hay que tener en cuenta que Nova utiliza un almacenamiento efímero al hacer uso de las imágenes de Glance, cuando una instancia se apaga, se pierden todos los cambios realizados hasta ese instante. Para ello se asignan volumenes persistentes a las máquinas virtuales a tráves de Cinder.
+    
+    \subsubsection{NOVA}
+    
+    NOVA es el modulo administrador de las maquinas virtuales y los recursos del host en openstack, y se compone de cinco elementos:
+    
+    \textbf{nova-api:} es el componente que permite la comunicación con el usuario final y otros usuarios del sistema, permitiendo que lancen instancias y las manipulen via OpenStack API o EC2 API, tambien descarga las imágenes desde Glance para poder utilizarlas en las instancias.
+    
+    \textbf{nova-compute:} es el componente encargado de inicializar y terminar instancias segun el API del hypervisor instalado, XenAPI para XenServer, Libvirt para KVM y VMware API para VMware.
+   
+    \textbf{nova-scheduler:} este elemento revisa cada host hypervisor para tener conocimiento de donde es mejor lanzar una instancia en base a los recursos del sistema.
+    
+    \textbf{nova-conductor:} este elemento soporta la conexion de nova con la base de datos.
+    
+    \textbf{nova-novncproxy} y \textbf{nova-consoleauth:} son elementos que nos permiten visualizar la consola de la máquina virtual desde el navegador mediante un proxy.
+    
+    \subsubsection{NEUTRON}
+    
+    ES el modulo de red como servicio, el cual nos permite la creación de redes internas y externas, creación de puertos y relacionarlos con interfaces de maquinas de nova, direccionamiento ipv4 e ipv6, creación de routers y asignación de ips flotantes, creación de switch virtuales y de mas configuraciones de red.
+    
+    \subsubsection{CINDER}
+    
+    MÓDULO que permite Block Storage, es decir, creación de volumenes fijos de almacenamiento persistente que pueden ser montados en las maquinas virtuales, así como la clonación de datos para realizar backups.
+    
+    \subsubsection{HEAT}
+    
+    ES el modulo de OpenStack encargado de utilizar plantillas para orquestar la creación de clusters, instancias, redes, y usuarios.
+    
+    \subsubsection{MAGNUM}
+    
+    ES el modulo de OpenStack que integra a Heat, Docker, y Kubernetes o Docker Swarm, para la inicialización de clusters en donde se desplieguen los contenedores.
+    
+    \subsection{ALTA DISPONIBILIDAD} 
+    
+    LA redundancia es un mecanismo usado para mitigar fallos, ya que es un factor muy importante a tener en cuenta cuando se desea implementar una infraestructura de nube. Los elementos físicos pueden fallar en cualquier instante, y la nube debe garantizar al usuario que sus datos no se pierdan en el camino. Para ello se trabaja en la alta disponibilidad de OpenStack, utilizando algunas herramientas software externas que permiten redundancia de datos en el sistema.
+    
+    Hay dos modos de alta disponibilidad, activo / activo y activo/pasivo, la primera es la alta disponibilidad recomendada para sitios web, ya que permite el balanceo de carga entre las máquinas, disminuyendo así el volumen de conexiones entrantes, pero también porque es facil implementarlo en servicios stateless, mientras que el activo/pasivo es recomendado para aquellos servicios que son stateful, servicios los cuales responden en base a un estado.
+ 
+ 	En el modo activo / activo los nodos se mantienen ofreciendo los mismos servicios en el mismo instante de tiempo, mientras que en activo/pasivo, un nodo ofrece el servicio mientras el otro se queda en espera de que el primer nodo falle.
+    
+    \subsubsection{ALTA DISPONIBILIDAD CON PACEMAKER Y COROSYNC}
+	    
+    PACEMAKER es una herramienta de código abierto que permite manipular recursos para clusters en alta disponibilidad.
+    
+    Pacemaker se ayuda de Corosync, un framework para alta disponibilidad que monitorea los servicios de varios nodos para actuar en base a una directiva planteada con Pacemaker.
+    
+    Un ejemplo de esto es la asignación de una IP virtual a dos nodos, uno de los nodos recibe las solicitudes de conexion por tal  IP mientras el otro se mantiene en un estado pasivo y no recibe las conexiones, ó, ambos pueden recibir las conexiones, segun como se especifique la manera de tratar el recurso por Pacemaker.
+    
+    \subsubsection{REPLICA DE DATOS CON LSYNC}
+    
+    LSYNC es un demonio que utiliza las funciones de rsync con ssh para sincronizar carpetas de un directorio. Es de vital importancia para aquellas soluciones en las que los discos no están formateados para la réplica iSCSI en línea, garantizando alta disponibilidad en clusters pequeños. Para un cluster de tamaño considerable, se recomienda utilizar alternativas como Ceph RADOS.
+    
+	\subsubsection{VIRTUALIZACION}     
+   	LA virtualización es una tecnología que permite la simulación de recursos de hardware como disco, memoria ram y procesador para crear una maquina virtual que se ejecutará sobre un host utilizando un software hipervisor.
+        
+    \subsubsection{CONTENEDORES}
+    LOS contenedores son instancias de máquinas virtuales que permiten la ejecución de procesos de aplicaciones de software utilizando menos recursos computacionales y haciendo uso del sistema operativo del host. Haciendo una analogía con la programación orientada a objetos (POO) las máquinas virtuales son clases y los contenedores son objetos de esas clases.
+    
+    \section{DEEP LEARNING}
+    \section{MACHINE LEARNING Y EL ESTRATO SOCIAL}
+    
+  
+      \newpage\chapter{METODOLOGIA} 
+    
+    
+    El desarrollo de éste proyecto consta de las siguientes fases o actividades para su realización: 
+    
+ \textbf{FASE 1:} Inspección del hardware y software requeridos para llevar a cabo el proyecto. 
+ 
+ \textbf{Actividad 1:} Revisar estado del arte del cloud computing, así como papers, y             material educativo que permita orientar de manera efectiva la realización del           proyecto. 
+ 
+ \textbf{Actividad 2:} Determinar los requisitos mínimos y recomendados del hardware para           la debida instalación del software. 
+ 
+ \textbf{FASE 2:} Implementación base I. 
+ 
+ \textbf{Actividad 1:} Preparación de las máquinas físicas, actualización del firmware de los servidores, conexión física de la red de acuerdo al mapa lógico, establecimiento de VLAN administrativa, de usuarios, y de pruebas. 
+ 
+ \textbf{Actividad 2:} Determinar y organizar el software que contendrá cada nodo. 
+
+ \textbf{FASE 3:} Implementación base II. 
+ 
+ \textbf{Actividad 1:} Definición de los servicios a implementar de OpenStack. 
+ 
+ \textbf{Actividad 2:} Implementación de cada servicio de OpenStack en los nodos disponibles segun la FASE 2. 
+ 
+ \textbf{Actividad 3:} Configuración de la conexión entre los diferentes módulos de OpenStack para alta disponibilidad. 
+ 
+ \textbf{FASE 4:} Implementación de Orquestación de contenedores. 
+ 
+ \textbf{Actividad 1:} Determinar las conexiones requeridas para implementar Kubernetes en OpenStack. 
+ 
+ \textbf{Actividad 2:} Implementación de Kubernetes junto a  OpenStack y su respectiva configuración. 
+ 
+ \textbf{FASE 5:} Implementación del sistema de notificaciones. 
+ 
+ \textbf{Actividad 1:} Instalar y configurar Nagios. 
+ 
+ \textbf{Actividad 2:} Implementar envío de notificaciones a Telegram desde Nagios. 
+ 
+ TIEMPO EXTENDIDO: Tiempo acumulado por tolerancia a fallos. 
+ 
+ \textbf{FASE FINAL:} Elaboración de libro en base al proyecto realizado para su posterior publicación con el objetivo de difundir el conocimiento.  
+ 
+ NOTA:  Las labores administrativas respectivas del Grupo GID-CONUSS no están listadas en las fases anteriormente descritas, se anexará una bitácora al final del proyecto con las actividades administrativas realizadas. 
+ 
+ 
+    
+    \newpage\chapter{DESARROLLO DEL PROYECTO} 
+    
+    Para iniciar el proyecto fue conveniente partir de cero, es decir, en base a la documentación del proyecto que se tenía previamente desarrollado por los ex compañeros, los cuales habían realizado un prototipo de instalación de OpenStack en maquinas virtuales, se determina que el hardware de los servidores físicos está bastante des-actualizado en comparación a los últimos controladores disponibles para dicho sistema, también se encuentra la ventaja de tener las instancias de OpenStack en sistemas físicos en vez de virtualizados, debido a que los servicios virtualizados no tienen aceleración de hardware, esto implica que se pierda rendimiento en las instancias (Funcionarían a 32 bits en un servidor de 64 bits). Esto es considerado la \textbf{FASE 1} del proyecto.
+    
+    \section{FASE 1} 
+    Para tener una buena base sobre el tipo de proyecto que se va a desarrollar, fue necesario como primera medida la investigación de las nuevas tecnologías que hay en el mundo del cloud computing empezando desde las redes informáticas hasta llegar a los contenedores, de los cuales se hablará mas adelante. Teniendo en cuenta que la computación en la nube es un tema demasiado extenso, desde el punto de vista de las tecnologías de la información, se logró llegar a tener las bases necesarias para continuar con el proyecto. Una infraestructura de nube se puede resumir en 3 niveles: Infraestructura como servicio (IaaS), Plataforma como servicio (PaaS) y Software como servicio (SaaS), descritos en el estado del arte de este libro.
+    
+    Por buenas practicas es recomendable utilizar la documentación del propio software para conocer los requisitos que se deben tener en cuenta a la hora de empezar un proyecto desde cero, en este caso se usó la documentación de OpenStack. 
+    
+    La siguiente figura muestra los requisitos mínimos otorgados por el proyecto de OpenStack para la construcción de una infraestructura de alta disponibilidad, sin embargo, como se observa en las tablas 1-4, se demuestra que los servidores del grupo aprueban estas consideraciones.
+    
+   
+    \label{fig:RequisitOS}
+  \figura{img/requisitosOS.PNG}{Requisitos OpenStack HA}{0.7}{\textbf{Fuente} \cite[][]{requisitos} }
+  
+  Los nodos controlador y compute de OpenStack son el núcleo principal de una infraestructura por esta razón se le da mayor importancia a los recursos que éstas maquinas requieren en cuanto a procesamiento y memoria RAM. 
+  
+  \section{FASE 2} 
+    
+    Esta fase consiste en actualizar los controladores y el BIOS en tres servidores físicos (Sistemas,Lactoria y Labroides) quienes son miembros de la infraestructura tradicional del grupo Conuss. Posteriormente formatear y realizar la instalación limpia del sistema operativo Ubuntu Server 16.04.4 LTS (escogido por la facilidad y experiencia utilizando esta distribución de linux) en los servidores Lactoria, Labroides y Nautilus (Servidor otorgado por el Grupo Radiogis). El servidor sistemas quedó como punto de inflexión para no perder las conexiones de los servicios prestados, mientras se colocaba en producción OpenStack en alta disponibilidad.
+    
+    La actualización de los drivers y las BIOS requirieron de una búsqueda exhaustiva en la red debido a que ya que no se encuentran con facilidad pues los servidores cuentan con varios años de uso y su tecnología se ha venido quedando atrás.
+    
+    Una vez se tienen actualizadas las maquinas se procede a enlazarlos en una red LAN creada por el Switch 3Com y gestionada por el DSI (División de Sistemas de Información) de la Universidad Industrial de Santander, para este caso en especifico por ser el grupo Conuss un grupo de investigación en cloud computing, servidores y servicios, se le fue asignado un total de tres VLANS de tal manera que puedan ser aprovechadas por los administradores para la configuración, gestión y administración de la red interna de Conuss.
+    A continuación se da a conocer las tres VLANS y su respectivo uso.
+    
+        \begin{table}[H]
+		\begin{minipage}{1\textwidth}
+			\caption[Red Conuss]{ \raggedright Red Conuss}
+			\label{tabla:red}
+			\begin{center}
+				%	%	%	%	Acá va la tabla como tal
+				\begin{tabular}{@{}lllll@{}}
+					\toprule
+					\multicolumn{4}{c}{Red Conuss} &            \\ \cmidrule(r){1-4}
+					      		& VLAN 1   & VLAN 2 & VLAN3     \\
+					Direccion   & 10.6.100.0 & 10.6.101.0 & 10.6.102.0      \\
+					Mascara     & 255.255.255.0 & 255.255.255.0 & 255.255.255.0   \\
+					Gateway     & 10.6.100.1 & 10.6.101.1 & 10.6.102.1     \\
+                    Uso 		& Administración & Usuarios & Pruebas \\\bottomrule
+					\end{tabular} \\
+			\end{center} %\vspace{0.1em}
+		\end{minipage}
+	\end{table}
+    
+    La topología de red de Conuss se puede observar en la \textbf{Figura 3}.
+    
+	\figura{img/InfraConuss.png}{Topología de Red GID-Conuss}{0.5}{\textbf{Fuente}: \cite[][]{infraconuss} }
+ 
+     La instalación de los módulos de OpenStack depende del entorno al que se quiera adecuar la infraestructura, para el caso del GID-Conuss basta con la configuración base, la cual incluye los siguientes módulos presentes en las \textbf{FIGURAS 4 y 5}.
+    
+    \figura{img/lacto_nauti.PNG}{Distribucion de software en Lactoria y Nautilus}{0.6}{\textbf{Fuente}: \cite[][]{propia} }
+    
+    Debido a que el objetivo de dicha implementación es la alta disponibilidad, se requieren los mismos servicios en los nodos controladores (Lactoria y Nautilus) de esto se hablará más adelante.
+         
+      \figura{img/labro_siste.PNG}{Distribucion de software en Labroides y Sistemas}{0.6}{\textbf{Fuente}: \cite[][]{propia} }
+      
+      Los servicios que están en rojo hacen referencia a la infraestructura de OpenStack y los azules a otros servicios requeridos por el proyecto.
+      
+      Labroides y Sistemas tienen la tarea de alojar las máquinas virtuales que harán parte del cluster de Kubernetes para los contenedores de Docker.
+      
+      En los 4 servidores existe el servicio de nagios-nrpe que se encarga de informarle al servidor nagios sobre el estado de los recursos del servidor y otros servicios, esto se explicará en la fase 5. 
+      
+      
+      
+    \section{FASE 3}
+    
+      En la \textbf{FASE 2} se determinaron los servicios a implementar en los servidores. Para la posterior instalación se elaboró un diagrama conceptual que permitiera ver de manera abstracta la implementación. 
+    
+    \figura{img/DiagramaOpenstackConuss.png}{Modelo Conceptual}{0.7}{\textbf{Fuente}: \cite[][]{propia} }
+    
+    Para una vista mas detalla de lo visto en la \textbf{FIGURA 6} se realizó un modelo lógico ( \textbf{FIGURA 7} ) que abarca más a fondo la manera de operar de OpenStack entre sus módulos; cabe aclarar que no se incluyeron los servicios de Nagios para el monitoreo en estos modelos porque se consideran agentes externos a la implementación de OpenStack como tal.
+    
+    \figura{img/DiagLogicOSConuss.png}{Modelo Lógico}{0.9}{\textbf{Fuente}: \cite[][]{propia} }
+    
+    \subsection{Hosts}
+    La implementación comienza configurando cada nodo para que reconozca a los demás nodos en el archivo \textbf{/etc/hosts}. De ésta manera será más factible referenciarlos en las URLs que maneja OpenStack en su interior.
+    
+    \subsection{API REST}
+    OpenStack utiliza para su comunicación interna el protocolo HTTP, debido a que la totalidad de sus módulos poseen una API REST quien les da el carácter modular, es decir, sus estados y/o ejecuciones varían referentes a los encabezados HTTP recibidos tales como los métodos POST y GET.
+     
+    \subsection{Interfaces}
+    En el archivo \textbf{/etc/network/interfaces} se configuran las interfaces para poder comunicarse. Cada nodo tiene 2 interfaces conectadas a excepción de Sistemas, quien solo necesita un puente para darle red a sus hosts, ya que son máquinas virtuales prestadas en la antigua infraestructura. 
+    
+    Las interfaces de los nodos de OpenStack están definidas como en la \textbf{TABLA 7}.
+   
+   \begin{table}[H]
+		\begin{minipage}{1\textwidth}
+			\caption[Interfaces]{ \raggedright Servidores e Interfaces}
+			\label{tabla:interfaces}
+			\begin{center}
+				%	%	%	%	Acá va la tabla como tal
+				\begin{tabular}{@{}llll@{}}
+					\toprule
+					\multicolumn{3}{c}{Interfaces de Red} &            \\ \cmidrule(r){1-3}
+					      		& Interfaz 1 & Interfaz 2 \\
+					Labroides   & 10.6.100.2 & Proveedor de 10.6.101.0/24 \\
+					Lactoria    & 10.6.100.3 & Proveedor de 10.6.101.0/24 \\
+					Nautilus    & 10.6.100.5 & Proveedor de 10.6.101.0/24 \\
+                    Sistemas 	& 10.6.100.4 & N/A \\\bottomrule
+					\end{tabular} \\
+			\end{center} %\vspace{0.1em}
+		\end{minipage}
+	\end{table}
+    
+    
+    La interfaz proveedora de define de la siguiente manera en Ubuntu Server 16.04 LTS:
+    
+    auto INTERFACE\_NAME \newline
+    iface  INTERFACE\_NAME inet manual\newline
+    up ip link set dev $IFACE up\newline
+    down ip link set dev $IFACE down
+    
+    \figura{img/etcinterfaces.PNG}{Interfaces de Lactoria}{0.7}{\textbf{Fuente}: \cite[][]{propia} }
+    
+    \figura{img/etchost.PNG}{Hosts}{0.7}{\textbf{Fuente}: \cite[][]{propia} }
+    
+    \subsection{MariaDB Galera Cluster}
+    
+    Una vez configurada las interfaces de los servidores, se procede a configurar el servicio de Network Time Protocol (NTP) para sincronizar la hora entre los servidores, y posteriormente se registra el repositorio de Ubuntu Cloud OpenStack Queens, pues es la versión estable más reciente de OpenStack. También es necesario añadir el repositorio de MariaDB Galera Cluster, pues la version del repositorio de Ubuntu solo llega hasta la 10.0, versión que no tiene soporte para la replicación entre nodos (WSREP).
+    
+   	Es importante tener en cuenta que las bases de datos solo se instalan en los nodos controladores, por ende, solo Lactoria y Nautilus tendrán base de datos instaladas y sincronizadas con Galera.
+    
+    Para sincronizarlas basta con editar el archivo de configuración /etc/mysql/conf.d/galera.cnf y habilitar la replicación entre nodos.
+   
+   \figura{img/etcgalera.PNG}{Configuración de Galera en Lactoria}{0.7}{\textbf{Fuente}: \cite[][]{propia}}
+   
+   A medida que se van instalando los módulos de OpenStack, se deben ir creando las bases de datos que contendrán la información de los mismos y otorgándoles privilegios para que puedan ser accedidos; cada servicio tiene sus credenciales usuario:contraseña para hacer uso de su respectiva base de datos.
+   
+   \figura{img/databases.PNG}{Bases de datos.}{0.7}{\textbf{Fuente}: \cite[][]{propia}}
+    
+    \subsection{RabbitMQ}
+    
+    Los procesos de OpenStack necesitan un intermediario que los comunique, es aquí donde entra el concepto de Colas de Mensajes, los modulos de OpenStack envian sus peticiones a la cola de mensajes, y permanecen allí hasta que sean atendidas. La comunicación por medio de RabbitMQ se asemeja a el encaminamiento de un router, utilizando determinadas claves para poder dirigirse a un servicio en específico.
+    
+    \figura{img/rabbitmq.PNG}{Cola de mensajes con RabbitMQ}{0.7}{\textbf{Fuente}: \cite[][]{propia}}
+    
+    RabbitMQ maneja cola de mensajes de alta disponibilidad, que no es más que clonar una cola de mensajes ya especificada, y reenviada a los nodos competentes para que la procesen al mismo tiempo.
+    
+    \subsection{Memcached}
+    
+    Memcached es utilizado por el servicio de identidad para guardar las tokens que le asigna a los usuarios y servicios autentificados. El servicio utiliza la memoria ram de los nodos controladores para crear una especie de almacenamiento compartido en donde consultar objetos de manera breve.
+    
+    \subsection{ETCD}
+    
+    CoreOS nos ofrece una solución para mantener a los controladores al tanto de la vida de los servicios ya que dispone de un almacén de clave-valor confiable y distribuido, se utiliza en otros casos como el bloqueo distribuido de claves y la configuración de almacenamiento.
+    
+    Finalmente, acabados los requisitos para un correcto funcionamiento de OpenStack, se implementan los módulos de OpenStack. El secreto de los módulos de OpenStack está en sus archivos de configuración,
+    
+    
+    \subsection{Pacemaker, Corosyn, Heartbeat, la alta disponibilidad. y el almacenamiento compartido.}
+    
+    La alta disponibilidad de OpenStack vendrá configurada por un cluster de Pacemaker, permitiéndonos configurar que servicios queremos como activos/pasivos y activos/activos. 
+    
+    \figura{img/OpenConHA.png}{Modelo OpenStack HA}{0.7}{\textbf{Fuente}: \cite[][]{propia}}
+    
+    Para la manipulación de pacemaker se utiliza crmsh, una aplicación de Corosync, quien nos permite crear reglas para controlar en que nodo se ejecuta un servicio, o si se quiere que el servicio se encuentre disponible en ambos nodos al tiempo (clone), a éstas reglas se les denomina \textbf{constraints} y son la base de la alta disponibilidad.
+    
+    \figura{img/crmsh.PNG}{Virtual IP configurada}{0.7}{\textbf{Fuente}: \cite[][]{propia}}
+    
+    En la \textbf{figura 14} se muestra configurada la IP virtual de acceso a los nodos en modo activo/pasivo, iniciada en Lactoria, esto quiere decir que si se accede a la IP virtual, se estaría accediendo al nodo de Lactoria, y en caso de que éste fallase, se accederia a Nautilus.
+    
+    La IP virtual solo es uno de los tantos recursos que se pueden configurar con pacemaker. Para manipular los demás servicios se pueden utilizar desde scripts en bash llamados agentes OCF obtenidos desde el paquete openstack-resource-agents de Ubuntu, hasta el mismo LSB de systemd.
+    
+    
+    
+    \subsection{Servicio de Identidad}
+    
+    El servicio de identidad a.k.a Keystone, es el servicio que gestionará la base de datos para la creación de usuarios, asignación de endpoints, creación de grupos de seguridad, manejo de roles para los usuarios, proyectos y dominios.
+    
+    
+    \subsection{Servicio de Imagenes}
+    
+    Las imágenes son uno de los componentes principales en el ciclo de vida de una instancia de OpenStack, por ello se requiere que el servicio sea altamente disponible, es decir, siempre se tengan a la mano las imágenes de determinado sistema operativo por si un nodo falla.
+    
+    Debido a que no se cuenta con una partición de almacenamiento compartido, se incorporó el servicio lsyncd, que permite la sincronización de dos directorios a través de rsync y por SSH.
+    
+    Éste servicio se encarga de replicar las imágenes y mantenerlas al día entre los nodos.
+    
+    \subsection{Servicio de Computo}
+    
+    El servicio de computo altamente disponible nos permite disponer de evacuación de las máquinas virtuales en caso de fallo del nodo en el que se encuentran virtualizadas, ejecutando una rutina en donde lanza la maquina virtual con la misma configuración pero en otro nodo de cómputo.
+    
+    \subsection{Servicio de Red}
+    
+    El servicio de red a.k.a. Neutron, involucra su alta disponibilidad al crear dos agentes de dhcp y de l3 por nodo, en caso de que un nodo falle, se tomará como referencia el otro nodo al ser levantada la máquina virtual de nuevo.
+      
+    \subsection{Servicio de Orquestacion}
+     
+     Heat nos permite la creación de plantillas pre-configuradas para lanzar aplicaciones. Las plantillas de heat se conocen como stacks, y comienzan a llamar a los servicios necesitados según las instrucciones que posea, de ésta manera facilitamos la labor por parte de los administradores automatizando la provisión de los recursos.
+     
+     
+     
+    \subsection{Servicio de almacenamiento de bloques}
+    
+    El almacenamiento que provee Nova por defecto es efimero, es decir, en el momento en que la maquina sea destruida se perderá toda su información, por ende, es recomendable que en aquellas instancias en donde se quiera conservar la información, se trabajen volúmenes.
+    
+    Con Cinder se configuran volúmenes lógicos en los servidores físicos para disponer de escalabilidad vertical en cuanto a almacenamiento se refiere, permitiendo así que sean asignados pequeños bloques a las máquinas virtuales también llamados volúmenes. Su labor principal es la de proveer un almacenamiento persistente.
+    
+    \subsection{Dashboard de Horizon}
+    
+    Finalmente se puede observar la interfaz de acceso por parte de los usuarios a través de http://10.6.100.10/horizon .
+    
+    \figura{img/loginHorizon.PNG}{Inicio de sesion en la plataforma}{0.7}{\textbf{Fuente}: \cite[][]{propia} }
+    
+    La interfaz requiere de las credenciales para el acceso otorgadas previamente por los administradores del grupo GID-CONUSS. Estas credenciales solo se otorgarán a los estudiantes y usuarios quienes acepten los términos y condiciones de uso, en los cuales se especifica claramente que GID-Conuss no se hace responsable del mal uso que se le pueda dar al servicio, y que llegado el caso, podrá realizar intervención alguna.
+    
+    \figura{img/contratoSLA.PNG}{Terminos y condiciones de uso GID-CONUSS página 1.}{0.7}{\textbf{Fuente}: \cite[][]{propia} }
+    
+    Si iniciamos sesión como administrador, tendremos un panel habilitado llamado "Administrador" en el cual podremos habilitar o deshabilitar nodos de computo en la sección de Compute, así como administrar los volumenes, redes, routers, ips flotantes, y las instancias creadas por todos los usuarios en el sistema.
+    
+    \figura{img/visgenAdm.PNG}{Vista general de Administrador}{0.7}{\textbf{Fuente}: \cite[][]{propia} }
+    
+    En el panel de proyecto es donde actúan y trabajan los usuarios, en él pueden configurar las redes como servicio que tienen a su disposición, como lanzar maquinas virtuales, stacks de orquestación, y almacenamiento de objetos en swift, siempre y cuando no sobrepase los limites establecidos por el administrador.
+    
+    \figura{img/panelproyecto.PNG}{Vista general de proyecto}{0.7}{\textbf{Fuente}: \cite[][]{propia} }
+    
+    En la sección de Compute encontramos las maneras de configurar una máquina virtual, teniendo en cuenta sus volumenes en caso de requerir almacenamiento persistente, su conexion de red, el par de claves para ser accedido por SSH, la conexión a consola de interface web, el grupo de seguridad que administrará las reglas de reenvío de tramas como ICMP, SSH, HTTP etc.,, por la máquina, y algunos scripts de configuración Cloud-init.
+    
+    En la sección de redes podemos crear Routers y redes privadas internas para establecer el routeo entre instancias de una manera lógica, contando también con un sistema que permite graficar en vivo la topología actual de la red.
+    
+    En la sección de orquestación podemos incluir Stacks para automarizar el despliegue de máquinas virtuales.
+    
+    \section{FASE 4}
+    Esta fase es un complemento para la infraestructura como servicio que se pretende tener en el grupo para que la comunidad universitaria pueda usarla y es la posibilidad de ofrecer contenedores como servicio. Inicialmente el proyecto estaba pensado para orquestar estos contenedores con Openstack con la ayuda de 2 de sus módulos, Mangnum es un modulo que permite administrar contenedores de docker que han sido orquestados con Kubernetes, Docker Swarm o Mesos, ya que estos 3 son compatibles con magnum, y Zun el mas reciente modulo de Openstack que salio con la versión de Pike y que ahora tiene soporte con las versiones de Queens y Rocky (latest). Zun es el servicio de contenedores de Openstack el cual crea sus propio contenedores sin una virtualización previa. Sin embargo durante el desarrollo del proyecto hubo varios problemas con las versiones de  Openstack ya que es un software que esta en constante cambio. por esta razón se decidió manejar los contenedores directamente con kubeadm el orquestador de clusters de Kubernetes Para comprender bien el tema se empezara hablando sobre los contenedores y Docker, luego se explicará el proceso para crear un cluster de contenedores.
+    
+    \subsection{Contenedores}
+    Los contenedores de aplicaciones son entornos ligeros de tiempo de ejecución que proporcionan a las aplicaciones los archivos, las variables y las bibliotecas que necesitan para ejecutarse, maximizando de esta forma su portabilidad. Si bien las máquinas virtuales (VM) tradicionales permiten la virtualización de la infraestructura de computación, los contenedores habilitan la de las aplicaciones de software. A diferencia de las máquinas virtuales, los contenedores utilizan el sistema operativo (SO) de su host en lugar de proporcionar el suyo propio.\footcite[][]{hpe-contenedore}. En pocas palabras un contenedor es una instancia de una maquina virtual que solo puede ejecutar un servicio.
+    
+    \subsection{Docker}
+    Se encarga de gestionar contenedores, los contenedores Docker ejecutan un único servicio por lo cual hace que sea demasiado ligero, l peso de este sistema no tiene comparación con cualquier otro sistema de virtualización más convencional que estemos acostumbrados a usar. Por poner un ejemplo, una de las herramientas de virtualización más extendida es VirtualBox, y cualquier imagen de Ubuntu que queramos usar en otro equipo pesará entorno a 1Gb si contamos únicamente con la instalación limpia del sistema. En cambio, un Ubuntu con Apache y una aplicación web, pesa alrededor de 180Mb, lo que nos demuestra un significativo ahorro a la hora de almacenar diversos contenedores que podamos desplegar con posterioridad.\footcite[][]{openwebinars}.
+    
+     \figura{img/docker.png}{Docker}{0.7}{\textbf{Fuente}: \cite[][]{docker}}
+     
+     \subsection{Kubernetes}
+     Cuando se habla de kubernetes se habla de contenedores, kubernetes tiene 3 actores principales: kubeadm, kubectl, kubelet.
+     
+     Kubeadm es el orquestador de clusters de contenedores docker.
+     Kubelet es el agente que habla con el nodo master del cluster y Kubectl es el servicio para ejecutar comando en una consola de comandos.
+ En un  clusters normal  de kubernetes existen 2 partes importantes: nodo master y nodo worker.
+ Todas las solicitudes para un clutser como para su creacion se hacen el nodo master y es él quien le comunica y asigna tareas a sus trabajadores.
+ 
+ 
+      \figura{img/kubernetes-cluster.png}{Kubernetes Cluster}{0.8}{\textbf{Fuente}: \cite[][]{kube-cluster}}
+      
+      Como se puede observar en la figura anterior el cluster esta conformado por 4 maquinas puedenser virtuales locales o que esten alojadas en la nube, fisicas o una combinacion de ellas, de estos 4 nodos uno toma el papel de master. Para este proyecto se usaran maquinas virtuales creadas por Openstack
+      
+      Primero se debe escoger el numero de nodos a usar para el cluster y los recursos necesarios para cada uno.
+      Teniendo eso presente y el sistema operativo con el cual se quieren los contenedores ya que los contenedores usan el mismo sistema operativo de su maquina donde está almacenado.
+      Una vez se tengan las maquinas listas con los archivos de hosts configurados se procede a instalar kubeadm, kubelet, kubectl y docker.io.
+      
+     Es importante aclarar que los nodos no deben llevar swap de lo contrario hay q usar el comando swapoff -a para deshabilitarla.
+     Cuando todos los nodos tengan todos los paquetes instalados es hora es escoger quien de ellos va a ser el nodo master, dicho deberá ejecutar este comando
+     
+     \# kubeadm init
+     
+     con este comando creara un cluster y sera hará nodo master.
+     Al finalizar la ejecución arrojará un token el cual se debe guardar ya que se usará para unir nodos workers al nodo master y escalar horizontalmente el cluster.
+     
+     Ejemplo de token: kubeadm join 192.168.10.10:6443 --token yaiayi.kkgdmmybpap2ackk --discovery-token-ca-cert-hash sha256:055cbc786ebd5d6e9a749e0c239165e410e4d454d6a
+
+     
+     Antes de empezar a unir nodos al cluster es necesario instalar un red para los pods que se vayan a ejecutar mas adelante, los drivers de red mas populares son franela y weave-master.
+     Una vez creada la red interna ahora los nodos podrán unirse al cluster.
+     
+     Cuando se crea el cluster por primera vez se crean contenedores que contienen unos servicios encendidos que hacen que el cluster funcione de buena forma
+     
+     Los contenedores de Kubernetes estan organizados dentro de pods, un pod es la unidad mas pequeña con la que kubernetes interactua y esta conformada por uno o varios contenedores, servicios y almancenamiento. Un nodo puede tener uno o muchos pods. La siguiente imagen describe de una mejor manera como se compone un nodo del cluster.
+      
+       \figura{img/pods.PNG}{Ilustracion de un nodo de kubernetes}{0.7}{\textbf{Fuente}: \cite[][]{pod}}
+      
+      Por esta razon es necesario una red interna para los pods, para que pods de otros nodos puedan comunicarse.
+      Como se puede observar en la figura cada pod tiene una direccion ip interna dentro del cluster la cual es usada para comunicaciones internas.
+      Luego de tener instalada la red de pods se procede a unir los nodos workers al cluster, usando el token que nos arrojó el nodo master, para esto se entra a cada nodo y se ejecuta el token como un comando de Linux.
+      
+      Inicialmente para este proyecto se uso un total de 4 maquinas para la creación del cluster cada una con los mismos recursos: 10GB de disco, 2GB de ram y 2 cores de cpu.
+      Este cluster puede escalar tanto verticalmente como horizontalmente, el escalamiento vertical hace referencia a aumentar los recursos de los nodos ya existente, es decir aumentarle la capacidad de almacenamiento y procesamiento. Para entornos de produccion es mas recomendable usar el escalamiento horizontal que se refiere a añadir otro nodo al cluster con caracteristicas similares.
+      
+      Una vez terminada la creación del cluster se procedió a inicializar pods para la creacion de los contenedores. Como se ha venido diciendo un contenedor solo puede ejecutar un servicio por ejemplo cada contenedor solo va a tener un servidor web como apache o nginx.
+     Por esta razón si una aplicación requiere mas de un servicio se necesitan crear otros contenedores que corran los demas servicios, por lo general Kubenertes crea otros pods para estos otros servicios y los conecta por medio de la red de pods para el intercambio de datos.
+     
+     Para crear los contenedores en kubernetes se debe primero tener una imagen docker que contenga la aplicación que se quiera correr, para esto existen images ya prediseñadas que se pueden listar utilizando el comando \$ docker images, en el nodo master; cabe resaltar que todas las instrucciones se deben ejecutar en el nodo master del cluster. 
+     
+     
+     \figura{img/docker_images.png}{Imagenes docker almancenadas localmente}{0.8}{\textbf{Fuente}: \cite[][]{propia}}
+     
+     
+     Si la imagen no se encuentra en el repositorio local entonces se puede recurrir al repositorio de images que tiene docker en su nube www.hub.docker.com donde la comunidad y las empresas desarrolladoras de software suben sus imágenes para ser compartidas, sin embargo para contenedores específicos es necesario crear la imagen a partir de un Dockerfile, un archivo de texto que contiene las instrucciones que se harían en una consola de comandos para construir una imagen con la ayuda del comando \$ docker build.
+     
+     
+    
+      \figura{img/dockerfile.png}{Dockerfile}{0.8}{\textbf{Fuente}: \cite[][]{dockerfile}}
+      
+      
+      La figura anterior muestra un Dockerfile que parte de una imagen con python3.4
+      a la cual se le crea un directorio code y se empieza a trabajar desde ahí.
+      La instrucción ADD . /code/ es el comando que permite que todo lo que hay en la carpeta donde está el dockerfile sea añadido a la nueva imagen en la ruta /code
+      
+      Para la construccion de la imagen debe usarser el comnado \$ docker build en la la carpeta donde esté el dockerfile y se le pasará como argumento el nombre de la imagen y la versión, mas adelante se mostrará un ejemplo.
+      
+      Como se dijo anteriormente kubectl es la herramienta que permite ejecutar comandos para el cluster de kubernetes, si se quiere conocer los pods que hay cuando se creo el cluster basta con usar el comando \textbf{kubectl get pods --all-namespaces} y nos mostrará una lista de todos los pods que hay en el cluster.
+      
+      
+      \figura{img/all_pods.png}{Tabla de todos los pods del cluster}{1}{\textbf{Fuente}: \cite[][]{propia}}
+      
+      Esto nos mostrara información acerca del estado de cada pod, el numero de replicas, tiempo de creacion, ip interna y el nodo donde se encuentra el pod. Pero toda esta información puede ser vista de una forma mas agradable para el usuario administrador haciendo uso del dashboard que provee kubernetes. El dashboard de kubernetes es una aplicación que se ejecuta en contenedores del mismo cluster.
+      
+     Hay 2 formas de ejecutar un contenedor con kubectl, la primera es usando imagenes de docker que esten en el repositorio local para eso utilizamos el comando \textbf{kubectl run nombre\_pod imagen/imagen}. La segunda es usando un archivo yaml que este en el el nodo master o que esté en internet para esto se usa el comando \textbf{kubectl apply -f ruta\_archivo.ymal}
+     
+     
+     \figura{img/dashboard_kubernetes.png}{Pantalla inicial del dashboard de kubernetes}{1}{\textbf{Fuente}: \cite[][]{propia}}
+     
+     Para acceder a este dashboard se necesita la ip del master y el puerto por el cual el servicio esta corriendo.
+     
+     
+     Existen varios complementos para para mejorar la administración y monitoreo de cluster, para este proyecto se usaron heapster, wave scope y grafana.
+     
+     Heapster agrega una capa más al dashboard de kubernetes que mejora la sintesis de la informacion mediante gráficas de procesamiento y uso de ram en los pods, nodos, y cluster.
+     Al igual que el dashboard estos otros complementos también son creados en contenedores en el mismo cluster.
+     
+     
+     
+      \figura{img/heapster.png}{Graficas de heapster en el dashboard de kubernetes}{1}{\textbf{Fuente}: \cite[][]{propia}}
+      
+      La imagen anterior muestra el estado actual de la CPU y la memoria total del cluster reuniendo los recursos de los 4 nodos, como se puede ver solamente desplegando estos pocos servicios para la orquestacion de los contenedores y visualización de estadísticas del cluster se requiere una buena cantidad de recursos
+      
+      
+      \figura{img/pods2.png}{Total de pods después de desplegar servicios de monitoreo}{1}{\textbf{Fuente}: \cite[][]{propia}}
+      
+      
+     La imagen anterior muestra todos los pods que se necesitaron para tener un cluster con herramientas de monitoreo 
+     
+           \figura{img/grafana.png}{Dashboard de Grafana}{1}{\textbf{Fuente}: \cite[][]{propia}}
+      
+      
+      
+      \figura{img/wavescope.png}{Dashboard de Wave Scope}{1}{\textbf{Fuente}: \cite[][]{propia}}
+      
+      
+      
+      La Figura 26 nos muestra una mejor vista del comportamiento del cluster, este dashboard tiene muchas opciones de configuración que le permiten al administrador tener una mejor experiencia y una personalización para las graficas.
+      
+      La figura 27 es una gran herramienta que nos permite visualizar la topología del cluster tanto de la red como de los distintos procesos que se están ejecutando, ademas también puede mostrar de forma detalla información de los recursos, sin embargo el principal atractivo de está herramienta es la ejecución de una shell de Linux que permite ejecutar comando directamente en los nodos, pods o contenedores del cluster.
+      
+      
+      	
+      
+     
+      
+      
+      
+      
+    
+  
+
+    
+
+    
+    
+    
+
+    
+    
+    
+   
+        
+    \section{FASE 5}
+    Tener sistemas de monitoreo para una infraestructura como la del grupo Conuss es de vital importancia ya que permite conocer el rendimiento de las maquinas así como de los servicios y la red. Los sistemas de monitoreo en tiempo real facilitan aun más la administración de la infraestructura la toma de decisiones en situaciones de incertidumbre y mejora la experiencia con el usuario. Sin embargo para que un monitoreo sea en tiempo real se necesitan de notificaciones que comuniquen a los administradores ante alguna eventualidad que haya ocurrido en el sistemas, ya que no siempre se puede estar mirando las pantallas de los computadores donde están los dashboards, por esta razón se implementó un sistema de notificaciones vía Telegram (aplicación de mensajería instantánea) que notifica en tiempo real cuando algún servicio haya cambiado su estado o esté en un estado crítico. 
+    
+    Para esta tarea se usó la aplicación Nagios, una herramienta de monitoreo para la infraestructura física del la nube CloudEisi que permite el chequeo de los servidores y vigila su comportamiento. Inicialmente se pretendia hacer esto con Grafana de la misma forma que se hizo con el cluster de kubernetes pero la falta de experiencia y de documentación no permitió poder configurar las notificaciones para este sistema. Sin embargo Nagios siempre fue una buena opción cuando se hizo la búsqueda de monitores de sistemas.
+    
+     
+    
+     \figura{img/nagios.png}{Logo de Nagios}{0.9}{\textbf{Fuente}: \cite[][]{nagios}}
+     
+     
+     El servicio de nagios esta compuesto de 2 partes importantes para su uso en producción: Nagios-server y nagios-nrpe.
+   Nagios-server es el actor principal quien recibe información de los servidores, la analiza y la expone con gráficos y estadísticas, nagios también cuenta con un dashboard que muestra información del sistema en graficos y  porcentajes, el segundo actor es el agente nrpe que se instala en todos los servidores físicos y se comunica con el servidor nagios para llevar información de cada servicio y cada recurso que se haya configurado para que sea monitoreado. De forma mas sencilla se puede ver como un nodo master y nodos workers.
+   
+   
+   \figura{img/nagios-nrpe.png}{Modelo lógico nagios}{0.9}{\textbf{Fuente}: \cite[][]{nagios-nrpe}}
+   
+   El modelo anterior muestra como el servidor nagios se comunica con los agentes nrpe de los servidores quienes a su vez ejecutan unos scripts llamados check\_disk y check\_load que verifican el estados de estos 2 servicios específicos en este caso del uso del disco y de la carga de trabajo, sin embargo estos scrips están alojados en el servidor nagios.
+   
+   Para la implementación de esta herramientas se utilizaron 3 paquetes principales los cuales están distribuidos de la siguiente manera 
+   
+     
+   \figura{img/nagios-distribucion.PNG}{Distribución de software nagios}{0.9}{\textbf{Fuente}: \cite[][]{propia}}
+   
+   
+   Al finalizar la instalación se procede a configurar los archivos de forma adecuada para que haya comunicación entre el servidor nagios y los agentes nrpe, esta configuración se realiza en todos los servidores físicos y en el computador de monitoreo.
+   
+   \figura{img/nagios-config.PNG}{Archivo de configuracion del servidor Labroides en el servidor nagios}{0.9}{\textbf{Fuente}: \cite[][]{propia}}
+   
+   Este archivo de configuracion  se encuentra localizado en la ruta \textbf{/usr/local/nagios/etc/objects/labroides.cfg}
+   
+   
+    
+   \figura{img/nrpe-config.PNG}{Archivo de configuracion del agente nrpe en Labroides}{1}{\textbf{Fuente}: \cite[][]{propia}}
+   
+   
+   
+   La imagen anterior es una parte del archivo de configuración del agente nrpe que se encuentra en todos los equipos en la ruta \textbf{/usr/loca/nagios/etc/nrpe.conf} . En este archivo se especifican los servicios y recursos que se desean monitorear en el servidor ademas de especificar parametros para indicar el estado del servicio o recurso, los posibles estados pueden ser: "critical", "warning" y "ok". Estos estados se verán de mejor manera en el dashboard.
+   
+   \figura{img/nagios-scripts.PNG}{Ubicación de los scripts en el servidor nagios}{1}{\textbf{Fuente}: \cite[][]{propia}}
+   
+   Estos scripts contienen secuencias de comandos que son utilizados por los agentes nrpe en los servidores para verificar el estados de los servicios y proporcionar un balance de ellos mismo.
+   
+   
+   
+    \figura{img/nagios-dashboard.PNG}{Dashboard de Nagios}{1}{\textbf{Fuente}: \cite[][]{propia}}
+    
+    
+    El dashboard de nagios nos muestra el estados de los servicios en colores de forma que el color verde representa  un estado bueno (ok), el amarillo es peligro (warning), y el rojo es crítico (critical). El color naranja hace alusión a un servicio que no esta siendo procesado por lo tanto no se puede saber su estado.
+    
+    
+    Por último se implemento el sistema de notificaciones con Telegram, una implementación que permite Nagios y que es aprovechada en muchos sistemas de produccion para tener alertas de fallos o cambios en el sistema.
+    
+    Para este objetivo fue necesario utilizar un script hecho por la comunidad  que se comunica con un bot creado en la aplicacion Telegram al cual se la ha dado el nombre de Camilo y que se encuentra en un chat de grupo administrativo a donde llegan las notificaciones que el bot envia.
+    
+    
+     \figura{img/telegram-script.PNG}{Script de Telegram}{1}{\textbf{Fuente}: \cite[][]{propia}}
+     
+     Sin embargo para que esto funcione se tuvo que modificar otros archivos de configuración del servidor nagios donde se indica el canal por el cual se desea enviar las notificaciones en este caso Telegram y el contacto al cual quiere ser enviado o sea Camilo.
+     
+     
+      \figura{img/telegram.jpeg}{Notificaciones en la aplicación Telegram}{0.4}{\textbf{Fuente}: \cite[][]{propia}}
+     
+     
+     
+     Una vez se termine de configurar el sistema empezaran a llegar al chat grupal mensajes de Camilo con alertas cuando un servicio cambia de estado.
+    
+    
+    
+   
+   
+   
+   
+   
+   
+   
+    
+    \newpage\chapter{CONCLUSIONES}
+    
+    Del trabajo realizado llegamos a concluir que:
+    
+    1. La responsabilidad de una infraestructura cloud recae totalmente en el administrador de sistemas y su capacidad para brindar prontas soluciones a los errores presentados del día a día y a las peticiones de los usuarios finales en el préstamo de los servicios. 
+    
+    2. Ubuntu es una gran distribución y sencilla de utilizar para aquellos que desean empezar ha entrar en el mundo de Linux, no obstante, la implementación de OpenStack en una distribución Red Hat puede llegar a ser mucho más confiable debido a que principalmente el proyecto está desarrollado para esta distribución, mientras que en Ubuntu pueden existir inconsistencias en la paquetería.
+    
+    3. Los contenedores son una abstracción de las maquinas virtuales, una tecnología maravillosa que permite tener aplicaciones en instancias muy  ligeras que reducen de forma significativa el uso de los recursos de una maquina haciendo uso únicamente de los servicios necesarios. Ademas de esto los contenedores no necesitan de un sistemas operativo en especial ya que funcionan utilizando el sistema operativo de la maquina en la cual se está ejecutando por lo que esto le da una capacidad de adaptación.  
+    
+    4. Para un administrador de sistemas es esencial tener un registro de eventos que permita argumentar en respuesta a un usuario un fallo con el servicio y brindar estadísticas de confiabilidad para proponerse metas que generen calidad a futuro. Ademas de esto las notificaciones en tiempo real sobre una eventualidad del sistema permite una pronta reacción por parte de los administradores para mitigar dicha anormalidad.
+    
+    \newpage\chapter{RECOMENDACIONES Y TRABAJO FUTURO}
+    
+    - La tecnología de OpenStack está constantemente en desarrollo, por ende es posible que las configuraciones de alta disponibilidad no sean las más optimas en el momento de llevarse a producción si se utiliza una versión demasiado reciente como lo es Queens, sin embargo, el soporte que se le da a cada versión es lo suficientemente a largo plazo, como para ir aplicando pequeñas actualizaciones a lo largo de los proyectos de grado realizados en el grupo. Cabe destacar que la experiencia es lo que más cuenta, pues se debe trabajar desde lo más básico que es el entendimiento de la función de los procesos en un Sistema Operativo, atravesando la complejidad de las redes, y finalizando indefinidamente con el extenso mundo del Cloud Computing de hoy en día.
+    
+    - Utilizar un cluster de storage es conveniente en la alta disponibilidad, para ello se requieren más servidores, en los cuales al instalar el sistema operativo otorgue un formato a los discos que permita el uso del protocolo iSCSI. La recomendación viene dada a utilizar el software Ceph RADOS, pues permite tener Shared File System, Object Storage y Block storage como servicio.
+    
+    - Investigar acerca de los bugs comunes que impiden que la visualización del entorno de OpenStack a través de su Dashboard (Horizon) sea fluida en navegadores como Google Chrome, pues en navegadores Firefox va demasiado bien.
+    
+    -Cambiar la distribución Ubuntu Server a una distribución como Red Hat o CentOS ya que la mayoría de los desarrollos de aplicaciones en la nube estan destinadas para estas distribuciones que son mas enfatizadas para servidores y servicios.
+    
+    -Investigar y aplicar herramientas de implementación y configuración como Ansible, Chef y Puppet que permitan el despliegue de aplicaciones y servicios de forma más sencilla.
+    
+    
+    -Continuar investigando sobre el uso de contenedores en el mundo del Cloud Computing ya que es una tecnología que está revolucionando la ejecución de aplicaciones.
+    
+    
+    
+    \newpage\chapter{LIMITACIONES Y PROBLEMAS} 
+    
+    A pesar de las limitaciones listadas  a continuación, el esfuerzo por hacer realidad éste proyecto quiere inspirar a la inversión en la nube CloudEISI para ofrecer un mejor servicio en el futuro.
+    
+    -La no independencia de la Red interna de la UIS fue un problema muy agobiante,  ya que tuvimos que acoplarnos a los constantes cambios de red que sucedieron con las modificación de la red en la Universidad, el cambio de  las IP privadas clase C  a clase A, afectó de una manera trágica los servicios prestados en la nube de aquel momento, pues sitios web como el aula virtual Meiweb, se vieron inutilizables por sus múltiples conexiones previamente establecidas para su alta disponibilidad, además de otras maquinas virtuales asignadas a estudiantes de proyecto que resultaron incomunicadas. También debemos tener en cuenta, que si por algún motivo falla la conexión del UIS-ISP, queda sin acceso la nube CloudEISI desde el exterior.
+    
+    -Velocidad de transferencia interna. Los cables de red destinados a la conexión interna de la nube son cables Ethernet, es decir, su velocidad de transferencia tiende a rozar los 100 Mbps, aunque actualmente no sea un factor demasiado limitante por el pequeño tamaño de la nube, en un futuro será inevitable tener molestias debido a su naturaleza escalable.
+    
+    -Cortes de luz. Actualmente la nube está lejos de ser considerado un datacenter, pues sus instalaciones físicas no están adaptadas para este fin, sin embargo se espera que haya un cambio en las infraestructura física del grupo que permita escalar de una mejor forma los servicios prestados.
+    
+    -Las nuevas políticas de la red de la Universidad que ahora limita a 3 el número de direcciones MAC por puerto. A pesar de que el grupo actualmente cuenta con un numero pequeño de usuarios, esta limitación es muy grave para una infraestructura de nube que provee servicios de maquinas virtuales ya que se espera que con el tiempo, tanto el número de usuarios como el número de servicios aumente.
+    
+    \newpage\chapter{REFERENCIAS}
+	%\printbibliography[heading=bibintoc, title={.}]
+    
+    A., Esaú. Docker, Qué es y sus principales características. [En línea] openwebinars.com, 2014 (Recuperado 14 mayo 2018) Disponiblen en https://openwebinars.net/blog/docker\ que-es-sus-principales-caracteristicas/.
+    
+ AUTORÍA., Propia. 
+ 
+DOCKER. Docker. [En línea] Docker.org, (Recuperado 14 mayo 2018). Disponiblen en https://www.docker.com. 
+
+ENTERPRISE, Hewllet Packard. ¿Qué son los contenedores? [En línea] hpe.com, (Recuperado 14 mayo 2018). Disponible en https://www.hpe.com/es/es/what-is/containers\ .html/. 
+
+ESCRIBANO, Francisco. Descubriendo RabbitMQ: una solución para colas de mensajería. [En línea] Beeva.com, (Recuperado el 14 de mayo 2018). Disponible en https://www.\ beeva.com/beevaview/tecnologia/descubriendo-rabbitmq-una-solucion-para-colas-de-m\ ensajeria/. 
+
+GALSTAD, Ethan. Modelo del funcionamiento de nagios. [En línea] assets.nagios.com, (Recuperado 15 mayo 2018). Disponiblen en https://assets.nagios.com/downloads/nagi\ oscore/docs/nrpe/NRPE.pdf. 
+
+INFLUXDBDATA. InfluxDB. [En línea] influxdata.com, (Recuperado 14 mayo 2018). Disponiblen en https://www.influxdata.com/time-series-platform/influxdb/.
+
+ K., Rahul. Logo de Nagios. [En línea] tecadmin.net, (Recuperado 15 mayo 2018). Disponiblen en https://tecadmin.net/install-nagios-monitoring-server-on-ubuntu/. 
+ 
+ KUBERNETES. Esquema interno de un nodo de Kubernetes. [En línea] kubernetes.com. 
+ 
+MEMCACHED. Memcached. [En línea] memcached.org, (Recuperado el 14 de mayo del 2018) Disponible en https://memcached.org/. 
+
+MICROSOFT. Ejemplo de un Dockerfile. [En línea] docs.microsoft.com, (Recuperado 14 mayo 2018). https://docs.microsoft.com/en-us/azure/app-service/containers/tutorialcu\ stom-docker-image. 
+
+OPENSTACK. OpenStack: [En línea] Openstack.org, (Recuperado 7 abril 2018). Disponible en https://www.openstack.org. 
+
+OPENSTACK. Tabla de quisitos para Openstack. [En línea] openstack.org, (Recuperado 14 mayo 2018). Disponiblen en https://docs.openstack.org/ha-guide/environmenthar\ dware.html. 
+
+PHILIPS, Brandon. Etcd. [En línea] coreos.com, (Recuperado el 14 de mayo del 2018) Disponible en https://coreos.com/etcd/. 
+
+PROPIA., Autoría. Infraestructura Fisica GID-CONUSS. 
+
+SCHRODER, Carla. Kubernetes-cluster. [En línea] linux.com, (Recuperado 14 mayo 2018). Disponiblen en https://www.linux.com/news/learn/chapter/intro-to-kubernetes\ /2017/4/whatmakes-kubernetes-cluster. 
+
+VELAZCO, Rubén. IaaS, PaaS, CaaS, SaaS – ¿Qué significan estos conceptos de Cloud Computing? [En línea] Redezone.net, 2016. (Recuperado 7 abril 2018). Dispo- 75 niblen en https://www.redeszone.net/2016/07/17/iaas-paas-caas-saas-significan-estosconcepto\ s-cloud-computing/.
+
+    
+     \newpage\chapter{BIBLIOGRAFIA}
+     
+     Alexellis (2018). openfaas/faas. [en línea] GitHub. Recuperado de: https://github.com/o\ penfaas/faas [Último acceso 5 Mayo 2018].
+     
+     Anicas, M. (2015). How To Install Nagios 4 and Monitor Your Servers on Ubuntu 14.04 DigitalOcean. [en línea] Digitalocean.com. Recuperado de: https://www.digitalocean.co\ m/
+community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-0\ 4 [Último acceso 13 Febrero. 2018].
+
+Brooks, J. (2017). Migrating Kubernetes on Fedora Atomic Host 27. [en línea] Projectatomic.io. Recuperado de: https://www.projectatomic.io/blog/2017/11/migrating-kubernetes-on-fedora-atomic-host-27/ [Último acceso 1 Marzo. 2018].
+
+Butow, T. (2018). How to Create a Kubernetes Cluster on Ubuntu 16.04 with kudeadm and Weave Net | Gremlin Community. [en línea] Gremlin.com. Recuperado de: https://www.gremlin.com/community/tutorials/how-to-create-a-kubernetes-cluster-on-ubuntu-16-04-with-kudeadm-and-weave-net/ [Último acceso 6 Abril. 2018].
+
+Cephalin, Ranieuwe, Kriscrider and Robvanuden (2017). Use a custom Docker image for Web App for Containers - Azure. [en línea] Docs.microsoft.com. Recuperado de: https://docs.microsoft.com/en-us/azure/app-service/containers/tutorial-custom-docker-image [Último acceso 1 May 2018].
+
+Chekin, P. (2017). Multi-container pods and container communication in Kubernetes. [en línea] Mirantis | Pure Play Open Cloud. Recuperado de: https://www.mirantis.com/b\ log/multi-container-pods-and-container-communication-in-kubernetes/ [Último acceso 8 May 2018].
+
+
+Cloud, G. (2018). Deploying a containerized web application  |  Kubernetes Engine Tutorials  |  Google Cloud. [en línea] Google Cloud. Recuperado de: https://cloud.google.com/\ kubernetes-engine/docs/tutorials/hello-app [Último acceso 1 Mayo 2018].
+
+
+Cobos, A. and Nebrera, P. (2014). Despliegue de arquitectura cloud basada en OpenStack y su integración con Chef sobre CentOS. [en línea] Bibing.us.es. Recuperado de: http://b\ ibing.us.es/proyectos/abreproy/90140/fichero/Memoria.pdf [Último acceso 10 Marzo. 2018].
+
+CoreOS (2017). CoreOS. [en línea] Coreos.com. Recuperado de: https://coreos.com/os/\ docs/latest/booting-on-openstack.html [Último acceso 28 Marzo. 2018].
+
+
+Dell (2015). Updating Dell PowerEdge servers via bootable media / ISO | Dell UK. [en línea] Dell.com. Recuperado de: http://www.dell.com/support/article/co/es/cobsdt1/sln\ 296511/updating-dell-poweredge-servers-via-bootable-media-iso?lang=en\#2 [Último acceso 18 Febrero. 2018].
+
+Dev, p. (2017). Introducción y ejemplo de cluster de contenedores con Docker Swarm. [en línea] Picodotdev.github.io. Recuperado de: https://picodotdev.github.io/blog-bitix/201\ 7/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/ [Último acceso 1 Marzo. 2018].
+
+
+Docs, D. (2018). Get Docker CE for Ubuntu. [en línea] Docker Documentation. Recuperado de: https://docs.docker.com/install/linux/docker-ce/ubuntu/ [Último acceso 7 May 2018].
+
+Docs, O. (2017). Gerrit Code Review. [en línea] Review.openstack.org. Recuperado de : https://review.openstack.org/\#/c/105660/10/specs/juno/dhcp-relay.rst [Último acceso 25 Jan. 2018].
+
+Docs, D. (2017). OpenStack. [en línea] Docker Documentation. Recuperado de: https://d\ ocs.docker.com/machine/drivers/openstack/ [Último acceso 4 Enero. 2018].
+
+Docs, O. (2017). OpenStack Docs: Developer Quick-Start. [en línea] Docs.openstack.org. Recuperado de: https://docs.openstack.org/magnum/latest/contributor/quickstart.html [Último acceso 27 Mar. 2018].
+
+Docs, O. (2017). OpenStack Docs: Launch an instance. [en línea] Docs.openstack.org. Recuperado de: https://docs.openstack.org/magnum/latest/install/launch-instance.ht\ ml [Último acceso 7 Febrero. 2018].
+
+Docs.openstack.org. (2018). OpenStack Docs: Install OpenStack services. [en línea] Recuperado de: https://docs.openstack.org/install-guide/openstack-services.htmlminimal-
+deployment [Último acceso 28 Marzo. 2018].
+
+Docs.openstack.org. (2018). OpenStack Docs: OpenStack Installation Guide. [en línea] Recuperado de: https://docs.openstack.org/install-guide/ [Último acceso 28 Marzo. 2018].
+
+Docs.openstack.org. (2018). OpenStack Docs: OpenStack Installation Guide Pike. [en línea] Recuperado de: https://docs.openstack.org/pike/ [Último acceso 16 MAyo. 2018].
+
+Ellison, Joseph. (2009). New and Improved check\_mem.pl Nagios Plugin  [en línea] Sysadminsjourney.com. Recuperado de: http://sysadminsjourney.com/content/2009/06/0\ 4-\/new-and-improved-checkmempl-nagios-plugin/ [Último acceso 3 Marzo. 2018].    
+
+El Despistado. (2017). Nagios Core 4 + PNP4Nagios. Instalación y configuración desde fuentes en Debian 7 (wheezy). - El Despistado.. [en línea] Recuperado de: http://www.el\ despistado.com/nagios-core-4-pnp4nagios-instalacion-configuracion-desde-fuentes-debia\ n-7-wheezy/ [Último acceso 13 Mayo 2018].
+
+Fedora (n.d.). Index of /pub/Mirrors/alt.fedoraproject.org/atomic/stable. [en línea] Ftp-stud.hs-esslingen.de. Recuperado de: https://ftp-stud.hs-esslingen.de/pub/Mirrors/\ alt.fedoraproject.org/atomic/stable/ [Último acceso 19 Jan. 2018].
+
+Galstad, E. (2017). NRPE DOCUMENTATION. [en línea] Assets.nagios.com. Recuperado de: https://assets.nagios.com/downloads/nagioscore/docs/nrpe/NRPE.pdf [Último acceso 16 Mayo 2018].
+
+Geekk, G. (2017). Inter VLAN Routing by Layer 3 Switch - GeeksforGeeks. [en línea] GeeksforGeeks. Recuperado de: https://www.geeksforgeeks.org/inter-vlan-routing-layer-3-switch/ [Último acceso 9 Abril. 2018].
+
+HPE-3com (2008). Command Reference Guide. [En línea] Recuperado de: http://h20628\ .www2.hp.com/km-ext/kmcsdirect/emr\_na-c02579470-1.pdf [Último acceso 25 Abril. 201\ 8].
+
+Kalsin, V. (2017). How To Install Nagios 4 and Monitor Your Servers on Ubuntu 16.04  DigitalOcean. [en línea] Digitalocean.com. Recuperado de: https://www.digitalocean.co\ m/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-16-04 [Último acceso 7 Febrero. 2018].
+
+Kubernetes.io. (2017). Installing kubeadm. [en línea] Recuperado de: https://kubernetes.\ io/docs/tasks/tools/install-kubeadm/ [Último acceso 19 Febrero. 2018].
+
+Kumar, P. and Kumari, M. (2017). Containers in OpenStack. [en línea] Packtpub.com. Recuperado de: https://www.packtpub.com/mapt/book/virtualization\_and\_cloud/97\ 81788394383 [Último acceso 16 Enero. 2018].
+
+Loges (2018). Steps to Install Kubernetes Dashboard - Assistanz. [en línea] Assistanz. Recuperado de: https://www.assistanz.com/steps-to-install-kubernetes-dashboard/ [Último acceso 24 Abril. 2018].
+
+Lopez, B. (2017). Notificaciones de Nagios vía Telegram - Bosco López. [en línea] Bosco López. Recuperado de: https://www.boscolopez.com/notificaciones-de-nagios-via-telegram/ [Último acceso 10 Mayo 2018].
+
+
+Lu, H., Teng, Q., Qiao, E. and Kumari, M. (2018). Magnum is not the OpenStack Container Service? How about Zun. [en línea] Openstack.org. Recuperado de: https://www.o\ penstack.org/assets/presentation-media/zunpresentationbarcelonasummit-3.pdf [Últim\ o acceso 1 Mayo 2018].
+
+Mas, O. (2018). Kubernetes: Heapster Influx Grafana - El Blog de Jorge de la Cruz. [en línea] El Blog de Jorge de la Cruz. Recuperado de: https://www.jorgedelacruz.es/2018/0\ 1/23/kubernetes-heapster-influx-grafana/ [Último acceso 5 Mayo 2018].
+
+Moose (2017). \begin{CJK*}{UTF8}{gbsn}安装Openstack ZUN模块\end{CJK*}. [en línea] Pystack.org. Recuperado de: http://p\ ystack.org/2017/10/14/install-openstack-zun/ [Último acceso 6 Abril. 2018].
+
+OpenStack. (2018). OpenStack - Kubernetes Integration, What Is Left?. [en línea] Recuperado de: https://www.openstack.org/videos/boston-2017/openstack-kubernetes-inte\ gration-what-is-left [Último acceso 16 Mayo 2018].
+
+Pasandideh, M. (2018). 6. Weave UI - Developer Wiki - Confluence. [en línea] Wiki.onap.org. Recuperado de: https://wiki.onap.org/display/DW/6.+Weave+UI [Último acceso 5 Mayo 2018].
+
+People, F. (2017). Index of /groups/magnum. [en línea] Fedorapeople.org. Recuperado de: https://fedorapeople.org/groups/magnum/ [Último acceso 10 Febrero. 2018].
+
+Rh-atomix-bot, l. (2018). projectatomic/atomic-system-containers. [en línea] GitHub. Recuperado de: https://github.com/projectatomic/atomic-system-containers [Último acceso 3 Abril. 2018].
+
+Rocy, l. (2017). projectatomic/atomic-system-containers. [en línea] GitHub. Recuperado de: https://github.com/projectatomic/atomic-system-containers [Último acceso 8 Febrero. 2018].
+
+Saikatgithub (2017). Not able to access dashboard from external browser · Issue \#2034 · kubernetes/dashboard. [en línea] GitHub. Recuperado de: https://github.com/kubern\ etes/dashboard/issues/2034 [Último acceso 2 May 2018].
+
+Sayalilunkad (2017). troubleshooting-diff. [en línea] Gist. Recuperado de: https://gist.git\ hub.com/sayalilunkad/17913a0bc256b81d2e670fedd9db67df [Último acceso 29 Abril. 20\ 18].
+
+Sjfbjs (2018). \begin{CJK*}{UTF8}{gbsn}使用kubeadm部署kubernetes集群\end{CJK*}. [en línea] blog.51cto.com. Recuperado de: http://blog.51cto.com/11886896/2072527 [Último acceso 3 Mayo 2018].
+
+Stangl, D. (2018). 5. Kubernetes UI - Developer Wiki - Confluence. [en línea] Wiki.onap.org. Recuperado de: https://wiki.onap.org/display/DW/5.+Kubernetes+UI [Último acceso 25 Abril. 2018].
+
+
+Support.nagios.com. (2018). Nagios Core - Installing Nagios Core From Source. [en línea] Recuperado de: https://support.nagios.com/kb/article/nagios-core-installing-nagi\ os-core-from-source-96.html\#Ubuntu [Último acceso 16 Mayo 2018].
+
+The Network Journal. (2012). Nagios: It appears as though you do not have permission to view information for any of the hosts you requested. [en línea] Recuperado de: https://cyruslab.net/2012/10/19/nagios-it-appears-as-though-you-do-not-have-permission-to-view-information-for-any-of-the-hosts-you-requested/ [Último acceso 9 M\ arzo 2018].
+
+The Network Journal. (2018). Nagios: It appears as though you do not have permission to view information for any of the hosts you requested. [en línea] Recuperado de: https://cyruslab.net/2012/10/19/nagios-it-appears-as-though-you-do-not-have-permission-to-view-information-for-any-of-the-hosts-you-requested/ [Último acceso 9 En\ ero 2018].
+
+Timme, F. (2013). Setting Up A High-Availability Load Balancer (With Failover and Session Support) With HAProxy/Heartbeat On Debian Etch. [en línea] Howtoforge.com. Recuperado de: https://www.howtoforge.com/high-availability-load-balancer-haproxy-heartbeat-debian-etch [Último acceso 2 Febrero. 2018].
+
+World, S. (2018). Ubuntu 16.04 LTS : OpenStack Pike : Configure Cinder(Control Node) : Server World. [en línea] Server-world.info. Recuperado de: https://www.server-world.info/en/note?os=Ubuntu\_16.04\&p=openstack\_pike2\&f=1 [Último acceso 16 Mayo 2018].
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+\end{document}
