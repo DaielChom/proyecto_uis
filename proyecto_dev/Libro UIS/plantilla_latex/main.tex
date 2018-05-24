@@ -36,12 +36,17 @@
 
 	\setlength{\parskip}{\baselineskip} % cambia el espacio entre parrafos
 %%	\setcounter{\thecharter}{2}
+
+%% ===========================
+%% RESUMEN
+%% ===========================
+
 	\newpage\chapter*{RESUMEN}
     \textbf{TITULO:} DETECCIÓN AUTOMÁTICA DEL NIVEL DE ESTRATIFICACIÓN SOCIOECONÓMICO URBANO USANDO REDES NEURONALES CONVOLUCIONALES SOBRE IMÁGENES SATELITALES CON INFORMACIÓN AUMENTADA.
     
     \textbf{AUTORES:} DANIEL ALCIDES CARVAJAL PATIÑO.
     
-    \textbf{PALABRAS CLAVE:} Contenedores, Cloud Computing, OpenStack, modulos y servicios.	
+    \textbf{PALABRAS CLAVE:} DANE, Machine learning, Deep Learning, Red Neuronal Convolucional, .	
     
     \textbf{DESCRIPCION:} 
     
@@ -50,7 +55,10 @@
     Debido a la necesidad de crear diplomados y laboratorios virtuales de computación para fomentar el avance en la formación de ingenieros de calidad, se decide utilizar soluciones de código abierto que permitan el fácil acceso y administración de los servidores físicos y virtualización. Entre las muchas soluciones, se decide optar por OpenStack gracias a su amplia gama de módulos y su abundante comunidad por el cual es respaldado, a su vez, integrando docker como solución para la creación de contenedores.
     
     Todo esto con el fin de que la comunidad estudiantil tenga acceso a recursos de computo que no están al alcance de sus manos, otorgándoles la capacidad de conocer, además de disfrutar, las nuevas tecnologías que hoy por hoy están mejorando y automatizando los procesos de las grandes industrias tecnológicas.
-    
+ 
+ %% =============================
+ %% ABSTRACT
+ %% =============================   
   
 	\newpage\chapter*{ABSTRACT}
     \textbf{TITLE:} AUTOMATIC DETECTION OF THE URBAN SOCIOECONOMIC STRATIFICATION LEVEL USING CONVOLUTIONAL NEURAL NETWORKS ON SATELLITE IMAGES WITH INCREASED INFORMATION.
@@ -67,16 +75,25 @@
     
     All this in order that the student community has access to computing resources that are not available to them, that they can know as well as enjoy the new technologies that are improving today and automating the processes of the large technological industries.
     
+%% =======================
+%% INTRODUCCION
+%% =======================
+    
 	\newpage\chapter*{INTRODUCCION}
-    La medición del nivel económico de una zona urbana, actualmente, conlleva un trabajo extenso, como lo expresa el DANE, “en el caso de las revisiones generales urbanas, así como en la estratificación rural se apoya en censos de vivienda”\footnote{DANE. Estratificación - Preguntas frecuentes. [en línea]. (Recuperado en 05 oct 2017). Disponible en \url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf} .}. Es decir, se requiere la elaboración de una encuesta de gran tamaño, la cual consume mucho tiempo y personal. Posteriormente, si la encuesta no se realizó usando software de recolección de datos, es necesario realizar su tipeo. Según la metodología que usa el DANE\footnote{DANE. Metodología de estratificación. [en línea]. (Recuperado en 05 oct 2017). \url{http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica}.}\footnote{DANE. Procedimiento del cálculo. [en línea]. (Recuperado en 05 oct 2017). \url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf} .}, el cálculo final del estrato se realiza mediante modelos estadísticos y económicos especialmente calibrados para esta tarea.
+    La medición del nivel económico de una zona urbana, actualmente, conlleva un trabajo extenso, como lo expresa el DANE, “en el caso de las revisiones generales urbanas, así como en la estratificación rural se apoya en censos de vivienda”\footnote{DANE. Estratificación - Preguntas frecuentes. [en línea]. (Recuperado en 05 oct 2017). Disponible en \url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf} p. 3 .}. Es decir, se requiere la elaboración de una encuesta de gran tamaño, la cual consume mucho tiempo y personal. Posteriormente, si la encuesta no se realizó usando software de recolección de datos, es necesario realizar su tipeo, lo cual tambien requiere tiempo. Luego, como lo indica el DANE\footnote{DANE. Metodología de estratificación. [en línea]. (Recuperado en 05 oct 2017). \url{http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica}.}\footnote{DANE. Procedimiento del cálculo. [en línea]. (Recuperado en 05 oct 2017). \url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf} .}, el cálculo final del estrato se realiza mediante modelos estadísticos y económicos especialmente calibrados para esta tarea.
     
     En este contexto surgen varias interrogantes respecto a la capacidad de actualización de esta metodología: ¿Qué sucede cuando una ciudad tiene una alta tasa de desarrollo urbano?, ¿Cómo mantiene el gobierno actualizada la información de los estratos ante éstas circunstancias?, ¿Que tan efectiva es la metodología actual ante estos casos de alto desarrollo urbano?
     
-    Por tanto, el objetivo de este trabajo seleccionar redes neuronales convolucionales y evaluar su capacidad para determinar automáticamente el estrato socioeconómico usando imágenes satelitales e información adicional (información catastral, presencia y consumo de servicios, etc.). No es la primera vez que se realiza una predicción del nivel social, han habido varias. Neal Jean en colaboración con otras personas y varias instituciones realizó un modelo \footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Linea]. (Recuperado en 10 oct 2017) \url{http://sustain.stanford.edu/predicting-poverty/} }\footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en linea]. (Recuperado en 10 oct 2017) \url{https://github.com/nealjean/predicting-poverty }}\footnote{NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016},  para predecir la pobreza en cinco países de África usando imágenes satelitales y datos extra para dicha tarea. En Colombia, más específicamente en Medellín, también se han realizado modelos\footnote{EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en linea]. (Recuperado en 10 oct 2017) \url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx> }}\footnote{NOREÑA Miguel. Deteccion y caracterizacion de zonas marginales en la ciudad de Medellın mediante el analisis exploratorio de datos espaciales [en linea]. (citado: 10 oct 2017) \url{http://www.banrep.gov.co/sites/default/files/eventos/archivos/TesisMiguelNorena_0.pdf} }o estudios para determinar los índices de pobreza en dicha ciudad, uno fue elaborado por  Miguel Noreña, aunque este estudio no se centra en la utilización de técnicas de machine learning si  se centra en la predicción de la pobreza. La diferencia del proyecto actual, con los proyectos aquí mensionados es lograr la predicción del “estrato social Colombiano” mediante el uso de técnicas de Deep Learning como lo son las CNN, por sus sigls en ingles. Convolutional Neural Network
+    Por tanto, el objetivo de este trabajo consiste en seleccionar redes neuronales convolucionales y evaluar su capacidad para determinar automáticamente el estrato socioeconómico usando imágenes satelitales e información adicional (información catastral, presencia y consumo de servicios, etc), con el fin de presentar una alternativa que haga frente a las inquietudes planteadas.
     
+     No es la primera vez que se realiza una predicción del nivel socioeconomico utilizando tecincas de machine learning o deep learning. Neal Jean en colaboración con varias personas e instituciones realizó un modelo\footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Linea]. (Recuperado en 10 oct 2017) \url{http://sustain.stanford.edu/predicting-poverty/} }\footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en linea]. (Recuperado en 10 oct 2017) \url{https://github.com/nealjean/predicting-poverty}}\footnote{NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016} capaz de predecir el nivel de pobreza en cinco países de África, usando imágenes satelitales y datos extra para dicha tarea. En Colombia, más específicamente en Medellín, también se han realizado modelos\footnote{EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en linea]. (Recuperado en 10 oct 2017) \url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx}} para determinar niveles socioeconomicos de una zona urbana. En la Universidad EAFIT, usando tecnicas de Machine Learning e imagenes satelitales logran medir los indices de pobreza de dicha ciudad.
     
     
     \addcontentsline{toc}{chapter}{INTRODUCCION}
+    
+%% =================================
+%% OBJETIVOS
+%% =================================
     
 
     \newpage\chapter{OBJETIVOS} 
@@ -93,23 +110,31 @@
       \item Evaluar el desempeño de las redes convolucionales con el uso de los distintos dataset. 
       \item Elegir la mejor configuración tanto de red convolucional como de conjunto de datos, teniendo en cuenta el desempeño obtenido.   
     \end{enumerate}
+
+%% =========================
+%% 2. MARCO TEORICO
+%% =========================
+
     \newpage\chapter{MARCO TEÓRICO} 
-	\section{ESTRATO SOCIAL}
-    A través de los años el paradigma de la computación en la nube ha permitido que las empresas tengan un gran beneficio al ahorrarse múltiples costos en los departamentos de TI y organización en general, costos como el almacenamiento, procesamiento, redes y muchas otras, todo esto gracias a otras compañías que proveen estos servicios por un coste mensual que se establece según el tipo de servicio requerido y la cantidad de este mismo. Es decir las compañías proveedoras cobran por el número de gigabytes de almacenamiento que la organización vaya a requerir, así mismo funciona para el número de núcleos de procesador y gigabytes de ram entre otros. Actualmente existen diferentes tipos de nubes que proveen distintos tipos de servicio, estos pueden ser clasificados de la siguiente manera:
-    \begin{itemize}
-    \item IaaS - Infraestructura as a service:
     
-    Infraestructura como servicio es una forma de computación en la nube donde se ofrecen a lo clientes recursos, físicos y virtuales, como máquinas virtuales, cortafuegos, sistemas de almacenamiento o balanceadores de carga, entre otros. Para poder ofrecer estos elementos se utilizan hipervisores como Xen, KVM, VMware ESX / ESXi o Hyper-V, entre otros. IaaS es la parte elemental de la computación en la nube, ya que es la que se encarga de proporcionar los recursos informáticos sobre los que se seguirán implementando el resto de conceptos.\footcite[][]{IaaS}
-
-	\item Paas - Infraestructure as a Service:
-
-Plataforma como servicio es un concepto de computación en la nube mediante la cual los usuarios pueden desarrollar, ejecutar y administrar aplicaciones sin preocuparse por la infraestructura que haya por debajo. De esta manera, los desarrolladores solo tienen que preocuparse por la programación de las aplicaciones, nunca por la configuración ni el hardware que hay por debajo, ahorrando tiempo y recursos. Por ejemplo, PaaS puede ejecutarse por encima del IaaS en máquinas físicas e incluso en contenedores.\footcite[][]{IaaS}
-
-	\item SaaS - Software as a Service:
-
-Software como servicio es un modelo de distribución de software por el que terceros desarrolladores ofrecen ciertas aplicaciones a través de Internet accesibles sólo a través de un cliente propio. Aunque no lo sepamos, este tipo de computación en la nube la utilizamos casi a diario, por ejemplo, al conectarnos a Twitter o Facebook desde sus respectivos clientes o al ver un vídeo o una película en streaming, por ejemplo, desde Netflix. \footcite[][]{IaaS}
-    \end{itemize}
+    %% =========================
+    %% 2.1 ESTRATIFICACION SOCIAL
+    %% =========================
     
+	\section{ESTRATIFICACIÓN SOCIAL}
+    
+    “La estratificación social es un fenómeno presente en todas las sociedades. Los miembros se clasifican a sí mismos y a los otros basándose en jerarquías que vienen dadas por diversos factores”\footnote[8]{GONZÁLEZ Vanessa. ¿Qué es la estratificación social? [en línea]. (Recuperado en 10 oct 2017). \url{https://www.lifeder.com/estratificacion-social/}} y no es algo nuevo, la antigua Mesopotamia contaba con una división social cuyos miembros iban desde el rey y su familia, en el estrato más alto, hasta los esclavos en el más bajo.
+    
+    Más que una simple división, la estratificación representa la desigualdad existente en una sociedad. Cada uno de los estratos, niveles o grupos sociales indica la capacidad de acceso a recursos, oportunidades, bienes y servicios por parte de las personas pertenecientes a cada nivel. Dicha estratificación es necesaria para la tarea que llevan acabo los gobiernos en contra de la desigualdad, dado que se suelen crear programas que beneficien a las personas de los niveles más bajos y cobrar mayores impuestos a las personas de los niveles más altos.
+    
+    En el caso de Colombia, se maneja una estratificación de 6 niveles.
+
+	\leftskip1em
+	\rightskip\leftskip
+	{\footnotesize \hspace{\parindent} “De éstos 6, los estratos 1, 2 y 3 corresponden a estratos bajos que albergan a los usuarios con menores recursos, los cuales son beneficiarios de subsidios en los servicios públicos domiciliarios; los estratos 5 y 6 corresponden a estratos altos que albergan a los usuarios con mayores recursos económicos, los cuales deben pagar sobrecostos (contribución) sobre el valor de los servicios públicos domiciliarios. El estrato 4 no es beneficiario de subsidios, ni debe pagar sobrecostos, paga exactamente el valor que la empresa defina como costo de prestación del servicio.”\footnote[9]{DANE, Estratificación - Preguntas frecuentes. Op. cit., p. 1.}}
+	
+	\leftskip0em
+    Dicha estratificación, definir el estrato al que pertenece una vivienda, no es tarea fácil. Se requiere gran cantidad de variables por cada una, como las caracteristicas de la zona en la que se ubica, el tamaño, materiales en que fue fabricada, entre otras. Lo que conlleva a una tarea de recolección de datos bastante amplia.   
 
     
     \section{MACHINE LEARNING}
@@ -198,7 +223,7 @@ Software como servicio es un modelo de distribución de software por el que terc
     LOS contenedores son instancias de máquinas virtuales que permiten la ejecución de procesos de aplicaciones de software utilizando menos recursos computacionales y haciendo uso del sistema operativo del host. Haciendo una analogía con la programación orientada a objetos (POO) las máquinas virtuales son clases y los contenedores son objetos de esas clases.
     
     \section{DEEP LEARNING}
-    \section{MACHINE LEARNING Y EL ESTRATO SOCIAL}
+    \section{MACHINE LEARNING APLICADO AL NIVEL SOCIOECONOMICO}
     
   
       \newpage\chapter{METODOLOGIA} 
@@ -250,7 +275,7 @@ Software como servicio es un modelo de distribución de software por el que terc
     
     Para iniciar el proyecto fue conveniente partir de cero, es decir, en base a la documentación del proyecto que se tenía previamente desarrollado por los ex compañeros, los cuales habían realizado un prototipo de instalación de OpenStack en maquinas virtuales, se determina que el hardware de los servidores físicos está bastante des-actualizado en comparación a los últimos controladores disponibles para dicho sistema, también se encuentra la ventaja de tener las instancias de OpenStack en sistemas físicos en vez de virtualizados, debido a que los servicios virtualizados no tienen aceleración de hardware, esto implica que se pierda rendimiento en las instancias (Funcionarían a 32 bits en un servidor de 64 bits). Esto es considerado la \textbf{FASE 1} del proyecto.
     
-    \section{FASE 1} 
+    \section{SELECCIÓN DE FUENTES} 
     Para tener una buena base sobre el tipo de proyecto que se va a desarrollar, fue necesario como primera medida la investigación de las nuevas tecnologías que hay en el mundo del cloud computing empezando desde las redes informáticas hasta llegar a los contenedores, de los cuales se hablará mas adelante. Teniendo en cuenta que la computación en la nube es un tema demasiado extenso, desde el punto de vista de las tecnologías de la información, se logró llegar a tener las bases necesarias para continuar con el proyecto. Una infraestructura de nube se puede resumir en 3 niveles: Infraestructura como servicio (IaaS), Plataforma como servicio (PaaS) y Software como servicio (SaaS), descritos en el estado del arte de este libro.
     
     Por buenas practicas es recomendable utilizar la documentación del propio software para conocer los requisitos que se deben tener en cuenta a la hora de empezar un proyecto desde cero, en este caso se usó la documentación de OpenStack. 
@@ -263,7 +288,7 @@ Software como servicio es un modelo de distribución de software por el que terc
   
   Los nodos controlador y compute de OpenStack son el núcleo principal de una infraestructura por esta razón se le da mayor importancia a los recursos que éstas maquinas requieren en cuanto a procesamiento y memoria RAM. 
   
-  \section{FASE 2} 
+  \section{OBTENCIÓN DE DATOS} 
     
     Esta fase consiste en actualizar los controladores y el BIOS en tres servidores físicos (Sistemas,Lactoria y Labroides) quienes son miembros de la infraestructura tradicional del grupo Conuss. Posteriormente formatear y realizar la instalación limpia del sistema operativo Ubuntu Server 16.04.4 LTS (escogido por la facilidad y experiencia utilizando esta distribución de linux) en los servidores Lactoria, Labroides y Nautilus (Servidor otorgado por el Grupo Radiogis). El servidor sistemas quedó como punto de inflexión para no perder las conexiones de los servicios prestados, mientras se colocaba en producción OpenStack en alta disponibilidad.
     
@@ -309,9 +334,9 @@ Software como servicio es un modelo de distribución de software por el que terc
       
       En los 4 servidores existe el servicio de nagios-nrpe que se encarga de informarle al servidor nagios sobre el estado de los recursos del servidor y otros servicios, esto se explicará en la fase 5. 
       
+    \section{CREACIÓN DEL DATASET} 
       
-      
-    \section{FASE 3}
+    \section{SELECCIÓN DE RED NEURONAL}
     
       En la \textbf{FASE 2} se determinaron los servicios a implementar en los servidores. Para la posterior instalación se elaboró un diagrama conceptual que permitiera ver de manera abstracta la implementación. 
     
@@ -469,7 +494,7 @@ Software como servicio es un modelo de distribución de software por el que terc
     
     En la sección de orquestación podemos incluir Stacks para automarizar el despliegue de máquinas virtuales.
     
-    \section{FASE 4}
+    \section{PRUEBAS PARA LA DETECCION DEL ESTRATO SOCIAL}
     Esta fase es un complemento para la infraestructura como servicio que se pretende tener en el grupo para que la comunidad universitaria pueda usarla y es la posibilidad de ofrecer contenedores como servicio. Inicialmente el proyecto estaba pensado para orquestar estos contenedores con Openstack con la ayuda de 2 de sus módulos, Mangnum es un modulo que permite administrar contenedores de docker que han sido orquestados con Kubernetes, Docker Swarm o Mesos, ya que estos 3 son compatibles con magnum, y Zun el mas reciente modulo de Openstack que salio con la versión de Pike y que ahora tiene soporte con las versiones de Queens y Rocky (latest). Zun es el servicio de contenedores de Openstack el cual crea sus propio contenedores sin una virtualización previa. Sin embargo durante el desarrollo del proyecto hubo varios problemas con las versiones de  Openstack ya que es un software que esta en constante cambio. por esta razón se decidió manejar los contenedores directamente con kubeadm el orquestador de clusters de Kubernetes Para comprender bien el tema se empezara hablando sobre los contenedores y Docker, luego se explicará el proceso para crear un cluster de contenedores.
     
     \subsection{Contenedores}
@@ -612,7 +637,7 @@ Software como servicio es un modelo de distribución de software por el que terc
     
    
         
-    \section{FASE 5}
+    \section{RESULTADOS}
     Tener sistemas de monitoreo para una infraestructura como la del grupo Conuss es de vital importancia ya que permite conocer el rendimiento de las maquinas así como de los servicios y la red. Los sistemas de monitoreo en tiempo real facilitan aun más la administración de la infraestructura la toma de decisiones en situaciones de incertidumbre y mejora la experiencia con el usuario. Sin embargo para que un monitoreo sea en tiempo real se necesitan de notificaciones que comuniquen a los administradores ante alguna eventualidad que haya ocurrido en el sistemas, ya que no siempre se puede estar mirando las pantallas de los computadores donde están los dashboards, por esta razón se implementó un sistema de notificaciones vía Telegram (aplicación de mensajería instantánea) que notifica en tiempo real cuando algún servicio haya cambiado su estado o esté en un estado crítico. 
     
     Para esta tarea se usó la aplicación Nagios, una herramienta de monitoreo para la infraestructura física del la nube CloudEisi que permite el chequeo de los servidores y vigila su comportamiento. Inicialmente se pretendia hacer esto con Grafana de la misma forma que se hizo con el cluster de kubernetes pero la falta de experiencia y de documentación no permitió poder configurar las notificaciones para este sistema. Sin embargo Nagios siempre fue una buena opción cuando se hizo la búsqueda de monitores de sistemas.

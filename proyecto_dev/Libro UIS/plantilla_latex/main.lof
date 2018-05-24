@@ -7,85 +7,85 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Logo OpenStack}}{17}{figure.caption.9}
+\contentsline {figure}{\numberline {1}{\ignorespaces Logo OpenStack}}{18}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2}{\ignorespaces Requisitos OpenStack HA}}{25}{figure.caption.10}
+\contentsline {figure}{\numberline {2}{\ignorespaces Requisitos OpenStack HA}}{26}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3}{\ignorespaces Topolog\IeC {\'\i }a de Red GID-Conuss}}{26}{figure.caption.12}
+\contentsline {figure}{\numberline {3}{\ignorespaces Topolog\IeC {\'\i }a de Red GID-Conuss}}{27}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4}{\ignorespaces Distribucion de software en Lactoria y Nautilus}}{27}{figure.caption.13}
+\contentsline {figure}{\numberline {4}{\ignorespaces Distribucion de software en Lactoria y Nautilus}}{28}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5}{\ignorespaces Distribucion de software en Labroides y Sistemas}}{28}{figure.caption.14}
+\contentsline {figure}{\numberline {5}{\ignorespaces Distribucion de software en Labroides y Sistemas}}{29}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6}{\ignorespaces Modelo Conceptual}}{29}{figure.caption.15}
+\contentsline {figure}{\numberline {6}{\ignorespaces Modelo Conceptual}}{30}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7}{\ignorespaces Modelo L\IeC {\'o}gico}}{30}{figure.caption.16}
+\contentsline {figure}{\numberline {7}{\ignorespaces Modelo L\IeC {\'o}gico}}{31}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8}{\ignorespaces Interfaces de Lactoria}}{32}{figure.caption.18}
+\contentsline {figure}{\numberline {8}{\ignorespaces Interfaces de Lactoria}}{33}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9}{\ignorespaces Hosts}}{32}{figure.caption.19}
+\contentsline {figure}{\numberline {9}{\ignorespaces Hosts}}{33}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {10}{\ignorespaces Configuraci\IeC {\'o}n de Galera en Lactoria}}{33}{figure.caption.20}
+\contentsline {figure}{\numberline {10}{\ignorespaces Configuraci\IeC {\'o}n de Galera en Lactoria}}{34}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {11}{\ignorespaces Bases de datos.}}{34}{figure.caption.21}
+\contentsline {figure}{\numberline {11}{\ignorespaces Bases de datos.}}{35}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {12}{\ignorespaces Cola de mensajes con RabbitMQ}}{34}{figure.caption.22}
+\contentsline {figure}{\numberline {12}{\ignorespaces Cola de mensajes con RabbitMQ}}{35}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {13}{\ignorespaces Modelo OpenStack HA}}{36}{figure.caption.23}
+\contentsline {figure}{\numberline {13}{\ignorespaces Modelo OpenStack HA}}{37}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {14}{\ignorespaces Virtual IP configurada}}{36}{figure.caption.24}
+\contentsline {figure}{\numberline {14}{\ignorespaces Virtual IP configurada}}{37}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {15}{\ignorespaces Inicio de sesion en la plataforma}}{39}{figure.caption.25}
+\contentsline {figure}{\numberline {15}{\ignorespaces Inicio de sesion en la plataforma}}{40}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {16}{\ignorespaces Terminos y condiciones de uso GID-CONUSS p\IeC {\'a}gina 1.}}{40}{figure.caption.26}
+\contentsline {figure}{\numberline {16}{\ignorespaces Terminos y condiciones de uso GID-CONUSS p\IeC {\'a}gina 1.}}{41}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {17}{\ignorespaces Vista general de Administrador}}{41}{figure.caption.27}
+\contentsline {figure}{\numberline {17}{\ignorespaces Vista general de Administrador}}{42}{figure.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {18}{\ignorespaces Vista general de proyecto}}{41}{figure.caption.28}
+\contentsline {figure}{\numberline {18}{\ignorespaces Vista general de proyecto}}{42}{figure.caption.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {19}{\ignorespaces Docker}}{44}{figure.caption.29}
+\contentsline {figure}{\numberline {19}{\ignorespaces Docker}}{45}{figure.caption.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {20}{\ignorespaces Kubernetes Cluster}}{45}{figure.caption.30}
+\contentsline {figure}{\numberline {20}{\ignorespaces Kubernetes Cluster}}{46}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {21}{\ignorespaces Ilustracion de un nodo de kubernetes}}{47}{figure.caption.31}
+\contentsline {figure}{\numberline {21}{\ignorespaces Ilustracion de un nodo de kubernetes}}{48}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {22}{\ignorespaces Imagenes docker almancenadas localmente}}{48}{figure.caption.32}
+\contentsline {figure}{\numberline {22}{\ignorespaces Imagenes docker almancenadas localmente}}{49}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {23}{\ignorespaces Dockerfile}}{49}{figure.caption.33}
+\contentsline {figure}{\numberline {23}{\ignorespaces Dockerfile}}{50}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {24}{\ignorespaces Tabla de todos los pods del cluster}}{50}{figure.caption.34}
+\contentsline {figure}{\numberline {24}{\ignorespaces Tabla de todos los pods del cluster}}{51}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {25}{\ignorespaces Pantalla inicial del dashboard de kubernetes}}{51}{figure.caption.35}
+\contentsline {figure}{\numberline {25}{\ignorespaces Pantalla inicial del dashboard de kubernetes}}{52}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {26}{\ignorespaces Graficas de heapster en el dashboard de kubernetes}}{52}{figure.caption.36}
+\contentsline {figure}{\numberline {26}{\ignorespaces Graficas de heapster en el dashboard de kubernetes}}{53}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {27}{\ignorespaces Total de pods despu\IeC {\'e}s de desplegar servicios de monitoreo}}{52}{figure.caption.37}
+\contentsline {figure}{\numberline {27}{\ignorespaces Total de pods despu\IeC {\'e}s de desplegar servicios de monitoreo}}{53}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {28}{\ignorespaces Dashboard de Grafana}}{53}{figure.caption.38}
+\contentsline {figure}{\numberline {28}{\ignorespaces Dashboard de Grafana}}{54}{figure.caption.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {29}{\ignorespaces Dashboard de Wave Scope}}{53}{figure.caption.39}
+\contentsline {figure}{\numberline {29}{\ignorespaces Dashboard de Wave Scope}}{54}{figure.caption.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {30}{\ignorespaces Logo de Nagios}}{55}{figure.caption.40}
+\contentsline {figure}{\numberline {30}{\ignorespaces Logo de Nagios}}{56}{figure.caption.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {31}{\ignorespaces Modelo l\IeC {\'o}gico nagios}}{55}{figure.caption.41}
+\contentsline {figure}{\numberline {31}{\ignorespaces Modelo l\IeC {\'o}gico nagios}}{56}{figure.caption.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {32}{\ignorespaces Distribuci\IeC {\'o}n de software nagios}}{56}{figure.caption.42}
+\contentsline {figure}{\numberline {32}{\ignorespaces Distribuci\IeC {\'o}n de software nagios}}{57}{figure.caption.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {33}{\ignorespaces Archivo de configuracion del servidor Labroides en el servidor nagios}}{57}{figure.caption.43}
+\contentsline {figure}{\numberline {33}{\ignorespaces Archivo de configuracion del servidor Labroides en el servidor nagios}}{58}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {34}{\ignorespaces Archivo de configuracion del agente nrpe en Labroides}}{58}{figure.caption.44}
+\contentsline {figure}{\numberline {34}{\ignorespaces Archivo de configuracion del agente nrpe en Labroides}}{59}{figure.caption.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {35}{\ignorespaces Ubicaci\IeC {\'o}n de los scripts en el servidor nagios}}{59}{figure.caption.45}
+\contentsline {figure}{\numberline {35}{\ignorespaces Ubicaci\IeC {\'o}n de los scripts en el servidor nagios}}{60}{figure.caption.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {36}{\ignorespaces Dashboard de Nagios}}{60}{figure.caption.46}
+\contentsline {figure}{\numberline {36}{\ignorespaces Dashboard de Nagios}}{61}{figure.caption.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {37}{\ignorespaces Script de Telegram}}{61}{figure.caption.47}
+\contentsline {figure}{\numberline {37}{\ignorespaces Script de Telegram}}{62}{figure.caption.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {38}{\ignorespaces Notificaciones en la aplicaci\IeC {\'o}n Telegram}}{62}{figure.caption.48}
+\contentsline {figure}{\numberline {38}{\ignorespaces Notificaciones en la aplicaci\IeC {\'o}n Telegram}}{63}{figure.caption.48}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

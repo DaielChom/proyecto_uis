@@ -3,7 +3,7 @@
 \BOOKMARK [1][-]{section.1.1}{OBJETIVO GENERAL}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.2}{OBJETIVOS ESPECIFICOS}{chapter.1}% 4
 \BOOKMARK [0][-]{chapter.2}{MARCO TE\323RICO}{}% 5
-\BOOKMARK [1][-]{section.2.1}{ESTRATO SOCIAL}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.1}{ESTRATIFICACI\323N SOCIAL}{chapter.2}% 6
 \BOOKMARK [1][-]{section.2.2}{MACHINE LEARNING}{chapter.2}% 7
 \BOOKMARK [2][-]{subsection.2.2.1}{OPENSTACK}{section.2.2}% 8
 \BOOKMARK [3][-]{subsubsection.2.2.1.1}{KEYSTONE:}{subsection.2.2.1}% 9
@@ -19,34 +19,35 @@
 \BOOKMARK [3][-]{subsubsection.2.2.2.3}{VIRTUALIZACION}{subsection.2.2.2}% 19
 \BOOKMARK [3][-]{subsubsection.2.2.2.4}{CONTENEDORES}{subsection.2.2.2}% 20
 \BOOKMARK [1][-]{section.2.3}{DEEP LEARNING}{chapter.2}% 21
-\BOOKMARK [1][-]{section.2.4}{MACHINE LEARNING Y EL ESTRATO SOCIAL}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.4}{MACHINE LEARNING APLICADO AL NIVEL SOCIOECONOMICO}{chapter.2}% 22
 \BOOKMARK [0][-]{chapter.3}{METODOLOGIA}{}% 23
 \BOOKMARK [0][-]{chapter.4}{DESARROLLO DEL PROYECTO}{}% 24
-\BOOKMARK [1][-]{section.4.1}{FASE 1}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.2}{FASE 2}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.3}{FASE 3}{chapter.4}% 27
-\BOOKMARK [2][-]{subsection.4.3.1}{Hosts}{section.4.3}% 28
-\BOOKMARK [2][-]{subsection.4.3.2}{API REST}{section.4.3}% 29
-\BOOKMARK [2][-]{subsection.4.3.3}{Interfaces}{section.4.3}% 30
-\BOOKMARK [2][-]{subsection.4.3.4}{MariaDB Galera Cluster}{section.4.3}% 31
-\BOOKMARK [2][-]{subsection.4.3.5}{RabbitMQ}{section.4.3}% 32
-\BOOKMARK [2][-]{subsection.4.3.6}{Memcached}{section.4.3}% 33
-\BOOKMARK [2][-]{subsection.4.3.7}{ETCD}{section.4.3}% 34
-\BOOKMARK [2][-]{subsection.4.3.8}{Pacemaker, Corosyn, Heartbeat, la alta disponibilidad. y el almacenamiento compartido.}{section.4.3}% 35
-\BOOKMARK [2][-]{subsection.4.3.9}{Servicio de Identidad}{section.4.3}% 36
-\BOOKMARK [2][-]{subsection.4.3.10}{Servicio de Imagenes}{section.4.3}% 37
-\BOOKMARK [2][-]{subsection.4.3.11}{Servicio de Computo}{section.4.3}% 38
-\BOOKMARK [2][-]{subsection.4.3.12}{Servicio de Red}{section.4.3}% 39
-\BOOKMARK [2][-]{subsection.4.3.13}{Servicio de Orquestacion}{section.4.3}% 40
-\BOOKMARK [2][-]{subsection.4.3.14}{Servicio de almacenamiento de bloques}{section.4.3}% 41
-\BOOKMARK [2][-]{subsection.4.3.15}{Dashboard de Horizon}{section.4.3}% 42
-\BOOKMARK [1][-]{section.4.4}{FASE 4}{chapter.4}% 43
-\BOOKMARK [2][-]{subsection.4.4.1}{Contenedores}{section.4.4}% 44
-\BOOKMARK [2][-]{subsection.4.4.2}{Docker}{section.4.4}% 45
-\BOOKMARK [2][-]{subsection.4.4.3}{Kubernetes}{section.4.4}% 46
-\BOOKMARK [1][-]{section.4.5}{FASE 5}{chapter.4}% 47
-\BOOKMARK [0][-]{chapter.5}{CONCLUSIONES}{}% 48
-\BOOKMARK [0][-]{chapter.6}{RECOMENDACIONES Y TRABAJO FUTURO}{}% 49
-\BOOKMARK [0][-]{chapter.7}{LIMITACIONES Y PROBLEMAS}{}% 50
-\BOOKMARK [0][-]{chapter.8}{REFERENCIAS}{}% 51
-\BOOKMARK [0][-]{chapter.9}{BIBLIOGRAFIA}{}% 52
+\BOOKMARK [1][-]{section.4.1}{SELECCI\323N DE FUENTES}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{OBTENCI\323N DE DATOS}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{CREACI\323N DEL DATASET}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.4}{SELECCI\323N DE RED NEURONAL}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.1}{Hosts}{section.4.4}% 29
+\BOOKMARK [2][-]{subsection.4.4.2}{API REST}{section.4.4}% 30
+\BOOKMARK [2][-]{subsection.4.4.3}{Interfaces}{section.4.4}% 31
+\BOOKMARK [2][-]{subsection.4.4.4}{MariaDB Galera Cluster}{section.4.4}% 32
+\BOOKMARK [2][-]{subsection.4.4.5}{RabbitMQ}{section.4.4}% 33
+\BOOKMARK [2][-]{subsection.4.4.6}{Memcached}{section.4.4}% 34
+\BOOKMARK [2][-]{subsection.4.4.7}{ETCD}{section.4.4}% 35
+\BOOKMARK [2][-]{subsection.4.4.8}{Pacemaker, Corosyn, Heartbeat, la alta disponibilidad. y el almacenamiento compartido.}{section.4.4}% 36
+\BOOKMARK [2][-]{subsection.4.4.9}{Servicio de Identidad}{section.4.4}% 37
+\BOOKMARK [2][-]{subsection.4.4.10}{Servicio de Imagenes}{section.4.4}% 38
+\BOOKMARK [2][-]{subsection.4.4.11}{Servicio de Computo}{section.4.4}% 39
+\BOOKMARK [2][-]{subsection.4.4.12}{Servicio de Red}{section.4.4}% 40
+\BOOKMARK [2][-]{subsection.4.4.13}{Servicio de Orquestacion}{section.4.4}% 41
+\BOOKMARK [2][-]{subsection.4.4.14}{Servicio de almacenamiento de bloques}{section.4.4}% 42
+\BOOKMARK [2][-]{subsection.4.4.15}{Dashboard de Horizon}{section.4.4}% 43
+\BOOKMARK [1][-]{section.4.5}{PRUEBAS PARA LA DETECCION DEL ESTRATO SOCIAL}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.5.1}{Contenedores}{section.4.5}% 45
+\BOOKMARK [2][-]{subsection.4.5.2}{Docker}{section.4.5}% 46
+\BOOKMARK [2][-]{subsection.4.5.3}{Kubernetes}{section.4.5}% 47
+\BOOKMARK [1][-]{section.4.6}{RESULTADOS}{chapter.4}% 48
+\BOOKMARK [0][-]{chapter.5}{CONCLUSIONES}{}% 49
+\BOOKMARK [0][-]{chapter.6}{RECOMENDACIONES Y TRABAJO FUTURO}{}% 50
+\BOOKMARK [0][-]{chapter.7}{LIMITACIONES Y PROBLEMAS}{}% 51
+\BOOKMARK [0][-]{chapter.8}{REFERENCIAS}{}% 52
+\BOOKMARK [0][-]{chapter.9}{BIBLIOGRAFIA}{}% 53

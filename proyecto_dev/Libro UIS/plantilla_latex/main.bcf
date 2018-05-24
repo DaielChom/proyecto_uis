@@ -1977,12 +1977,12 @@
     <bcf:datasource type="file" datatype="bibtex">Anexos/LATEX/source/bib/referenciasejemplo.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">IaaS</bcf:citekey>
-    <bcf:citekey order="2">IaaS</bcf:citekey>
-    <bcf:citekey order="3">IaaS</bcf:citekey>
-    <bcf:citekey order="4">openstackIMG</bcf:citekey>
-    <bcf:citekey order="5">requisitos</bcf:citekey>
-    <bcf:citekey order="6">infraconuss</bcf:citekey>
+    <bcf:citekey order="1">openstackIMG</bcf:citekey>
+    <bcf:citekey order="2">requisitos</bcf:citekey>
+    <bcf:citekey order="3">infraconuss</bcf:citekey>
+    <bcf:citekey order="4">propia</bcf:citekey>
+    <bcf:citekey order="5">propia</bcf:citekey>
+    <bcf:citekey order="6">propia</bcf:citekey>
     <bcf:citekey order="7">propia</bcf:citekey>
     <bcf:citekey order="8">propia</bcf:citekey>
     <bcf:citekey order="9">propia</bcf:citekey>
@@ -1995,31 +1995,28 @@
     <bcf:citekey order="16">propia</bcf:citekey>
     <bcf:citekey order="17">propia</bcf:citekey>
     <bcf:citekey order="18">propia</bcf:citekey>
-    <bcf:citekey order="19">propia</bcf:citekey>
-    <bcf:citekey order="20">propia</bcf:citekey>
-    <bcf:citekey order="21">propia</bcf:citekey>
-    <bcf:citekey order="22">hpe-contenedore</bcf:citekey>
-    <bcf:citekey order="23">openwebinars</bcf:citekey>
-    <bcf:citekey order="24">docker</bcf:citekey>
-    <bcf:citekey order="25">kube-cluster</bcf:citekey>
-    <bcf:citekey order="26">pod</bcf:citekey>
+    <bcf:citekey order="19">hpe-contenedore</bcf:citekey>
+    <bcf:citekey order="20">openwebinars</bcf:citekey>
+    <bcf:citekey order="21">docker</bcf:citekey>
+    <bcf:citekey order="22">kube-cluster</bcf:citekey>
+    <bcf:citekey order="23">pod</bcf:citekey>
+    <bcf:citekey order="24">propia</bcf:citekey>
+    <bcf:citekey order="25">dockerfile</bcf:citekey>
+    <bcf:citekey order="26">propia</bcf:citekey>
     <bcf:citekey order="27">propia</bcf:citekey>
-    <bcf:citekey order="28">dockerfile</bcf:citekey>
+    <bcf:citekey order="28">propia</bcf:citekey>
     <bcf:citekey order="29">propia</bcf:citekey>
     <bcf:citekey order="30">propia</bcf:citekey>
     <bcf:citekey order="31">propia</bcf:citekey>
-    <bcf:citekey order="32">propia</bcf:citekey>
-    <bcf:citekey order="33">propia</bcf:citekey>
+    <bcf:citekey order="32">nagios</bcf:citekey>
+    <bcf:citekey order="33">nagios-nrpe</bcf:citekey>
     <bcf:citekey order="34">propia</bcf:citekey>
-    <bcf:citekey order="35">nagios</bcf:citekey>
-    <bcf:citekey order="36">nagios-nrpe</bcf:citekey>
+    <bcf:citekey order="35">propia</bcf:citekey>
+    <bcf:citekey order="36">propia</bcf:citekey>
     <bcf:citekey order="37">propia</bcf:citekey>
     <bcf:citekey order="38">propia</bcf:citekey>
     <bcf:citekey order="39">propia</bcf:citekey>
     <bcf:citekey order="40">propia</bcf:citekey>
-    <bcf:citekey order="41">propia</bcf:citekey>
-    <bcf:citekey order="42">propia</bcf:citekey>
-    <bcf:citekey order="43">propia</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
