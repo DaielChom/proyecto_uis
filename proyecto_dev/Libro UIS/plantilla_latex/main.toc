@@ -3,108 +3,36 @@
 \defcounter {refsection}{0}\relax 
 \bfseries \hfill p\IeC {\'a}g.\par \normalfont 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{INTRODUCCION}{14}{chapter*.8}
+\contentsline {chapter}{INTRODUCCION}{11}{chapter*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}OBJETIVOS}{15}{chapter.1}
+\contentsline {chapter}{\numberline {1}OBJETIVOS}{12}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}OBJETIVO GENERAL}{15}{section.1.1}
+\contentsline {section}{\numberline {1.1}OBJETIVO GENERAL}{12}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}OBJETIVOS ESPECIFICOS}{15}{section.1.2}
+\contentsline {section}{\numberline {1.2}OBJETIVOS ESPECIFICOS}{12}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}MARCO TE\IeC {\'O}RICO}{16}{chapter.2}
+\contentsline {chapter}{\numberline {2}MARCO TE\IeC {\'O}RICO}{13}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}ESTRATIFICACI\IeC {\'O}N SOCIAL}{16}{section.2.1}
+\contentsline {section}{\numberline {2.1}ESTRATIFICACI\IeC {\'O}N SOCIAL}{13}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}MACHINE LEARNING}{17}{section.2.2}
+\contentsline {section}{\numberline {2.2}MACHINE LEARNING}{14}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}OPENSTACK}{17}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}REDES NEURONALES}{14}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.1.1}KEYSTONE:}{18}{subsubsection.2.2.1.1}
+\contentsline {chapter}{\numberline {3}DESARROLLO DEL PROYECTO}{17}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.1.2}GLANCE}{19}{subsubsection.2.2.1.2}
+\contentsline {section}{\numberline {3.1}FUENTES DE DATOS}{18}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.1.3}NOVA}{19}{subsubsection.2.2.1.3}
+\contentsline {section}{\numberline {3.2}DATASET}{19}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.1.4}NEUTRON}{20}{subsubsection.2.2.1.4}
+\contentsline {section}{\numberline {3.3}REDES NEURONALES}{19}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.1.5}CINDER}{20}{subsubsection.2.2.1.5}
+\contentsline {section}{\numberline {3.4}DETECCION DEL ESTRATO SOCIAL}{19}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.1.6}HEAT}{20}{subsubsection.2.2.1.6}
+\contentsline {section}{\numberline {3.5}RESULTADOS}{19}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.1.7}MAGNUM}{20}{subsubsection.2.2.1.7}
+\contentsline {chapter}{\numberline {4}CONCLUSIONES}{20}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}ALTA DISPONIBILIDAD}{20}{subsection.2.2.2}
+\contentsline {chapter}{\numberline {5}RECOMENDACIONES Y TRABAJO FUTURO}{24}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.2.1}ALTA DISPONIBILIDAD CON PACEMAKER Y COROSYNC}{21}{subsubsection.2.2.2.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.2.2}REPLICA DE DATOS CON LSYNC}{21}{subsubsection.2.2.2.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.2.3}VIRTUALIZACION}{21}{subsubsection.2.2.2.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.2.2.4}CONTENEDORES}{22}{subsubsection.2.2.2.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}DEEP LEARNING}{22}{section.2.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}MACHINE LEARNING APLICADO AL NIVEL SOCIOECONOMICO}{22}{section.2.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}METODOLOGIA}{23}{chapter.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}DESARROLLO DEL PROYECTO}{25}{chapter.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}SELECCI\IeC {\'O}N DE FUENTES}{25}{section.4.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}OBTENCI\IeC {\'O}N DE DATOS}{26}{section.4.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}CREACI\IeC {\'O}N DEL DATASET}{30}{section.4.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}SELECCI\IeC {\'O}N DE RED NEURONAL}{30}{section.4.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Hosts}{31}{subsection.4.4.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}API REST}{31}{subsection.4.4.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Interfaces}{31}{subsection.4.4.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.4}MariaDB Galera Cluster}{33}{subsection.4.4.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.5}RabbitMQ}{35}{subsection.4.4.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.6}Memcached}{36}{subsection.4.4.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.7}ETCD}{36}{subsection.4.4.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.8}Pacemaker, Corosyn, Heartbeat, la alta disponibilidad. y el almacenamiento compartido.}{36}{subsection.4.4.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.9}Servicio de Identidad}{38}{subsection.4.4.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.10}Servicio de Imagenes}{38}{subsection.4.4.10}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.11}Servicio de Computo}{38}{subsection.4.4.11}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.12}Servicio de Red}{39}{subsection.4.4.12}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.13}Servicio de Orquestacion}{39}{subsection.4.4.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.14}Servicio de almacenamiento de bloques}{39}{subsection.4.4.14}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.15}Dashboard de Horizon}{39}{subsection.4.4.15}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}PRUEBAS PARA LA DETECCION DEL ESTRATO SOCIAL}{43}{section.4.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.1}Contenedores}{43}{subsection.4.5.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.2}Docker}{44}{subsection.4.5.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.3}Kubernetes}{45}{subsection.4.5.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}RESULTADOS}{55}{section.4.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}CONCLUSIONES}{64}{chapter.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}RECOMENDACIONES Y TRABAJO FUTURO}{65}{chapter.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}LIMITACIONES Y PROBLEMAS}{66}{chapter.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}REFERENCIAS}{67}{chapter.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}BIBLIOGRAFIA}{69}{chapter.9}
+\contentsline {chapter}{\numberline {6}LIMITACIONES Y PROBLEMAS}{25}{chapter.6}
