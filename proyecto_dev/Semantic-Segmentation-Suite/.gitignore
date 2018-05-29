@@ -11,7 +11,17 @@ models/*.ckpt
 checkpoints/
 Test/*.png
 accuracy_vs_epochs.png
+.ipynb_checkpoints/
 loss_vs_epochs.png
 colour_codes.csv
 CamVid_train.tfrecords
 tfrecords.py
+OVERLAECOBO_13/
+OVERLAECOBO_14/
+OVERLAECOBO_15/
+OVERLAECOBO_16/
+OVERLAECOBO_17/
+OVERLAECOBO_18/
+OVERLAECOBO_19/
+OVERLAECOBO_20/
+OVERLAECOBO_13_multi/

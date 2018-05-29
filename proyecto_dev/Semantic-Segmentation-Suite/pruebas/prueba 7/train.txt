@@ -1,0 +1,923 @@
+Preparing the model ...
+This model has 34968199 trainable parameters
+Loading the data ...
+
+***** Begin training *****
+Dataset --> OVERLAECOBO_13
+Model --> Encoder-Decoder-Skip
+Crop Height --> 256
+Crop Width --> 256
+Num Epochs --> 50
+Batch Size --> 1
+Num Classes --> 7
+Data Augmentation:
+	Vertical Flip --> False
+	Horizontal Flip --> False
+	Brightness Alteration --> None
+	Rotation --> None
+
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0000 = 0.078003
+Average per class validation accuracies for epoch # 0000:
+Estrato_1 = 0.035371
+Estrato_2 = 0.535790
+Estrato_3 = 0.033520
+Estrato_4 = 0.618541
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.183362
+Validation precision =  0.2937054162709756
+Validation recall =  0.0780029296875
+Validation F1 score =  0.05299287967460311
+Validation IoU score =  0.04253031237702343
+[2018-05-29 15:43:03] Remaining training time = 0 hours 52 minutes 38 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0001 = 0.112900
+Average per class validation accuracies for epoch # 0001:
+Estrato_1 = 0.031773
+Estrato_2 = 0.591457
+Estrato_3 = 0.018000
+Estrato_4 = 0.568389
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.374305
+Validation precision =  0.3639929785332098
+Validation recall =  0.1128997802734375
+Validation F1 score =  0.10091502313558699
+Validation IoU score =  0.05823245030197835
+[2018-05-29 15:43:50] Remaining training time = 0 hours 37 minutes 36 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0002 = 0.143936
+Average per class validation accuracies for epoch # 0002:
+Estrato_1 = 0.038122
+Estrato_2 = 0.519719
+Estrato_3 = 0.019760
+Estrato_4 = 0.533435
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.505358
+Validation precision =  0.3831158155982901
+Validation recall =  0.1439361572265625
+Validation F1 score =  0.14428419486553626
+Validation IoU score =  0.0658641508451112
+[2018-05-29 15:44:27] Remaining training time = 0 hours 28 minutes 20 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0003 = 0.163712
+Average per class validation accuracies for epoch # 0003:
+Estrato_1 = 0.032669
+Estrato_2 = 0.511376
+Estrato_3 = 0.009869
+Estrato_4 = 0.504559
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.638475
+Validation precision =  0.4755869129853017
+Validation recall =  0.1637115478515625
+Validation F1 score =  0.1866460605873201
+Validation IoU score =  0.06858933392934971
+[2018-05-29 15:45:07] Remaining training time = 0 hours 30 minutes 38 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0004 = 0.177139
+Average per class validation accuracies for epoch # 0004:
+Estrato_1 = 0.026652
+Estrato_2 = 0.549803
+Estrato_3 = 0.006347
+Estrato_4 = 0.503040
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.745863
+Validation precision =  0.5814207182354147
+Validation recall =  0.1771392822265625
+Validation F1 score =  0.21784957555595386
+Validation IoU score =  0.07184526623168268
+[2018-05-29 15:45:37] Remaining training time = 0 hours 22 minutes 30 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0005 = 0.186188
+Average per class validation accuracies for epoch # 0005:
+Estrato_1 = 0.028141
+Estrato_2 = 0.559305
+Estrato_3 = 0.002152
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.805566
+Validation precision =  0.6420248753975779
+Validation recall =  0.186187744140625
+Validation F1 score =  0.23400131337706234
+Validation IoU score =  0.07346224884912889
+[2018-05-29 15:46:07] Remaining training time = 0 hours 22 minutes 9 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0006 = 0.186264
+Average per class validation accuracies for epoch # 0006:
+Estrato_1 = 0.032638
+Estrato_2 = 0.605492
+Estrato_3 = 0.000304
+Estrato_4 = 0.501520
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.795505
+Validation precision =  0.6489301380881332
+Validation recall =  0.1862640380859375
+Validation F1 score =  0.22937181625064124
+Validation IoU score =  0.07410057932496386
+[2018-05-29 15:46:37] Remaining training time = 0 hours 21 minutes 22 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0007 = 0.201370
+Average per class validation accuracies for epoch # 0007:
+Estrato_1 = 0.035759
+Estrato_2 = 0.545430
+Estrato_3 = 0.003260
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.873866
+Validation precision =  0.700522430821831
+Validation recall =  0.2013702392578125
+Validation F1 score =  0.25224587096027157
+Validation IoU score =  0.07821640942329819
+[2018-05-29 15:47:09] Remaining training time = 0 hours 22 minutes 45 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0008 = 0.183571
+Average per class validation accuracies for epoch # 0008:
+Estrato_1 = 0.038803
+Estrato_2 = 0.482995
+Estrato_3 = 0.005282
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.773600
+Validation precision =  0.6215945846108035
+Validation recall =  0.18357086181640625
+Validation F1 score =  0.2220431888071913
+Validation IoU score =  0.07095802362415571
+[2018-05-29 15:47:32] Remaining training time = 0 hours 15 minutes 47 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0009 = 0.199333
+Average per class validation accuracies for epoch # 0009:
+Estrato_1 = 0.034028
+Estrato_2 = 0.442128
+Estrato_3 = 0.003565
+Estrato_4 = 0.503040
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.890399
+Validation precision =  0.6865786050485577
+Validation recall =  0.19933319091796875
+Validation F1 score =  0.2502884937051054
+Validation IoU score =  0.07751923399378988
+[2018-05-29 15:47:55] Remaining training time = 0 hours 15 minutes 12 seconds
+
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0010 = 0.179268
+Average per class validation accuracies for epoch # 0010:
+Estrato_1 = 0.032821
+Estrato_2 = 0.488184
+Estrato_3 = 0.004326
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.799791
+Validation precision =  0.6213898219195535
+Validation recall =  0.17926788330078125
+Validation F1 score =  0.21863409940887696
+Validation IoU score =  0.06959634971741437
+[2018-05-29 15:48:32] Remaining training time = 0 hours 23 minutes 46 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0011 = 0.181137
+Average per class validation accuracies for epoch # 0011:
+Estrato_1 = 0.041155
+Estrato_2 = 0.387765
+Estrato_3 = 0.004326
+Estrato_4 = 0.501520
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.791286
+Validation precision =  0.6052031818080663
+Validation recall =  0.1811370849609375
+Validation F1 score =  0.21515047178046684
+Validation IoU score =  0.06835911322407594
+[2018-05-29 15:48:54] Remaining training time = 0 hours 14 minutes 21 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0012 = 0.198196
+Average per class validation accuracies for epoch # 0012:
+Estrato_1 = 0.037174
+Estrato_2 = 0.455766
+Estrato_3 = 0.002304
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.851101
+Validation precision =  0.6668851310861309
+Validation recall =  0.1981964111328125
+Validation F1 score =  0.24591408764030467
+Validation IoU score =  0.0760341181115896
+[2018-05-29 15:49:17] Remaining training time = 0 hours 14 minutes 15 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0013 = 0.163147
+Average per class validation accuracies for epoch # 0013:
+Estrato_1 = 0.018129
+Estrato_2 = 0.247465
+Estrato_3 = 0.012369
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.806527
+Validation precision =  0.6270697410963382
+Validation recall =  0.16314697265625
+Validation F1 score =  0.21609104529729162
+Validation IoU score =  0.05733680678556681
+[2018-05-29 15:49:40] Remaining training time = 0 hours 13 minutes 19 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0014 = 0.167946
+Average per class validation accuracies for epoch # 0014:
+Estrato_1 = 0.008537
+Estrato_2 = 0.488519
+Estrato_3 = 0.007565
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.802818
+Validation precision =  0.6016384303070959
+Validation recall =  0.16794586181640625
+Validation F1 score =  0.2189906433926791
+Validation IoU score =  0.07182169431480354
+[2018-05-29 15:50:03] Remaining training time = 0 hours 13 minutes 32 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0015 = 0.173660
+Average per class validation accuracies for epoch # 0015:
+Estrato_1 = 0.013190
+Estrato_2 = 0.303894
+Estrato_3 = 0.005674
+Estrato_4 = 0.583587
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.861260
+Validation precision =  0.6438869133527763
+Validation recall =  0.1736602783203125
+Validation F1 score =  0.23184798505032048
+Validation IoU score =  0.06538108765961406
+[2018-05-29 15:50:26] Remaining training time = 0 hours 13 minutes 9 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0016 = 0.164406
+Average per class validation accuracies for epoch # 0016:
+Estrato_1 = 0.010961
+Estrato_2 = 0.354298
+Estrato_3 = 0.008652
+Estrato_4 = 0.503040
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.789192
+Validation precision =  0.622645820504159
+Validation recall =  0.16440582275390625
+Validation F1 score =  0.2214468567865273
+Validation IoU score =  0.0617623524501153
+[2018-05-29 15:50:50] Remaining training time = 0 hours 13 minutes 12 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0017 = 0.168953
+Average per class validation accuracies for epoch # 0017:
+Estrato_1 = 0.008346
+Estrato_2 = 0.454936
+Estrato_3 = 0.008393
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.815924
+Validation precision =  0.5909650801576727
+Validation recall =  0.16895294189453125
+Validation F1 score =  0.22295331097548318
+Validation IoU score =  0.07059602635958087
+[2018-05-29 15:51:13] Remaining training time = 0 hours 12 minutes 14 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0018 = 0.159164
+Average per class validation accuracies for epoch # 0018:
+Estrato_1 = 0.004708
+Estrato_2 = 0.262482
+Estrato_3 = 0.007087
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.815554
+Validation precision =  0.6041587432885135
+Validation recall =  0.1591644287109375
+Validation F1 score =  0.2170189440553987
+Validation IoU score =  0.06067675259719825
+[2018-05-29 15:51:36] Remaining training time = 0 hours 11 minutes 45 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0019 = 0.163086
+Average per class validation accuracies for epoch # 0019:
+Estrato_1 = 0.006115
+Estrato_2 = 0.241839
+Estrato_3 = 0.019696
+Estrato_4 = 0.510638
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.826664
+Validation precision =  0.5630241240706018
+Validation recall =  0.1630859375
+Validation F1 score =  0.21826250286472365
+Validation IoU score =  0.06558676332286245
+[2018-05-29 15:52:00] Remaining training time = 0 hours 12 minutes 9 seconds
+
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0020 = 0.158981
+Average per class validation accuracies for epoch # 0020:
+Estrato_1 = 0.004777
+Estrato_2 = 0.251800
+Estrato_3 = 0.020088
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.812414
+Validation precision =  0.5630840056279112
+Validation recall =  0.1589813232421875
+Validation F1 score =  0.21549160988946633
+Validation IoU score =  0.06295884338355259
+[2018-05-29 15:52:35] Remaining training time = 0 hours 17 minutes 4 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0021 = 0.161194
+Average per class validation accuracies for epoch # 0021:
+Estrato_1 = 0.003415
+Estrato_2 = 0.292704
+Estrato_3 = 0.029717
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.809001
+Validation precision =  0.5490723947273837
+Validation recall =  0.16119384765625
+Validation F1 score =  0.21569028489256659
+Validation IoU score =  0.06921283257720844
+[2018-05-29 15:52:59] Remaining training time = 0 hours 10 minutes 49 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0022 = 0.161049
+Average per class validation accuracies for epoch # 0022:
+Estrato_1 = 0.002718
+Estrato_2 = 0.290723
+Estrato_3 = 0.013111
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.818650
+Validation precision =  0.5453039631878198
+Validation recall =  0.16104888916015625
+Validation F1 score =  0.21692103572088453
+Validation IoU score =  0.0674126960533735
+[2018-05-29 15:53:22] Remaining training time = 0 hours 10 minutes 26 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0023 = 0.165718
+Average per class validation accuracies for epoch # 0023:
+Estrato_1 = 0.002945
+Estrato_2 = 0.212075
+Estrato_3 = 0.036412
+Estrato_4 = 0.509119
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.831629
+Validation precision =  0.5863657824252002
+Validation recall =  0.16571807861328125
+Validation F1 score =  0.2278498280185748
+Validation IoU score =  0.06657056165788781
+[2018-05-29 15:53:45] Remaining training time = 0 hours 9 minutes 49 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0024 = 0.155258
+Average per class validation accuracies for epoch # 0024:
+Estrato_1 = 0.002762
+Estrato_2 = 0.221120
+Estrato_3 = 0.016913
+Estrato_4 = 0.501520
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.808329
+Validation precision =  0.5490579497514158
+Validation recall =  0.1552581787109375
+Validation F1 score =  0.20985481761221714
+Validation IoU score =  0.06326471332431632
+[2018-05-29 15:54:09] Remaining training time = 0 hours 10 minutes 13 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0025 = 0.161392
+Average per class validation accuracies for epoch # 0025:
+Estrato_1 = 0.002067
+Estrato_2 = 0.246225
+Estrato_3 = 0.037133
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.814527
+Validation precision =  0.5525184949506798
+Validation recall =  0.1613922119140625
+Validation F1 score =  0.21916214102324952
+Validation IoU score =  0.06810246368692822
+[2018-05-29 15:54:32] Remaining training time = 0 hours 9 minutes 8 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0026 = 0.158089
+Average per class validation accuracies for epoch # 0026:
+Estrato_1 = 0.001956
+Estrato_2 = 0.202797
+Estrato_3 = 0.032612
+Estrato_4 = 0.702128
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.819713
+Validation precision =  0.5844857835087471
+Validation recall =  0.15808868408203125
+Validation F1 score =  0.2151257593698904
+Validation IoU score =  0.06649356695195298
+[2018-05-29 15:54:54] Remaining training time = 0 hours 8 minutes 37 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0027 = 0.154900
+Average per class validation accuracies for epoch # 0027:
+Estrato_1 = 0.001769
+Estrato_2 = 0.219140
+Estrato_3 = 0.020219
+Estrato_4 = 0.501520
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.799701
+Validation precision =  0.5490345601101914
+Validation recall =  0.15489959716796875
+Validation F1 score =  0.20920365197483984
+Validation IoU score =  0.06466516678114026
+[2018-05-29 15:55:18] Remaining training time = 0 hours 8 minutes 44 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0028 = 0.156967
+Average per class validation accuracies for epoch # 0028:
+Estrato_1 = 0.001915
+Estrato_2 = 0.194278
+Estrato_3 = 0.024308
+Estrato_4 = 0.559271
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.819356
+Validation precision =  0.5558303671729459
+Validation recall =  0.1569671630859375
+Validation F1 score =  0.212305589868778
+Validation IoU score =  0.06558058005673431
+[2018-05-29 15:55:41] Remaining training time = 0 hours 7 minutes 55 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0029 = 0.158302
+Average per class validation accuracies for epoch # 0029:
+Estrato_1 = 0.004165
+Estrato_2 = 0.288143
+Estrato_3 = 0.019958
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.795379
+Validation precision =  0.544328634710997
+Validation recall =  0.15830230712890625
+Validation F1 score =  0.21033772342282775
+Validation IoU score =  0.06859839462831005
+[2018-05-29 15:56:04] Remaining training time = 0 hours 7 minutes 44 seconds
+
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0030 = 0.159546
+Average per class validation accuracies for epoch # 0030:
+Estrato_1 = 0.001912
+Estrato_2 = 0.170999
+Estrato_3 = 0.013066
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.842582
+Validation precision =  0.5998076253195304
+Validation recall =  0.1595458984375
+Validation F1 score =  0.22113825579816318
+Validation IoU score =  0.0613952810057235
+[2018-05-29 15:56:41] Remaining training time = 0 hours 11 minutes 35 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0031 = 0.159882
+Average per class validation accuracies for epoch # 0031:
+Estrato_1 = 0.003151
+Estrato_2 = 0.289244
+Estrato_3 = 0.023306
+Estrato_4 = 0.516717
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.797108
+Validation precision =  0.5297041488847851
+Validation recall =  0.159881591796875
+Validation F1 score =  0.21208951366411702
+Validation IoU score =  0.07125909917278891
+[2018-05-29 15:57:04] Remaining training time = 0 hours 6 minutes 50 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0032 = 0.157684
+Average per class validation accuracies for epoch # 0032:
+Estrato_1 = 0.003311
+Estrato_2 = 0.226967
+Estrato_3 = 0.013936
+Estrato_4 = 0.504559
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.793937
+Validation precision =  0.5428258774902849
+Validation recall =  0.157684326171875
+Validation F1 score =  0.21307281851568577
+Validation IoU score =  0.06446327143766091
+[2018-05-29 15:57:26] Remaining training time = 0 hours 6 minutes 24 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0033 = 0.165054
+Average per class validation accuracies for epoch # 0033:
+Estrato_1 = 0.003510
+Estrato_2 = 0.280877
+Estrato_3 = 0.020892
+Estrato_4 = 0.503040
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.824968
+Validation precision =  0.5620343459921656
+Validation recall =  0.1650543212890625
+Validation F1 score =  0.22236053489339663
+Validation IoU score =  0.07076890705381256
+[2018-05-29 15:57:49] Remaining training time = 0 hours 6 minutes 5 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0034 = 0.159843
+Average per class validation accuracies for epoch # 0034:
+Estrato_1 = 0.005637
+Estrato_2 = 0.266137
+Estrato_3 = 0.018502
+Estrato_4 = 0.518237
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.798967
+Validation precision =  0.5409326271773945
+Validation recall =  0.15984344482421875
+Validation F1 score =  0.21368838836340875
+Validation IoU score =  0.06665034075928995
+[2018-05-29 15:58:12] Remaining training time = 0 hours 5 minutes 39 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0035 = 0.161751
+Average per class validation accuracies for epoch # 0035:
+Estrato_1 = 0.004064
+Estrato_2 = 0.237219
+Estrato_3 = 0.020892
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.813632
+Validation precision =  0.5538312061816908
+Validation recall =  0.16175079345703125
+Validation F1 score =  0.2185758120488401
+Validation IoU score =  0.0664310700899965
+[2018-05-29 15:58:36] Remaining training time = 0 hours 5 minutes 42 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0036 = 0.160408
+Average per class validation accuracies for epoch # 0036:
+Estrato_1 = 0.006685
+Estrato_2 = 0.253104
+Estrato_3 = 0.020024
+Estrato_4 = 0.577508
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.813480
+Validation precision =  0.5776068563087768
+Validation recall =  0.16040802001953125
+Validation F1 score =  0.21448631483507472
+Validation IoU score =  0.06571950934968863
+[2018-05-29 15:58:59] Remaining training time = 0 hours 4 minutes 53 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0037 = 0.168449
+Average per class validation accuracies for epoch # 0037:
+Estrato_1 = 0.006916
+Estrato_2 = 0.331533
+Estrato_3 = 0.016000
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.813576
+Validation precision =  0.565408267022282
+Validation recall =  0.16844940185546875
+Validation F1 score =  0.2238485096531947
+Validation IoU score =  0.07137064266892114
+[2018-05-29 15:59:22] Remaining training time = 0 hours 4 minutes 33 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0038 = 0.164124
+Average per class validation accuracies for epoch # 0038:
+Estrato_1 = 0.004374
+Estrato_2 = 0.268386
+Estrato_3 = 0.020655
+Estrato_4 = 0.506079
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.817462
+Validation precision =  0.5622296756944627
+Validation recall =  0.16412353515625
+Validation F1 score =  0.22167745915421225
+Validation IoU score =  0.06760639575165334
+[2018-05-29 15:59:45] Remaining training time = 0 hours 4 minutes 19 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0039 = 0.156136
+Average per class validation accuracies for epoch # 0039:
+Estrato_1 = 0.004535
+Estrato_2 = 0.166747
+Estrato_3 = 0.014457
+Estrato_4 = 0.609422
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.805065
+Validation precision =  0.5906061698326945
+Validation recall =  0.15613555908203125
+Validation F1 score =  0.21365138262740874
+Validation IoU score =  0.05953592579212428
+[2018-05-29 16:00:08] Remaining training time = 0 hours 3 minutes 47 seconds
+
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0040 = 0.173210
+Average per class validation accuracies for epoch # 0040:
+Estrato_1 = 0.008059
+Estrato_2 = 0.495402
+Estrato_3 = 0.007674
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.827287
+Validation precision =  0.5832012196861767
+Validation recall =  0.17321014404296875
+Validation F1 score =  0.22624210284673
+Validation IoU score =  0.07656906870805448
+[2018-05-29 16:00:44] Remaining training time = 0 hours 5 minutes 21 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0041 = 0.162094
+Average per class validation accuracies for epoch # 0041:
+Estrato_1 = 0.005079
+Estrato_2 = 0.278286
+Estrato_3 = 0.029370
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.804019
+Validation precision =  0.5814776703423113
+Validation recall =  0.1620941162109375
+Validation F1 score =  0.21977853747021694
+Validation IoU score =  0.06564252156386934
+[2018-05-29 16:01:07] Remaining training time = 0 hours 3 minutes 5 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0042 = 0.167068
+Average per class validation accuracies for epoch # 0042:
+Estrato_1 = 0.006237
+Estrato_2 = 0.426820
+Estrato_3 = 0.018959
+Estrato_4 = 0.721884
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.813567
+Validation precision =  0.6193959221774965
+Validation recall =  0.1670684814453125
+Validation F1 score =  0.22318104246971088
+Validation IoU score =  0.07244511282844558
+[2018-05-29 16:01:29] Remaining training time = 0 hours 2 minutes 37 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0043 = 0.166733
+Average per class validation accuracies for epoch # 0043:
+Estrato_1 = 0.008110
+Estrato_2 = 0.331646
+Estrato_3 = 0.014000
+Estrato_4 = 0.626140
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.811384
+Validation precision =  0.6048589015544623
+Validation recall =  0.1667327880859375
+Validation F1 score =  0.22347892207438316
+Validation IoU score =  0.06723871108070126
+[2018-05-29 16:01:53] Remaining training time = 0 hours 2 minutes 22 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0044 = 0.161377
+Average per class validation accuracies for epoch # 0044:
+Estrato_1 = 0.007012
+Estrato_2 = 0.369415
+Estrato_3 = 0.010697
+Estrato_4 = 0.544073
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.806973
+Validation precision =  0.596356250472837
+Validation recall =  0.161376953125
+Validation F1 score =  0.2169730572437149
+Validation IoU score =  0.06449344702101822
+[2018-05-29 16:02:18] Remaining training time = 0 hours 2 minutes 4 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0045 = 0.171692
+Average per class validation accuracies for epoch # 0045:
+Estrato_1 = 0.005065
+Estrato_2 = 0.350729
+Estrato_3 = 0.007827
+Estrato_4 = 0.521277
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.839335
+Validation precision =  0.636926260329088
+Validation recall =  0.17169189453125
+Validation F1 score =  0.23646446154321832
+Validation IoU score =  0.06718664209134387
+[2018-05-29 16:02:41] Remaining training time = 0 hours 1 minutes 31 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0046 = 0.161911
+Average per class validation accuracies for epoch # 0046:
+Estrato_1 = 0.010261
+Estrato_2 = 0.336783
+Estrato_3 = 0.004913
+Estrato_4 = 0.586626
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.793168
+Validation precision =  0.5782564844565741
+Validation recall =  0.1619110107421875
+Validation F1 score =  0.21189266966738665
+Validation IoU score =  0.06462350041730039
+[2018-05-29 16:03:04] Remaining training time = 0 hours 1 minutes 8 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0047 = 0.169708
+Average per class validation accuracies for epoch # 0047:
+Estrato_1 = 0.002150
+Estrato_2 = 0.311018
+Estrato_3 = 0.012913
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.843753
+Validation precision =  0.6136353487418273
+Validation recall =  0.169708251953125
+Validation F1 score =  0.23559432415865716
+Validation IoU score =  0.06770132429495868
+[2018-05-29 16:03:29] Remaining training time = 0 hours 0 minutes 49 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0048 = 0.160263
+Average per class validation accuracies for epoch # 0048:
+Estrato_1 = 0.004790
+Estrato_2 = 0.268060
+Estrato_3 = 0.006131
+Estrato_4 = 0.577508
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.804412
+Validation precision =  0.5953024328598557
+Validation recall =  0.1602630615234375
+Validation F1 score =  0.21996815147002877
+Validation IoU score =  0.06074838191871268
+[2018-05-29 16:03:51] Remaining training time = 0 hours 0 minutes 22 seconds
+
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0049 = 0.172905
+Average per class validation accuracies for epoch # 0049:
+Estrato_1 = 0.003399
+Estrato_2 = 0.384956
+Estrato_3 = 0.006283
+Estrato_4 = 0.621581
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.857501
+Validation precision =  0.6380105607354956
+Validation recall =  0.17290496826171875
+Validation F1 score =  0.23586026240228808
+Validation IoU score =  0.07207902889878105
+[2018-05-29 16:04:14] Remaining training time : Training completed.
+
