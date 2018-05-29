@@ -1,4 +1,10 @@
 # Ignorando las imagenes del dataset
-*.jpg
-*.png
-*.rar
+OVERLAECOBO_13/
+OVERLAECOBO_14/
+OVERLAECOBO_15/
+OVERLAECOBO_16/
+OVERLAECOBO_17/
+OVERLAECOBO_18/
+OVERLAECOBO_19/
+OVERLAECOBO_20/
+target/
