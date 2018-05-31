@@ -5,6 +5,17 @@
 \usepackage{lipsum}
 \usepackage{CJKutf8}
 
+%%% FOR URLs WORK ============================
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks% save the current one
+	\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+	\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+	\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+	\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+	\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+	\do\Y\do\Z\do\*\do\-\do\~\do\'\do\"\do\-}%
+% ==================================================
 
 
 \title{DETECCIÓN AUTOMÁTICA DEL NIVEL DE ESTRATIFICACIÓN SOCIOECONÓMICO URBANO USANDO REDES NEURONALES CONVOLUCIONALES SOBRE IMÁGENES SATELITALES CON INFORMACIÓN AUMENTADA}
@@ -84,13 +95,19 @@
     \footnote{DANE. Estratificación - Preguntas frecuentes. [en línea]. 
     		<\url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf}> [citado en 25 de Mayo de 2018]}.
     Es decir, se requiere la elaboración de una encuesta de gran tamaño, la cual consume mucho tiempo y personal. Posteriormente, si la encuesta no se realizó usando software de recolección de datos, es necesario realizar su tipeo, lo cual tambien requiere tiempo. Luego, como lo indica el DANE
-    \footnote{DANE. Metodología de estratificación. [en línea]. (Recuperado en 05 oct 2017). \url{http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica}.}\footnote{DANE. Procedimiento del cálculo. [en línea]. (Recuperado en 05 oct 2017). \url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf} .}, el cálculo final del estrato se realiza mediante modelos estadísticos y económicos especialmente calibrados para esta tarea.
+    \footnote{DANE. Metodología de estratificación. [en línea].
+    	 <\url{http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica}> [citado en 25 de Mayo de 2018].}
+    \footnote{DANE. Procedimiento del cálculo. [en línea]. <\url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf}> [citado en 25 de Mayo de 2018].}, el cálculo final del estrato se realiza mediante modelos estadísticos y económicos especialmente calibrados para esta tarea.
     
     En este contexto surgen varias interrogantes respecto a la capacidad de actualización de esta metodología: ¿Qué sucede cuando una ciudad tiene una alta tasa de desarrollo urbano?, ¿Cómo mantiene el gobierno actualizada la información de los estratos ante éstas circunstancias?, ¿Que tan efectiva es la metodología actual ante estos casos de alto desarrollo urbano?
     
     Por tanto, el objetivo de este trabajo consiste en seleccionar redes neuronales convolucionales y evaluar su capacidad para determinar automáticamente el estrato socioeconómico usando imágenes satelitales e información adicional (información catastral, presencia y consumo de servicios, etc), con el fin de presentar una alternativa que haga frente a las inquietudes planteadas.
     
-     No es la primera vez que se realiza una predicción del nivel socioeconomico utilizando tecincas de machine learning o deep learning. Neal Jean en colaboración con varias personas e instituciones realizó un modelo\footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Linea]. (Recuperado en 10 oct 2017) \url{http://sustain.stanford.edu/predicting-poverty/} }\footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en linea]. (Recuperado en 10 oct 2017) \url{https://github.com/nealjean/predicting-poverty}}\footnote{NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016} capaz de predecir el nivel de pobreza en cinco países de África, usando imágenes satelitales y datos extra para dicha tarea. En Colombia, más específicamente en Medellín, también se han realizado modelos\footnote{EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en linea]. (Recuperado en 10 oct 2017) \url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx}} para determinar niveles socioeconomicos de una zona urbana. En la Universidad EAFIT, usando tecnicas de Machine Learning e imagenes satelitales logran medir los indices de pobreza de dicha ciudad.
+     No es la primera vez que se realiza una predicción del nivel socioeconomico utilizando tecincas de machine learning o deep learning. Neal Jean en colaboración con varias personas e instituciones realizó un modelo
+     \footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Linea]. <\url{http://sustain.stanford.edu/predicting-poverty/}> [citado en 25 de Mayo de 2018]}
+     \footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en linea]. <\url{https://github.com/nealjean/predicting-poverty}> [citado en 25 de Mayo de 2018] }
+     \footnote{NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016} capaz de predecir el nivel de pobreza en cinco países de África, usando imágenes satelitales y datos extra para dicha tarea. En Colombia, más específicamente en Medellín, también se han realizado modelos
+     \footnote{EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en linea]. <\url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx}> [citado en 25 de Mayo de 2018] } para determinar niveles socioeconomicos de una zona urbana. En la Universidad EAFIT, usando tecnicas de Machine Learning e imagenes satelitales logran medir los indices de pobreza de dicha ciudad.
     
     
     \addcontentsline{toc}{chapter}{INTRODUCCION}
@@ -118,14 +135,17 @@
 %% =========================
 %% 2. MARCO TEORICO
 %% =========================
-    \newpage\chapter{MARCO TEÓRICO}     
+    \newpage\chapter{MARCO TEÓRICO}    
+    
+     
     %% =========================
     %% 2.1 ESTRATIFICACION SOCIAL
     %% =========================
     
 	\section{ESTRATIFICACIÓN SOCIAL}
     
-    “La estratificación social es un fenómeno presente en todas las sociedades. Los miembros se clasifican a sí mismos y a los otros basándose en jerarquías que vienen dadas por diversos factores”\footnote[8]{GONZÁLEZ Vanessa. ¿Qué es la estratificación social? [en línea]. (Recuperado en 10 oct 2017). \url{https://www.lifeder.com/estratificacion-social/}} y no es algo nuevo, la antigua Mesopotamia contaba con una división social cuyos miembros iban desde el rey y su familia, en el estrato más alto, hasta los esclavos en el más bajo.
+    “La estratificación social es un fenómeno presente en todas las sociedades. Los miembros se clasifican a sí mismos y a los otros basándose en jerarquías que vienen dadas por diversos factores”
+    \footnote[8]{GONZÁLEZ Vanessa. ¿Qué es la estratificación social? [en línea]. <\url{https://www.lifeder.com/estratificacion-social/}> [citado en 31 de Mayo del 2018].} y no es algo nuevo, la antigua Mesopotamia contaba con una división social cuyos miembros iban desde el rey y su familia, en el estrato más alto, hasta los esclavos en el más bajo.
     
     Más que una simple división, la estratificación representa la desigualdad existente en una sociedad. Cada uno de los estratos, niveles o grupos sociales indica la capacidad de acceso a recursos, oportunidades, bienes y servicios por parte de las personas pertenecientes a cada nivel. Dicha estratificación es necesaria para la tarea que llevan acabo los gobiernos en contra de la desigualdad, dado que se suelen crear programas que beneficien a las personas de los niveles más bajos y cobrar mayores impuestos a las personas de los niveles más altos.
     
@@ -157,7 +177,7 @@
     
     Aunque en el fondo, independientemente del campo en el que se trabaje, las técnicas de machine learning son las mismas, existen tareas muchos más complejos que otras. Por ejemplo, hoy en día, es mucho más fácil predecir el valor de una casa a predecir el valor del dólar o predecir terremotos. Esta dificultad se da debido a que, para cada tarea que se realice se deben “ajustar” los datos y los algortimos para que estos aprendan y puedan realizar predicciónes o detecciónes con un nivel de tolerancia aceptable.
     
-    \subsection{REDES NEURONALES} es una de las técnicas o algortimos de machine learning que se pueden emplear en las tareas de predicción o detección. “Una red neuronal es un modelo simplificado que emula el modo en que el cerebro humano procesa la información: Funciona simultaneando un número elevado de unidades de procesamiento interconectadas que parecen versiones abstractas de neuronas”\footnote[11]{IBM. El modelo de redes neuronales [en línea]. (Recuperado en 15 oct 2017) \url{https://www.ibm.com/support/knowledgecenter/es/SS3RA7_18.0.0/modeler_mainhelp_client_ddita/components/neuralnet/neuralnet_model.html} }
+    \subsection{REDES NEURONALES} es una de las técnicas o algortimos de machine learning que se pueden emplear en las tareas de predicción o detección. “Una red neuronal es un modelo simplificado que emula el modo en que el cerebro humano procesa la información: Funciona simultaneando un número elevado de unidades de procesamiento interconectadas que parecen versiones abstractas de neuronas”\footnote[11]{IBM. El modelo de redes neuronales [en línea]. <\url{https://www.ibm.com/support/knowledgecenter/es/SS3RA7_18.0.0/modeler_mainhelp_client_ddita/components/neuralnet/neuralnet_model.html> [citado en 31 de Mayo de 2018]} }
     
   
   \figura{img/red.jpg}{Diagrama de red neuronal}{0.8}{VÍLCHEZ GARCÍA, Víctor Gabriel.\textit{Estimación y clasificación de daños en materiales utilizando modelos AR y redes neuronales para la evaluaciónno destructiva con ultrasonidos.} [en linea]. (Recuperado en 24 may 2018) \url{http://ceres.ugr.es/~alumnos/esclas/}}
@@ -165,36 +185,55 @@
   Una red neuronal está constituida por una serie de capas que se activan con determinadas entradas generando determinadas salidas que podrían ser tomadas o no por otras capas, dependiendo de la “profundidad” de la red. Utilizar redes neuronales consiste en hacer que la misma aprenda examinando las entradas, prediciendo las salidas y haciendo ajustes a los distintos parámetros de la misma, este proceso se repite muchas veces hasta que la red sea capaz de predecir o clasificar con un margen de error tolerable.
   
   La idea del proyecto es obtener una red neuronal capaz de predecir el nivel socioeconómico de una zona urbana, para esto se planea alimentar la red con imágenes satelitales e información extra de dichas zonas urbanas. Con esta información, ajustes en los parámetros y bastantes iteraciones la red neuronal aprenderá. Los cambios en los parámetros, profundidad y datos usados en la red neuronal son realizados para encontrar la red neuronal que mejor desempeño presente para la tarea propuesta.
-  Dado que los datos a utilizar son imágenes, es recomendable utilizar “redes neuronales convolucionales” (CNN), las cuales son un tipo de red neuronal que se adapta mejor al uso de imágenes dado que “las CNN eliminan la necesidad de una extracción de características manual, por lo que no es necesario identificar las características utilizadas para clasificar las imágenes. La CNN funciona mediante la extracción de características directamente de las imágenes. Las características relevantes no se entrenan previamente; se aprenden mientras la red se entrena con una colección de imágenes”\footnote[12]{MATHWORKS. Aprendizaje profundo [en línea]. (Recuperado en 15 oct 2017) \url{https://es.mathworks.com/discovery/deep-learning.html}.}
+  Dado que los datos a utilizar son imágenes, es recomendable utilizar “redes neuronales convolucionales” (CNN), las cuales son un tipo de red neuronal que se adapta mejor al uso de imágenes dado que “las CNN eliminan la necesidad de una extracción de características manual, por lo que no es necesario identificar las características utilizadas para clasificar las imágenes. La CNN funciona mediante la extracción de características directamente de las imágenes. Las características relevantes no se entrenan previamente; se aprenden mientras la red se entrena con una colección de imágenes”\footnote[12]{MATHWORKS. Aprendizaje profundo [en línea]. <\url{https://es.mathworks.com/discovery/deep-learning.html}> [citado en 31 de Mayo de 2018]}
   
 %% ==========================================
 %% DESARROLLO DEL PROYECTO
-%% ==========================================  
- \newpage\chapter{DESARROLLO DEL PROYECTO}  
-  Esta claro que la recoleccion de datos medieante encuestas a vivienda es una metodologia que conlleva bastane tiempo y el calculo del estrato debe tener en cuenta un sin numero de variables. Como alternativa se propone usar imagenes satelitales dado que se puede obtener mucha información socioeconomica con el analizis de las mismas. Se pueden identificar patrones, detectar construcciones especificas, clasificar materiales de construccion en los tejados y más, todos estos analizis son variables usadas en el calclo del estrato.
+%% ========================================== 
+ 
+\newpage\chapter{DESARROLLO DEL PROYECTO}  
+Esta claro que la recoleccion de datos medieante encuestas a vivienda es una metodologia que conlleva bastane tiempo y que el calculo del estrato debe tener en cuenta un sin numero de variables. Como alternativa se propone usar imagenes satelitales dado que se puede obtener mucha información socioeconomica con el analizis de las mismas. Se pueden identificar patrones, detectar construcciones especificas, clasificar materiales de construccion en los tejados y más, todos estos analizis son variables usadas en el calculo del estrato.
   
- Como se mencionó existe un par de trabajos sobre el nivel socioeconomico usando tecnicas de machine learning. El trabajo de Neal Jean usa redes neuronales convolucionales y Transfer Learning para lograr un  
+Como se mencionó existe un par de trabajos sobre el nivel socioeconomico usando tecnicas de machine learning. El trabajo de Neal Jean usa redes neuronales convolucionales y Transfer Learning para lograr una prediccion de la pobreza en 5 paises de africa. El trabajo de la EAFIT usa tecnicas de machine learning para detectar caracteristicas que puedan dar a conocer el nivel socioeconomico de una zona. Hay que tener en cuenta que en ambos trabajos la principal fuente de datos son las imagenes satelitales. En este proyecto tambien se usaron imagenes satelitales.
  
- y en ambos la principal fuente de datos son las imagenes satelitales.
- 
- repo github
- 
-A grandes rasgos lo que se planea realizar con las imagenes satelitales, la informacion aumentada, la informacion de los estratos y las redes neuronales se muestra en las siguientes figuras.
+A grandes rasgos lo que se planteo realizar con las imagenes satelitales, la informacion aumentada, la informacion de los estratos y las redes neuronales, se muestra en las siguientes figuras.
 
-\figura{img/datos.png}{Datos a usar en el proyecto}{0.8}{Imagen Propia} 
+\figura{img/datos.png}{Datos a usar en el proyecto}{0.7}{Imagen Propia} 
+\figura{img/modelo.png}{Modelo a usar en el proyecto}{0.8}{Imagen Propia}
 
-Hay que mencionar que el desarrollo del proyecto esta documentado en el sigueinte repositorio de Github \url{https://github.com/DaielChom/proyecto_uis}. El desarrollo se llevo de la siguiente manera.
+El proyecto se desarrollo encontrando fuentes de datos, generando dataset con imagenes satelitales, informacion aumentada y distintos niveles de zoom, seleccionando redes neuronales y realizando pruebas para determinar la mejor manera de predecir el estrato social. Hay que mencionar que el desarrollo del proyecto esta documentado en el sigueinte repositorio de Github \url{https://github.com/DaielChom/proyecto_uis}. El desarrollo se llevo de la siguiente manera.
+
+%% ==========================================
+%% FUENTES DE DATOS
+%% ==========================================
  
  \section{FUENTES DE DATOS}
  
- Es necesario tener varias fuentes de datos ya que se maneja distinos tipos de intformacion, imagenes satelitales, datos de estratificación e informacion extra. Y dicha informacion en lo posible debe estar en formato de imagenes como se muestra en la Figura \ref{fig:Datos a usar en el proyecto}, esto para facilitar su uso en las redes neuronales a usar.
+ Era necesario tener imagenes satelitales, imagenes con los estratos sociales e imagenes con informacion extra que correspondan geograficamente y que tengan distintos niveles de zoom, como se muestran en la Figura  \ref{fig:Datos a usar en el proyecto}. Se usan distintos niveles de zoom para determinar si esto influye en la prediccion del estrato social.  
+ Existen muchas plataformas para obtener imagenes satelitales tanto de alta como baja resolucion, varias de estas plataformas tienen la opcion de insertar información en dichos mapas de forma de marcador, poligono o linea. Esta informacion por lo general son archivos en formato .kml o .shp. Aprochando esta opcion se realizaron busquedas de archivos kml con distintos tipos de informacion, incluyendo el estato social. Gracias a la politica de datos abiertos\footnote[13]{GOBIERNO DIGITAL. Datos Abiertos [en linea] <\url{http://estrategia.gobiernoenlinea.gov.co/623/w3-article-9407.html}> [citado en 30 de Mayo de 2018]} es psobile encontrar archivos kml o shp en distintas paginas web del gobierno. sin embargo no todos los departamentos o ciudades cuentan con la misma cantidad de datos disponibles y menos con datos del estrato social. El unico portal web donde se encontro una buena cantidad de informacion, incluyendo la del estrto social fue en el portal de mapas de Bogota, disponible en \url{http://mapas.bogota.gov.co}. 
  
- Existen muchas opciones y plataformas para obtener imagenes satelitales tanto de alta como baja resolucion, varias de estas plataformas tienen la opcion de insertar información sobre dichos mapas de forma de marcador, poligono o linea. Esta informacion por lo general son archivos en formato .kml o .shp.
+ No fue posible descargar los archivos kml mostrados en la plataforma, por ende, y aprovechando la licencia Creative Commons que presentan los datos, se crearon nuevos archivos kml usando los mapas de la plataforma como guia. Los archivos kml realizados estan disponibles en \url{https://drive.google.com/open?id=15VnvN6ZRTbsqqd9kl3ukNWBj3oqADsy0}. se crearon dos kml, uno con informacion de los estratos sociales y otro con los indices de condiciones de seguridad nocturna por localidad que tienen las mujeres, mas especificamente los datos de la categoria \textit{riesgo alto} de dicho mapa. 
+
+%% ==========================================
+%% DATASET
+%% ==========================================
+
+ \section{DATASET}
+ Como en la mayoria de trabajos de machine learning se debe tener un dataset, un conjunto de datos organizados y con una estrucura dividida en train (datos para entrenamiento) y test (datos para pruebas) con los cuales se entrena o prueba un algortimo de aprendizaje. El dataset que se construyo lleva por nombre OVERLAECOBO y cuenta con 3 tipos imagenes (Figura \ref{fig:Datos a usar en el proyecto}) geograficamente correspondidas y de distintos niveles de zoom o acercamiento satelital.  
+ Las imagenes del dataset fueron obtenidas usando el software Ruso SASplanet\footnote[14]{Disponible en http://www.sasgis.org/} y los archivos kml diseñados. Usando  \textit{Bing maps} como fuente de imagenes satelitales, fuente ofrecida en SASplanet, se tomo el mapa de Bogota y se traso una linea que dividiera la ciudad en dos partes, de tal manera que en ambas hubiera informacion de todos los estratos. Una parte se escogio para train y otra la para test, como se muestra en la sigueinte imagen.
  
- Gracias a la politica de datos abiertos{} es psobile encontrar archivos kml o shp en distintas paginas web del gobierno, sin embargo no todos los departamentos o ciudades cuentan con la misma cantidad de datos disponibles y menos con la información que se requiere en dicho formato. El unico portal web donde se encontro una buena cantidad de informacion, incluyendo la del estrto social es en el portal de mapas de Bogota, disponible en
+ \figura{img/train-test.png}{Division de Train y Test}{0.3}{Imagen Propia}
  
+  Se extrayeron imagenes de 7 Zooms diferentes,  del 13 al 20,  Cada nivel de zoom cuenta con imagenes satelitales, de informacion extra y de estrato social. Cada una de estas dividida en train y test. OVERLAECOBO cuenta con la siguente estructura.
  
- \section{DATASET} 
+ \figura{img/estructura.png}{Estrucutra OVERLAECOBO}{0.2}{Imagen Propia}
+ 
+ OVERLAECOBO es el dataset con el que se realizaron las pruebas en busca de la mejor manera de detectar el estrato social.
+ 
+%% ==========================================
+%% REDES NEURONALES
+%% ==========================================
+
  \section{REDES NEURONALES}
  \section{DETECCION DEL ESTRATO SOCIAL}
  \section{RESULTADOS}
@@ -208,8 +247,7 @@ Hay que mencionar que el desarrollo del proyecto esta documentado en el sigueint
 \newpage\chapter{CONCLUSIONES} 
     
     
-   Una vez se tienen actualizadas las maquinas se procede a enlazarlos en una red LAN creada por el Switch 3Com y gestionada por el DSI (División de Sistemas de Información) de la Universidad Industrial de Santander, para este caso en especifico por ser el grupo Conuss un grupo de investigación en cloud computing, servidores y servicios, se le fue asignado un total de tres VLANS de tal manera que puedan ser aprovechadas por los administradores para la configuración, gestión y administración de la red interna de Conuss.
-    A continuación se da a conocer las tres VLANS y su respectivo uso.
+   
     
         \begin{table}[H]
 		\begin{minipage}{1\textwidth}
@@ -230,17 +268,7 @@ Hay que mencionar que el desarrollo del proyecto esta documentado en el sigueint
 		\end{minipage}
 	\end{table}
     
-    La topología de red de Conuss se puede observar en la \textbf{Figura 3}.
-    
-	\figura{img/InfraConuss.png}{Topología de Red GID-Conuss}{0.5}{\textbf{Fuente}: \cite[][]{infraconuss} }
- 
-     La instalación de los módulos de OpenStack depende del entorno al que se quiera adecuar la infraestructura, para el caso del GID-Conuss basta con la configuración base, la cual incluye los siguientes módulos presentes en las \textbf{FIGURAS 4 y 5}.
-    
- 
-    
-    \figura{img/DiagLogicOSConuss.png}{Modelo Lógico}{0.9}{\textbf{Fuente}: \cite[][]{propia} }
-    
-        
+  
     Las interfaces de los nodos de OpenStack están definidas como en la \textbf{TABLA 7}.
    
    \begin{table}[H]
@@ -263,30 +291,7 @@ Hay que mencionar que el desarrollo del proyecto esta documentado en el sigueint
 	\end{table}
     
     
-    La interfaz proveedora de define de la siguiente manera en Ubuntu Server 16.04 LTS:
-    
-    auto INTERFACE\_NAME \newline
-    iface  INTERFACE\_NAME inet manual\newline
-    up ip link set dev $IFACE up\newline
-    down ip link set dev $IFACE down
-    
-    \figura{img/etcinterfaces.PNG}{Interfaces de Lactoria}{0.7}{\textbf{Fuente}: \cite[][]{propia} }
-    
-    \figura{img/etchost.PNG}{Hosts}{0.7}{\textbf{Fuente}: \cite[][]{propia} }
-    
-   
-    
-   
-    
-    
   
-    
-    
-  
-  
-    
-  
-    
        
   
     
@@ -327,32 +332,12 @@ Hay que mencionar que el desarrollo del proyecto esta documentado en el sigueint
      
     \newpage\chapter{RECOMENDACIONES Y TRABAJO FUTURO}
     
-    - La tecnología de OpenStack está constantemente en desarrollo, por ende es posible que las configuraciones de alta disponibilidad no sean las más optimas en el momento de llevarse a producción si se utiliza una versión demasiado reciente como lo es Queens, sin embargo, el soporte que se le da a cada versión es lo suficientemente a largo plazo, como para ir aplicando pequeñas actualizaciones a lo largo de los proyectos de grado realizados en el grupo. Cabe destacar que la experiencia es lo que más cuenta, pues se debe trabajar desde lo más básico que es el entendimiento de la función de los procesos en un Sistema Operativo, atravesando la complejidad de las redes, y finalizando indefinidamente con el extenso mundo del Cloud Computing de hoy en día.
-    
-    - Utilizar un cluster de storage es conveniente en la alta disponibilidad, para ello se requieren más servidores, en los cuales al instalar el sistema operativo otorgue un formato a los discos que permita el uso del protocolo iSCSI. La recomendación viene dada a utilizar el software Ceph RADOS, pues permite tener Shared File System, Object Storage y Block storage como servicio.
-    
-    - Investigar acerca de los bugs comunes que impiden que la visualización del entorno de OpenStack a través de su Dashboard (Horizon) sea fluida en navegadores como Google Chrome, pues en navegadores Firefox va demasiado bien.
-    
-    -Cambiar la distribución Ubuntu Server a una distribución como Red Hat o CentOS ya que la mayoría de los desarrollos de aplicaciones en la nube estan destinadas para estas distribuciones que son mas enfatizadas para servidores y servicios.
-    
-    -Investigar y aplicar herramientas de implementación y configuración como Ansible, Chef y Puppet que permitan el despliegue de aplicaciones y servicios de forma más sencilla.
-    
-    
-    -Continuar investigando sobre el uso de contenedores en el mundo del Cloud Computing ya que es una tecnología que está revolucionando la ejecución de aplicaciones.
     
     
     
     \newpage\chapter{LIMITACIONES Y PROBLEMAS} 
     
-    A pesar de las limitaciones listadas  a continuación, el esfuerzo por hacer realidad éste proyecto quiere inspirar a la inversión en la nube CloudEISI para ofrecer un mejor servicio en el futuro.
     
-    -La no independencia de la Red interna de la UIS fue un problema muy agobiante,  ya que tuvimos que acoplarnos a los constantes cambios de red que sucedieron con las modificación de la red en la Universidad, el cambio de  las IP privadas clase C  a clase A, afectó de una manera trágica los servicios prestados en la nube de aquel momento, pues sitios web como el aula virtual Meiweb, se vieron inutilizables por sus múltiples conexiones previamente establecidas para su alta disponibilidad, además de otras maquinas virtuales asignadas a estudiantes de proyecto que resultaron incomunicadas. También debemos tener en cuenta, que si por algún motivo falla la conexión del UIS-ISP, queda sin acceso la nube CloudEISI desde el exterior.
-    
-    -Velocidad de transferencia interna. Los cables de red destinados a la conexión interna de la nube son cables Ethernet, es decir, su velocidad de transferencia tiende a rozar los 100 Mbps, aunque actualmente no sea un factor demasiado limitante por el pequeño tamaño de la nube, en un futuro será inevitable tener molestias debido a su naturaleza escalable.
-    
-    -Cortes de luz. Actualmente la nube está lejos de ser considerado un datacenter, pues sus instalaciones físicas no están adaptadas para este fin, sin embargo se espera que haya un cambio en las infraestructura física del grupo que permita escalar de una mejor forma los servicios prestados.
-    
-    -Las nuevas políticas de la red de la Universidad que ahora limita a 3 el número de direcciones MAC por puerto. A pesar de que el grupo actualmente cuenta con un numero pequeño de usuarios, esta limitación es muy grave para una infraestructura de nube que provee servicios de maquinas virtuales ya que se espera que con el tiempo, tanto el número de usuarios como el número de servicios aumente.
     
     
 %% ==============================
@@ -363,121 +348,29 @@ Hay que mencionar que el desarrollo del proyecto esta documentado en el sigueint
     
 \newpage\chapter*{BIBLIOGRAFIA}
 
-DANE. Estratificación - Preguntas frecuentes. [en línea]. 
-<\url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf}> [citado en 25 de Mayo de 2018]
+DANE. Estratificación - Preguntas frecuentes. [en línea]. <\url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf}> [citado en 25 de Mayo de 2018]
     
+DANE. Metodología de estratificación. [en línea].
+ <\url{http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica}> [citado en 25 de Mayo de 2018]
 
-     Anicas, M. (2015). How To Install Nagios 4 and Monitor Your Servers on Ubuntu 14.04 DigitalOcean. [en línea] Digitalocean.com. Recuperado de: https://www.digitalocean.co\ m/
-community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-0\ 4 [Último acceso 13 Febrero. 2018].
+DANE. Procedimiento del cálculo. [en línea].
+ <\url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf}>.
+ [citado en 25 de Mayo de 2018].
+ 
+NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Linea]. <\url{http://sustain.stanford.edu/predicting-poverty/}> [citado en 25 de Mayo de 2018].
 
-Brooks, J. (2017). Migrating Kubernetes on Fedora Atomic Host 27. [en línea] Projectatomic.io. Recuperado de: https://www.projectatomic.io/blog/2017/11/migrating-kubernetes-on-fedora-atomic-host-27/ [Último acceso 1 Marzo. 2018].
+NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en linea]. <\url{https://github.com/nealjean/predicting-poverty}> [citado en 25 de Mayo de 2018]
 
-Butow, T. (2018). How to Create a Kubernetes Cluster on Ubuntu 16.04 with kudeadm and Weave Net | Gremlin Community. [en línea] Gremlin.com. Recuperado de: https://www.gremlin.com/community/tutorials/how-to-create-a-kubernetes-cluster-on-ubuntu-16-04-with-kudeadm-and-weave-net/ [Último acceso 6 Abril. 2018].
+NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016
 
-Cephalin, Ranieuwe, Kriscrider and Robvanuden (2017). Use a custom Docker image for Web App for Containers - Azure. [en línea] Docs.microsoft.com. Recuperado de: https://docs.microsoft.com/en-us/azure/app-service/containers/tutorial-custom-docker-image [Último acceso 1 May 2018].
+EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en linea]. <\url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx}> [citado en 25 de Mayo de 2018]
 
-Chekin, P. (2017). Multi-container pods and container communication in Kubernetes. [en línea] Mirantis | Pure Play Open Cloud. Recuperado de: https://www.mirantis.com/b\ log/multi-container-pods-and-container-communication-in-kubernetes/ [Último acceso 8 May 2018].
+GONZÁLEZ Vanessa. ¿Qué es la estratificación social? [en línea]. <\url{https://www.lifeder.com/estratificacion-social/}> [citado en 31 de Mayo del 2018].
 
+IBM. El modelo de redes neuronales [en línea]. <\url{https://www.ibm.com/support/knowledgecenter/es/SS3RA7_18.0.0/modeler_mainhelp_client_ddita/components/neuralnet/neuralnet_model.html> [citado en 31 de Mayo de 2018]}
 
-Cloud, G. (2018). Deploying a containerized web application  |  Kubernetes Engine Tutorials  |  Google Cloud. [en línea] Google Cloud. Recuperado de: https://cloud.google.com/\ kubernetes-engine/docs/tutorials/hello-app [Último acceso 1 Mayo 2018].
+MATHWORKS. Aprendizaje profundo [en línea]. <\url{https://es.mathworks.com/discovery/deep-learning.html}> [citado en 31 de Mayo de 2018]
 
-
-Cobos, A. and Nebrera, P. (2014). Despliegue de arquitectura cloud basada en OpenStack y su integración con Chef sobre CentOS. [en línea] Bibing.us.es. Recuperado de: http://b\ ibing.us.es/proyectos/abreproy/90140/fichero/Memoria.pdf [Último acceso 10 Marzo. 2018].
-
-CoreOS (2017). CoreOS. [en línea] Coreos.com. Recuperado de: https://coreos.com/os/\ docs/latest/booting-on-openstack.html [Último acceso 28 Marzo. 2018].
-
-
-Dell (2015). Updating Dell PowerEdge servers via bootable media / ISO | Dell UK. [en línea] Dell.com. Recuperado de: http://www.dell.com/support/article/co/es/cobsdt1/sln\ 296511/updating-dell-poweredge-servers-via-bootable-media-iso?lang=en\#2 [Último acceso 18 Febrero. 2018].
-
-Dev, p. (2017). Introducción y ejemplo de cluster de contenedores con Docker Swarm. [en línea] Picodotdev.github.io. Recuperado de: https://picodotdev.github.io/blog-bitix/201\ 7/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/ [Último acceso 1 Marzo. 2018].
-
-
-Docs, D. (2018). Get Docker CE for Ubuntu. [en línea] Docker Documentation. Recuperado de: https://docs.docker.com/install/linux/docker-ce/ubuntu/ [Último acceso 7 May 2018].
-
-Docs, O. (2017). Gerrit Code Review. [en línea] Review.openstack.org. Recuperado de : https://review.openstack.org/\#/c/105660/10/specs/juno/dhcp-relay.rst [Último acceso 25 Jan. 2018].
-
-Docs, D. (2017). OpenStack. [en línea] Docker Documentation. Recuperado de: https://d\ ocs.docker.com/machine/drivers/openstack/ [Último acceso 4 Enero. 2018].
-
-Docs, O. (2017). OpenStack Docs: Developer Quick-Start. [en línea] Docs.openstack.org. Recuperado de: https://docs.openstack.org/magnum/latest/contributor/quickstart.html [Último acceso 27 Mar. 2018].
-
-Docs, O. (2017). OpenStack Docs: Launch an instance. [en línea] Docs.openstack.org. Recuperado de: https://docs.openstack.org/magnum/latest/install/launch-instance.ht\ ml [Último acceso 7 Febrero. 2018].
-
-Docs.openstack.org. (2018). OpenStack Docs: Install OpenStack services. [en línea] Recuperado de: https://docs.openstack.org/install-guide/openstack-services.htmlminimal-
-deployment [Último acceso 28 Marzo. 2018].
-
-Docs.openstack.org. (2018). OpenStack Docs: OpenStack Installation Guide. [en línea] Recuperado de: https://docs.openstack.org/install-guide/ [Último acceso 28 Marzo. 2018].
-
-Docs.openstack.org. (2018). OpenStack Docs: OpenStack Installation Guide Pike. [en línea] Recuperado de: https://docs.openstack.org/pike/ [Último acceso 16 MAyo. 2018].
-
-Ellison, Joseph. (2009). New and Improved check\_mem.pl Nagios Plugin  [en línea] Sysadminsjourney.com. Recuperado de: http://sysadminsjourney.com/content/2009/06/0\ 4-\/new-and-improved-checkmempl-nagios-plugin/ [Último acceso 3 Marzo. 2018].    
-
-El Despistado. (2017). Nagios Core 4 + PNP4Nagios. Instalación y configuración desde fuentes en Debian 7 (wheezy). - El Despistado.. [en línea] Recuperado de: http://www.el\ despistado.com/nagios-core-4-pnp4nagios-instalacion-configuracion-desde-fuentes-debia\ n-7-wheezy/ [Último acceso 13 Mayo 2018].
-
-Fedora (n.d.). Index of /pub/Mirrors/alt.fedoraproject.org/atomic/stable. [en línea] Ftp-stud.hs-esslingen.de. Recuperado de: https://ftp-stud.hs-esslingen.de/pub/Mirrors/\ alt.fedoraproject.org/atomic/stable/ [Último acceso 19 Jan. 2018].
-
-Galstad, E. (2017). NRPE DOCUMENTATION. [en línea] Assets.nagios.com. Recuperado de: https://assets.nagios.com/downloads/nagioscore/docs/nrpe/NRPE.pdf [Último acceso 16 Mayo 2018].
-
-Geekk, G. (2017). Inter VLAN Routing by Layer 3 Switch - GeeksforGeeks. [en línea] GeeksforGeeks. Recuperado de: https://www.geeksforgeeks.org/inter-vlan-routing-layer-3-switch/ [Último acceso 9 Abril. 2018].
-
-HPE-3com (2008). Command Reference Guide. [En línea] Recuperado de: http://h20628\ .www2.hp.com/km-ext/kmcsdirect/emr\_na-c02579470-1.pdf [Último acceso 25 Abril. 201\ 8].
-
-Kalsin, V. (2017). How To Install Nagios 4 and Monitor Your Servers on Ubuntu 16.04  DigitalOcean. [en línea] Digitalocean.com. Recuperado de: https://www.digitalocean.co\ m/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-16-04 [Último acceso 7 Febrero. 2018].
-
-Kubernetes.io. (2017). Installing kubeadm. [en línea] Recuperado de: https://kubernetes.\ io/docs/tasks/tools/install-kubeadm/ [Último acceso 19 Febrero. 2018].
-
-Kumar, P. and Kumari, M. (2017). Containers in OpenStack. [en línea] Packtpub.com. Recuperado de: https://www.packtpub.com/mapt/book/virtualization\_and\_cloud/97\ 81788394383 [Último acceso 16 Enero. 2018].
-
-Loges (2018). Steps to Install Kubernetes Dashboard - Assistanz. [en línea] Assistanz. Recuperado de: https://www.assistanz.com/steps-to-install-kubernetes-dashboard/ [Último acceso 24 Abril. 2018].
-
-Lopez, B. (2017). Notificaciones de Nagios vía Telegram - Bosco López. [en línea] Bosco López. Recuperado de: https://www.boscolopez.com/notificaciones-de-nagios-via-telegram/ [Último acceso 10 Mayo 2018].
-
-
-Lu, H., Teng, Q., Qiao, E. and Kumari, M. (2018). Magnum is not the OpenStack Container Service? How about Zun. [en línea] Openstack.org. Recuperado de: https://www.o\ penstack.org/assets/presentation-media/zunpresentationbarcelonasummit-3.pdf [Últim\ o acceso 1 Mayo 2018].
-
-Mas, O. (2018). Kubernetes: Heapster Influx Grafana - El Blog de Jorge de la Cruz. [en línea] El Blog de Jorge de la Cruz. Recuperado de: https://www.jorgedelacruz.es/2018/0\ 1/23/kubernetes-heapster-influx-grafana/ [Último acceso 5 Mayo 2018].
-
-Moose (2017). \begin{CJK*}{UTF8}{gbsn}安装Openstack ZUN模块\end{CJK*}. [en línea] Pystack.org. Recuperado de: http://p\ ystack.org/2017/10/14/install-openstack-zun/ [Último acceso 6 Abril. 2018].
-
-OpenStack. (2018). OpenStack - Kubernetes Integration, What Is Left?. [en línea] Recuperado de: https://www.openstack.org/videos/boston-2017/openstack-kubernetes-inte\ gration-what-is-left [Último acceso 16 Mayo 2018].
-
-Pasandideh, M. (2018). 6. Weave UI - Developer Wiki - Confluence. [en línea] Wiki.onap.org. Recuperado de: https://wiki.onap.org/display/DW/6.+Weave+UI [Último acceso 5 Mayo 2018].
-
-People, F. (2017). Index of /groups/magnum. [en línea] Fedorapeople.org. Recuperado de: https://fedorapeople.org/groups/magnum/ [Último acceso 10 Febrero. 2018].
-
-Rh-atomix-bot, l. (2018). projectatomic/atomic-system-containers. [en línea] GitHub. Recuperado de: https://github.com/projectatomic/atomic-system-containers [Último acceso 3 Abril. 2018].
-
-Rocy, l. (2017). projectatomic/atomic-system-containers. [en línea] GitHub. Recuperado de: https://github.com/projectatomic/atomic-system-containers [Último acceso 8 Febrero. 2018].
-
-Saikatgithub (2017). Not able to access dashboard from external browser · Issue \#2034 · kubernetes/dashboard. [en línea] GitHub. Recuperado de: https://github.com/kubern\ etes/dashboard/issues/2034 [Último acceso 2 May 2018].
-
-Sayalilunkad (2017). troubleshooting-diff. [en línea] Gist. Recuperado de: https://gist.git\ hub.com/sayalilunkad/17913a0bc256b81d2e670fedd9db67df [Último acceso 29 Abril. 20\ 18].
-
-Sjfbjs (2018). \begin{CJK*}{UTF8}{gbsn}使用kubeadm部署kubernetes集群\end{CJK*}. [en línea] blog.51cto.com. Recuperado de: http://blog.51cto.com/11886896/2072527 [Último acceso 3 Mayo 2018].
-
-Stangl, D. (2018). 5. Kubernetes UI - Developer Wiki - Confluence. [en línea] Wiki.onap.org. Recuperado de: https://wiki.onap.org/display/DW/5.+Kubernetes+UI [Último acceso 25 Abril. 2018].
-
-
-Support.nagios.com. (2018). Nagios Core - Installing Nagios Core From Source. [en línea] Recuperado de: https://support.nagios.com/kb/article/nagios-core-installing-nagi\ os-core-from-source-96.html\#Ubuntu [Último acceso 16 Mayo 2018].
-
-The Network Journal. (2012). Nagios: It appears as though you do not have permission to view information for any of the hosts you requested. [en línea] Recuperado de: https://cyruslab.net/2012/10/19/nagios-it-appears-as-though-you-do-not-have-permission-to-view-information-for-any-of-the-hosts-you-requested/ [Último acceso 9 M\ arzo 2018].
-
-The Network Journal. (2018). Nagios: It appears as though you do not have permission to view information for any of the hosts you requested. [en línea] Recuperado de: https://cyruslab.net/2012/10/19/nagios-it-appears-as-though-you-do-not-have-permission-to-view-information-for-any-of-the-hosts-you-requested/ [Último acceso 9 En\ ero 2018].
-
-Timme, F. (2013). Setting Up A High-Availability Load Balancer (With Failover and Session Support) With HAProxy/Heartbeat On Debian Etch. [en línea] Howtoforge.com. Recuperado de: https://www.howtoforge.com/high-availability-load-balancer-haproxy-heartbeat-debian-etch [Último acceso 2 Febrero. 2018].
-
-World, S. (2018). Ubuntu 16.04 LTS : OpenStack Pike : Configure Cinder(Control Node) : Server World. [en línea] Server-world.info. Recuperado de: https://www.server-world.info/en/note?os=Ubuntu\_16.04\&p=openstack\_pike2\&f=1 [Último acceso 16 Mayo 2018].
-
-
-
-
-
-
-
-
-
-
-
-    
-    
+GOBIERNO DIGITAL. Datos Abiertos [en linea] <\url{http://estrategia.gobiernoenlinea.gov.co/623/w3-article-9407.html}> [citado en 30 de Mayo de 2018]
 
 \end{document}

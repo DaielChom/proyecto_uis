@@ -1977,10 +1977,6 @@
     <bcf:datasource type="file" datatype="bibtex">Anexos/LATEX/source/bib/referenciasejemplo.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">infraconuss</bcf:citekey>
-    <bcf:citekey order="2">propia</bcf:citekey>
-    <bcf:citekey order="3">propia</bcf:citekey>
-    <bcf:citekey order="4">propia</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

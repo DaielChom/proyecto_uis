@@ -21,18 +21,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}DESARROLLO DEL PROYECTO}{17}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}FUENTES DE DATOS}{18}{section.3.1}
+\contentsline {section}{\numberline {3.1}FUENTES DE DATOS}{19}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}DATASET}{19}{section.3.2}
+\contentsline {section}{\numberline {3.2}DATASET}{20}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}REDES NEURONALES}{19}{section.3.3}
+\contentsline {section}{\numberline {3.3}REDES NEURONALES}{21}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}DETECCION DEL ESTRATO SOCIAL}{19}{section.3.4}
+\contentsline {section}{\numberline {3.4}DETECCION DEL ESTRATO SOCIAL}{21}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}RESULTADOS}{19}{section.3.5}
+\contentsline {section}{\numberline {3.5}RESULTADOS}{21}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}CONCLUSIONES}{20}{chapter.4}
+\contentsline {chapter}{\numberline {4}CONCLUSIONES}{22}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}RECOMENDACIONES Y TRABAJO FUTURO}{24}{chapter.5}
+\contentsline {chapter}{\numberline {5}RECOMENDACIONES Y TRABAJO FUTURO}{23}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}LIMITACIONES Y PROBLEMAS}{25}{chapter.6}
+\contentsline {chapter}{\numberline {6}LIMITACIONES Y PROBLEMAS}{24}{chapter.6}
