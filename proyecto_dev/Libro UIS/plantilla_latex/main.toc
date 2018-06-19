@@ -27,12 +27,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}REDES NEURONALES}{21}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}DETECCION DEL ESTRATO SOCIAL}{21}{section.3.4}
+\contentsline {section}{\numberline {3.4}DETECCION DEL ESTRATO SOCIAL}{23}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}RESULTADOS}{21}{section.3.5}
+\contentsline {section}{\numberline {3.5}LA MEJOR CONFIGURACION}{23}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}CONCLUSIONES}{22}{chapter.4}
+\contentsline {chapter}{\numberline {4}CONCLUSIONES}{24}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}RECOMENDACIONES Y TRABAJO FUTURO}{23}{chapter.5}
+\contentsline {chapter}{\numberline {5}RECOMENDACIONES Y TRABAJO FUTURO}{25}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}LIMITACIONES Y PROBLEMAS}{24}{chapter.6}
+\contentsline {chapter}{\numberline {6}LIMITACIONES Y PROBLEMAS}{26}{chapter.6}

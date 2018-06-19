@@ -89,65 +89,56 @@
 %% =======================
 %% INTRODUCCION
 %% =======================
+\newpage\chapter*{INTRODUCCION}
+
+La medición del nivel económico de una zona urbana, actualmente, conlleva un trabajo extenso, como lo expresa el DANE, “en el caso de las revisiones generales urbanas, así como en la estratificación rural se apoya en censos de vivienda” \footnote{DANE. Estratificación - Preguntas frecuentes. [en línea]. <\url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf}> [citado en 25 de mayo de 2018]}. Es decir, se requiere la elaboración de una encuesta de gran tamaño, la cual consume mucho tiempo y personal. Posteriormente, si la encuesta no se realizó usando software de recolección de datos, es necesario realizar su tipeo, lo cual también requiere tiempo. Luego, como lo indica el DANE \footnote{DANE. Metodología de estratificación. [en línea]. <\url{http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica}> [citado en 25 de mayo de 2018].} \footnote{DANE. Procedimiento del cálculo. [en línea]. <\url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf}> [citado en 25 de mayo de 2018].}, el cálculo final del estrato se realiza mediante modelos estadísticos y económicos especialmente calibrados para esta tarea.
     
-	\newpage\chapter*{INTRODUCCION}
-    La medición del nivel económico de una zona urbana, actualmente, conlleva un trabajo extenso, como lo expresa el DANE, “en el caso de las revisiones generales urbanas, así como en la estratificación rural se apoya en censos de vivienda”    
-    \footnote{DANE. Estratificación - Preguntas frecuentes. [en línea]. 
-    		<\url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf}> [citado en 25 de Mayo de 2018]}.
-    Es decir, se requiere la elaboración de una encuesta de gran tamaño, la cual consume mucho tiempo y personal. Posteriormente, si la encuesta no se realizó usando software de recolección de datos, es necesario realizar su tipeo, lo cual tambien requiere tiempo. Luego, como lo indica el DANE
-    \footnote{DANE. Metodología de estratificación. [en línea].
-    	 <\url{http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica}> [citado en 25 de Mayo de 2018].}
-    \footnote{DANE. Procedimiento del cálculo. [en línea]. <\url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf}> [citado en 25 de Mayo de 2018].}, el cálculo final del estrato se realiza mediante modelos estadísticos y económicos especialmente calibrados para esta tarea.
+En este contexto surgen varias interrogantes respecto a la capacidad de actualización de esta metodología: ¿Qué sucede cuando una ciudad tiene una alta tasa de desarrollo urbano?, ¿Cómo mantiene el gobierno actualizada la información de los estratos ante estas circunstancias?, ¿Que tan efectiva es la metodología actual ante estos casos de alto desarrollo urbano?
+   
+Por tanto, el objetivo de este trabajo consiste en seleccionar redes neuronales convolucionales y evaluar su capacidad para determinar automáticamente el estrato socioeconómico usando imágenes satelitales e información adicional (información catastral, presencia y consumo de servicios, etc.), con el fin de presentar una alternativa que haga frente a las inquietudes planteadas.
     
-    En este contexto surgen varias interrogantes respecto a la capacidad de actualización de esta metodología: ¿Qué sucede cuando una ciudad tiene una alta tasa de desarrollo urbano?, ¿Cómo mantiene el gobierno actualizada la información de los estratos ante éstas circunstancias?, ¿Que tan efectiva es la metodología actual ante estos casos de alto desarrollo urbano?
-    
-    Por tanto, el objetivo de este trabajo consiste en seleccionar redes neuronales convolucionales y evaluar su capacidad para determinar automáticamente el estrato socioeconómico usando imágenes satelitales e información adicional (información catastral, presencia y consumo de servicios, etc), con el fin de presentar una alternativa que haga frente a las inquietudes planteadas.
-    
-     No es la primera vez que se realiza una predicción del nivel socioeconomico utilizando tecincas de machine learning o deep learning. Neal Jean en colaboración con varias personas e instituciones realizó un modelo
-     \footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Linea]. <\url{http://sustain.stanford.edu/predicting-poverty/}> [citado en 25 de Mayo de 2018]}
-     \footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en linea]. <\url{https://github.com/nealjean/predicting-poverty}> [citado en 25 de Mayo de 2018] }
-     \footnote{NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016} capaz de predecir el nivel de pobreza en cinco países de África, usando imágenes satelitales y datos extra para dicha tarea. En Colombia, más específicamente en Medellín, también se han realizado modelos
-     \footnote{EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en linea]. <\url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx}> [citado en 25 de Mayo de 2018] } para determinar niveles socioeconomicos de una zona urbana. En la Universidad EAFIT, usando tecnicas de Machine Learning e imagenes satelitales logran medir los indices de pobreza de dicha ciudad.
+No es la primera vez que se realiza una predicción del nivel socioeconómico utilizando técnicas de machine learning o Deep learning. Neal Jean en colaboración con varias personas e instituciones realizó un modelo \footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Línea]. <\url{http://sustain.stanford.edu/predicting-poverty/}> [citado en 25 de mayo de 2018]} \footnote{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en línea]. <\url{https://github.com/nealjean/predicting-poverty}> [citado en 25 de Mayo de 2018]} \footnote{NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016} capaz de predecir el nivel de pobreza en cinco países de África, usando imágenes satelitales y datos extra para dicha tarea. En Colombia, más específicamente en Medellín, también se han realizado modelos \footnote{EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en línea]. <\url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx}> [citado en 25 de mayo de 2018]} para determinar niveles socioeconómicos de una zona urbana. En la Universidad EAFIT, usando técnicas de Machine Learning e imágenes satelitales logran medir los índices de pobreza de dicha ciudad.
     
     
-    \addcontentsline{toc}{chapter}{INTRODUCCION}
+\addcontentsline{toc}{chapter}{INTRODUCCION}
     
 %% =================================
 %% OBJETIVOS
 %% =================================
     
+\newpage\chapter{OBJETIVOS} 
 
-    \newpage\chapter{OBJETIVOS} 
 	\section{OBJETIVO GENERAL}
-	\begin{enumerate}
-	\item Seleccionar y evaluar redes convolucionales para la determinación del nivel socio económico urbano mediante el uso de imágenes satelitales e información adicional.
-	\end{enumerate}
-    \section{OBJETIVOS ESPECIFICOS}
-    \begin{enumerate}
-      \item Identificar fuentes de datos de imágenes satelitales e información adicional.
-      \item Diseñar y construir datasets integrando los datos obtenidos de las fuentes identificadas.
-      \item Seleccionar entre distintas arquitecturas de redes neuronales convolucionales existentes en la literatura y repositorios tecnológicos    .
-      \item Entrenar las redes convolucionales probando configuraciones de datasets.
-      \item Evaluar el desempeño de las redes convolucionales con el uso de los distintos dataset. 
-      \item Elegir la mejor configuración tanto de red convolucional como de conjunto de datos, teniendo en cuenta el desempeño obtenido.   
-    \end{enumerate}
+		\begin{enumerate}
+		\item Seleccionar y evaluar redes convolucionales para la determinación del nivel socio económico urbano mediante el uso de imágenes satelitales e información adicional.
+		\end{enumerate}
+
+	\section{OBJETIVOS ESPECIFICOS}
+	    \begin{enumerate}
+	      \item Identificar fuentes de datos de imágenes satelitales e información adicional.
+	      \item Diseñar y construir datasets integrando los datos obtenidos de las fuentes identificadas.
+	      \item Seleccionar entre distintas arquitecturas de redes neuronales convolucionales existentes en la literatura y repositorios tecnológicos    .
+	      \item Entrenar las redes convolucionales probando configuraciones de datasets.
+	      \item Evaluar el desempeño de las redes convolucionales con el uso de los distintos dataset. 
+	      \item Elegir la mejor configuración tanto de red convolucional como de conjunto de datos, teniendo en cuenta el desempeño obtenido.   
+	    \end{enumerate}
 
 %% =========================
 %% 2. MARCO TEORICO
 %% =========================
-    \newpage\chapter{MARCO TEÓRICO}    
-    
+
+\newpage\chapter{MARCO TEÓRICO}    
      
-    %% =========================
+	%% =========================
     %% 2.1 ESTRATIFICACION SOCIAL
     %% =========================
     
 	\section{ESTRATIFICACIÓN SOCIAL}
     
     “La estratificación social es un fenómeno presente en todas las sociedades. Los miembros se clasifican a sí mismos y a los otros basándose en jerarquías que vienen dadas por diversos factores”
-    \footnote[8]{GONZÁLEZ Vanessa. ¿Qué es la estratificación social? [en línea]. <\url{https://www.lifeder.com/estratificacion-social/}> [citado en 31 de Mayo del 2018].} y no es algo nuevo, la antigua Mesopotamia contaba con una división social cuyos miembros iban desde el rey y su familia, en el estrato más alto, hasta los esclavos en el más bajo.
+    \footnote[8]{GONZÁLEZ Vanessa. ¿Qué es la estratificación social? [en línea]. <\url{https://www.lifeder.com/estratificacion-social/}> [citado en 31 de mayo del 2018].} y no es algo nuevo, la antigua Mesopotamia contaba con una división social cuyos miembros iban desde el rey y su familia, en el estrato más alto, hasta los esclavos en el más bajo.
     
-    Más que una simple división, la estratificación representa la desigualdad existente en una sociedad. Cada uno de los estratos, niveles o grupos sociales indica la capacidad de acceso a recursos, oportunidades, bienes y servicios por parte de las personas pertenecientes a cada nivel. Dicha estratificación es necesaria para la tarea que llevan acabo los gobiernos en contra de la desigualdad, dado que se suelen crear programas que beneficien a las personas de los niveles más bajos y cobrar mayores impuestos a las personas de los niveles más altos.
+    Más que una simple división, la estratificación representa la desigualdad existente en una sociedad. Cada uno de los estratos, niveles o grupos sociales indica la capacidad de acceso a recursos, oportunidades, bienes y servicios por parte de las personas pertenecientes a cada nivel. Dicha estratificación es necesaria para la tarea que llevan a cabo los gobiernos en contra de la desigualdad, dado que se suelen crear programas que beneficien a las personas de los niveles más bajos y cobrar mayores impuestos a las personas de los niveles más altos.
     
     En el caso de Colombia, se maneja una estratificación de 6 niveles.
 
@@ -157,7 +148,7 @@
 	
 	\leftskip0em
 	\rightskip0em
-    Dicha estratificación, definir el estrato al que pertenece una vivienda, no es tarea fácil. Se requiere gran cantidad de variables por cada una, como las caracteristicas de la zona en la que se ubica, el tamaño, materiales en que fue fabricada, entre otras. Lo que conlleva a una tarea de recolección de datos bastante amplia.
+    Dicha estratificación no es tarea fácil. Se requiere gran cantidad de variables por cada vivienda, como las características de la zona en la que se ubica, el tamaño, materiales en que fue fabricada, entre otras. Lo que conlleva a una tarea de recolección de datos bastante amplia.
     
     %% ================================
     %% MACHINE LEARNING
@@ -172,36 +163,35 @@
 
     \leftskip0em
     \rightskip0em
-    Se han llevado muchos desarrollos y avances en distintos campos usando técnicas de machine learning. Uno de las más recientes y populares fue la máquina de Google AlphaGo que venció al mejor jugador a nivel mundial de GO! Ke Jie. 
-    Wikipedia usa técnicas de machine learning para detectar saboteos en su enciclopedia. Otros usos de machine learning consisten en la detección de objetos, patrones o enfermedades incluso predicción de tráfico urbano y precios de bienes.
+    Se han llevado muchos desarrollos y avances en distintos campos usando técnicas de machine learning. Uno de las más recientes y populares fue la máquina de Google AlphaGo que venció al mejor jugador a nivel mundial de GO, Ke Jie. Wikipedia usa técnicas de machine learning para detectar saboteos en su enciclopedia. Otros usos de machine learning consisten en la detección de objetos, patrones o enfermedades incluso predicción de tráfico urbano y precios de bienes.
     
-    Aunque en el fondo, independientemente del campo en el que se trabaje, las técnicas de machine learning son las mismas, existen tareas muchos más complejos que otras. Por ejemplo, hoy en día, es mucho más fácil predecir el valor de una casa a predecir el valor del dólar o predecir terremotos. Esta dificultad se da debido a que, para cada tarea que se realice se deben “ajustar” los datos y los algortimos para que estos aprendan y puedan realizar predicciónes o detecciónes con un nivel de tolerancia aceptable.
+    Aunque en el fondo, independientemente del campo en el que se trabaje, las técnicas de machine learning son las mismas, existen tareas mucho más complejas que otras. Por ejemplo, hoy en día, es mucho más fácil predecir el valor de una casa que predecir el valor del dólar. Esta dificultad se debe a que cada tarea requiere “ajustar” los datos y los algoritmos para que se puedan realizar predicciones o detecciones con un nivel de tolerancia aceptable.
     
-    \subsection{REDES NEURONALES} es una de las técnicas o algortimos de machine learning que se pueden emplear en las tareas de predicción o detección. “Una red neuronal es un modelo simplificado que emula el modo en que el cerebro humano procesa la información: Funciona simultaneando un número elevado de unidades de procesamiento interconectadas que parecen versiones abstractas de neuronas”\footnote[11]{IBM. El modelo de redes neuronales [en línea]. <\url{https://www.ibm.com/support/knowledgecenter/es/SS3RA7_18.0.0/modeler_mainhelp_client_ddita/components/neuralnet/neuralnet_model.html> [citado en 31 de Mayo de 2018]} }
+    \subsection{REDES NEURONALES} es una de las técnicas o algoritmos de machine learning que se pueden emplear en las tareas de predicción o detección. “Una red neuronal es un modelo simplificado que emula el modo en que el cerebro humano procesa la información: Funciona simultaneando un número elevado de unidades de procesamiento interconectadas que parecen versiones abstractas de neuronas”\footnote[11]{IBM. El modelo de redes neuronales [en línea]. <\url{https://www.ibm.com/support/knowledgecenter/es/SS3RA7_18.0.0/modeler_mainhelp_client_ddita/components/neuralnet/neuralnet_model.html> [citado en 31 de Mayo de 2018]} }
     
   
   \figura{img/red.jpg}{Diagrama de red neuronal}{0.8}{VÍLCHEZ GARCÍA, Víctor Gabriel.\textit{Estimación y clasificación de daños en materiales utilizando modelos AR y redes neuronales para la evaluaciónno destructiva con ultrasonidos.} [en linea]. (Recuperado en 24 may 2018) \url{http://ceres.ugr.es/~alumnos/esclas/}}
 
   Una red neuronal está constituida por una serie de capas que se activan con determinadas entradas generando determinadas salidas que podrían ser tomadas o no por otras capas, dependiendo de la “profundidad” de la red. Utilizar redes neuronales consiste en hacer que la misma aprenda examinando las entradas, prediciendo las salidas y haciendo ajustes a los distintos parámetros de la misma, este proceso se repite muchas veces hasta que la red sea capaz de predecir o clasificar con un margen de error tolerable.
   
-  La idea del proyecto es obtener una red neuronal capaz de predecir el nivel socioeconómico de una zona urbana, para esto se planea alimentar la red con imágenes satelitales e información extra de dichas zonas urbanas. Con esta información, ajustes en los parámetros y bastantes iteraciones la red neuronal aprenderá. Los cambios en los parámetros, profundidad y datos usados en la red neuronal son realizados para encontrar la red neuronal que mejor desempeño presente para la tarea propuesta.
-  Dado que los datos a utilizar son imágenes, es recomendable utilizar “redes neuronales convolucionales” (CNN), las cuales son un tipo de red neuronal que se adapta mejor al uso de imágenes dado que “las CNN eliminan la necesidad de una extracción de características manual, por lo que no es necesario identificar las características utilizadas para clasificar las imágenes. La CNN funciona mediante la extracción de características directamente de las imágenes. Las características relevantes no se entrenan previamente; se aprenden mientras la red se entrena con una colección de imágenes”\footnote[12]{MATHWORKS. Aprendizaje profundo [en línea]. <\url{https://es.mathworks.com/discovery/deep-learning.html}> [citado en 31 de Mayo de 2018]}
+  La idea del proyecto es obtener la configuración de una red neuronal que sea capaz de predecir el nivel socioeconómico de una zona urbana, para esto se planea alimentar la red con imágenes satelitales e información extra de dichas zonas urbanas. Con esta información, ajustes en los parámetros y bastantes iteraciones la red neuronal aprenderá. Los cambios en los parámetros, profundidad y datos usados en la red neuronal son realizados para encontrar la configuración de red neuronal que mejor desempeño presente para la tarea propuesta. Dado que los datos a utilizar son imágenes, es recomendable utilizar “redes neuronales convolucionales” (CNN), las cuales son un tipo de red neuronal que se adapta mejor al uso de imágenes dado que “las CNN eliminan la necesidad de una extracción de características manual, por lo que no es necesario identificar las características utilizadas para clasificar las imágenes. La CNN funciona mediante la extracción de características directamente de las imágenes. Las características relevantes no se entrenan previamente; se aprenden mientras la red se entrena con una colección de imágenes”\footnote[12]{MATHWORKS. Aprendizaje profundo [en línea]. <\url{https://es.mathworks.com/discovery/deep-learning.html}> [citado en 31 de Mayo de 2018]}
   
 %% ==========================================
 %% DESARROLLO DEL PROYECTO
 %% ========================================== 
  
-\newpage\chapter{DESARROLLO DEL PROYECTO}  
-Esta claro que la recoleccion de datos medieante encuestas a vivienda es una metodologia que conlleva bastane tiempo y que el calculo del estrato debe tener en cuenta un sin numero de variables. Como alternativa se propone usar imagenes satelitales dado que se puede obtener mucha información socioeconomica con el analizis de las mismas. Se pueden identificar patrones, detectar construcciones especificas, clasificar materiales de construccion en los tejados y más, todos estos analizis son variables usadas en el calculo del estrato.
+\newpage\chapter{DESARROLLO DEL PROYECTO} 
+
+Está claro que la recolección de datos mediante encuestas a vivienda es una metodología que conlleva bastante tiempo y que el cálculo del estrato debe tener en cuenta un sin número de variables. Como alternativa se propone usar imágenes satelitales dado que se puede obtener mucha información socioeconómica con el análisis de las mismas. Se pueden identificar patrones, detectar construcciones específicas, clasificar materiales de construcción en los tejados y más, todos estos análisis son variables usadas en el cálculo del estrato.
   
-Como se mencionó existe un par de trabajos sobre el nivel socioeconomico usando tecnicas de machine learning. El trabajo de Neal Jean usa redes neuronales convolucionales y Transfer Learning para lograr una prediccion de la pobreza en 5 paises de africa. El trabajo de la EAFIT usa tecnicas de machine learning para detectar caracteristicas que puedan dar a conocer el nivel socioeconomico de una zona. Hay que tener en cuenta que en ambos trabajos la principal fuente de datos son las imagenes satelitales. En este proyecto tambien se usaron imagenes satelitales.
+Como se mencionó existe un par de trabajos sobre el nivel socioeconómico usando técnicas de machine learning. El trabajo de Neal Jean usa redes neuronales convoluciones y Transfer Learning para lograr una predicción de la pobreza en 5 países de áfrica. El trabajo de la EAFIT usa técnicas de machine learning para detectar características que puedan dar a conocer el nivel socioeconómico de una zona. Hay que tener en cuenta que en ambos trabajos la principal fuente de datos son las imágenes satelitales.
  
-A grandes rasgos lo que se planteo realizar con las imagenes satelitales, la informacion aumentada, la informacion de los estratos y las redes neuronales, se muestra en las siguientes figuras.
+A grandes rasgos lo que se planteó realizar con las imágenes satelitales, la información aumentada, la información de los estratos y las redes neuronales, se muestra en las siguientes figuras.
 
 \figura{img/datos.png}{Datos a usar en el proyecto}{0.7}{Imagen Propia} 
 \figura{img/modelo.png}{Modelo a usar en el proyecto}{0.8}{Imagen Propia}
 
-El proyecto se desarrollo encontrando fuentes de datos, generando dataset con imagenes satelitales, informacion aumentada y distintos niveles de zoom, seleccionando redes neuronales y realizando pruebas para determinar la mejor manera de predecir el estrato social. Hay que mencionar que el desarrollo del proyecto esta documentado en el sigueinte repositorio de Github \url{https://github.com/DaielChom/proyecto_uis}. El desarrollo se llevo de la siguiente manera.
+El proyecto se desarrolló encontrando fuentes de datos, generando dataset con imágenes satelitales, información aumentada y distintos niveles de zoom, seleccionando redes neuronales y realizando pruebas para determinar la mejor manera de predecir el estrato social. Hay que mencionar que el desarrollo del proyecto está documentado en el siguiente repositorio de GitHub \url{https://github.com/DaielChom/proyecto_uis}. El desarrollo se llevó de la siguiente manera.
 
 %% ==========================================
 %% FUENTES DE DATOS
@@ -209,34 +199,37 @@ El proyecto se desarrollo encontrando fuentes de datos, generando dataset con im
  
  \section{FUENTES DE DATOS}
  
- Era necesario tener imagenes satelitales, imagenes con los estratos sociales e imagenes con informacion extra que correspondan geograficamente y que tengan distintos niveles de zoom, como se muestran en la Figura  \ref{fig:Datos a usar en el proyecto}. Se usan distintos niveles de zoom para determinar si esto influye en la prediccion del estrato social.  
- Existen muchas plataformas para obtener imagenes satelitales tanto de alta como baja resolucion, varias de estas plataformas tienen la opcion de insertar información en dichos mapas de forma de marcador, poligono o linea. Esta informacion por lo general son archivos en formato .kml o .shp. Aprochando esta opcion se realizaron busquedas de archivos kml con distintos tipos de informacion, incluyendo el estato social. Gracias a la politica de datos abiertos\footnote[13]{GOBIERNO DIGITAL. Datos Abiertos [en linea] <\url{http://estrategia.gobiernoenlinea.gov.co/623/w3-article-9407.html}> [citado en 30 de Mayo de 2018]} es psobile encontrar archivos kml o shp en distintas paginas web del gobierno. sin embargo no todos los departamentos o ciudades cuentan con la misma cantidad de datos disponibles y menos con datos del estrato social. El unico portal web donde se encontro una buena cantidad de informacion, incluyendo la del estrto social fue en el portal de mapas de Bogota, disponible en \url{http://mapas.bogota.gov.co}. 
+ Era necesario tener imágenes satelitales, imágenes con los estratos sociales e imágenes con información extra que correspondan geográficamente y que tengan distintos niveles de zoom, como se muestran en la Figura \ref{fig:Datos a usar en el proyecto}. Se usan distintos niveles de zoom para determinar si esto influye en la predicción del estrato social. Existen muchas plataformas para obtener imágenes satelitales tanto de alta como baja resolución, varias de estas plataformas tienen la opción de insertar información en dichos mapas en forma de marcador, polígono o línea. Esta información por lo general son archivos en formato kml o shp. Gracias a la política de datos abiertos\footnote[13]{GOBIERNO DIGITAL. Datos Abiertos [en linea] <\url{http://estrategia.gobiernoenlinea.gov.co/623/w3-article-9407.html}> [citado en 30 de Mayo de 2018]} es posible encontrar archivos kml o shp en distintas páginas web del gobierno. sin embargo no todos los departamentos o ciudades cuentan con la misma cantidad de datos disponibles y menos con datos del estrato social. El único portal web donde se encontró una buena cantidad de información, incluyendo la del estrato social fue en el portal de mapas de Bogotá, disponible en \url{http://mapas.bogota.gov.co}.
  
- No fue posible descargar los archivos kml mostrados en la plataforma, por ende, y aprovechando la licencia Creative Commons que presentan los datos, se crearon nuevos archivos kml usando los mapas de la plataforma como guia. Los archivos kml realizados estan disponibles en \url{https://drive.google.com/open?id=15VnvN6ZRTbsqqd9kl3ukNWBj3oqADsy0}. se crearon dos kml, uno con informacion de los estratos sociales y otro con los indices de condiciones de seguridad nocturna por localidad que tienen las mujeres, mas especificamente los datos de la categoria \textit{riesgo alto} de dicho mapa. 
+ No fue posible descargar los archivos kml mostrados en la plataforma, por ende, y aprovechando la licencia Creative Commons que presentan los datos, se crearon nuevos archivos kml usando los mapas de la plataforma como guía. Los archivos kml realizados están disponibles en \url{https://drive.google.com/open?id=15VnvN6ZRTbsqqd9kl3ukNWBj3oqADsy0}. se crearon dos kml, uno con información de los estratos sociales y otro con los índices de condiciones de seguridad nocturna por localidad que tienen las mujeres, mas específicamente los datos de la categoría \textit{riesgo alto} de dicho mapa. 
 
 %% ==========================================
 %% DATASET
 %% ==========================================
 
  \section{DATASET}
- Como en la mayoria de trabajos de machine learning se debe tener un dataset, un conjunto de datos organizados y con una estrucura dividida en train (datos para entrenamiento) y test (datos para pruebas) con los cuales se entrena o prueba un algortimo de aprendizaje. El dataset que se construyo lleva por nombre OVERLAECOBO y cuenta con 3 tipos imagenes (Figura \ref{fig:Datos a usar en el proyecto}) geograficamente correspondidas y de distintos niveles de zoom o acercamiento satelital.  
- Las imagenes del dataset fueron obtenidas usando el software Ruso SASplanet\footnote[14]{Disponible en http://www.sasgis.org/} y los archivos kml diseñados. Usando  \textit{Bing maps} como fuente de imagenes satelitales, fuente ofrecida en SASplanet, se tomo el mapa de Bogota y se traso una linea que dividiera la ciudad en dos partes, de tal manera que en ambas hubiera informacion de todos los estratos. Una parte se escogio para train y otra la para test, como se muestra en la sigueinte imagen.
+ Como en la mayoría de trabajos de machine learning se debe tener un dataset, un conjunto de datos organizados y con una estructura dividida en train (datos para entrenamiento) y test (datos para pruebas) con los cuales se entrena o prueba un algoritmo de aprendizaje. El dataset que se construyó lleva por nombre OVERLAECOBO y cuenta con 3 tipos imágenes (Figura \ref{fig:Datos a usar en el proyecto}) geográficamente correspondidas y de distintos niveles de zoom o acercamiento satelital. Las imágenes del dataset fueron obtenidas usando el software Ruso SASplanet\footnote[14]{Disponible en http://www.sasgis.org/}, los archivos kml diseñados y \textit{Bing maps} como fuente de imágenes satelitales, fuente ofrecida en SASplanet. Se tomo el mapa de Bogotá y se trazó una línea que dividiera la ciudad en dos partes, de tal manera que en ambas hubiera información de todos los estratos, una parte se escogió para train y otra la para test, como se muestra en la siguiente imagen.
  
  \figura{img/train-test.png}{Division de Train y Test}{0.3}{Imagen Propia}
  
-  Se extrayeron imagenes de 7 Zooms diferentes,  del 13 al 20,  Cada nivel de zoom cuenta con imagenes satelitales, de informacion extra y de estrato social. Cada una de estas dividida en train y test. OVERLAECOBO cuenta con la siguente estructura.
+  Se extrajeron imágenes de 7 Zooms diferentes, del 13 al 20,  cada nivel de zoom cuenta con imágenes satelitales, de información extra (Riesgo nocturno para las mujeres) y de estrato social. Cada nivel está dividido en train y test. OVERLAECOBO cuenta con la siguiente estructura.
  
  \figura{img/estructura.png}{Estrucutra OVERLAECOBO}{0.2}{Imagen Propia}
- 
- OVERLAECOBO es el dataset con el que se realizaron las pruebas en busca de la mejor manera de detectar el estrato social.
+ Una vez el dataset estuvo elaborado se prosiguió con la búsqueda de redes neuronales y posteriormente pruebas para determinar la mejor configuración para la detección del estrato social.
  
 %% ==========================================
 %% REDES NEURONALES
 %% ==========================================
 
- \section{REDES NEURONALES}
+\section{REDES NEURONALES}
+Hay que mencionar que la metodología que se usó para la detección del estrato social se conoce en machine learning como Segmentación Semántica (Figura \ref{fig:Segmentación Semantica}), la cual consiste en segmentar una imagen con el fin de delimitar un objeto o diferenciar entre elementos. En Segmentación semántica, en el proceso de entrenamiento se tienen dos imágenes, la imagen que se quiere segmentar (Xtrain) y la imagen segmentada (ytrain) y con estas se realiza el aprendizaje. En el proceso de pruebas con imágenes que se requieren segmentar (Xtest) se crea una nueva imagen segmentada, luego en el proceso de medición del error con las imágenes segmentadas creadas se comparan con las imágenes segmentadas de dataset (ytest). En otras palabras, cada pixel RGB de una imagen tiene su propia etiqueta. La segmentación semántica es una técnica muy utilizada en el campo de la conducción autónoma, ya que representa una buena metodología para descubrir los distintos objetos que percibe la cámara del vehículo y así tomar decisiones.
+  
+  \figura{img/segmentacion.jpg}{Segmentación Semantica}{0.9}{ABHIJIT Kundu, VIBHAV Vineet, and VLANDLEN Koltun Feature Space Optimization for Semantic Video Segmentation [en linea] <\url{http://vladlen.info/publications/feature-space-optimization-for-semantic-video-segmentation/} [citado en 01 de junio de 2018]}
+  
+Existe muchas redes neuronales convolucionales con las que se puede aplicar Segmentación semántica, entre ellas SegNet, uNet y AlexNet. En GitHub hay varios repositorios con implementaciones de estas redes; como es de esperarse estos repositorios, aunque implementen la misma red neuronal, tienen varias diferencias; implementados en distintos lenguajes, usan diferentes librerías e incluso entrenan con diferentes dataset, sin embargo, cumplen la tarea de Segmentación semántica que proponen. Tras una búsqueda y selección entre varios repositorios para seleccionar la mejor red neuronal o la mejor implementación se encontró un Framework que permite usar distintas redes neuronales para la misma tarea. Dicho framework está disponible en el siguiente enlace \url{https://github.com/GeorgeSeif/Semantic-Segmentation-Suite} y es el que se usó para las pruebas descritas a continuación.
+  
  \section{DETECCION DEL ESTRATO SOCIAL}
- \section{RESULTADOS}
+ \section{LA MEJOR CONFIGURACION}
   
     
 
