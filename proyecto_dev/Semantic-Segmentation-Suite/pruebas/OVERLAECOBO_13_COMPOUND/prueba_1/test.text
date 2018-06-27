@@ -1,0 +1,27 @@
+Preparing the model ...
+This model has 1365439 trainable parameters
+Loaded latest model checkpoint
+Loading the data ...
+
+***** Begin testing *****
+Dataset --> OVERLAECOBO_13_COMPOUND
+Model --> FC-DenseNet56
+Crop Height --> 256
+Crop Width --> 256
+Num Classes --> 7
+
+Running test image 1 / 2Running test image 2 / 2Average test accuracy =  0.18444061279296875
+Average per class test accuracies = 
+
+Estrato_1 = 0.044041
+Estrato_2 = 0.081622
+Estrato_3 = 0.040826
+Estrato_4 = 0.500000
+Estrato_5 = 1.000000
+Estrato_6 = 1.000000
+No_Definido = 0.777567
+Average precision =  0.5728155249453706
+Average recall =  0.18444061279296875
+Average F1 score =  0.22003213677230476
+Average mean IoU score =  0.06439590613607203
+Average run time =  3.720727801322937
