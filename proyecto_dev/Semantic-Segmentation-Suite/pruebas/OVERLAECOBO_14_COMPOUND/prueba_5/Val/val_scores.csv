@@ -1,4 +1,4 @@
-val_name, avg_accuracy, precision, recall, f1 score, mean iou Estrato_1, Estrato_2, Estrato_3, Estrato_4, Estrato_5, Estrato_6, No_Definido
+val_name, avg_accuracy, precision, recall, f1 score, mean iou, Estrato_1, Estrato_2, Estrato_3, Estrato_4, Estrato_5, Estrato_6, No_Definido
 0, 0.107315, 0.896869, 0.107315, 0.160644, 0.041158, 0.000881, 0.166667, 0.224444, 0.025243, 0.000883, 0.000000, 0.999210
 1, 0.126282, 0.908665, 0.126282, 0.207081, 0.058903, 0.001762, 0.000000, 0.532868, 0.000632, 0.006398, 0.000000, 0.995234
 10, 0.127991, 0.898380, 0.127991, 0.189428, 0.084753, 0.000664, 0.162847, 0.167727, 1.000000, 1.000000, 1.000000, 0.997827
