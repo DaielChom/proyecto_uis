@@ -1,27 +1,0 @@
-Preparing the model ...
-This model has 17740039 trainable parameters
-Loaded latest model checkpoint
-Loading the data ...
-
-***** Begin testing *****
-Dataset --> OVERLAECOBO_13
-Model --> FRRN-A
-Crop Height --> 256
-Crop Width --> 256
-Num Classes --> 7
-
-Running test image 1 / 2Running test image 2 / 2Average test accuracy =  0.25974273681640625
-Average per class test accuracies = 
-
-Estrato_1 = 0.133560
-Estrato_2 = 0.531310
-Estrato_3 = 0.112145
-Estrato_4 = 0.501520
-Estrato_5 = 1.000000
-Estrato_6 = 1.000000
-No_Definido = 0.778521
-Average precision =  0.5932385426346967
-Average recall =  0.25974273681640625
-Average F1 score =  0.24898102236883093
-Average mean IoU score =  0.10503281774702189
-Average run time =  2.31013822555542

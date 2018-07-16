@@ -1,27 +1,0 @@
-Preparing the model ...
-This model has 34968199 trainable parameters
-Loaded latest model checkpoint
-Loading the data ...
-
-***** Begin testing *****
-Dataset --> OVERLAECOBO_15
-Model --> Encoder-Decoder-Skip
-Crop Height --> 256
-Crop Width --> 256
-Num Classes --> 7
-
-Running test image 1 / 90Running test image 2 / 90Running test image 3 / 90Running test image 4 / 90Running test image 5 / 90Running test image 6 / 90Running test image 7 / 90Running test image 8 / 90Running test image 9 / 90Running test image 10 / 90Running test image 11 / 90Running test image 12 / 90Running test image 13 / 90Running test image 14 / 90Running test image 15 / 90Running test image 16 / 90Running test image 17 / 90Running test image 18 / 90Running test image 19 / 90Running test image 20 / 90Running test image 21 / 90Running test image 22 / 90Running test image 23 / 90Running test image 24 / 90Running test image 25 / 90Running test image 26 / 90Running test image 27 / 90Running test image 28 / 90Running test image 29 / 90Running test image 30 / 90Running test image 31 / 90Running test image 32 / 90Running test image 33 / 90Running test image 34 / 90Running test image 35 / 90Running test image 36 / 90Running test image 37 / 90Running test image 38 / 90Running test image 39 / 90Running test image 40 / 90Running test image 41 / 90Running test image 42 / 90Running test image 43 / 90Running test image 44 / 90Running test image 45 / 90Running test image 46 / 90Running test image 47 / 90Running test image 48 / 90Running test image 49 / 90Running test image 50 / 90Running test image 51 / 90Running test image 52 / 90Running test image 53 / 90Running test image 54 / 90Running test image 55 / 90Running test image 56 / 90Running test image 57 / 90Running test image 58 / 90Running test image 59 / 90Running test image 60 / 90Running test image 61 / 90Running test image 62 / 90Running test image 63 / 90Running test image 64 / 90Running test image 65 / 90Running test image 66 / 90Running test image 67 / 90Running test image 68 / 90Running test image 69 / 90Running test image 70 / 90Running test image 71 / 90Running test image 72 / 90Running test image 73 / 90Running test image 74 / 90Running test image 75 / 90Running test image 76 / 90Running test image 77 / 90Running test image 78 / 90Running test image 79 / 90Running test image 80 / 90Running test image 81 / 90Running test image 82 / 90Running test image 83 / 90Running test image 84 / 90Running test image 85 / 90Running test image 86 / 90Running test image 87 / 90Running test image 88 / 90Running test image 89 / 90Running test image 90 / 90Average test accuracy =  0.46561245388454864
-Average per class test accuracies = 
-
-Estrato_1 = 0.000026
-Estrato_2 = 0.403874
-Estrato_3 = 0.636754
-Estrato_4 = 0.645962
-Estrato_5 = 0.666667
-Estrato_6 = 0.824686
-No_Definido = 0.968313
-Average precision =  0.8223498399526641
-Average recall =  0.46561245388454864
-Average F1 score =  0.535733743763603
-Average mean IoU score =  0.18773332131861672
-Average run time =  0.35432770782046846
