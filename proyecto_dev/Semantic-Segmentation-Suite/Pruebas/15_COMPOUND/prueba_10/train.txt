@@ -1,0 +1,1565 @@
+Preparing the model ...
+This model has 8872327 trainable parameters
+Loading the data ...
+
+***** Begin training *****
+Dataset --> OVERLAECOBO_15_COMPOUND
+Model --> MobileUNet-Skip
+Crop Height --> 256
+Crop Width --> 256
+Num Epochs --> 70
+Batch Size --> 1
+Num Classes --> 7
+Data Augmentation:
+	Vertical Flip --> False
+	Horizontal Flip --> False
+	Brightness Alteration --> None
+	Rotation --> None
+
+[2018-07-14 20:27:06] Epoch = 0 Count = 20 Current_Loss = 2.6667 Time = 23.91
+[2018-07-14 20:27:27] Epoch = 0 Count = 40 Current_Loss = 1.5278 Time = 20.69
+[2018-07-14 20:27:48] Epoch = 0 Count = 60 Current_Loss = 2.0212 Time = 21.06
+[2018-07-14 20:28:09] Epoch = 0 Count = 80 Current_Loss = 1.9769 Time = 20.87
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0000 = 0.561154
+Average per class validation accuracies for epoch # 0000:
+Estrato_1 = 0.327793
+Estrato_2 = 0.298915
+Estrato_3 = 0.747617
+Estrato_4 = 0.619783
+Estrato_5 = 0.173822
+Estrato_6 = 0.900092
+No_Definido = 0.809517
+Validation precision =  0.48776874248973145
+Validation recall =  0.5611541748046875
+Validation F1 score =  0.4885887726208125
+Validation IoU score =  0.2315498489260698
+[2018-07-14 20:28:35] Remaining training time = 2 hours 9 minutes 23 seconds
+
+[2018-07-14 20:28:54] Epoch = 1 Count = 20 Current_Loss = 1.5151 Time = 19.37
+[2018-07-14 20:29:13] Epoch = 1 Count = 40 Current_Loss = 1.4058 Time = 19.35
+[2018-07-14 20:29:33] Epoch = 1 Count = 60 Current_Loss = 1.4886 Time = 19.35
+[2018-07-14 20:29:52] Epoch = 1 Count = 80 Current_Loss = 1.0793 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0001 = 0.664322
+Average per class validation accuracies for epoch # 0001:
+Estrato_1 = 0.306352
+Estrato_2 = 0.265737
+Estrato_3 = 0.820267
+Estrato_4 = 0.606768
+Estrato_5 = 0.123361
+Estrato_6 = 0.900066
+No_Definido = 0.946610
+Validation precision =  0.6814522948258143
+Validation recall =  0.6643218994140625
+Validation F1 score =  0.6380283657594854
+Validation IoU score =  0.2688119198867877
+[2018-07-14 20:30:15] Remaining training time = 1 hours 53 minutes 59 seconds
+
+[2018-07-14 20:30:35] Epoch = 2 Count = 20 Current_Loss = 1.2319 Time = 19.44
+[2018-07-14 20:30:54] Epoch = 2 Count = 40 Current_Loss = 1.1262 Time = 19.36
+[2018-07-14 20:31:13] Epoch = 2 Count = 60 Current_Loss = 1.0517 Time = 19.36
+[2018-07-14 20:31:33] Epoch = 2 Count = 80 Current_Loss = 1.6778 Time = 19.37
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0002 = 0.687100
+Average per class validation accuracies for epoch # 0002:
+Estrato_1 = 0.308136
+Estrato_2 = 0.430413
+Estrato_3 = 0.823339
+Estrato_4 = 0.602765
+Estrato_5 = 0.114225
+Estrato_6 = 0.900000
+No_Definido = 0.965075
+Validation precision =  0.722148688411582
+Validation recall =  0.6871002197265625
+Validation F1 score =  0.6702335480335387
+Validation IoU score =  0.2816260716700373
+[2018-07-14 20:31:55] Remaining training time = 1 hours 51 minutes 23 seconds
+
+[2018-07-14 20:32:14] Epoch = 3 Count = 20 Current_Loss = 1.5122 Time = 19.38
+[2018-07-14 20:32:34] Epoch = 3 Count = 40 Current_Loss = 0.7859 Time = 19.37
+[2018-07-14 20:32:53] Epoch = 3 Count = 60 Current_Loss = 1.2896 Time = 19.38
+[2018-07-14 20:33:12] Epoch = 3 Count = 80 Current_Loss = 1.2932 Time = 19.37
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0003 = 0.696870
+Average per class validation accuracies for epoch # 0003:
+Estrato_1 = 0.305206
+Estrato_2 = 0.336770
+Estrato_3 = 0.860740
+Estrato_4 = 0.600844
+Estrato_5 = 0.108142
+Estrato_6 = 0.900000
+No_Definido = 0.974414
+Validation precision =  0.7564385404696786
+Validation recall =  0.6968704223632812
+Validation F1 score =  0.6882711410964389
+Validation IoU score =  0.285666121149693
+[2018-07-14 20:33:35] Remaining training time = 1 hours 49 minutes 42 seconds
+
+[2018-07-14 20:33:54] Epoch = 4 Count = 20 Current_Loss = 0.9075 Time = 19.42
+[2018-07-14 20:34:13] Epoch = 4 Count = 40 Current_Loss = 0.8958 Time = 19.35
+[2018-07-14 20:34:33] Epoch = 4 Count = 60 Current_Loss = 0.9307 Time = 19.34
+[2018-07-14 20:34:52] Epoch = 4 Count = 80 Current_Loss = 0.9150 Time = 19.42
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0004 = 0.717175
+Average per class validation accuracies for epoch # 0004:
+Estrato_1 = 0.300985
+Estrato_2 = 0.398494
+Estrato_3 = 0.843970
+Estrato_4 = 0.600572
+Estrato_5 = 0.107179
+Estrato_6 = 0.900040
+No_Definido = 0.981419
+Validation precision =  0.7715165213892424
+Validation recall =  0.71717529296875
+Validation F1 score =  0.7119283687690154
+Validation IoU score =  0.29729758707957354
+[2018-07-14 20:35:15] Remaining training time = 1 hours 48 minutes 22 seconds
+
+[2018-07-14 20:35:34] Epoch = 5 Count = 20 Current_Loss = 1.9214 Time = 19.37
+[2018-07-14 20:35:53] Epoch = 5 Count = 40 Current_Loss = 1.1838 Time = 19.36
+[2018-07-14 20:36:13] Epoch = 5 Count = 60 Current_Loss = 0.7587 Time = 19.38
+[2018-07-14 20:36:32] Epoch = 5 Count = 80 Current_Loss = 0.9739 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0005 = 0.729745
+Average per class validation accuracies for epoch # 0005:
+Estrato_1 = 0.303402
+Estrato_2 = 0.433742
+Estrato_3 = 0.840241
+Estrato_4 = 0.600373
+Estrato_5 = 0.105022
+Estrato_6 = 0.900040
+No_Definido = 0.984586
+Validation precision =  0.7851251470008792
+Validation recall =  0.7297454833984375
+Validation F1 score =  0.7282936358381676
+Validation IoU score =  0.30410894265425775
+[2018-07-14 20:36:54] Remaining training time = 1 hours 46 minutes 10 seconds
+
+[2018-07-14 20:37:14] Epoch = 6 Count = 20 Current_Loss = 0.7309 Time = 19.38
+[2018-07-14 20:37:33] Epoch = 6 Count = 40 Current_Loss = 0.9319 Time = 19.37
+[2018-07-14 20:37:52] Epoch = 6 Count = 60 Current_Loss = 0.7483 Time = 19.35
+[2018-07-14 20:38:12] Epoch = 6 Count = 80 Current_Loss = 0.6565 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0006 = 0.719588
+Average per class validation accuracies for epoch # 0006:
+Estrato_1 = 0.304910
+Estrato_2 = 0.419455
+Estrato_3 = 0.848779
+Estrato_4 = 0.600183
+Estrato_5 = 0.105719
+Estrato_6 = 0.900040
+No_Definido = 0.983267
+Validation precision =  0.7789424843477121
+Validation recall =  0.7195877075195313
+Validation F1 score =  0.7157998068371025
+Validation IoU score =  0.29977327877892496
+[2018-07-14 20:38:34] Remaining training time = 1 hours 44 minutes 46 seconds
+
+[2018-07-14 20:38:53] Epoch = 7 Count = 20 Current_Loss = 0.4248 Time = 19.35
+[2018-07-14 20:39:13] Epoch = 7 Count = 40 Current_Loss = 0.8263 Time = 19.38
+[2018-07-14 20:39:32] Epoch = 7 Count = 60 Current_Loss = 0.6619 Time = 19.38
+[2018-07-14 20:39:52] Epoch = 7 Count = 80 Current_Loss = 0.9988 Time = 19.43
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0007 = 0.742560
+Average per class validation accuracies for epoch # 0007:
+Estrato_1 = 0.304917
+Estrato_2 = 0.509734
+Estrato_3 = 0.829866
+Estrato_4 = 0.600148
+Estrato_5 = 0.101775
+Estrato_6 = 0.900026
+No_Definido = 0.988683
+Validation precision =  0.8024461911301609
+Validation recall =  0.742559814453125
+Validation F1 score =  0.7450782250882212
+Validation IoU score =  0.31414660966899816
+[2018-07-14 20:40:14] Remaining training time = 1 hours 43 minutes 21 seconds
+
+[2018-07-14 20:40:33] Epoch = 8 Count = 20 Current_Loss = 0.6088 Time = 19.34
+[2018-07-14 20:40:53] Epoch = 8 Count = 40 Current_Loss = 0.7833 Time = 19.40
+[2018-07-14 20:41:12] Epoch = 8 Count = 60 Current_Loss = 0.7559 Time = 19.38
+[2018-07-14 20:41:32] Epoch = 8 Count = 80 Current_Loss = 0.4666 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0008 = 0.724191
+Average per class validation accuracies for epoch # 0008:
+Estrato_1 = 0.304980
+Estrato_2 = 0.413887
+Estrato_3 = 0.883735
+Estrato_4 = 0.600070
+Estrato_5 = 0.101768
+Estrato_6 = 0.900013
+No_Definido = 0.988671
+Validation precision =  0.8013590176767555
+Validation recall =  0.7241912841796875
+Validation F1 score =  0.7239606587515414
+Validation IoU score =  0.30215160570127136
+[2018-07-14 20:41:54] Remaining training time = 1 hours 41 minutes 38 seconds
+
+[2018-07-14 20:42:13] Epoch = 9 Count = 20 Current_Loss = 0.5926 Time = 19.37
+[2018-07-14 20:42:33] Epoch = 9 Count = 40 Current_Loss = 1.1437 Time = 19.37
+[2018-07-14 20:42:52] Epoch = 9 Count = 60 Current_Loss = 1.0274 Time = 19.36
+[2018-07-14 20:43:12] Epoch = 9 Count = 80 Current_Loss = 1.2199 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0009 = 0.742445
+Average per class validation accuracies for epoch # 0009:
+Estrato_1 = 0.305895
+Estrato_2 = 0.514831
+Estrato_3 = 0.844768
+Estrato_4 = 0.600058
+Estrato_5 = 0.100791
+Estrato_6 = 0.900013
+No_Definido = 0.988524
+Validation precision =  0.8012529237896068
+Validation recall =  0.7424453735351563
+Validation F1 score =  0.744932494346817
+Validation IoU score =  0.3144291998453362
+[2018-07-14 20:43:33] Remaining training time = 1 hours 39 minutes 16 seconds
+
+[2018-07-14 20:43:53] Epoch = 10 Count = 20 Current_Loss = 0.3195 Time = 19.38
+[2018-07-14 20:44:12] Epoch = 10 Count = 40 Current_Loss = 0.3985 Time = 19.37
+[2018-07-14 20:44:32] Epoch = 10 Count = 60 Current_Loss = 0.5312 Time = 19.39
+[2018-07-14 20:44:51] Epoch = 10 Count = 80 Current_Loss = 0.4245 Time = 19.35
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0010 = 0.724539
+Average per class validation accuracies for epoch # 0010:
+Estrato_1 = 0.304942
+Estrato_2 = 0.409648
+Estrato_3 = 0.896999
+Estrato_4 = 0.600070
+Estrato_5 = 0.100764
+Estrato_6 = 0.900040
+No_Definido = 0.991485
+Validation precision =  0.8087838831465766
+Validation recall =  0.7245391845703125
+Validation F1 score =  0.7265202918065146
+Validation IoU score =  0.3042134896498318
+[2018-07-14 20:45:15] Remaining training time = 1 hours 39 minutes 33 seconds
+
+[2018-07-14 20:45:34] Epoch = 11 Count = 20 Current_Loss = 0.3063 Time = 19.39
+[2018-07-14 20:45:53] Epoch = 11 Count = 40 Current_Loss = 0.8112 Time = 19.38
+[2018-07-14 20:46:13] Epoch = 11 Count = 60 Current_Loss = 1.1859 Time = 19.36
+[2018-07-14 20:46:32] Epoch = 11 Count = 80 Current_Loss = 0.4340 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0011 = 0.750839
+Average per class validation accuracies for epoch # 0011:
+Estrato_1 = 0.304932
+Estrato_2 = 0.519979
+Estrato_3 = 0.900977
+Estrato_4 = 0.600054
+Estrato_5 = 0.100086
+Estrato_6 = 0.900000
+No_Definido = 0.991006
+Validation precision =  0.8274987669356477
+Validation recall =  0.7508392333984375
+Validation F1 score =  0.75653826892479
+Validation IoU score =  0.31988270996177925
+[2018-07-14 20:46:54] Remaining training time = 1 hours 36 minutes 31 seconds
+
+[2018-07-14 20:47:14] Epoch = 12 Count = 20 Current_Loss = 0.7570 Time = 19.35
+[2018-07-14 20:47:35] Epoch = 12 Count = 40 Current_Loss = 0.6049 Time = 20.98
+[2018-07-14 20:47:58] Epoch = 12 Count = 60 Current_Loss = 0.4068 Time = 23.57
+[2018-07-14 20:48:18] Epoch = 12 Count = 80 Current_Loss = 0.3115 Time = 19.37
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0012 = 0.743776
+Average per class validation accuracies for epoch # 0012:
+Estrato_1 = 0.309827
+Estrato_2 = 0.530511
+Estrato_3 = 0.867875
+Estrato_4 = 0.600039
+Estrato_5 = 0.100136
+Estrato_6 = 0.900000
+No_Definido = 0.990998
+Validation precision =  0.8088386197079798
+Validation recall =  0.7437759399414062
+Validation F1 score =  0.7460267207093809
+Validation IoU score =  0.3196574870759587
+[2018-07-14 20:48:40] Remaining training time = 1 hours 40 minutes 6 seconds
+
+[2018-07-14 20:48:59] Epoch = 13 Count = 20 Current_Loss = 0.5186 Time = 19.37
+[2018-07-14 20:49:19] Epoch = 13 Count = 40 Current_Loss = 0.3640 Time = 19.35
+[2018-07-14 20:49:38] Epoch = 13 Count = 60 Current_Loss = 0.2797 Time = 19.35
+[2018-07-14 20:49:57] Epoch = 13 Count = 80 Current_Loss = 0.7975 Time = 19.40
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0013 = 0.752148
+Average per class validation accuracies for epoch # 0013:
+Estrato_1 = 0.305811
+Estrato_2 = 0.608774
+Estrato_3 = 0.898484
+Estrato_4 = 0.600062
+Estrato_5 = 0.100676
+Estrato_6 = 0.900013
+No_Definido = 0.990877
+Validation precision =  0.8263877214427116
+Validation recall =  0.7521484375
+Validation F1 score =  0.7578965094056196
+Validation IoU score =  0.3234998539158257
+[2018-07-14 20:50:19] Remaining training time = 1 hours 33 minutes 1 seconds
+
+[2018-07-14 20:50:39] Epoch = 14 Count = 20 Current_Loss = 0.6982 Time = 19.38
+[2018-07-14 20:50:58] Epoch = 14 Count = 40 Current_Loss = 0.9140 Time = 19.38
+[2018-07-14 20:51:18] Epoch = 14 Count = 60 Current_Loss = 0.2199 Time = 19.37
+[2018-07-14 20:51:37] Epoch = 14 Count = 80 Current_Loss = 0.4781 Time = 19.34
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0014 = 0.753297
+Average per class validation accuracies for epoch # 0014:
+Estrato_1 = 0.309888
+Estrato_2 = 0.677069
+Estrato_3 = 0.859183
+Estrato_4 = 0.600093
+Estrato_5 = 0.100455
+Estrato_6 = 0.900000
+No_Definido = 0.994090
+Validation precision =  0.8222993756066284
+Validation recall =  0.7532974243164062
+Validation F1 score =  0.7572469568142619
+Validation IoU score =  0.32931879174047274
+[2018-07-14 20:51:59] Remaining training time = 1 hours 31 minutes 17 seconds
+
+[2018-07-14 20:52:18] Epoch = 15 Count = 20 Current_Loss = 0.2415 Time = 19.38
+[2018-07-14 20:52:38] Epoch = 15 Count = 40 Current_Loss = 0.3389 Time = 19.38
+[2018-07-14 20:52:57] Epoch = 15 Count = 60 Current_Loss = 0.6162 Time = 19.36
+[2018-07-14 20:53:17] Epoch = 15 Count = 80 Current_Loss = 0.3317 Time = 19.37
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0015 = 0.764107
+Average per class validation accuracies for epoch # 0015:
+Estrato_1 = 0.307371
+Estrato_2 = 0.558575
+Estrato_3 = 0.901086
+Estrato_4 = 0.600031
+Estrato_5 = 0.101422
+Estrato_6 = 0.900000
+No_Definido = 0.993814
+Validation precision =  0.8365688887369519
+Validation recall =  0.7641067504882812
+Validation F1 score =  0.7728981061066846
+Validation IoU score =  0.33141562137501185
+[2018-07-14 20:53:39] Remaining training time = 1 hours 29 minutes 39 seconds
+
+[2018-07-14 20:53:58] Epoch = 16 Count = 20 Current_Loss = 0.9451 Time = 19.35
+[2018-07-14 20:54:17] Epoch = 16 Count = 40 Current_Loss = 0.1939 Time = 19.38
+[2018-07-14 20:54:37] Epoch = 16 Count = 60 Current_Loss = 0.6997 Time = 19.36
+[2018-07-14 20:54:56] Epoch = 16 Count = 80 Current_Loss = 1.0390 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0016 = 0.772913
+Average per class validation accuracies for epoch # 0016:
+Estrato_1 = 0.304907
+Estrato_2 = 0.664251
+Estrato_3 = 0.900385
+Estrato_4 = 0.600066
+Estrato_5 = 0.102449
+Estrato_6 = 0.900026
+No_Definido = 0.993909
+Validation precision =  0.8479817400575094
+Validation recall =  0.77291259765625
+Validation F1 score =  0.7826445283845156
+Validation IoU score =  0.33586326243769793
+[2018-07-14 20:55:18] Remaining training time = 1 hours 27 minutes 53 seconds
+
+[2018-07-14 20:55:38] Epoch = 17 Count = 20 Current_Loss = 0.8571 Time = 19.38
+[2018-07-14 20:55:57] Epoch = 17 Count = 40 Current_Loss = 0.8463 Time = 19.35
+[2018-07-14 20:56:16] Epoch = 17 Count = 60 Current_Loss = 0.5328 Time = 19.37
+[2018-07-14 20:56:36] Epoch = 17 Count = 80 Current_Loss = 0.7498 Time = 19.34
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0017 = 0.751039
+Average per class validation accuracies for epoch # 0017:
+Estrato_1 = 0.307413
+Estrato_2 = 0.515756
+Estrato_3 = 0.852379
+Estrato_4 = 0.600082
+Estrato_5 = 0.102112
+Estrato_6 = 0.900316
+No_Definido = 0.994978
+Validation precision =  0.8102781443584559
+Validation recall =  0.7510391235351562
+Validation F1 score =  0.7541001841923158
+Validation IoU score =  0.32594130926007103
+[2018-07-14 20:56:58] Remaining training time = 1 hours 26 minutes 14 seconds
+
+[2018-07-14 20:57:17] Epoch = 18 Count = 20 Current_Loss = 0.7224 Time = 19.38
+[2018-07-14 20:57:36] Epoch = 18 Count = 40 Current_Loss = 0.1754 Time = 19.37
+[2018-07-14 20:57:56] Epoch = 18 Count = 60 Current_Loss = 1.5098 Time = 19.37
+[2018-07-14 20:58:15] Epoch = 18 Count = 80 Current_Loss = 0.2890 Time = 19.40
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0018 = 0.762198
+Average per class validation accuracies for epoch # 0018:
+Estrato_1 = 0.307349
+Estrato_2 = 0.526377
+Estrato_3 = 0.893132
+Estrato_4 = 0.600194
+Estrato_5 = 0.101440
+Estrato_6 = 0.900066
+No_Definido = 0.993046
+Validation precision =  0.8348049307351403
+Validation recall =  0.7621978759765625
+Validation F1 score =  0.7717681803867243
+Validation IoU score =  0.32868955484034695
+[2018-07-14 20:58:37] Remaining training time = 1 hours 24 minutes 33 seconds
+
+[2018-07-14 20:58:57] Epoch = 19 Count = 20 Current_Loss = 0.7487 Time = 19.37
+[2018-07-14 20:59:16] Epoch = 19 Count = 40 Current_Loss = 0.2135 Time = 19.36
+[2018-07-14 20:59:35] Epoch = 19 Count = 60 Current_Loss = 1.5610 Time = 19.38
+[2018-07-14 20:59:55] Epoch = 19 Count = 80 Current_Loss = 0.2435 Time = 19.34
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0019 = 0.759120
+Average per class validation accuracies for epoch # 0019:
+Estrato_1 = 0.309797
+Estrato_2 = 0.476202
+Estrato_3 = 0.916661
+Estrato_4 = 0.600179
+Estrato_5 = 0.101078
+Estrato_6 = 0.900013
+No_Definido = 0.995112
+Validation precision =  0.8429786071185701
+Validation recall =  0.7591201782226562
+Validation F1 score =  0.7691212679591052
+Validation IoU score =  0.32687281826510567
+[2018-07-14 21:00:17] Remaining training time = 1 hours 23 minutes 14 seconds
+
+[2018-07-14 21:00:36] Epoch = 20 Count = 20 Current_Loss = 0.2516 Time = 19.39
+[2018-07-14 21:00:56] Epoch = 20 Count = 40 Current_Loss = 0.2451 Time = 19.37
+[2018-07-14 21:01:15] Epoch = 20 Count = 60 Current_Loss = 0.9353 Time = 19.36
+[2018-07-14 21:01:35] Epoch = 20 Count = 80 Current_Loss = 0.2283 Time = 19.36
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0020 = 0.757642
+Average per class validation accuracies for epoch # 0020:
+Estrato_1 = 0.309845
+Estrato_2 = 0.510497
+Estrato_3 = 0.780756
+Estrato_4 = 0.600361
+Estrato_5 = 0.101036
+Estrato_6 = 0.900013
+No_Definido = 0.993737
+Validation precision =  0.8035229601830386
+Validation recall =  0.7576416015625
+Validation F1 score =  0.7638206946700545
+Validation IoU score =  0.32571855574781805
+[2018-07-14 21:01:57] Remaining training time = 1 hours 21 minutes 55 seconds
+
+[2018-07-14 21:02:17] Epoch = 21 Count = 20 Current_Loss = 0.2815 Time = 19.39
+[2018-07-14 21:02:36] Epoch = 21 Count = 40 Current_Loss = 0.1832 Time = 19.36
+[2018-07-14 21:02:56] Epoch = 21 Count = 60 Current_Loss = 0.3086 Time = 19.35
+[2018-07-14 21:03:15] Epoch = 21 Count = 80 Current_Loss = 0.1338 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0021 = 0.770253
+Average per class validation accuracies for epoch # 0021:
+Estrato_1 = 0.307804
+Estrato_2 = 0.550690
+Estrato_3 = 0.863117
+Estrato_4 = 0.600463
+Estrato_5 = 0.101797
+Estrato_6 = 0.900000
+No_Definido = 0.994342
+Validation precision =  0.8433093268002126
+Validation recall =  0.7702529907226563
+Validation F1 score =  0.7822148126186297
+Validation IoU score =  0.3364911392117197
+[2018-07-14 21:03:37] Remaining training time = 1 hours 19 minutes 33 seconds
+
+[2018-07-14 21:03:56] Epoch = 22 Count = 20 Current_Loss = 0.2484 Time = 19.43
+[2018-07-14 21:04:16] Epoch = 22 Count = 40 Current_Loss = 0.5696 Time = 19.33
+[2018-07-14 21:04:35] Epoch = 22 Count = 60 Current_Loss = 1.2081 Time = 19.39
+[2018-07-14 21:04:54] Epoch = 22 Count = 80 Current_Loss = 0.9160 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0022 = 0.779636
+Average per class validation accuracies for epoch # 0022:
+Estrato_1 = 0.309779
+Estrato_2 = 0.579152
+Estrato_3 = 0.885906
+Estrato_4 = 0.601504
+Estrato_5 = 0.103042
+Estrato_6 = 0.900053
+No_Definido = 0.994387
+Validation precision =  0.8552688567095107
+Validation recall =  0.7796356201171875
+Validation F1 score =  0.7928186964558169
+Validation IoU score =  0.34188301491373596
+[2018-07-14 21:05:16] Remaining training time = 1 hours 17 minutes 55 seconds
+
+[2018-07-14 21:05:36] Epoch = 23 Count = 20 Current_Loss = 0.4779 Time = 19.36
+[2018-07-14 21:05:55] Epoch = 23 Count = 40 Current_Loss = 0.6882 Time = 19.34
+[2018-07-14 21:06:14] Epoch = 23 Count = 60 Current_Loss = 0.7555 Time = 19.36
+[2018-07-14 21:06:34] Epoch = 23 Count = 80 Current_Loss = 0.5181 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0023 = 0.790504
+Average per class validation accuracies for epoch # 0023:
+Estrato_1 = 0.307426
+Estrato_2 = 0.624855
+Estrato_3 = 0.902427
+Estrato_4 = 0.600824
+Estrato_5 = 0.101431
+Estrato_6 = 0.900171
+No_Definido = 0.993318
+Validation precision =  0.8632777425713677
+Validation recall =  0.7905044555664062
+Validation F1 score =  0.8072028719113294
+Validation IoU score =  0.34543509780813353
+[2018-07-14 21:06:56] Remaining training time = 1 hours 16 minutes 14 seconds
+
+[2018-07-14 21:07:15] Epoch = 24 Count = 20 Current_Loss = 0.1116 Time = 19.38
+[2018-07-14 21:07:35] Epoch = 24 Count = 40 Current_Loss = 1.0440 Time = 19.36
+[2018-07-14 21:07:54] Epoch = 24 Count = 60 Current_Loss = 0.4998 Time = 19.42
+[2018-07-14 21:08:13] Epoch = 24 Count = 80 Current_Loss = 0.6763 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0024 = 0.790845
+Average per class validation accuracies for epoch # 0024:
+Estrato_1 = 0.307494
+Estrato_2 = 0.630890
+Estrato_3 = 0.765017
+Estrato_4 = 0.601263
+Estrato_5 = 0.102340
+Estrato_6 = 0.900263
+No_Definido = 0.993676
+Validation precision =  0.8528694893344951
+Validation recall =  0.7908447265625
+Validation F1 score =  0.8088508742394291
+Validation IoU score =  0.34162005673395246
+[2018-07-14 21:08:35] Remaining training time = 1 hours 14 minutes 19 seconds
+
+[2018-07-14 21:08:54] Epoch = 25 Count = 20 Current_Loss = 0.6444 Time = 19.40
+[2018-07-14 21:09:14] Epoch = 25 Count = 40 Current_Loss = 0.4996 Time = 19.35
+[2018-07-14 21:09:33] Epoch = 25 Count = 60 Current_Loss = 1.7817 Time = 19.35
+[2018-07-14 21:09:52] Epoch = 25 Count = 80 Current_Loss = 0.4911 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0025 = 0.775571
+Average per class validation accuracies for epoch # 0025:
+Estrato_1 = 0.307512
+Estrato_2 = 0.670930
+Estrato_3 = 0.889263
+Estrato_4 = 0.600634
+Estrato_5 = 0.101797
+Estrato_6 = 0.900000
+No_Definido = 0.993968
+Validation precision =  0.8357227647918973
+Validation recall =  0.7755706787109375
+Validation F1 score =  0.7877043170481048
+Validation IoU score =  0.340504278411471
+[2018-07-14 21:10:15] Remaining training time = 1 hours 13 minutes 22 seconds
+
+[2018-07-14 21:10:34] Epoch = 26 Count = 20 Current_Loss = 0.1232 Time = 19.37
+[2018-07-14 21:10:54] Epoch = 26 Count = 40 Current_Loss = 0.8575 Time = 19.37
+[2018-07-14 21:11:13] Epoch = 26 Count = 60 Current_Loss = 1.0416 Time = 19.40
+[2018-07-14 21:11:32] Epoch = 26 Count = 80 Current_Loss = 1.4925 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0026 = 0.771722
+Average per class validation accuracies for epoch # 0026:
+Estrato_1 = 0.307449
+Estrato_2 = 0.538492
+Estrato_3 = 0.890588
+Estrato_4 = 0.601092
+Estrato_5 = 0.102048
+Estrato_6 = 0.900000
+No_Definido = 0.994308
+Validation precision =  0.8516246922443228
+Validation recall =  0.771722412109375
+Validation F1 score =  0.78636480189992
+Validation IoU score =  0.33182099960786793
+[2018-07-14 21:11:55] Remaining training time = 1 hours 11 minutes 36 seconds
+
+[2018-07-14 21:12:14] Epoch = 27 Count = 20 Current_Loss = 0.0966 Time = 19.42
+[2018-07-14 21:12:34] Epoch = 27 Count = 40 Current_Loss = 0.3365 Time = 19.36
+[2018-07-14 21:12:53] Epoch = 27 Count = 60 Current_Loss = 0.5594 Time = 19.35
+[2018-07-14 21:13:12] Epoch = 27 Count = 80 Current_Loss = 0.1521 Time = 19.39
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0027 = 0.768149
+Average per class validation accuracies for epoch # 0027:
+Estrato_1 = 0.307397
+Estrato_2 = 0.491779
+Estrato_3 = 0.922057
+Estrato_4 = 0.605598
+Estrato_5 = 0.102190
+Estrato_6 = 0.900040
+No_Definido = 0.995217
+Validation precision =  0.8534288674205526
+Validation recall =  0.7681488037109375
+Validation F1 score =  0.7800497636904776
+Validation IoU score =  0.33157965641399495
+[2018-07-14 21:13:34] Remaining training time = 1 hours 9 minutes 43 seconds
+
+[2018-07-14 21:13:54] Epoch = 28 Count = 20 Current_Loss = 1.0613 Time = 19.34
+[2018-07-14 21:14:13] Epoch = 28 Count = 40 Current_Loss = 1.3111 Time = 19.36
+[2018-07-14 21:14:33] Epoch = 28 Count = 60 Current_Loss = 0.1615 Time = 19.35
+[2018-07-14 21:14:52] Epoch = 28 Count = 80 Current_Loss = 0.5472 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0028 = 0.751419
+Average per class validation accuracies for epoch # 0028:
+Estrato_1 = 0.307665
+Estrato_2 = 0.583345
+Estrato_3 = 0.842243
+Estrato_4 = 0.605533
+Estrato_5 = 0.104193
+Estrato_6 = 0.900000
+No_Definido = 0.994499
+Validation precision =  0.8266293944352519
+Validation recall =  0.7514190673828125
+Validation F1 score =  0.7578607704355454
+Validation IoU score =  0.3263044049575666
+[2018-07-14 21:15:14] Remaining training time = 1 hours 8 minutes 7 seconds
+
+[2018-07-14 21:15:34] Epoch = 29 Count = 20 Current_Loss = 0.7738 Time = 19.37
+[2018-07-14 21:15:53] Epoch = 29 Count = 40 Current_Loss = 0.6587 Time = 19.35
+[2018-07-14 21:16:12] Epoch = 29 Count = 60 Current_Loss = 0.2426 Time = 19.40
+[2018-07-14 21:16:32] Epoch = 29 Count = 80 Current_Loss = 0.1037 Time = 19.34
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0029 = 0.791812
+Average per class validation accuracies for epoch # 0029:
+Estrato_1 = 0.310310
+Estrato_2 = 0.735868
+Estrato_3 = 0.835946
+Estrato_4 = 0.605667
+Estrato_5 = 0.102089
+Estrato_6 = 0.900000
+No_Definido = 0.993942
+Validation precision =  0.8704916079121828
+Validation recall =  0.7918121337890625
+Validation F1 score =  0.8104655572571685
+Validation IoU score =  0.3447570579856903
+[2018-07-14 21:16:54] Remaining training time = 1 hours 6 minutes 32 seconds
+
+[2018-07-14 21:17:13] Epoch = 30 Count = 20 Current_Loss = 0.8201 Time = 19.44
+[2018-07-14 21:17:33] Epoch = 30 Count = 40 Current_Loss = 0.0836 Time = 19.37
+[2018-07-14 21:17:52] Epoch = 30 Count = 60 Current_Loss = 0.9937 Time = 19.34
+[2018-07-14 21:18:12] Epoch = 30 Count = 80 Current_Loss = 0.1399 Time = 19.43
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0030 = 0.793416
+Average per class validation accuracies for epoch # 0030:
+Estrato_1 = 0.308793
+Estrato_2 = 0.690156
+Estrato_3 = 0.925671
+Estrato_4 = 0.611439
+Estrato_5 = 0.101770
+Estrato_6 = 0.900026
+No_Definido = 0.994634
+Validation precision =  0.8757557603034527
+Validation recall =  0.7934158325195313
+Validation F1 score =  0.8083069099990097
+Validation IoU score =  0.3492030655260166
+[2018-07-14 21:18:35] Remaining training time = 1 hours 5 minutes 28 seconds
+
+[2018-07-14 21:18:54] Epoch = 31 Count = 20 Current_Loss = 0.0963 Time = 19.34
+[2018-07-14 21:19:13] Epoch = 31 Count = 40 Current_Loss = 0.6219 Time = 19.35
+[2018-07-14 21:19:33] Epoch = 31 Count = 60 Current_Loss = 1.3022 Time = 19.39
+[2018-07-14 21:19:52] Epoch = 31 Count = 80 Current_Loss = 0.1070 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0031 = 0.777280
+Average per class validation accuracies for epoch # 0031:
+Estrato_1 = 0.312147
+Estrato_2 = 0.647950
+Estrato_3 = 0.925616
+Estrato_4 = 0.609943
+Estrato_5 = 0.101694
+Estrato_6 = 0.900053
+No_Definido = 0.994277
+Validation precision =  0.8602282026279925
+Validation recall =  0.7772796630859375
+Validation F1 score =  0.7887108404675398
+Validation IoU score =  0.34079744855619054
+[2018-07-14 21:20:14] Remaining training time = 1 hours 3 minutes 6 seconds
+
+[2018-07-14 21:20:34] Epoch = 32 Count = 20 Current_Loss = 0.4158 Time = 19.36
+[2018-07-14 21:20:53] Epoch = 32 Count = 40 Current_Loss = 0.5811 Time = 19.37
+[2018-07-14 21:21:12] Epoch = 32 Count = 60 Current_Loss = 0.2463 Time = 19.37
+[2018-07-14 21:21:32] Epoch = 32 Count = 80 Current_Loss = 1.5960 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0032 = 0.778249
+Average per class validation accuracies for epoch # 0032:
+Estrato_1 = 0.310813
+Estrato_2 = 0.691548
+Estrato_3 = 0.895284
+Estrato_4 = 0.606235
+Estrato_5 = 0.103543
+Estrato_6 = 0.900000
+No_Definido = 0.993436
+Validation precision =  0.8526023367935596
+Validation recall =  0.7782485961914063
+Validation F1 score =  0.7896344253826719
+Validation IoU score =  0.34144152293295216
+[2018-07-14 21:21:54] Remaining training time = 1 hours 1 minutes 12 seconds
+
+[2018-07-14 21:22:13] Epoch = 33 Count = 20 Current_Loss = 0.3160 Time = 19.39
+[2018-07-14 21:22:32] Epoch = 33 Count = 40 Current_Loss = 0.9371 Time = 19.37
+[2018-07-14 21:22:52] Epoch = 33 Count = 60 Current_Loss = 0.8817 Time = 19.34
+[2018-07-14 21:23:11] Epoch = 33 Count = 80 Current_Loss = 0.4330 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0033 = 0.779770
+Average per class validation accuracies for epoch # 0033:
+Estrato_1 = 0.315901
+Estrato_2 = 0.645458
+Estrato_3 = 0.922602
+Estrato_4 = 0.612213
+Estrato_5 = 0.103040
+Estrato_6 = 0.900000
+No_Definido = 0.993234
+Validation precision =  0.8596968776368824
+Validation recall =  0.7797698974609375
+Validation F1 score =  0.7906299438849301
+Validation IoU score =  0.34086387563388143
+[2018-07-14 21:23:33] Remaining training time = 0 hours 59 minutes 29 seconds
+
+[2018-07-14 21:23:52] Epoch = 34 Count = 20 Current_Loss = 0.7706 Time = 19.38
+[2018-07-14 21:24:11] Epoch = 34 Count = 40 Current_Loss = 0.7951 Time = 19.37
+[2018-07-14 21:24:31] Epoch = 34 Count = 60 Current_Loss = 0.2073 Time = 19.35
+[2018-07-14 21:24:50] Epoch = 34 Count = 80 Current_Loss = 0.5510 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0034 = 0.754668
+Average per class validation accuracies for epoch # 0034:
+Estrato_1 = 0.326188
+Estrato_2 = 0.551376
+Estrato_3 = 0.868743
+Estrato_4 = 0.607242
+Estrato_5 = 0.105538
+Estrato_6 = 0.900053
+No_Definido = 0.994592
+Validation precision =  0.8383750750553812
+Validation recall =  0.7546676635742188
+Validation F1 score =  0.7613219283842156
+Validation IoU score =  0.32711215453446474
+[2018-07-14 21:25:12] Remaining training time = 0 hours 58 minutes 9 seconds
+
+[2018-07-14 21:25:32] Epoch = 35 Count = 20 Current_Loss = 0.5603 Time = 19.37
+[2018-07-14 21:25:51] Epoch = 35 Count = 40 Current_Loss = 0.5752 Time = 19.37
+[2018-07-14 21:26:11] Epoch = 35 Count = 60 Current_Loss = 0.7412 Time = 19.35
+[2018-07-14 21:26:30] Epoch = 35 Count = 80 Current_Loss = 0.3753 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0035 = 0.761241
+Average per class validation accuracies for epoch # 0035:
+Estrato_1 = 0.319543
+Estrato_2 = 0.577819
+Estrato_3 = 0.908252
+Estrato_4 = 0.618148
+Estrato_5 = 0.106402
+Estrato_6 = 0.900000
+No_Definido = 0.994636
+Validation precision =  0.8442220858340213
+Validation recall =  0.7612411499023437
+Validation F1 score =  0.7685676728470058
+Validation IoU score =  0.3333281160257815
+[2018-07-14 21:26:52] Remaining training time = 0 hours 56 minutes 29 seconds
+
+[2018-07-14 21:27:11] Epoch = 36 Count = 20 Current_Loss = 0.1825 Time = 19.38
+[2018-07-14 21:27:31] Epoch = 36 Count = 40 Current_Loss = 0.7234 Time = 19.35
+[2018-07-14 21:27:50] Epoch = 36 Count = 60 Current_Loss = 0.5737 Time = 19.37
+[2018-07-14 21:28:10] Epoch = 36 Count = 80 Current_Loss = 0.7758 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0036 = 0.759128
+Average per class validation accuracies for epoch # 0036:
+Estrato_1 = 0.332759
+Estrato_2 = 0.568858
+Estrato_3 = 0.909818
+Estrato_4 = 0.612922
+Estrato_5 = 0.103034
+Estrato_6 = 0.900000
+No_Definido = 0.993629
+Validation precision =  0.8539712449386503
+Validation recall =  0.7591278076171875
+Validation F1 score =  0.766167238732186
+Validation IoU score =  0.3300111634584322
+[2018-07-14 21:28:32] Remaining training time = 0 hours 54 minutes 42 seconds
+
+[2018-07-14 21:28:51] Epoch = 37 Count = 20 Current_Loss = 0.3871 Time = 19.37
+[2018-07-14 21:29:10] Epoch = 37 Count = 40 Current_Loss = 0.8101 Time = 19.37
+[2018-07-14 21:29:30] Epoch = 37 Count = 60 Current_Loss = 0.2766 Time = 19.36
+[2018-07-14 21:29:49] Epoch = 37 Count = 80 Current_Loss = 0.1953 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0037 = 0.775879
+Average per class validation accuracies for epoch # 0037:
+Estrato_1 = 0.310161
+Estrato_2 = 0.621720
+Estrato_3 = 0.928755
+Estrato_4 = 0.625561
+Estrato_5 = 0.106597
+Estrato_6 = 0.900013
+No_Definido = 0.993078
+Validation precision =  0.8401208940180697
+Validation recall =  0.77587890625
+Validation F1 score =  0.782367067984489
+Validation IoU score =  0.33965849191637776
+[2018-07-14 21:30:11] Remaining training time = 0 hours 53 minutes 10 seconds
+
+[2018-07-14 21:30:31] Epoch = 38 Count = 20 Current_Loss = 0.1453 Time = 19.35
+[2018-07-14 21:30:50] Epoch = 38 Count = 40 Current_Loss = 0.2119 Time = 19.37
+[2018-07-14 21:31:09] Epoch = 38 Count = 60 Current_Loss = 0.3174 Time = 19.36
+[2018-07-14 21:31:29] Epoch = 38 Count = 80 Current_Loss = 0.4929 Time = 19.34
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0038 = 0.770282
+Average per class validation accuracies for epoch # 0038:
+Estrato_1 = 0.325313
+Estrato_2 = 0.598660
+Estrato_3 = 0.897633
+Estrato_4 = 0.618281
+Estrato_5 = 0.106829
+Estrato_6 = 0.900000
+No_Definido = 0.992398
+Validation precision =  0.8577208103631957
+Validation recall =  0.770281982421875
+Validation F1 score =  0.7789424327378843
+Validation IoU score =  0.33664684178113946
+[2018-07-14 21:31:51] Remaining training time = 0 hours 51 minutes 18 seconds
+
+[2018-07-14 21:32:10] Epoch = 39 Count = 20 Current_Loss = 0.3075 Time = 19.35
+[2018-07-14 21:32:29] Epoch = 39 Count = 40 Current_Loss = 0.0918 Time = 19.37
+[2018-07-14 21:32:49] Epoch = 39 Count = 60 Current_Loss = 0.0564 Time = 19.35
+[2018-07-14 21:33:08] Epoch = 39 Count = 80 Current_Loss = 0.2830 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0039 = 0.777759
+Average per class validation accuracies for epoch # 0039:
+Estrato_1 = 0.320396
+Estrato_2 = 0.623803
+Estrato_3 = 0.942465
+Estrato_4 = 0.614134
+Estrato_5 = 0.114783
+Estrato_6 = 0.900224
+No_Definido = 0.993955
+Validation precision =  0.8706249488147323
+Validation recall =  0.7777587890625
+Validation F1 score =  0.7895743628368276
+Validation IoU score =  0.34015505560754944
+[2018-07-14 21:33:30] Remaining training time = 0 hours 49 minutes 32 seconds
+
+[2018-07-14 21:33:49] Epoch = 40 Count = 20 Current_Loss = 0.6966 Time = 19.35
+[2018-07-14 21:34:08] Epoch = 40 Count = 40 Current_Loss = 0.3490 Time = 19.36
+[2018-07-14 21:34:28] Epoch = 40 Count = 60 Current_Loss = 0.2590 Time = 19.36
+[2018-07-14 21:34:47] Epoch = 40 Count = 80 Current_Loss = 0.4367 Time = 19.35
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0040 = 0.779500
+Average per class validation accuracies for epoch # 0040:
+Estrato_1 = 0.330784
+Estrato_2 = 0.595777
+Estrato_3 = 0.922715
+Estrato_4 = 0.620193
+Estrato_5 = 0.119068
+Estrato_6 = 0.900000
+No_Definido = 0.992706
+Validation precision =  0.8422948756749212
+Validation recall =  0.7794998168945313
+Validation F1 score =  0.7810607863932445
+Validation IoU score =  0.341815601477092
+[2018-07-14 21:35:10] Remaining training time = 0 hours 48 minutes 31 seconds
+
+[2018-07-14 21:35:29] Epoch = 41 Count = 20 Current_Loss = 0.1444 Time = 19.36
+[2018-07-14 21:35:49] Epoch = 41 Count = 40 Current_Loss = 0.1271 Time = 19.34
+[2018-07-14 21:36:08] Epoch = 41 Count = 60 Current_Loss = 0.3199 Time = 19.42
+[2018-07-14 21:36:28] Epoch = 41 Count = 80 Current_Loss = 0.9506 Time = 19.34
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0041 = 0.782869
+Average per class validation accuracies for epoch # 0041:
+Estrato_1 = 0.316276
+Estrato_2 = 0.622340
+Estrato_3 = 0.917167
+Estrato_4 = 0.633263
+Estrato_5 = 0.115703
+Estrato_6 = 0.900171
+No_Definido = 0.994903
+Validation precision =  0.8442818575020326
+Validation recall =  0.7828689575195312
+Validation F1 score =  0.7857039905495469
+Validation IoU score =  0.34606833194235304
+[2018-07-14 21:36:51] Remaining training time = 0 hours 46 minutes 56 seconds
+
+[2018-07-14 21:37:10] Epoch = 42 Count = 20 Current_Loss = 0.1517 Time = 19.39
+[2018-07-14 21:37:29] Epoch = 42 Count = 40 Current_Loss = 0.1320 Time = 19.35
+[2018-07-14 21:37:49] Epoch = 42 Count = 60 Current_Loss = 0.7410 Time = 19.77
+[2018-07-14 21:38:14] Epoch = 42 Count = 80 Current_Loss = 0.0486 Time = 24.56
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0042 = 0.725621
+Average per class validation accuracies for epoch # 0042:
+Estrato_1 = 0.300641
+Estrato_2 = 0.453863
+Estrato_3 = 0.882745
+Estrato_4 = 0.642982
+Estrato_5 = 0.210174
+Estrato_6 = 0.900092
+No_Definido = 0.992613
+Validation precision =  0.7703646214908344
+Validation recall =  0.7256210327148438
+Validation F1 score =  0.7152940826785383
+Validation IoU score =  0.31634430793959717
+[2018-07-14 21:38:36] Remaining training time = 0 hours 47 minutes 12 seconds
+
+[2018-07-14 21:38:55] Epoch = 43 Count = 20 Current_Loss = 0.0452 Time = 19.37
+[2018-07-14 21:39:14] Epoch = 43 Count = 40 Current_Loss = 0.8246 Time = 19.34
+[2018-07-14 21:39:34] Epoch = 43 Count = 60 Current_Loss = 0.3049 Time = 19.34
+[2018-07-14 21:39:53] Epoch = 43 Count = 80 Current_Loss = 0.1022 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0043 = 0.771454
+Average per class validation accuracies for epoch # 0043:
+Estrato_1 = 0.331039
+Estrato_2 = 0.495132
+Estrato_3 = 0.884020
+Estrato_4 = 0.623694
+Estrato_5 = 0.122660
+Estrato_6 = 0.900092
+No_Definido = 0.994774
+Validation precision =  0.8155223020726309
+Validation recall =  0.771453857421875
+Validation F1 score =  0.7683296692976181
+Validation IoU score =  0.34463099066458186
+[2018-07-14 21:40:15] Remaining training time = 0 hours 43 minutes 14 seconds
+
+[2018-07-14 21:40:35] Epoch = 44 Count = 20 Current_Loss = 0.1771 Time = 19.36
+[2018-07-14 21:40:54] Epoch = 44 Count = 40 Current_Loss = 0.1633 Time = 19.37
+[2018-07-14 21:41:14] Epoch = 44 Count = 60 Current_Loss = 0.9566 Time = 19.43
+[2018-07-14 21:41:33] Epoch = 44 Count = 80 Current_Loss = 0.2284 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0044 = 0.748112
+Average per class validation accuracies for epoch # 0044:
+Estrato_1 = 0.363911
+Estrato_2 = 0.321134
+Estrato_3 = 0.862357
+Estrato_4 = 0.627459
+Estrato_5 = 0.186050
+Estrato_6 = 0.900053
+No_Definido = 0.994803
+Validation precision =  0.7796751018123725
+Validation recall =  0.7481124877929688
+Validation F1 score =  0.7373505340882401
+Validation IoU score =  0.32703752575765266
+[2018-07-14 21:41:55] Remaining training time = 0 hours 41 minutes 26 seconds
+
+[2018-07-14 21:42:14] Epoch = 45 Count = 20 Current_Loss = 0.2364 Time = 19.40
+[2018-07-14 21:42:34] Epoch = 45 Count = 40 Current_Loss = 0.1605 Time = 19.35
+[2018-07-14 21:42:53] Epoch = 45 Count = 60 Current_Loss = 0.5107 Time = 19.38
+[2018-07-14 21:43:12] Epoch = 45 Count = 80 Current_Loss = 0.1946 Time = 19.37
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0045 = 0.765929
+Average per class validation accuracies for epoch # 0045:
+Estrato_1 = 0.348310
+Estrato_2 = 0.456286
+Estrato_3 = 0.843206
+Estrato_4 = 0.620023
+Estrato_5 = 0.120951
+Estrato_6 = 0.900013
+No_Definido = 0.995271
+Validation precision =  0.7990013910029516
+Validation recall =  0.7659286499023438
+Validation F1 score =  0.7625966450129539
+Validation IoU score =  0.3370696509907593
+[2018-07-14 21:43:34] Remaining training time = 0 hours 39 minutes 49 seconds
+
+[2018-07-14 21:43:54] Epoch = 46 Count = 20 Current_Loss = 0.1074 Time = 19.35
+[2018-07-14 21:44:13] Epoch = 46 Count = 40 Current_Loss = 0.1114 Time = 19.37
+[2018-07-14 21:44:32] Epoch = 46 Count = 60 Current_Loss = 0.0687 Time = 19.39
+[2018-07-14 21:44:52] Epoch = 46 Count = 80 Current_Loss = 0.2843 Time = 19.61
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0046 = 0.740260
+Average per class validation accuracies for epoch # 0046:
+Estrato_1 = 0.380658
+Estrato_2 = 0.333545
+Estrato_3 = 0.882044
+Estrato_4 = 0.623553
+Estrato_5 = 0.117579
+Estrato_6 = 0.900158
+No_Definido = 0.995248
+Validation precision =  0.8078860789643739
+Validation recall =  0.7402603149414062
+Validation F1 score =  0.7376864930063036
+Validation IoU score =  0.3259698229657604
+[2018-07-14 21:45:14] Remaining training time = 0 hours 38 minutes 8 seconds
+
+[2018-07-14 21:45:33] Epoch = 47 Count = 20 Current_Loss = 0.1302 Time = 19.39
+[2018-07-14 21:45:53] Epoch = 47 Count = 40 Current_Loss = 0.3962 Time = 19.35
+[2018-07-14 21:46:12] Epoch = 47 Count = 60 Current_Loss = 0.4599 Time = 19.41
+[2018-07-14 21:46:31] Epoch = 47 Count = 80 Current_Loss = 0.0938 Time = 19.39
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0047 = 0.774231
+Average per class validation accuracies for epoch # 0047:
+Estrato_1 = 0.328732
+Estrato_2 = 0.493644
+Estrato_3 = 0.832992
+Estrato_4 = 0.623389
+Estrato_5 = 0.125285
+Estrato_6 = 0.900026
+No_Definido = 0.994283
+Validation precision =  0.8174637035178517
+Validation recall =  0.77423095703125
+Validation F1 score =  0.7768684266481757
+Validation IoU score =  0.3386504244539662
+[2018-07-14 21:46:53] Remaining training time = 0 hours 36 minutes 24 seconds
+
+[2018-07-14 21:47:13] Epoch = 48 Count = 20 Current_Loss = 0.7701 Time = 19.37
+[2018-07-14 21:47:36] Epoch = 48 Count = 40 Current_Loss = 0.0830 Time = 23.12
+[2018-07-14 21:47:55] Epoch = 48 Count = 60 Current_Loss = 0.1140 Time = 19.51
+[2018-07-14 21:48:15] Epoch = 48 Count = 80 Current_Loss = 0.2145 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0048 = 0.784178
+Average per class validation accuracies for epoch # 0048:
+Estrato_1 = 0.428740
+Estrato_2 = 0.510149
+Estrato_3 = 0.837788
+Estrato_4 = 0.613001
+Estrato_5 = 0.119460
+Estrato_6 = 0.900013
+No_Definido = 0.994553
+Validation precision =  0.8391083662198966
+Validation recall =  0.7841781616210938
+Validation F1 score =  0.7869657825893304
+Validation IoU score =  0.35500237557679654
+[2018-07-14 21:48:37] Remaining training time = 0 hours 36 minutes 14 seconds
+
+[2018-07-14 21:48:56] Epoch = 49 Count = 20 Current_Loss = 0.1328 Time = 19.35
+[2018-07-14 21:49:15] Epoch = 49 Count = 40 Current_Loss = 0.2909 Time = 19.36
+[2018-07-14 21:49:35] Epoch = 49 Count = 60 Current_Loss = 0.0361 Time = 19.35
+[2018-07-14 21:49:54] Epoch = 49 Count = 80 Current_Loss = 0.1365 Time = 19.41
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0049 = 0.779021
+Average per class validation accuracies for epoch # 0049:
+Estrato_1 = 0.384583
+Estrato_2 = 0.473679
+Estrato_3 = 0.883179
+Estrato_4 = 0.653137
+Estrato_5 = 0.114689
+Estrato_6 = 0.900448
+No_Definido = 0.995830
+Validation precision =  0.830910949112831
+Validation recall =  0.7790206909179688
+Validation F1 score =  0.7762515734766839
+Validation IoU score =  0.34867852115778303
+[2018-07-14 21:50:16] Remaining training time = 0 hours 33 minutes 11 seconds
+
+[2018-07-14 21:50:36] Epoch = 50 Count = 20 Current_Loss = 0.2832 Time = 19.35
+[2018-07-14 21:50:55] Epoch = 50 Count = 40 Current_Loss = 0.0492 Time = 19.34
+[2018-07-14 21:51:14] Epoch = 50 Count = 60 Current_Loss = 0.6187 Time = 19.38
+[2018-07-14 21:51:34] Epoch = 50 Count = 80 Current_Loss = 0.2089 Time = 19.37
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0050 = 0.776494
+Average per class validation accuracies for epoch # 0050:
+Estrato_1 = 0.385201
+Estrato_2 = 0.495254
+Estrato_3 = 0.875053
+Estrato_4 = 0.639957
+Estrato_5 = 0.116718
+Estrato_6 = 0.900040
+No_Definido = 0.993075
+Validation precision =  0.8219460982318294
+Validation recall =  0.7764938354492188
+Validation F1 score =  0.7728233953323405
+Validation IoU score =  0.35092556796007224
+[2018-07-14 21:51:57] Remaining training time = 0 hours 31 minutes 50 seconds
+
+[2018-07-14 21:52:16] Epoch = 51 Count = 20 Current_Loss = 0.1749 Time = 19.36
+[2018-07-14 21:52:36] Epoch = 51 Count = 40 Current_Loss = 0.0708 Time = 19.37
+[2018-07-14 21:52:55] Epoch = 51 Count = 60 Current_Loss = 0.1150 Time = 19.41
+[2018-07-14 21:53:14] Epoch = 51 Count = 80 Current_Loss = 0.0960 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0051 = 0.757253
+Average per class validation accuracies for epoch # 0051:
+Estrato_1 = 0.343299
+Estrato_2 = 0.409451
+Estrato_3 = 0.846727
+Estrato_4 = 0.699275
+Estrato_5 = 0.176196
+Estrato_6 = 0.900171
+No_Definido = 0.995743
+Validation precision =  0.8026802700636237
+Validation recall =  0.7572525024414063
+Validation F1 score =  0.7506608247870339
+Validation IoU score =  0.33830463999717675
+[2018-07-14 21:53:36] Remaining training time = 0 hours 29 minutes 46 seconds
+
+[2018-07-14 21:53:56] Epoch = 52 Count = 20 Current_Loss = 0.1972 Time = 19.41
+[2018-07-14 21:54:15] Epoch = 52 Count = 40 Current_Loss = 0.0438 Time = 19.36
+[2018-07-14 21:54:34] Epoch = 52 Count = 60 Current_Loss = 0.0895 Time = 19.38
+[2018-07-14 21:54:54] Epoch = 52 Count = 80 Current_Loss = 0.1842 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0052 = 0.765462
+Average per class validation accuracies for epoch # 0052:
+Estrato_1 = 0.345780
+Estrato_2 = 0.423128
+Estrato_3 = 0.941888
+Estrato_4 = 0.673344
+Estrato_5 = 0.167726
+Estrato_6 = 0.900316
+No_Definido = 0.994706
+Validation precision =  0.8385173970556454
+Validation recall =  0.7654617309570313
+Validation F1 score =  0.762092378339364
+Validation IoU score =  0.3440958011061697
+[2018-07-14 21:55:16] Remaining training time = 0 hours 28 minutes 24 seconds
+
+[2018-07-14 21:55:36] Epoch = 53 Count = 20 Current_Loss = 0.2918 Time = 19.41
+[2018-07-14 21:55:55] Epoch = 53 Count = 40 Current_Loss = 0.0518 Time = 19.35
+[2018-07-14 21:56:15] Epoch = 53 Count = 60 Current_Loss = 0.3433 Time = 19.44
+[2018-07-14 21:56:34] Epoch = 53 Count = 80 Current_Loss = 0.0991 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0053 = 0.758415
+Average per class validation accuracies for epoch # 0053:
+Estrato_1 = 0.349796
+Estrato_2 = 0.380781
+Estrato_3 = 0.833781
+Estrato_4 = 0.686942
+Estrato_5 = 0.181521
+Estrato_6 = 0.900395
+No_Definido = 0.994722
+Validation precision =  0.791637170848744
+Validation recall =  0.7584152221679688
+Validation F1 score =  0.750386696899948
+Validation IoU score =  0.3352321839326696
+[2018-07-14 21:56:56] Remaining training time = 0 hours 26 minutes 32 seconds
+
+[2018-07-14 21:57:15] Epoch = 54 Count = 20 Current_Loss = 0.3648 Time = 19.36
+[2018-07-14 21:57:35] Epoch = 54 Count = 40 Current_Loss = 0.0775 Time = 19.40
+[2018-07-14 21:57:54] Epoch = 54 Count = 60 Current_Loss = 0.1103 Time = 19.38
+[2018-07-14 21:58:13] Epoch = 54 Count = 80 Current_Loss = 0.0656 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0054 = 0.745163
+Average per class validation accuracies for epoch # 0054:
+Estrato_1 = 0.349317
+Estrato_2 = 0.360260
+Estrato_3 = 0.894525
+Estrato_4 = 0.692999
+Estrato_5 = 0.160825
+Estrato_6 = 0.900277
+No_Definido = 0.995121
+Validation precision =  0.8184233920194579
+Validation recall =  0.7451629638671875
+Validation F1 score =  0.7432462989072093
+Validation IoU score =  0.3341530771007575
+[2018-07-14 21:58:36] Remaining training time = 0 hours 24 minutes 53 seconds
+
+[2018-07-14 21:58:55] Epoch = 55 Count = 20 Current_Loss = 0.0492 Time = 19.38
+[2018-07-14 21:59:14] Epoch = 55 Count = 40 Current_Loss = 0.1788 Time = 19.37
+[2018-07-14 21:59:34] Epoch = 55 Count = 60 Current_Loss = 0.5115 Time = 19.39
+[2018-07-14 21:59:53] Epoch = 55 Count = 80 Current_Loss = 0.0276 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0055 = 0.753293
+Average per class validation accuracies for epoch # 0055:
+Estrato_1 = 0.348144
+Estrato_2 = 0.374942
+Estrato_3 = 0.927221
+Estrato_4 = 0.665171
+Estrato_5 = 0.128009
+Estrato_6 = 0.900119
+No_Definido = 0.994869
+Validation precision =  0.8407723782154966
+Validation recall =  0.7532928466796875
+Validation F1 score =  0.7546682429247588
+Validation IoU score =  0.3300036933344104
+[2018-07-14 22:00:15] Remaining training time = 0 hours 23 minutes 7 seconds
+
+[2018-07-14 22:00:34] Epoch = 56 Count = 20 Current_Loss = 0.3958 Time = 19.36
+[2018-07-14 22:00:53] Epoch = 56 Count = 40 Current_Loss = 0.0707 Time = 19.34
+[2018-07-14 22:01:13] Epoch = 56 Count = 60 Current_Loss = 0.1123 Time = 19.42
+[2018-07-14 22:01:32] Epoch = 56 Count = 80 Current_Loss = 0.0907 Time = 19.38
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0056 = 0.760594
+Average per class validation accuracies for epoch # 0056:
+Estrato_1 = 0.350180
+Estrato_2 = 0.412627
+Estrato_3 = 0.910095
+Estrato_4 = 0.694115
+Estrato_5 = 0.131940
+Estrato_6 = 0.900198
+No_Definido = 0.994675
+Validation precision =  0.8253160078002317
+Validation recall =  0.7605941772460938
+Validation F1 score =  0.7565075418738629
+Validation IoU score =  0.33658502729398054
+[2018-07-14 22:01:54] Remaining training time = 0 hours 21 minutes 28 seconds
+
+[2018-07-14 22:02:13] Epoch = 57 Count = 20 Current_Loss = 0.0535 Time = 19.39
+[2018-07-14 22:02:33] Epoch = 57 Count = 40 Current_Loss = 0.1571 Time = 19.35
+[2018-07-14 22:02:52] Epoch = 57 Count = 60 Current_Loss = 0.0240 Time = 19.38
+[2018-07-14 22:03:11] Epoch = 57 Count = 80 Current_Loss = 0.0285 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0057 = 0.754659
+Average per class validation accuracies for epoch # 0057:
+Estrato_1 = 0.347602
+Estrato_2 = 0.404562
+Estrato_3 = 0.926523
+Estrato_4 = 0.656232
+Estrato_5 = 0.124314
+Estrato_6 = 0.900250
+No_Definido = 0.994292
+Validation precision =  0.8384454040804338
+Validation recall =  0.7546585083007813
+Validation F1 score =  0.7558785034100558
+Validation IoU score =  0.33376136571411924
+[2018-07-14 22:03:34] Remaining training time = 0 hours 20 minutes 5 seconds
+
+[2018-07-14 22:03:54] Epoch = 58 Count = 20 Current_Loss = 0.1081 Time = 19.35
+[2018-07-14 22:04:13] Epoch = 58 Count = 40 Current_Loss = 0.3212 Time = 19.39
+[2018-07-14 22:04:32] Epoch = 58 Count = 60 Current_Loss = 0.1972 Time = 19.37
+[2018-07-14 22:04:52] Epoch = 58 Count = 80 Current_Loss = 0.0422 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0058 = 0.748929
+Average per class validation accuracies for epoch # 0058:
+Estrato_1 = 0.351636
+Estrato_2 = 0.366480
+Estrato_3 = 0.926606
+Estrato_4 = 0.664724
+Estrato_5 = 0.128831
+Estrato_6 = 0.900171
+No_Definido = 0.994838
+Validation precision =  0.8390267608868079
+Validation recall =  0.7489288330078125
+Validation F1 score =  0.7511262634871683
+Validation IoU score =  0.3295067696761675
+[2018-07-14 22:05:30] Remaining training time = 0 hours 21 minutes 9 seconds
+
+[2018-07-14 22:05:49] Epoch = 59 Count = 20 Current_Loss = 0.2893 Time = 19.44
+[2018-07-14 22:06:08] Epoch = 59 Count = 40 Current_Loss = 0.0836 Time = 19.35
+[2018-07-14 22:06:28] Epoch = 59 Count = 60 Current_Loss = 0.0705 Time = 19.34
+[2018-07-14 22:06:47] Epoch = 59 Count = 80 Current_Loss = 0.0518 Time = 19.33
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0059 = 0.775102
+Average per class validation accuracies for epoch # 0059:
+Estrato_1 = 0.349423
+Estrato_2 = 0.459689
+Estrato_3 = 0.891321
+Estrato_4 = 0.665770
+Estrato_5 = 0.156180
+Estrato_6 = 0.900461
+No_Definido = 0.994928
+Validation precision =  0.8228964122006477
+Validation recall =  0.7751022338867187
+Validation F1 score =  0.7704535423966316
+Validation IoU score =  0.347787386116467
+[2018-07-14 22:07:09] Remaining training time = 0 hours 16 minutes 37 seconds
+
+[2018-07-14 22:07:29] Epoch = 60 Count = 20 Current_Loss = 0.0591 Time = 19.36
+[2018-07-14 22:07:48] Epoch = 60 Count = 40 Current_Loss = 0.1168 Time = 19.35
+[2018-07-14 22:08:07] Epoch = 60 Count = 60 Current_Loss = 0.2779 Time = 19.38
+[2018-07-14 22:08:27] Epoch = 60 Count = 80 Current_Loss = 0.1238 Time = 19.35
+Saving latest checkpoint
+Saving checkpoint for this epoch
+Performing validation
+
+Average validation accuracy for epoch # 0060 = 0.768373
+Average per class validation accuracies for epoch # 0060:
+Estrato_1 = 0.399122
+Estrato_2 = 0.426759
+Estrato_3 = 0.895422
+Estrato_4 = 0.640060
+Estrato_5 = 0.134643
+Estrato_6 = 0.900606
+No_Definido = 0.994056
+Validation precision =  0.819225868932522
+Validation recall =  0.7683731079101562
+Validation F1 score =  0.7621950035517698
+Validation IoU score =  0.34285261172526493
+[2018-07-14 22:08:50] Remaining training time = 0 hours 15 minutes 5 seconds
+
+[2018-07-14 22:09:09] Epoch = 61 Count = 20 Current_Loss = 0.2584 Time = 19.37
+[2018-07-14 22:09:29] Epoch = 61 Count = 40 Current_Loss = 0.0373 Time = 19.35
+[2018-07-14 22:09:48] Epoch = 61 Count = 60 Current_Loss = 0.3998 Time = 19.38
+[2018-07-14 22:10:07] Epoch = 61 Count = 80 Current_Loss = 0.2261 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0061 = 0.762334
+Average per class validation accuracies for epoch # 0061:
+Estrato_1 = 0.346588
+Estrato_2 = 0.403148
+Estrato_3 = 0.875702
+Estrato_4 = 0.672039
+Estrato_5 = 0.150973
+Estrato_6 = 0.900408
+No_Definido = 0.995065
+Validation precision =  0.8198692901931901
+Validation recall =  0.7623336791992188
+Validation F1 score =  0.7594156815610429
+Validation IoU score =  0.33902634219813904
+[2018-07-14 22:10:30] Remaining training time = 0 hours 13 minutes 18 seconds
+
+[2018-07-14 22:10:49] Epoch = 62 Count = 20 Current_Loss = 0.0398 Time = 19.38
+[2018-07-14 22:11:09] Epoch = 62 Count = 40 Current_Loss = 0.0434 Time = 19.37
+[2018-07-14 22:11:28] Epoch = 62 Count = 60 Current_Loss = 0.0352 Time = 19.36
+[2018-07-14 22:11:47] Epoch = 62 Count = 80 Current_Loss = 0.0333 Time = 19.36
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0062 = 0.762270
+Average per class validation accuracies for epoch # 0062:
+Estrato_1 = 0.352193
+Estrato_2 = 0.393129
+Estrato_3 = 0.897532
+Estrato_4 = 0.650726
+Estrato_5 = 0.148932
+Estrato_6 = 0.900250
+No_Definido = 0.995157
+Validation precision =  0.8196475306519927
+Validation recall =  0.7622695922851562
+Validation F1 score =  0.7583931979913062
+Validation IoU score =  0.3350493106451028
+[2018-07-14 22:12:09] Remaining training time = 0 hours 11 minutes 36 seconds
+
+[2018-07-14 22:12:29] Epoch = 63 Count = 20 Current_Loss = 0.0454 Time = 19.35
+[2018-07-14 22:12:48] Epoch = 63 Count = 40 Current_Loss = 0.0714 Time = 19.35
+[2018-07-14 22:13:11] Epoch = 63 Count = 60 Current_Loss = 0.0323 Time = 23.28
+[2018-07-14 22:13:33] Epoch = 63 Count = 80 Current_Loss = 0.0705 Time = 21.26
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0063 = 0.759854
+Average per class validation accuracies for epoch # 0063:
+Estrato_1 = 0.332346
+Estrato_2 = 0.486969
+Estrato_3 = 0.851365
+Estrato_4 = 0.672518
+Estrato_5 = 0.148340
+Estrato_6 = 0.901409
+No_Definido = 0.994415
+Validation precision =  0.8034661867065227
+Validation recall =  0.7598541259765625
+Validation F1 score =  0.7555656100424073
+Validation IoU score =  0.335439478805554
+[2018-07-14 22:13:55] Remaining training time = 0 hours 10 minutes 32 seconds
+
+[2018-07-14 22:14:14] Epoch = 64 Count = 20 Current_Loss = 0.0619 Time = 19.35
+[2018-07-14 22:14:33] Epoch = 64 Count = 40 Current_Loss = 0.0587 Time = 19.35
+[2018-07-14 22:14:53] Epoch = 64 Count = 60 Current_Loss = 0.3116 Time = 19.34
+[2018-07-14 22:15:12] Epoch = 64 Count = 80 Current_Loss = 0.1597 Time = 19.40
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0064 = 0.762064
+Average per class validation accuracies for epoch # 0064:
+Estrato_1 = 0.351142
+Estrato_2 = 0.489870
+Estrato_3 = 0.932160
+Estrato_4 = 0.662750
+Estrato_5 = 0.126954
+Estrato_6 = 0.900514
+No_Definido = 0.994289
+Validation precision =  0.8317749171284893
+Validation recall =  0.7620635986328125
+Validation F1 score =  0.7580503634892077
+Validation IoU score =  0.3386204713378612
+[2018-07-14 22:15:35] Remaining training time = 0 hours 8 minutes 19 seconds
+
+[2018-07-14 22:15:54] Epoch = 65 Count = 20 Current_Loss = 0.1298 Time = 19.36
+[2018-07-14 22:16:13] Epoch = 65 Count = 40 Current_Loss = 0.0548 Time = 19.42
+[2018-07-14 22:16:33] Epoch = 65 Count = 60 Current_Loss = 0.3679 Time = 19.36
+[2018-07-14 22:16:52] Epoch = 65 Count = 80 Current_Loss = 0.2296 Time = 19.34
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0065 = 0.775200
+Average per class validation accuracies for epoch # 0065:
+Estrato_1 = 0.375218
+Estrato_2 = 0.482311
+Estrato_3 = 0.899916
+Estrato_4 = 0.634839
+Estrato_5 = 0.102975
+Estrato_6 = 0.900369
+No_Definido = 0.995224
+Validation precision =  0.8334890945670471
+Validation recall =  0.7751998901367188
+Validation F1 score =  0.7743020011227713
+Validation IoU score =  0.3419144766516903
+[2018-07-14 22:17:14] Remaining training time = 0 hours 6 minutes 37 seconds
+
+[2018-07-14 22:17:33] Epoch = 66 Count = 20 Current_Loss = 0.0730 Time = 19.36
+[2018-07-14 22:17:53] Epoch = 66 Count = 40 Current_Loss = 0.0211 Time = 19.39
+[2018-07-14 22:18:12] Epoch = 66 Count = 60 Current_Loss = 0.3770 Time = 19.36
+[2018-07-14 22:18:31] Epoch = 66 Count = 80 Current_Loss = 0.1092 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0066 = 0.739381
+Average per class validation accuracies for epoch # 0066:
+Estrato_1 = 0.321185
+Estrato_2 = 0.356405
+Estrato_3 = 0.821281
+Estrato_4 = 0.636708
+Estrato_5 = 0.244170
+Estrato_6 = 0.902160
+No_Definido = 0.995391
+Validation precision =  0.763727820373653
+Validation recall =  0.7393814086914062
+Validation F1 score =  0.728363595448125
+Validation IoU score =  0.32384248203388044
+[2018-07-14 22:18:54] Remaining training time = 0 hours 4 minutes 59 seconds
+
+[2018-07-14 22:19:13] Epoch = 67 Count = 20 Current_Loss = 0.2792 Time = 19.35
+[2018-07-14 22:19:33] Epoch = 67 Count = 40 Current_Loss = 1.2660 Time = 19.40
+[2018-07-14 22:19:52] Epoch = 67 Count = 60 Current_Loss = 0.0503 Time = 19.34
+[2018-07-14 22:20:11] Epoch = 67 Count = 80 Current_Loss = 0.0619 Time = 19.34
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0067 = 0.749594
+Average per class validation accuracies for epoch # 0067:
+Estrato_1 = 0.393880
+Estrato_2 = 0.301813
+Estrato_3 = 0.863444
+Estrato_4 = 0.619879
+Estrato_5 = 0.220703
+Estrato_6 = 0.900869
+No_Definido = 0.997051
+Validation precision =  0.7888632514988579
+Validation recall =  0.7495941162109375
+Validation F1 score =  0.7381414071448087
+Validation IoU score =  0.33055537839611426
+[2018-07-14 22:20:34] Remaining training time = 0 hours 3 minutes 19 seconds
+
+[2018-07-14 22:20:53] Epoch = 68 Count = 20 Current_Loss = 0.2807 Time = 19.37
+[2018-07-14 22:21:12] Epoch = 68 Count = 40 Current_Loss = 0.1905 Time = 19.35
+[2018-07-14 22:21:32] Epoch = 68 Count = 60 Current_Loss = 0.3229 Time = 19.36
+[2018-07-14 22:21:51] Epoch = 68 Count = 80 Current_Loss = 0.3226 Time = 19.37
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0068 = 0.769766
+Average per class validation accuracies for epoch # 0068:
+Estrato_1 = 0.345115
+Estrato_2 = 0.346552
+Estrato_3 = 0.836216
+Estrato_4 = 0.686185
+Estrato_5 = 0.312895
+Estrato_6 = 0.901897
+No_Definido = 0.995785
+Validation precision =  0.782541164245742
+Validation recall =  0.7697662353515625
+Validation F1 score =  0.7562740298270052
+Validation IoU score =  0.3397084416794085
+[2018-07-14 22:22:13] Remaining training time = 0 hours 1 minutes 39 seconds
+
+[2018-07-14 22:22:32] Epoch = 69 Count = 20 Current_Loss = 0.8236 Time = 19.34
+[2018-07-14 22:22:52] Epoch = 69 Count = 40 Current_Loss = 0.1309 Time = 19.38
+[2018-07-14 22:23:11] Epoch = 69 Count = 60 Current_Loss = 0.1370 Time = 19.38
+[2018-07-14 22:23:31] Epoch = 69 Count = 80 Current_Loss = 0.5630 Time = 19.35
+Saving latest checkpoint
+Performing validation
+
+Average validation accuracy for epoch # 0069 = 0.797816
+Average per class validation accuracies for epoch # 0069:
+Estrato_1 = 0.418086
+Estrato_2 = 0.438169
+Estrato_3 = 0.825731
+Estrato_4 = 0.687407
+Estrato_5 = 0.183771
+Estrato_6 = 0.904518
+No_Definido = 0.995741
+Validation precision =  0.8137650257523792
+Validation recall =  0.7978164672851562
+Validation F1 score =  0.789218237338366
+Validation IoU score =  0.35813151208094085
+[2018-07-14 22:23:52] Remaining training time : Training completed.
+

@@ -1,0 +1,27 @@
+Preparing the model ...
+This model has 8872327 trainable parameters
+Loaded latest model checkpoint
+Loading the data ...
+
+***** Begin testing *****
+Dataset --> OVERLAECOBO_13_COMPOUND
+Model --> MobileUNet
+Crop Height --> 256
+Crop Width --> 256
+Num Classes --> 7
+
+Running test image 1 / 2Running test image 2 / 2Average test accuracy =  0.36170196533203125
+Average per class test accuracies = 
+
+Estrato_1 = 0.003630
+Estrato_2 = 0.265188
+Estrato_3 = 0.222331
+Estrato_4 = 0.000000
+Estrato_5 = 0.000000
+Estrato_6 = 0.500000
+No_Definido = 0.615088
+Average precision =  0.4582775330671391
+Average recall =  0.36170196533203125
+Average F1 score =  0.3814485663178759
+Average mean IoU score =  0.09425874037785573
+Average run time =  0.8839813470840454

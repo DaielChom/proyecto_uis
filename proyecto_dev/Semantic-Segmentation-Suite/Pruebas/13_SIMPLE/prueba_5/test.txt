@@ -1,0 +1,27 @@
+Preparing the model ...
+This model has 34968199 trainable parameters
+Loaded latest model checkpoint
+Loading the data ...
+
+***** Begin testing *****
+Dataset --> OVERLAECOBO_13_SIMPLE
+Model --> Encoder-Decoder-Skip
+Crop Height --> 256
+Crop Width --> 256
+Num Classes --> 7
+
+Running test image 1 / 2Running test image 2 / 2Average test accuracy =  0.6844482421875
+Average per class test accuracies = 
+
+Estrato_1 = 0.141093
+Estrato_2 = 0.414636
+Estrato_3 = 0.701830
+Estrato_4 = 0.245892
+Estrato_5 = 0.001548
+Estrato_6 = 0.500000
+No_Definido = 0.985018
+Average precision =  0.7181531732060171
+Average recall =  0.6844482421875
+Average F1 score =  0.6818152761575089
+Average mean IoU score =  0.2761932696745564
+Average run time =  4.714255690574646
