@@ -188,8 +188,8 @@ Como se mencionó existe un par de trabajos sobre el nivel socioeconómico usand
  
 A grandes rasgos lo que se planteó realizar con las imágenes satelitales, la información aumentada, la información de los estratos y las redes neuronales, se muestra en las siguientes figuras.
 
-\figura{img/datos.png}{Datos a usar en el proyecto}{0.7}{Imagen Propia} 
-\figura{img/modelo.png}{Modelo a usar en el proyecto}{0.8}{Imagen Propia}
+\figura{img/datos.png}{Datos a usar en el proyecto}{0.7} {}
+\figura{img/modelo.png}{Modelo a usar en el proyecto}{0.8}{}
 
 El proyecto se desarrolló encontrando fuentes de datos, generando dataset con imágenes satelitales, información aumentada y distintos niveles de zoom, seleccionando redes neuronales y realizando pruebas para determinar la mejor manera de predecir el estrato social. Hay que mencionar que el desarrollo del proyecto está documentado en el siguiente repositorio de GitHub \url{https://github.com/DaielChom/proyecto_uis}. El desarrollo se llevó de la siguiente manera.
 
@@ -210,11 +210,11 @@ El proyecto se desarrolló encontrando fuentes de datos, generando dataset con i
  \section{DATASET}
  Como en la mayoría de trabajos de machine learning se debe tener un dataset, un conjunto de datos organizados y con una estructura dividida en train (datos para entrenamiento) y test (datos para pruebas) con los cuales se entrena o prueba un algoritmo de aprendizaje. El dataset que se construyó lleva por nombre OVERLAECOBO y cuenta con 3 tipos imágenes (Figura \ref{fig:Datos a usar en el proyecto}) geográficamente correspondidas y de distintos niveles de zoom o acercamiento satelital. Las imágenes del dataset fueron obtenidas usando el software Ruso SASplanet\footnote[14]{Disponible en http://www.sasgis.org/}, los archivos kml diseñados y \textit{Bing maps} como fuente de imágenes satelitales, fuente ofrecida en SASplanet. Se tomo el mapa de Bogotá y se trazó una línea que dividiera la ciudad en dos partes, de tal manera que en ambas hubiera información de todos los estratos, una parte se escogió para train y otra la para test, como se muestra en la siguiente imagen.
  
- \figura{img/train-test.png}{Division de Train y Test}{0.3}{Imagen Propia}
+ \figura{img/train-test.png}{Division de Train y Test}{0.3}{}
  
   Se extrajeron imágenes de 7 Zooms diferentes, del 13 al 20,  cada nivel de zoom cuenta con imágenes satelitales, de información extra (Riesgo nocturno para las mujeres) y de estrato social. Cada nivel está dividido en train y test. OVERLAECOBO cuenta con la siguiente estructura.
  
- \figura{img/estructura.png}{Estrucutra OVERLAECOBO}{0.2}{Imagen Propia}
+ \figura{img/estructura.png}{Estrucutra OVERLAECOBO}{0.2}{}
  Una vez el dataset estuvo elaborado se prosiguió con la búsqueda de redes neuronales y posteriormente pruebas para determinar la mejor configuración para la detección del estrato social.
  
 %% ==========================================
@@ -226,12 +226,88 @@ Hay que mencionar que la metodología que se usó para la detección del estrato
   
   \figura{img/segmentacion.jpg}{Segmentación Semantica}{0.9}{ABHIJIT Kundu, VIBHAV Vineet, and VLANDLEN Koltun Feature Space Optimization for Semantic Video Segmentation [en linea] <\url{http://vladlen.info/publications/feature-space-optimization-for-semantic-video-segmentation/} [citado en 01 de junio de 2018]}
   
-Existe muchas redes neuronales convolucionales con las que se puede aplicar Segmentación semántica, entre ellas SegNet, uNet y AlexNet. En GitHub hay varios repositorios con implementaciones de estas redes; como es de esperarse estos repositorios, aunque implementen la misma red neuronal, tienen varias diferencias; implementados en distintos lenguajes, usan diferentes librerías e incluso entrenan con diferentes dataset, sin embargo, cumplen la tarea de Segmentación semántica que proponen. Tras una búsqueda y selección entre varios repositorios para seleccionar la mejor red neuronal o la mejor implementación se encontró un Framework que permite usar distintas redes neuronales para la misma tarea. Dicho framework está disponible en el siguiente enlace \url{https://github.com/GeorgeSeif/Semantic-Segmentation-Suite} y es el que se usó para las pruebas descritas a continuación.
+Existe muchas redes neuronales convolucionales con las que se puede aplicar Segmentación semántica, entre ellas SegNet, uNet y AlexNet. En GitHub hay varios repositorios con implementaciones de estas redes; como es de esperarse estos repositorios, aunque implementen la misma red neuronal, tienen varias diferencias; implementados en distintos lenguajes, usan diferentes librerías e incluso entrenan con diferentes dataset, sin embargo, cumplen la tarea de Segmentación semántica que proponen. Tras una búsqueda y selección entre varios repositorios para seleccionar la mejor red neuronal o la mejor implementación se encontró un Framework que permite usar distintas redes neuronales para la misma tarea. Dicho framework está disponible en el siguiente enlace \url{https://github.com/GeorgeSeif/Semantic-Segmentation-Suite} y es el que se usó para las pruebas.
   
- \section{DETECCION DEL ESTRATO SOCIAL}
- \section{LA MEJOR CONFIGURACION}
+\section{DETECCION DEL ESTRATO SOCIAL}
+
+Se utilizaron 3 niveles de ZOOM para las pruebas y de cada nivel 2 configuraciones, \textit{SIMPLE} y \textit{COMPOUND} (satelital, satelital + informacion aumentada) y para cada configuacion se realizaron 11 pruebas variando la red neuronal y los parametros \textit{epoch} y \textit{batch size}. En total se realizaron 66 pruebas. 
+
+\begin{table}[H]
+		\begin{minipage}{1\textwidth}
+			\caption[Interfaces]{ \raggedright Pruebas realizadas por cada configuracion de dataset}
+			\label{tabla:interfaces}
+			\begin{center}
+				%	%	%	%	Acá va la tabla como tal
+				\begin{tabular}{@{}llll@{}}
+					\toprule
+					\multicolumn{3}{c}{Pruebas} &            \\ \cmidrule(r){1-4}
+					    N°	& RED 1 & EPOCH & BATCH SIZE \\
+					    1   & FC-DenseNet56 & 50 & 1 \\
+						2   & FC-DenseNet56 & 70 & 1\\
+					    3   & Encoder-Decoder & 70 & 1\\
+					    4   & Encoder-Decoder & 70 & 2\\
+					    5   & Encoder-Decoder-Skip & 70&1 \\
+					    6   & Encoder-Decoder-Skip & 70 &2\\
+					    7   & FRRN-A & 70 &1\\
+					    8   & MobileUNet & 70 &1 \\
+					    9   & MobileUNet & 70 &2\\
+					    10  & MobileUNet-Skip & 70 &1 \\
+                    	11	& MobileUNet-Skip & 70 &2 \\\bottomrule
+					\end{tabular} \\
+			\end{center} %\vspace{0.1em}
+		\end{minipage}
+	\end{table}
+	
+ una vez realizado el entrenamientos de cada red neuronal se midie la capacidad de cada una para peredeccir el estrato social (generar las imagenes \textit{LABEL}) utilizando el indice de jaccard, mas conocido como  \textit{IoU  - Interseccion over Union}, una metrica\footnote[14]{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/}> [citado en 17 de Julio de 2018]} muy utilizada en la deteccion de objetos y la segmentacion. El indice de jaccard consiste en encontrar el grado de similitud entre dos conjuntos, en este caso entre dos imagenes, calculando el cociente entre la interseccion y union de los dos conjuntos. En el caso de segmentacion semantica se usan las areas cubierta por cada clase en las iamgenes para calcular dicho coeficiente, esto se explica mejor en la siguiente imagen. 
+
+\figura{img/iou.png}{Ecuacion IoU}{0.5}{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/} [citado en 17 de julio de 2018]} 
+
+Cada red entrenada genero una cantidad de imagenes equivalente a las de \textit{test} del dataset con el que se entreno. Con estas imagenes generadas y las imagenes del dataset se calculo el indice de jaccard para cada una de las 66 pruebas. Como se mencionó dichos procesos se pueden observar en el repositorio del proyecto. \url{https://github.com/DaielChom/proyecto_uis/}
+
+\figura{img/metrica.png}{Ejemplo de prediccion}{0.6}{}
+
+\begin{table}[htb]
+	\begin{minipage}{1\textwidth}
+		\caption[Interfaces]{ \raggedright Resultados de cada entrenamiento}
+			\label{tabla:interfaces}
+			\begin{center}
+			%	%	%	%	Acá va la tabla como tal			
+				\begin{tabular}{@{}lll|lll|lll@{}}
+				\toprule
+				\multicolumn{8}{c}{Pruebas} &            \\ \cmidrule(r){1-9}
+					Prueba& Duración (s) & IoU & Prueba& Duración (s) & IoU &  Prueba& Duración (s) & IoU  \\
+					1 & 1696 & - & 23 & 3029 & - & 45 & 6768 & -\\
+					2 & 1860 & - & 24 & 3510 & - & 46 & 9545 & -\\
+					3 & 1910 & - & 25 & 3468 & - & 47 & 9305 & -\\
+					4 & 1705 & - & 26 & 3038 & - & 48 & 9659 & - \\
+					5 & 2480 & - & 27 & 4523 & - & 49 & 11346 & -\\
+					6 & 1984 & - & 28 & 3229 & - & 50 & 7780 & -\\
+					7 & 2591 & - & 29 & 4272 & - & 51 & 11429 & -\\
+					8 & 1083 & - & 30 & 2267 & - & 52 & 6996 & -\\
+					9 & 1137 & - & 31 & 2016 & - & 53 & 6559 & -\\
+					10 & 934 & - & 32 & 2209 & - & 54 & 7733 & -\\
+					11 & 917 & - & 33 & 2142 & - & 55 & 6629 & -\\
+					12 & 1345 & - & 34 & 2524 & - & 56 & 7151 & -\\
+					13 & 1993 & - & 35 & 3510 & - & 57 & 9542 & -\\
+					14 & 1962 & - & 36 & 4518 & - & 58 & 9672 & -\\
+					15 & 2052 & - & 37 & 3231 & - & 59 & 7877 & -\\
+					16 & 2088 & - & 38 & 3467 & - & 60 & 9527 & -\\
+					17 & 1706 & - & 39 & 3110 & - & 61 & 8212 & -\\
+					18 & 1677 & - & 40 & 3793 & - & 62 & 11611 & -\\
+					19 & 900 & - & 41 & 2914 & - & 63 & 7125 & -\\
+					20 & 810 & - & 42 & 2216 & - & 64 & 6547 & -\\
+					21 & 1357 & - & 43 & 2256 & - & 65 & 7763 & -\\
+					22 & 876 & - & 44 & 2160 & - & 66 & 7119 & -\\
+
+				\end{tabular} \\				
+			\end{center} %\vspace{0.1em}
+		\end{minipage}
+	\end{table}
+	
+ 
+\section{LA MEJOR CONFIGURACION}
   
-    
+   asd 
 
 %% ===============================================
 %% CONCLUSIONES
@@ -242,50 +318,7 @@ Existe muchas redes neuronales convolucionales con las que se puede aplicar Segm
     
    
     
-        \begin{table}[H]
-		\begin{minipage}{1\textwidth}
-			\caption[Red Conuss]{ \raggedright Red Conuss}
-			\label{tabla:red}
-			\begin{center}
-				%	%	%	%	Acá va la tabla como tal
-				\begin{tabular}{@{}lllll@{}}
-					\toprule
-					\multicolumn{4}{c}{Red Conuss} &            \\ \cmidrule(r){1-4}
-					      		& VLAN 1   & VLAN 2 & VLAN3     \\
-					Direccion   & 10.6.100.0 & 10.6.101.0 & 10.6.102.0      \\
-					Mascara     & 255.255.255.0 & 255.255.255.0 & 255.255.255.0   \\
-					Gateway     & 10.6.100.1 & 10.6.101.1 & 10.6.102.1     \\
-                    Uso 		& Administración & Usuarios & Pruebas \\\bottomrule
-					\end{tabular} \\
-			\end{center} %\vspace{0.1em}
-		\end{minipage}
-	\end{table}
-    
-  
-    Las interfaces de los nodos de OpenStack están definidas como en la \textbf{TABLA 7}.
-   
-   \begin{table}[H]
-		\begin{minipage}{1\textwidth}
-			\caption[Interfaces]{ \raggedright Servidores e Interfaces}
-			\label{tabla:interfaces}
-			\begin{center}
-				%	%	%	%	Acá va la tabla como tal
-				\begin{tabular}{@{}llll@{}}
-					\toprule
-					\multicolumn{3}{c}{Interfaces de Red} &            \\ \cmidrule(r){1-3}
-					      		& Interfaz 1 & Interfaz 2 \\
-					Labroides   & 10.6.100.2 & Proveedor de 10.6.101.0/24 \\
-					Lactoria    & 10.6.100.3 & Proveedor de 10.6.101.0/24 \\
-					Nautilus    & 10.6.100.5 & Proveedor de 10.6.101.0/24 \\
-                    Sistemas 	& 10.6.100.4 & N/A \\\bottomrule
-					\end{tabular} \\
-			\end{center} %\vspace{0.1em}
-		\end{minipage}
-	\end{table}
-    
-    
-  
-       
+            
   
     
          

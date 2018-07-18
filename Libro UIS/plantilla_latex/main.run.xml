@@ -53,8 +53,8 @@
       <file>blx-dm.def</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
-      <file>standard.bbx</file>
       <file>./Anexos/LATEX/source/bib/icontec-imer.bbx</file>
+      <file>standard.bbx</file>
       <file>verbose-trad2.cbx</file>
       <file>biblatex.cfg</file>
       <file>spanish.lbx</file>
