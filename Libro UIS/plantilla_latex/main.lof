@@ -19,11 +19,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5}{\ignorespaces Estrucutra OVERLAECOBO}}{20}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6}{\ignorespaces Segmentaci\IeC {\'o}n Semantica}}{22}{figure.caption.14}
+\contentsline {figure}{\numberline {6}{\ignorespaces Segmentaci\IeC {\'o}n Semantica}}{22}{figure.caption.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7}{\ignorespaces Ecuacion IoU}}{24}{figure.caption.16}
+\contentsline {figure}{\numberline {7}{\ignorespaces Niveles de ZOOM usados}}{23}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8}{\ignorespaces Ejemplo de prediccion}}{24}{figure.caption.17}
+\contentsline {figure}{\numberline {8}{\ignorespaces Ecuaci\IeC {\'o}n IoU}}{25}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9}{\ignorespaces Ejemplo de predicci\IeC {\'o}n}}{25}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {10}{\ignorespaces Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}}{26}{figure.caption.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {11}{\ignorespaces Resultados - Duraci\IeC {\'o}n de Entrenamiento y Testeo para cada prueba, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}}{27}{figure.caption.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {12}{\ignorespaces Resultados - IoU para diferentes valores de 'Epoch'}}{28}{figure.caption.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {13}{\ignorespaces Resultados - IoU de cada nivel de ZOOM para la prueba 'Prueba 8'}}{29}{figure.caption.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {14}{\ignorespaces Resultados - IoU de cada nivel de ZOOM 'Prueba 2'}}{30}{figure.caption.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {15}{\ignorespaces Resultados - IoU por clase de la mejor configuraci\IeC {\'o}n}}{31}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

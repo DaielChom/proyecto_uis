@@ -1,6 +1,10 @@
 \input{Anexos/LATEX/source/structure.tex}
 \addbibresource{Anexos/LATEX/source/bib/referenciasejemplo.bib}
-
+\usepackage{longtable} % Permite uso del entrono longtable
+\usepackage{booktabs} % Permite el uso de \toprule, \midrule y \bottonrule para realzar el acabado de las tablas
+\usepackage[spanish]{babel} % Captions y sections en español
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 % \usepackage{showframe}
 \usepackage{lipsum}
 \usepackage{CJKutf8}
@@ -61,11 +65,7 @@
     
     \textbf{DESCRIPCION:} 
     
-    La finalidad de este proyecto de grado, es continuar con la investigación  que el grupo Conuss ha venido desarrollando durante varios semestres en la creación de una infraestructura nube para la comunidad estudiantil, que permita su uso para el desarrollo de otros proyectos e investigaciones.
-    
-    Debido a la necesidad de crear diplomados y laboratorios virtuales de computación para fomentar el avance en la formación de ingenieros de calidad, se decide utilizar soluciones de código abierto que permitan el fácil acceso y administración de los servidores físicos y virtualización. Entre las muchas soluciones, se decide optar por OpenStack gracias a su amplia gama de módulos y su abundante comunidad por el cual es respaldado, a su vez, integrando docker como solución para la creación de contenedores.
-    
-    Todo esto con el fin de que la comunidad estudiantil tenga acceso a recursos de computo que no están al alcance de sus manos, otorgándoles la capacidad de conocer, además de disfrutar, las nuevas tecnologías que hoy por hoy están mejorando y automatizando los procesos de las grandes industrias tecnológicas.
+    DDDDDDDDD
  
  %% =============================
  %% ABSTRACT
@@ -80,11 +80,7 @@
     
     \textbf{DESCRIPTION:} 
     
-    The purpose of this thesis is to continue with the research that the Conuss group has incorporated during several semesters in the creation of an infrastructure for the student community that allows its use for the development of other projects and research.
-    
-    Due to the need to create certified courses and virtual computer labs to promote the advancement in the training of quality engineers, it is decided to use open source solutions that allow easy access and administration of physical servers and virtualization. Among the many solutions, it is decided to opt for OpenStack thanks to its wide range of modules and its abundant community for which it is backed, in turn, integrating docker as a solution for the creation of containers.
-    
-    All this in order that the student community has access to computing resources that are not available to them, that they can know as well as enjoy the new technologies that are improving today and automating the processes of the large technological industries.
+    DDD
     
 %% =======================
 %% INTRODUCCION
@@ -215,6 +211,32 @@ El proyecto se desarrolló encontrando fuentes de datos, generando dataset con i
   Se extrajeron imágenes de 7 Zooms diferentes, del 13 al 20,  cada nivel de zoom cuenta con imágenes satelitales, de información extra (Riesgo nocturno para las mujeres) y de estrato social. Cada nivel está dividido en train y test. OVERLAECOBO cuenta con la siguiente estructura.
  
  \figura{img/estructura.png}{Estrucutra OVERLAECOBO}{0.2}{}
+ 
+\begin{table}[H]
+		\begin{minipage}{1\textwidth}
+			\caption[Cantida de Imágenes en OVERLAECOBO]{ \raggedright OVERLAECOBO}
+			\label{tabla:interfaces}
+			\begin{center}
+				%	%	%	%	Acá va la tabla como tal
+				\begin{tabular}{@{}llll@{}}
+					\toprule
+					\multicolumn{3}{c}{Cantida de Imágenes en OVERLAECOBO} &            \\ \cmidrule(r){1-4}
+					    ZOOM	& Configuración 1 & Train & Test \\
+					    13   & SIMPLE & 7 & 2 \\
+					    13   & COMOUND & 7 & 2 \\
+						14   & SIMPLE & 24 & 24\\
+						14   & COMOUND & 24 & 24 \\
+					    15  & SIMPLE & 98 & 90\\
+					    15   & COMPOUND & 98 & 90 \\
+					    16   & SIMPLE & 347 & 321\\
+					    16   & COMPOUND & 347 & 321 \\
+					    17   & SIMPLE & 1338 & 1203 \\
+					    17   & COMPOUND & 1338&1203 \\\bottomrule
+					\end{tabular} \\
+			\end{center} %\vspace{0.1em}
+		\end{minipage}
+	\end{table}
+ 
  Una vez el dataset estuvo elaborado se prosiguió con la búsqueda de redes neuronales y posteriormente pruebas para determinar la mejor configuración para la detección del estrato social.
  
 %% ==========================================
@@ -227,14 +249,20 @@ Hay que mencionar que la metodología que se usó para la detección del estrato
   \figura{img/segmentacion.jpg}{Segmentación Semantica}{0.9}{ABHIJIT Kundu, VIBHAV Vineet, and VLANDLEN Koltun Feature Space Optimization for Semantic Video Segmentation [en linea] <\url{http://vladlen.info/publications/feature-space-optimization-for-semantic-video-segmentation/} [citado en 01 de junio de 2018]}
   
 Existe muchas redes neuronales convolucionales con las que se puede aplicar Segmentación semántica, entre ellas SegNet, uNet y AlexNet. En GitHub hay varios repositorios con implementaciones de estas redes; como es de esperarse estos repositorios, aunque implementen la misma red neuronal, tienen varias diferencias; implementados en distintos lenguajes, usan diferentes librerías e incluso entrenan con diferentes dataset, sin embargo, cumplen la tarea de Segmentación semántica que proponen. Tras una búsqueda y selección entre varios repositorios para seleccionar la mejor red neuronal o la mejor implementación se encontró un Framework que permite usar distintas redes neuronales para la misma tarea. Dicho framework está disponible en el siguiente enlace \url{https://github.com/GeorgeSeif/Semantic-Segmentation-Suite} y es el que se usó para las pruebas.
-  
+ 
+%% ==========================================
+%% DETECCION DEL ESTRATO SOCIAL
+%% ==========================================
+
 \section{DETECCION DEL ESTRATO SOCIAL}
 
-Se utilizaron 3 niveles de ZOOM para las pruebas y de cada nivel 2 configuraciones, \textit{SIMPLE} y \textit{COMPOUND} (satelital, satelital + informacion aumentada) y para cada configuacion se realizaron 11 pruebas variando la red neuronal y los parametros \textit{epoch} y \textit{batch size}. En total se realizaron 66 pruebas. 
+Se utilizaron 3 niveles de ZOOM para las pruebas y de cada nivel 2 configuraciones, \textit{SIMPLE} y \textit{COMPOUND} (satelital, satelital + información aumentada). Para cada configuración se realizaron 11 pruebas variando la red neuronal y los parámetros \textit{epoch} y \textit{batch size}. En total se realizaron 66 pruebas.  
+
+\figura{img/zooms.png}{Niveles de ZOOM usados}{1}{} 
 
 \begin{table}[H]
 		\begin{minipage}{1\textwidth}
-			\caption[Interfaces]{ \raggedright Pruebas realizadas por cada configuracion de dataset}
+			\caption[Pruebas]{ \raggedright Pruebas realizadas por cada configuración de dataset}
 			\label{tabla:interfaces}
 			\begin{center}
 				%	%	%	%	Acá va la tabla como tal
@@ -257,113 +285,123 @@ Se utilizaron 3 niveles de ZOOM para las pruebas y de cada nivel 2 configuracion
 			\end{center} %\vspace{0.1em}
 		\end{minipage}
 	\end{table}
-	
- una vez realizado el entrenamientos de cada red neuronal se midie la capacidad de cada una para peredeccir el estrato social (generar las imagenes \textit{LABEL}) utilizando el indice de jaccard, mas conocido como  \textit{IoU  - Interseccion over Union}, una metrica\footnote[14]{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/}> [citado en 17 de Julio de 2018]} muy utilizada en la deteccion de objetos y la segmentacion. El indice de jaccard consiste en encontrar el grado de similitud entre dos conjuntos, en este caso entre dos imagenes, calculando el cociente entre la interseccion y union de los dos conjuntos. En el caso de segmentacion semantica se usan las areas cubierta por cada clase en las iamgenes para calcular dicho coeficiente, esto se explica mejor en la siguiente imagen. 
 
-\figura{img/iou.png}{Ecuacion IoU}{0.5}{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/} [citado en 17 de julio de 2018]} 
+Todas las pruebas fueron realizadas en la misma máquina, la cual cuenta con un procesador Intel Core i7, una Tarjeta gráfica NVIDIA GEFORCE 940MX y 8GBs de RAM, las pruebas fueron ejecutadas sobre el Sistema Operativo Xubuntu 18-04. Una vez realizado el entrenamientos de cada red neuronal se mide la capacidad de cada una para predecir el estrato social (generar las imágenes \textit{LABEL}) utilizando el índice de jaccard, más conocido como  \textit{IoU  - Intersection over Union}, una métrica\footnote[14]{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/}> [citado en 17 de Julio de 2018]} muy utilizada en la detección de objetos y la segmentación. El índice de jaccard consiste en encontrar el grado de similitud entre dos conjuntos, en este caso entre dos imágenes, calculando el cociente entre la intersección y unión de los dos conjuntos. En el caso de segmentación semántica se usan las áreas cubierta por cada clase en las imágenes predichas y \textit{test} para calcular dicho coeficiente.  
 
-Cada red entrenada genero una cantidad de imagenes equivalente a las de \textit{test} del dataset con el que se entreno. Con estas imagenes generadas y las imagenes del dataset se calculo el indice de jaccard para cada una de las 66 pruebas. Como se mencionó dichos procesos se pueden observar en el repositorio del proyecto. \url{https://github.com/DaielChom/proyecto_uis/}
+\figura{img/iou.png}{Ecuación IoU}{0.5}{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/} [citado en 17 de julio de 2018]} 
 
-\figura{img/metrica.png}{Ejemplo de prediccion}{0.6}{}
+\figura{img/metrica.png}{Ejemplo de predicción}{0.8}{}
 
-\begin{table}[htb]
-	\begin{minipage}{1\textwidth}
-		\caption[Interfaces]{ \raggedright Resultados de cada entrenamiento}
+Cada red entrenada genero una cantidad de imágenes equivalente a las de \textit{test} del dataset con el que se entrenó. Con estas imágenes generadas y las imágenes del dataset se calculó el índice de jaccard para cada una de las 66 pruebas. Como se mencionó dichos procesos se pueden observar en el repositorio del proyecto. \url{https://github.com/DaielChom/proyecto_uis/}. Las pruebas entregaron los siguientes resultados. 
+
+\figura{img/todos.png}{Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}{1}{}
+
+Analizando la Figura \ref{fig:Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}, se observa como el aumento del nivel de ZOOM provoca un incremento en la variable IoU, lo que significa un aumento en la presión de cada predicción. Aunque los valores de IoU son bajos (puesto que se esperan valores cercanos a 1) este resultado no es sorprendente dado a la cantidad de imágenes de cada configuración de dataset y a los valores bajos de \textit{Epoch} y \textit{Batch Size}, los cuales son bajos debido a los recursos computacionales con los que se cuenta. A excepción de una prueba, se puede observar el aumento de IoU en el uso de capas de información extra, como es el caso de la configuración \textit{COMPOUND}. También se puede decir que el modelo que mejor se acopla a la tarea de predicción del nivel socio económico de una zona urbana es FC-DensetNet56\footnote[15]{JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en Linea]<\url{https://arxiv.org/abs/1611.09326}>[citado en 23 de Julio de 2018]}, mientras que MobileUNet\footnote[16]{HOWARD Andrew G., ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry, WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en línea]<\url{https://arxiv.org/abs/1704.04861}> [citado en 23 de Julio de 2018]} no es recomendable. 
+
+\figura{img/tiempo.png}{Resultados - Duración de Entrenamiento y Testeo para cada prueba, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}{1}{}
+
+Como era de esperarse y como lo demuestra la gráfica la cantidad de imágenes usadas en el entrenamiento afecta la duración del proceso de entrenamiento y testeo, siendo las configuraciones con más imágenes las que más tiempo gastan. Hay que aclarar que la duración de cada prueba se ve afectada por el poder computacional con el que se cuenta.
+
+
+\figura{img/epoch.png}{Resultados - IoU para diferentes valores de 'Epoch'}{1}{}
+
+Aunque se hicieron pocas pruebas con distintos valores de \textit{Epoch}, se puede observar una mejora en el IoU con el incremento de dicha variable, se muestra una mejora en el aumento de este valor, resultado que era de esperarse dado que se recomiendan\footnote[18]{SHARMA Sagar. Epoch vs Batch Size vs Iterations [en linea]<\url{https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9}>[citado en 23 Julio de 2018]} valores altos para este parámetro. Un número mayor de 70 podría generar mejores resultados, aunque también podría sobre entrenar el modelo. 
+
+\figura{img/peor.png}{Resultados - IoU de cada nivel de ZOOM para la prueba 'Prueba 8'}{1}{}
+
+Como se mencionó anterior mente la peor configuración para la tarea propuesta corresponde al modelo MobileUNet, el cual registra los valores más bajos de IoU para las distintas configuraciones de dataset, como se puede observar en la Figura  \ref{fig:Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}. Sin embargo, se puede notar el incremento de IoU con el uso de configuraciones con mayor cantidad de imágenes. 
+
+\figura{img/mejor.png}{Resultados - IoU de cada nivel de ZOOM 'Prueba 2'}{1}{}
+
+Contrario a MobileUnet, FC-DenseNet56 presentando los mejores IoU en las distintas configuraciones, fue la mejor red para la tarea propuesta. De igual manera se puede observar el incremento de la métrica IoU con el aumento de imágenes usadas en entrenamiento y testeo. También se conoce la mejoría de IoU con el incremento del parámetro \textit{Epoch} usando esta misma red neuronal, como se ilustra en la figura \ref{fig:Resultados - IoU para diferentes valores de 'Epoch'}. 
+
+\figura{img/por_clase.png}{Resultados - IoU por clase de la mejor configuración}{1}{}
+
+Con la Figura \ref{fig:Resultados - IoU por clase de la mejor configuración} se puede realizar un mayor análisis de los resultados generados por la red FC-DenseNet56. dicha grafica muestra el IoU de cada una de las clases presente en el dataset, en otras palabras, se muestra la capacidad de FC-DenseNet56 para predecir cada uno de los distintos estratos. Este valor de IoU se ve reflejado tanto por la cantidad de imágenes usadas como por la presencia de los distintos estratos en dichas imágenes. Como se puede ver en la siguiente grafica las zonas sin estrato o clase 'NO DEFINIDO' cuenta con una presencia casi del 50 por ciento en el dataset, lo que se refleja en su IoU, siendo este el mayor entre todas las clases. 
+
+
+\begin{table}[H]
+		\begin{minipage}{1\textwidth}
+			\caption[Presencia de cada clase en el dataset]{ \raggedright Presencia de cada clase en el dataset}
 			\label{tabla:interfaces}
 			\begin{center}
-			%	%	%	%	Acá va la tabla como tal			
-				\begin{tabular}{@{}lll|lll|lll@{}}
-				\toprule
-				\multicolumn{8}{c}{Pruebas} &            \\ \cmidrule(r){1-9}
-					Prueba& Duración (s) & IoU & Prueba& Duración (s) & IoU &  Prueba& Duración (s) & IoU  \\
-					1 & 1696 & - & 23 & 3029 & - & 45 & 6768 & -\\
-					2 & 1860 & - & 24 & 3510 & - & 46 & 9545 & -\\
-					3 & 1910 & - & 25 & 3468 & - & 47 & 9305 & -\\
-					4 & 1705 & - & 26 & 3038 & - & 48 & 9659 & - \\
-					5 & 2480 & - & 27 & 4523 & - & 49 & 11346 & -\\
-					6 & 1984 & - & 28 & 3229 & - & 50 & 7780 & -\\
-					7 & 2591 & - & 29 & 4272 & - & 51 & 11429 & -\\
-					8 & 1083 & - & 30 & 2267 & - & 52 & 6996 & -\\
-					9 & 1137 & - & 31 & 2016 & - & 53 & 6559 & -\\
-					10 & 934 & - & 32 & 2209 & - & 54 & 7733 & -\\
-					11 & 917 & - & 33 & 2142 & - & 55 & 6629 & -\\
-					12 & 1345 & - & 34 & 2524 & - & 56 & 7151 & -\\
-					13 & 1993 & - & 35 & 3510 & - & 57 & 9542 & -\\
-					14 & 1962 & - & 36 & 4518 & - & 58 & 9672 & -\\
-					15 & 2052 & - & 37 & 3231 & - & 59 & 7877 & -\\
-					16 & 2088 & - & 38 & 3467 & - & 60 & 9527 & -\\
-					17 & 1706 & - & 39 & 3110 & - & 61 & 8212 & -\\
-					18 & 1677 & - & 40 & 3793 & - & 62 & 11611 & -\\
-					19 & 900 & - & 41 & 2914 & - & 63 & 7125 & -\\
-					20 & 810 & - & 42 & 2216 & - & 64 & 6547 & -\\
-					21 & 1357 & - & 43 & 2256 & - & 65 & 7763 & -\\
-					22 & 876 & - & 44 & 2160 & - & 66 & 7119 & -\\
-
-				\end{tabular} \\				
+				%	%	%	%	Acá va la tabla como tal
+				\begin{tabular}{@{}lll@{}}
+					\toprule
+					\multicolumn{2}{c}{Porcentaje por clase} &            \\ \cmidrule(r){1-3}
+					    CLASE	& PORCENTAJE \\
+					    Estrato 1 & 0.061223 \\
+					    Estrato 2 & 0.144790 \\
+					    Estrato 3 & 0.193266 \\
+					    Estrato 4 & 0.051771 \\
+					    Estrato 5 & 0.028800 \\
+					    Estrato 6 & 0.023021 \\
+					    No Definido & 0.497130\\\bottomrule
+					\end{tabular} \\
 			\end{center} %\vspace{0.1em}
 		\end{minipage}
 	\end{table}
-	
- 
-\section{LA MEJOR CONFIGURACION}
-  
-   asd 
+
+En cambio, el 'ESTRATO 6' que tiene menor presencia en el dataset cuenta con el menor valor de IoU. Hay que aclarar que no se usaron técnicas para modificar los pesos de cada clase, ya que esto suele ser una alternativa para mejorar la calidad de los algoritmos ante la ausencia o alta presencia de las clases. 
 
 %% ===============================================
 %% CONCLUSIONES
 %% ===============================================  
 
-\newpage\chapter{CONCLUSIONES} 
-    
-    
-   
-    
-            
-  
-    
-         
-     
-     
-     
-  
-      
-      	
-      
-     
-      
-      
-      
-      
-    
+\newpage\chapter{CONCLUSIONES}
+
+\begin{itemize}
+\item La mejor manera de predecir el nivel socio económico de una zona urbana usando imágenes satelitales es usando niveles de acercamiento satelital altos, capas de información extra en las imágenes satelitales y la red neuronal FC-DenseNet56 con valores de \textit{Epoch} y \textit{Batch-size} mayores o iguales a 70 y 1 respectivamente. 
+
+\item Los datos en el formato necesario no están disponibles en las páginas del gobierno, ni en alguna otra página en internet, debido a esto se crearon varios archivos KML de la ciudad de Bogotá, los cuales quedan disponibles para el público. Esta falta de datos generó retrasos en la elaboración del proyecto. 
+
+\item Con los archivos KML que se crearon y usando el software ruso SASplanet se crea un dataset nombrado OVERLAECOBO, el cual consta de imágenes satelitales de 5 diferentes niveles de acercamiento satelital. El dataset cuenta con dos tipos de imágenes satelitales (\textit{SIMPLE} y \textit{COMPOUND}) e imágenes \textit{Ground Truth} (\textit{LABEL}) todas geográficamente correspondidas. las imágenes \textit{COMPOUND} son imágenes satelitales con un canal extra el cual consiste en información sobre el riesgo que corren las mujeres en horarios nocturnos de las distintas localidades de Bogotá. 
+
+\item Como método de predicción para el nivel socio económico de zonas urbanas se utiliza segmentación semántica, redes neuronales convoluciones y el Framework Semantic-Segmentation-Suite disponible en \url{https://github.com/GeorgeSeif/Semantic-Segmentation-Suite} el cual facilita el trabajo con los datos que se poseen. 
+
+\item El uso de niveles de acercamiento satelital más amplios genera una mejoría en la calidad de la predicción, esto es debido a que los \textit{ZOOM} más grandes cuentan con un número mayor de imagines y a la vez una mayor cantidad de información de la cual el modelo puede tomar más patrones. 
+
+\item Como lo enuncia la teoría el uso de valores altos en la variable \textit{Epoch} genera mejores resultados y el porcentaje de presencia de las clases en el dataset también afecta la predicción. 
+\end{itemize}
+
+%% ===============================================
+%% RECOMENDACIONES
+%% ===============================================  
+
+\newpage\chapter{RECOMENDACIONES Y TRABAJO FUTURO}
+	
+	\begin{itemize}
+	
+	\item Utilizar maquinas con mayor poder computacional. 
+
+    \item Realizar entrenamiento con FC-DenseNet56 variando los valores de \textit{Epoch} y \textit{Batch-size}, usando los \textit{ZOOM} 16 o 17. 
+
+    \item Dar más peso a las clases que tienen menor presencia en el dataset. 
+
+    \item Cambiar de Framework dado a las limitaciones del mismo respecto a las capas de información extra. 
+
+    \item Entrenar las redes neuronales con imágenes satelitales con más de una capa de información extra. 
+	
+	
+	\end{itemize}
   
 
-    
+%% ===============================================
+%% LIMITACIONES
+%% ===============================================   
 
     
-    
-    
+\newpage\chapter{LIMITACIONES Y PROBLEMAS} 
 
-    
-    
-    
-   
+	\begin{itemize}
+		\item{Poca disponibilidad y difícil acceso de los datos necesarios para la tarea propuesta. debido a esta baja disponibilidad el proyecto tomo más tiempo del planeado.} 
+
+        \item{El Framework únicamente permite el uso de imágenes con 4 canales.} 
+
+        \item{El poder computacional con el que se contaba} 	
+	
+	\end{itemize}
         
-   
-   
-   
- 
-    
-    
-    
-     
-    \newpage\chapter{RECOMENDACIONES Y TRABAJO FUTURO}
-    
-    
-    
-    
-    \newpage\chapter{LIMITACIONES Y PROBLEMAS} 
-    
-    
     
     
 %% ==============================
@@ -398,5 +436,17 @@ IBM. El modelo de redes neuronales [en línea]. <\url{https://www.ibm.com/suppor
 MATHWORKS. Aprendizaje profundo [en línea]. <\url{https://es.mathworks.com/discovery/deep-learning.html}> [citado en 31 de Mayo de 2018]
 
 GOBIERNO DIGITAL. Datos Abiertos [en linea] <\url{http://estrategia.gobiernoenlinea.gov.co/623/w3-article-9407.html}> [citado en 30 de Mayo de 2018]
+
+BHIJIT Kundu, VIBHAV Vineet, and VLANDLEN Koltun Feature Space Optimization for Semantic Video Segmentation [en linea] <\url{http://vladlen.info/publications/feature-space-optimization-for-semantic-video-segmentation/}> [citado en 01 de junio de 2018]
+
+ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/}> [citado en 17 de Julio de 2018]
+
+JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en Linea]<\url{https://arxiv.org/abs/1611.09326}>[citado en 23 de Julio de 2018]
+
+HOWARD Andrew G., ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry, WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en linea]<\url{https://arxiv.org/abs/1704.04861}> [citado en 23 de Julio de 2018]
+
+
+SHARMA Sagar. Epoch vs Batch Size vs Iterations [en linea] <\url{https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9}> [citado en 23 Julio de 2018]
+
 
 \end{document}

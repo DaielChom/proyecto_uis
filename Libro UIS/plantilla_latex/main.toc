@@ -29,10 +29,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}DETECCION DEL ESTRATO SOCIAL}{23}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}LA MEJOR CONFIGURACION}{25}{section.3.5}
+\contentsline {chapter}{\numberline {4}CONCLUSIONES}{33}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}CONCLUSIONES}{26}{chapter.4}
+\contentsline {chapter}{\numberline {5}RECOMENDACIONES Y TRABAJO FUTURO}{34}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}RECOMENDACIONES Y TRABAJO FUTURO}{27}{chapter.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}LIMITACIONES Y PROBLEMAS}{28}{chapter.6}
+\contentsline {chapter}{\numberline {6}LIMITACIONES Y PROBLEMAS}{35}{chapter.6}
