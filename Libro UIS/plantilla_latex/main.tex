@@ -63,9 +63,7 @@
     
     \textbf{PALABRAS CLAVE:} DANE, Machine learning, Deep Learning, Red Neuronal Convolucional, .	
     
-    \textbf{DESCRIPCION:} 
-    
-    DDDDDDDDD
+    \textbf{DESCRIPCION:} Aplicando segmentación semántica para un dataset de imágenes satelitales de la ciudad de Bogotá se consiguió un nivel de predicción del estrato socioeconómico de las zonas urbanas de la ciudad. Con el dataset, denominado OVERLAECOBO, el cual fue elaborado durante el desarrollo del proyecto debido a la baja disponibilidad de la información en el formato requerido para la segmentación, se consigue una predicción con un valor de IoU de 0.34. La elaboración del dataset se realizó usando el software SASplanet junto con archivos KML creados en base a la información del nivel socioeconómico disponible en el portal de mapas de la ciudad de Bogotá. Con dicho software se obtuvieron 3 tipos de imágenes satelitales geográficamente correspondidas entre sí y con 5 niveles de acercamiento (\textit{ZOOM}), los 3 tipos de imágenes se denominaron como \textit{SIMPLE}, \textit{COMPOUND} y \textit{LABERL}. Las imágenes \textit{SIMPLE} son imágenes satelitales con 3 canales (RGB), las imágenes \textit{COMPOUND} son imágenes satelitales con 4 canales (RGB + Información extra) donde el cuarto canal es el nivel de riesgo que tienen las mujeres durante horarios nocturnos en las distintas localidades de la ciudad, las imágenes LABEL son imágenes de 3 canales (RGB) pero únicamente con 7 colores, donde cada color representa un estrato social. El proceso de segmentación semántica se hizo entrenando las redes neuronales convolucionales ofrecidas por el Framework Semantic-Segmentation-Suite del usuario de github @GeorgeSeif. Se realizaron en total 66 pruebas, las cuales indican que la mejor red para determinar el nivel socioeconómico de una zona urbana es FC-DenseNet56. Para las pruebas se usaron varias redes neuronales modificando los parámetros de Epoch y batchsize junto con 3 de los zooms disponibles por el dataset. 
  
  %% =============================
  %% ABSTRACT
@@ -78,9 +76,7 @@
     
     \textbf{KEYWORDS:} Container, Cloud Computing, OpenStack, modules and services.
     
-    \textbf{DESCRIPTION:} 
-    
-    DDD
+    \textbf{DESCRIPTION:} A level of prediction was obtained using semantic segmentation for a dataset of satellite images from Bogota city.  The dataset was named OVERLAECOBO and was created with information from the maps web page of Bogota. OVERLACOBO have 3 types of satellite image, SIMPLE, COMPUND and LABEL, The SIMPLE image is RGB satellite image,  the COMPOUND image are image with 4 channels, RGB + extra information, in this case the night danger for the women and the LABEL image are color maps where a color is a class for the prediction. The metric IoU (Intersection over Union) is used for determining the quality of predictions. The maximum IoU of the different test was 0.34 and the model used for this value was FC-DenseNet56 with a value of 70 for epoch and 1 for batch-size. The test was elaborated with the Framework Semantic-Segmentation-Suite of the GitHub user @GeorgeSeif. 
     
 %% =======================
 %% INTRODUCCION
@@ -256,7 +252,7 @@ Existe muchas redes neuronales convolucionales con las que se puede aplicar Segm
 
 \section{DETECCION DEL ESTRATO SOCIAL}
 
-Se utilizaron 3 niveles de ZOOM para las pruebas y de cada nivel 2 configuraciones, \textit{SIMPLE} y \textit{COMPOUND} (satelital, satelital + información aumentada). Para cada configuración se realizaron 11 pruebas variando la red neuronal y los parámetros \textit{epoch} y \textit{batch size}. En total se realizaron 66 pruebas.  
+Se utilizaron 3 niveles de ZOOM para las pruebas y cada nivel se entrenó con imágenes \textit{SIMPLE} y \textit{COMPOUND} (satelital, satelital + información aumentada). Para cada configuración se realizaron 11 pruebas variando la red neuronal y los parámetros \textit{epoch} y \textit{batch size}. En total se realizaron 66 pruebas.  
 
 \figura{img/zooms.png}{Niveles de ZOOM usados}{1}{} 
 
@@ -286,17 +282,17 @@ Se utilizaron 3 niveles de ZOOM para las pruebas y de cada nivel 2 configuracion
 		\end{minipage}
 	\end{table}
 
-Todas las pruebas fueron realizadas en la misma máquina, la cual cuenta con un procesador Intel Core i7, una Tarjeta gráfica NVIDIA GEFORCE 940MX y 8GBs de RAM, las pruebas fueron ejecutadas sobre el Sistema Operativo Xubuntu 18-04. Una vez realizado el entrenamientos de cada red neuronal se mide la capacidad de cada una para predecir el estrato social (generar las imágenes \textit{LABEL}) utilizando el índice de jaccard, más conocido como  \textit{IoU  - Intersection over Union}, una métrica\footnote[14]{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/}> [citado en 17 de Julio de 2018]} muy utilizada en la detección de objetos y la segmentación. El índice de jaccard consiste en encontrar el grado de similitud entre dos conjuntos, en este caso entre dos imágenes, calculando el cociente entre la intersección y unión de los dos conjuntos. En el caso de segmentación semántica se usan las áreas cubierta por cada clase en las imágenes predichas y \textit{test} para calcular dicho coeficiente.  
+Todas las pruebas fueron realizadas en la misma máquina, la cual cuenta con un procesador Intel Core i7, una Tarjeta gráfica NVIDIA GEFORCE 940MX y 8GBs de RAM, las pruebas fueron ejecutadas sobre el Sistema Operativo Xubuntu 18-04. Una vez realizado el entrenamientos de cada red neuronal se midió la capacidad de cada una para predecir el estrato social (generar aproximaciónes a las imágenes \textit{LABEL}) utilizando el índice de jaccard, más conocido como  \textit{IoU  - Intersection over Union}, una métrica\footnote[14]{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/}> [citado en 17 de Julio de 2018]} muy utilizada en la detección de objetos y la segmentación. El índice de jaccard consiste en encontrar el grado de similitud entre dos conjuntos, en este caso entre dos imágenes, calculando el cociente entre la intersección y unión de los dos conjuntos. En el caso de segmentación semántica se usan las áreas cubierta por cada clase en las imágenes predichas y \textit{test} para calcular dicho cociente.  
 
 \figura{img/iou.png}{Ecuación IoU}{0.5}{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/} [citado en 17 de julio de 2018]} 
 
 \figura{img/metrica.png}{Ejemplo de predicción}{0.8}{}
 
-Cada red entrenada genero una cantidad de imágenes equivalente a las de \textit{test} del dataset con el que se entrenó. Con estas imágenes generadas y las imágenes del dataset se calculó el índice de jaccard para cada una de las 66 pruebas. Como se mencionó dichos procesos se pueden observar en el repositorio del proyecto. \url{https://github.com/DaielChom/proyecto_uis/}. Las pruebas entregaron los siguientes resultados. 
+Cada red entrenada generó una cantidad de imágenes equivalente a las de \textit{test} del dataset con el que se entrenó. Con estas imágenes generadas y las imágenes del dataset se calculó el índice de jaccard para cada una de las 66 pruebas. Como se mencionó dichos procesos se pueden observar en el repositorio del proyecto. \url{https://github.com/DaielChom/proyecto_uis/}. Las pruebas entregaron los siguientes resultados. 
 
 \figura{img/todos.png}{Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}{1}{}
 
-Analizando la Figura \ref{fig:Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}, se observa como el aumento del nivel de ZOOM provoca un incremento en la variable IoU, lo que significa un aumento en la presión de cada predicción. Aunque los valores de IoU son bajos (puesto que se esperan valores cercanos a 1) este resultado no es sorprendente dado a la cantidad de imágenes de cada configuración de dataset y a los valores bajos de \textit{Epoch} y \textit{Batch Size}, los cuales son bajos debido a los recursos computacionales con los que se cuenta. A excepción de una prueba, se puede observar el aumento de IoU en el uso de capas de información extra, como es el caso de la configuración \textit{COMPOUND}. También se puede decir que el modelo que mejor se acopla a la tarea de predicción del nivel socio económico de una zona urbana es FC-DensetNet56\footnote[15]{JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en Linea]<\url{https://arxiv.org/abs/1611.09326}>[citado en 23 de Julio de 2018]}, mientras que MobileUNet\footnote[16]{HOWARD Andrew G., ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry, WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en línea]<\url{https://arxiv.org/abs/1704.04861}> [citado en 23 de Julio de 2018]} no es recomendable. 
+Analizando la Figura \ref{fig:Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}, se observa como el aumento del nivel de ZOOM provoca un incremento en la variable IoU, lo que significa un aumento en la precisión de cada predicción. Aunque los valores de IoU son bajos (puesto que se esperan valores cercanos a 1) este resultado no es extraño dado a la cantidad de imágenes de cada configuración de dataset y a los valores bajos de \textit{Epoch} y \textit{Batch Size}, los cuales son debido a los recursos computacionales con los que se cuenta. A excepción de una prueba, se puede observar el aumento de IoU en el uso de capas de información extra, como es el caso de la configuración \textit{COMPOUND}. También se puede decir que el modelo que mejor se acopla a la tarea de predicción del nivel socio económico de una zona urbana es FC-DensetNet56\footnote[15]{JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en Linea]<\url{https://arxiv.org/abs/1611.09326}>[citado en 23 de Julio de 2018]}, mientras que MobileUNet\footnote[16]{HOWARD Andrew G., ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry, WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en línea]<\url{https://arxiv.org/abs/1704.04861}> [citado en 23 de Julio de 2018]} no es recomendable. 
 
 \figura{img/tiempo.png}{Resultados - Duración de Entrenamiento y Testeo para cada prueba, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}{1}{}
 
@@ -305,19 +301,19 @@ Como era de esperarse y como lo demuestra la gráfica la cantidad de imágenes u
 
 \figura{img/epoch.png}{Resultados - IoU para diferentes valores de 'Epoch'}{1}{}
 
-Aunque se hicieron pocas pruebas con distintos valores de \textit{Epoch}, se puede observar una mejora en el IoU con el incremento de dicha variable, se muestra una mejora en el aumento de este valor, resultado que era de esperarse dado que se recomiendan\footnote[18]{SHARMA Sagar. Epoch vs Batch Size vs Iterations [en linea]<\url{https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9}>[citado en 23 Julio de 2018]} valores altos para este parámetro. Un número mayor de 70 podría generar mejores resultados, aunque también podría sobre entrenar el modelo. 
+Aunque se hicieron pocas pruebas con distintos valores de \textit{Epoch}, se puede observar una mejora en el IoU con el incremento de dicha variable, resultado que era de esperarse dado que se recomiendan\footnote[18]{SHARMA Sagar. Epoch vs Batch Size vs Iterations [en linea]<\url{https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9}>[citado en 23 Julio de 2018]} valores altos para este parámetro. Un número mayor de 70 podría generar mejores resultados, aunque también podría sobre entrenar el modelo. 
 
 \figura{img/peor.png}{Resultados - IoU de cada nivel de ZOOM para la prueba 'Prueba 8'}{1}{}
 
-Como se mencionó anterior mente la peor configuración para la tarea propuesta corresponde al modelo MobileUNet, el cual registra los valores más bajos de IoU para las distintas configuraciones de dataset, como se puede observar en la Figura  \ref{fig:Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}. Sin embargo, se puede notar el incremento de IoU con el uso de configuraciones con mayor cantidad de imágenes. 
+Como se mencionó anteriormente la peor configuración para la tarea propuesta corresponde al modelo MobileUNet, el cual registra los valores más bajos de IoU para las distintas configuraciones de dataset, como se puede observar en la Figura  \ref{fig:Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}. Sin embargo, se puede notar el incremento de IoU con el uso de configuraciones con mayor cantidad de imágenes. 
 
 \figura{img/mejor.png}{Resultados - IoU de cada nivel de ZOOM 'Prueba 2'}{1}{}
 
-Contrario a MobileUnet, FC-DenseNet56 presentando los mejores IoU en las distintas configuraciones, fue la mejor red para la tarea propuesta. De igual manera se puede observar el incremento de la métrica IoU con el aumento de imágenes usadas en entrenamiento y testeo. También se conoce la mejoría de IoU con el incremento del parámetro \textit{Epoch} usando esta misma red neuronal, como se ilustra en la figura \ref{fig:Resultados - IoU para diferentes valores de 'Epoch'}. 
+Contrario a MobileUnet, FC-DenseNet56 presenta los mejores valores de IoU en las distintas configuraciones. FC-DenseNet56 fue la mejor red para la tarea propuesta. De igual manera se puede observar el incremento de la métrica IoU con el aumento de imágenes usadas en entrenamiento y testeo. De la Figura \ref{fig:Resultados - IoU para diferentes valores de 'Epoch'} se conoce la mejoría de IoU con el incremento del parámetro \textit{Epoch} usando esta misma red neuronal. 
 
 \figura{img/por_clase.png}{Resultados - IoU por clase de la mejor configuración}{1}{}
 
-Con la Figura \ref{fig:Resultados - IoU por clase de la mejor configuración} se puede realizar un mayor análisis de los resultados generados por la red FC-DenseNet56. dicha grafica muestra el IoU de cada una de las clases presente en el dataset, en otras palabras, se muestra la capacidad de FC-DenseNet56 para predecir cada uno de los distintos estratos. Este valor de IoU se ve reflejado tanto por la cantidad de imágenes usadas como por la presencia de los distintos estratos en dichas imágenes. Como se puede ver en la siguiente grafica las zonas sin estrato o clase 'NO DEFINIDO' cuenta con una presencia casi del 50 por ciento en el dataset, lo que se refleja en su IoU, siendo este el mayor entre todas las clases. 
+Con la Figura \ref{fig:Resultados - IoU por clase de la mejor configuración} se puede realizar un mayor análisis de los resultados generados por la red FC-DenseNet56. dicha grafica muestra el IoU de cada una de las clases presente en el dataset, en otras palabras, se muestra la capacidad de FC-DenseNet56 para predecir cada uno de los distintos estratos. Este valor de IoU se ve reflejado tanto por la cantidad de imágenes usadas como por la presencia de los distintos estratos en dichas imágenes. Como se puede ver en la siguiente tabla las zonas sin estrato o clase 'NO DEFINIDO' cuenta con una presencia casi del 50 por ciento del dataset, lo que se refleja en su IoU, siendo este el mayor entre todas las clases. 
 
 
 \begin{table}[H]
@@ -342,7 +338,7 @@ Con la Figura \ref{fig:Resultados - IoU por clase de la mejor configuración} se
 		\end{minipage}
 	\end{table}
 
-En cambio, el 'ESTRATO 6' que tiene menor presencia en el dataset cuenta con el menor valor de IoU. Hay que aclarar que no se usaron técnicas para modificar los pesos de cada clase, ya que esto suele ser una alternativa para mejorar la calidad de los algoritmos ante la ausencia o alta presencia de las clases. 
+En cambio, el 'ESTRATO 6' que tiene menor presencia en el dataset cuenta con el menor valor de IoU. Hay que aclarar que no se usaron técnicas para modificar los pesos de cada clase, ya que esto suele ser una alternativa para mejorar la calidad de las predicciónes ante la ausencia o presencia de las clases. 
 
 %% ===============================================
 %% CONCLUSIONES
@@ -351,7 +347,7 @@ En cambio, el 'ESTRATO 6' que tiene menor presencia en el dataset cuenta con el 
 \newpage\chapter{CONCLUSIONES}
 
 \begin{itemize}
-\item La mejor manera de predecir el nivel socio económico de una zona urbana usando imágenes satelitales es usando niveles de acercamiento satelital altos, capas de información extra en las imágenes satelitales y la red neuronal FC-DenseNet56 con valores de \textit{Epoch} y \textit{Batch-size} mayores o iguales a 70 y 1 respectivamente. 
+\item La mejor manera de predecir el nivel socio económico de una zona urbana usando imágenes satelitales es utilizar niveles de acercamiento satelital altos, capas de información extra en las imágenes satelitales y la red neuronal FC-DenseNet56 con valores de \textit{Epoch} y \textit{Batch-size} mayores o iguales a 70 y 1 respectivamente. 
 
 \item Los datos en el formato necesario no están disponibles en las páginas del gobierno, ni en alguna otra página en internet, debido a esto se crearon varios archivos KML de la ciudad de Bogotá, los cuales quedan disponibles para el público. Esta falta de datos generó retrasos en la elaboración del proyecto. 
 
@@ -359,7 +355,7 @@ En cambio, el 'ESTRATO 6' que tiene menor presencia en el dataset cuenta con el 
 
 \item Como método de predicción para el nivel socio económico de zonas urbanas se utiliza segmentación semántica, redes neuronales convoluciones y el Framework Semantic-Segmentation-Suite disponible en \url{https://github.com/GeorgeSeif/Semantic-Segmentation-Suite} el cual facilita el trabajo con los datos que se poseen. 
 
-\item El uso de niveles de acercamiento satelital más amplios genera una mejoría en la calidad de la predicción, esto es debido a que los \textit{ZOOM} más grandes cuentan con un número mayor de imagines y a la vez una mayor cantidad de información de la cual el modelo puede tomar más patrones. 
+\item El uso de niveles de acercamiento satelital más amplios genera una mayor calidad en la predicción, esto es debido a que los \textit{ZOOM} más grandes cuentan con un número mayor de imagines y a la vez una mayor cantidad de información de la cual el modelo puede aprender. 
 
 \item Como lo enuncia la teoría el uso de valores altos en la variable \textit{Epoch} genera mejores resultados y el porcentaje de presencia de las clases en el dataset también afecta la predicción. 
 \end{itemize}
