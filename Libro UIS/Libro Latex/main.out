@@ -6,11 +6,22 @@
 \BOOKMARK [1][-]{section.2.1}{ESTRATIFICACI\323N SOCIAL}{chapter.2}% 6
 \BOOKMARK [1][-]{section.2.2}{MACHINE LEARNING}{chapter.2}% 7
 \BOOKMARK [2][-]{subsection.2.2.1}{REDES NEURONALES}{section.2.2}% 8
-\BOOKMARK [0][-]{chapter.3}{DESARROLLO DEL PROYECTO}{}% 9
-\BOOKMARK [1][-]{section.3.1}{FUENTES DE DATOS}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.2}{DATASET}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.3}{REDES NEURONALES}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.4}{DETECCION DEL ESTRATO SOCIAL}{chapter.3}% 13
-\BOOKMARK [0][-]{chapter.4}{CONCLUSIONES}{}% 14
-\BOOKMARK [0][-]{chapter.5}{RECOMENDACIONES Y TRABAJO FUTURO}{}% 15
-\BOOKMARK [0][-]{chapter.6}{LIMITACIONES Y PROBLEMAS}{}% 16
+\BOOKMARK [2][-]{subsection.2.2.2}{REDES NEURONALES CONVOLUCIONALES}{section.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.3}{SEGMENTACION SEMANTICA}{section.2.2}% 10
+\BOOKMARK [0][-]{chapter.3}{DESARROLLO DEL PROYECTO}{}% 11
+\BOOKMARK [1][-]{section.3.1}{FUENTES DE DATOS}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.2}{DATASET}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.3}{REDES NEURONALES}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.4}{DETECCION DEL ESTRATO SOCIAL}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.4.1}{DATOS.}{section.3.4}% 16
+\BOOKMARK [2][-]{subsection.3.4.2}{REDES.}{section.3.4}% 17
+\BOOKMARK [3][-]{subsubsection.3.4.2.1}{FC-DenseNet56}{subsection.3.4.2}% 18
+\BOOKMARK [3][-]{subsubsection.3.4.2.2}{Encoder-Decoder}{subsection.3.4.2}% 19
+\BOOKMARK [3][-]{subsubsection.3.4.2.3}{Encoder-Decoder-Skip}{subsection.3.4.2}% 20
+\BOOKMARK [3][-]{subsubsection.3.4.2.4}{FRRN-A}{subsection.3.4.2}% 21
+\BOOKMARK [3][-]{subsubsection.3.4.2.5}{MobileUNet}{subsection.3.4.2}% 22
+\BOOKMARK [3][-]{subsubsection.3.4.2.6}{MobileUNet-Skip}{subsection.3.4.2}% 23
+\BOOKMARK [2][-]{subsection.3.4.3}{METRICA}{section.3.4}% 24
+\BOOKMARK [0][-]{chapter.4}{CONCLUSIONES}{}% 25
+\BOOKMARK [0][-]{chapter.5}{RECOMENDACIONES Y TRABAJO FUTURO}{}% 26
+\BOOKMARK [0][-]{chapter.6}{LIMITACIONES Y PROBLEMAS}{}% 27

@@ -9,11 +9,15 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces Cantida de Im\IeC {\'a}genes en OVERLAECOBO}}{21}{table.caption.14}
+\contentsline {table}{\numberline {1}{\ignorespaces Cantidad de Im\IeC {\'a}genes en OVERLAECOBO}}{26}{table.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2}{\ignorespaces Pruebas}}{24}{table.caption.17}
+\contentsline {table}{\numberline {2}{\ignorespaces Proporci\IeC {\'o}n de cada clase en Train - OVERLAECOBO}}{26}{table.caption.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {3}{\ignorespaces Presencia de cada clase en el dataset}}{32}{table.caption.26}
+\contentsline {table}{\numberline {3}{\ignorespaces Proporci\IeC {\'o}n de cada clase en Test - OVERLAECOBO}}{27}{table.caption.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4}{\ignorespaces Pruebas}}{31}{table.caption.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5}{\ignorespaces Presencia de cada clase en el dataset}}{45}{table.caption.43}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
