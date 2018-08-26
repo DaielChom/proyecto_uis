@@ -1,0 +1,606 @@
+\input{Anexos/LATEX/source/structure.tex}
+\addbibresource{Anexos/LATEX/source/bib/referenciasejemplo.bib}
+\usepackage{longtable} % Permite uso del entrono longtable
+\usepackage{booktabs} % Permite el uso de \toprule, \midrule y \bottonrule para realzar el acabado de las tablas
+\usepackage[spanish]{babel} % Captions y sections en español
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% \usepackage{showframe}
+\usepackage{lipsum}
+\usepackage{CJKutf8}
+
+%%% FOR URLs WORK ============================
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks% save the current one
+	\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+	\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+	\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+	\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+	\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+	\do\Y\do\Z\do\*\do\-\do\~\do\'\do\"\do\-}%
+% ==================================================
+
+
+\title{DETECCIÓN AUTOMÁTICA DEL NIVEL DE ESTRATIFICACIÓN SOCIOECONÓMICO URBANO USANDO REDES NEURONALES CONVOLUCIONALES SOBRE IMÁGENES SATELITALES CON INFORMACIÓN AUMENTADA}
+\author{DANIEL ALCIDES CARVAJAL PATIÑO}
+
+\legend{TRABAJO DE GRADO PARA OPTAR POR EL TITULO DE INGENIERO DE SISTEMAS}
+\director{FABIO MARTINEZ CARRILLO\\Ph.D. EN INGENIERÍA DE SISTEMAS Y COMPUTACIÓN}
+\directortitle{Codirector\\Ph.D RAUL RAMOS POLLAN}
+\institution {UNIVERSIDAD INDUSTRIAL DE SANTANDER}
+\faculty {FACULTAD DE INGENIERIAS FISICOMECANICAS\\{ESCUELA DE INGENIERIA DE SISTEMAS E INFORMÁTICA}}
+\city{BUCARAMANGA}
+\date{2018}
+
+
+
+\begin{document}
+
+
+	\onehalfspace
+	\maketitle
+%    % para incluir la nota y/o autorización de uso de datos
+	\chapter*{}
+	\includegraphics[scale=0.33]{img/nota.jpg}{}{} 
+    \newpage
+    \chapter*{}
+    \includegraphics[scale=0.33]{img/carta.jpg}{}{} 
+
+    \newpage
+	\tableofcontents
+	\newpage \listoffigures
+	\newpage \listoftables
+
+	\setlength{\parskip}{\baselineskip} % cambia el espacio entre parrafos
+%%	\setcounter{\thecharter}{2}
+
+%% ===========================
+%% RESUMEN
+%% ===========================
+
+	\newpage\chapter*{RESUMEN}
+    \textbf{TITULO:} DETECCIÓN AUTOMÁTICA DEL NIVEL DE ESTRATIFICACIÓN SOCIOECONÓMICO URBANO USANDO REDES NEURONALES CONVOLUCIONALES SOBRE IMÁGENES SATELITALES CON INFORMACIÓN AUMENTADA.
+    
+    \textbf{AUTORES:} DANIEL ALCIDES CARVAJAL PATIÑO.
+    
+    \textbf{PALABRAS CLAVE:} DANE, Machine learning, Deep Learning, Red Neuronal Convolucional, .	
+    
+    \textbf{DESCRIPCION:} Aplicando segmentación semántica para un dataset de imágenes satelitales de la ciudad de Bogotá se consiguió un nivel de predicción del estrato socioeconómico de las zonas urbanas de la ciudad. Con el dataset, denominado OVERLAECOBO, el cual fue elaborado durante el desarrollo del proyecto debido a la baja disponibilidad de la información en el formato requerido para la segmentación, se consigue una predicción con un valor de IoU de 0.34. La elaboración del dataset se realizó usando el software SASplanet junto con archivos KML creados en base a la información del nivel socioeconómico disponible en el portal de mapas de la ciudad de Bogotá. Con dicho software se obtuvieron 3 tipos de imágenes satelitales geográficamente correspondidas entre sí y con 5 niveles de acercamiento (\textit{ZOOM}), los 3 tipos de imágenes se denominaron como \textit{SIMPLE}, \textit{COMPOUND} y \textit{LABEL}. Las imágenes \textit{SIMPLE} son imágenes satelitales con 3 canales (RGB), las imágenes \textit{COMPOUND} son imágenes satelitales con 4 canales (RGB + Información extra) donde el cuarto canal es el nivel de riesgo que tienen las mujeres durante horarios nocturnos en las distintas localidades de la ciudad, las imágenes LABEL son imágenes de 3 canales (RGB) pero únicamente con 7 colores, donde cada color representa un estrato social. El proceso de segmentación semántica se hizo entrenando las redes neuronales convolucionales ofrecidas por el Framework Semantic-Segmentation-Suite del usuario de github @GeorgeSeif. Se realizaron en total 66 pruebas, las cuales indican que la mejor red para determinar el nivel socioeconómico de una zona urbana es FC-DenseNet56, la cual obtuvo el mejor IoU con un valor de 0.34. Para las pruebas se usaron varias redes neuronales modificando los parámetros de Epoch y batchsize junto con 3 de los zooms disponibles por el dataset. 
+ 
+ %% =============================
+ %% ABSTRACT
+ %% =============================   
+  
+	\newpage\chapter*{ABSTRACT}
+    \textbf{TITLE:} AUTOMATIC DETECTION OF THE URBAN SOCIOECONOMIC STRATIFICATION LEVEL USING CONVOLUTIONAL NEURAL NETWORKS ON SATELLITE IMAGES WITH INCREASED INFORMATION.
+    
+    \textbf{AUTHORS:} DANIEL ALCIDES CARVAJAL PATIÑO.
+    
+    \textbf{KEYWORDS:} Container, Cloud Computing, OpenStack, modules and services.
+    
+    \textbf{DESCRIPTION:} A level of prediction was obtained using semantic segmentation for a dataset of satellite images from Bogota city.  The dataset was named OVERLAECOBO and was created with information from the maps web page of Bogotá. OVERLACOBO have 3 types of satellite image, SIMPLE, COMPUND and LABEL, The SIMPLE image is RGB satellite image,  the COMPOUND image are image with 4 channels, RGB + extra information, in this case the night danger for the women and the LABEL image are color maps where a color is a class for the prediction. The metric IoU (Intersection over Union) is used for determining the quality of predictions. The maximum IoU of the different test was 0.34 and the model used for this value was FC-DenseNet56 with a value of 70 for epoch and 1 for batch-size. The test was elaborated with the Framework Semantic-Segmentation-Suite of the GitHub user @GeorgeSeif. 
+    
+%% =======================
+%% INTRODUCCION
+%% =======================
+\newpage\chapter*{INTRODUCCION}
+
+La medición del nivel económico de una zona urbana, actualmente, conlleva un trabajo extenso, como lo expresa el DANE, “en el caso de las revisiones generales urbanas, así como en la estratificación rural se apoya en censos de vivienda” \footnote[1]{DANE. Estratificación - Preguntas frecuentes. [en línea]. <\url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf}> [citado en 25 de mayo de 2018]}. Es decir, se requiere la elaboración de una encuesta de gran tamaño, la cual consume mucho tiempo y personal. Posteriormente, si la encuesta no se realizó usando software de recolección de datos, es necesario realizar su tipeo, lo cual también requiere tiempo. Luego, como lo indica el DANE \footnote[2]{DANE. Metodología de estratificación. [en línea]. <\url{http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica}> [citado en 25 de mayo de 2018].} \footnote[3]{DANE. Procedimiento del cálculo. [en línea]. <\url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf}> [citado en 25 de mayo de 2018].}, el cálculo final del estrato se realiza mediante modelos estadísticos y económicos especialmente calibrados para esta tarea.
+    
+En este contexto surgen varias interrogantes respecto a la capacidad de actualización de esta metodología: ¿Qué sucede cuando una ciudad tiene una alta tasa de desarrollo urbano?, ¿Cómo mantiene el gobierno actualizada la información de los estratos ante estas circunstancias?, ¿Que tan efectiva es la metodología actual ante estos casos de alto desarrollo urbano?
+   
+Por tanto, el objetivo de este trabajo consiste en seleccionar redes neuronales convolucionales y evaluar su capacidad para determinar automáticamente el estrato socioeconómico usando imágenes satelitales e información adicional (información catastral, presencia y consumo de servicios, etc.), con el fin de presentar una alternativa que haga frente a las inquietudes planteadas.
+    
+No es la primera vez que se realiza una predicción del nivel socioeconómico utilizando técnicas de machine learning o Deep learning. Neal Jean en colaboración con varias personas e instituciones realizó un modelo \footnote[4]{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Línea]. <\url{http://sustain.stanford.edu/predicting-poverty/}> [citado en 25 de mayo de 2018]} \footnote[5]{NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en línea]. <\url{https://github.com/nealjean/predicting-poverty}> [citado en 25 de Mayo de 2018]} \footnote[6]{NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016} capaz de predecir el nivel de pobreza en cinco países de África, usando imágenes satelitales y datos extra para dicha tarea. En Colombia, más específicamente en Medellín, también se han realizado modelos \footnote[7]{EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en línea]. <\url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx}> [citado en 25 de mayo de 2018]} para determinar niveles socioeconómicos de una zona urbana. En la Universidad EAFIT, usando técnicas de Machine Learning e imágenes satelitales logran medir los índices de pobreza de dicha ciudad.
+    
+    
+\addcontentsline{toc}{chapter}{INTRODUCCION}
+    
+%% =================================
+%% OBJETIVOS
+%% =================================
+    
+\newpage\chapter{OBJETIVOS} 
+
+	\section{OBJETIVO GENERAL}
+		\begin{enumerate}
+		\item Seleccionar y evaluar redes convolucionales para la determinación del nivel socio económico urbano mediante el uso de imágenes satelitales e información adicional.
+		\end{enumerate}
+
+	\section{OBJETIVOS ESPECIFICOS}
+	    \begin{enumerate}
+	      \item Identificar fuentes de datos de imágenes satelitales e información adicional.
+	      \item Diseñar y construir datasets integrando los datos obtenidos de las fuentes identificadas.
+	      \item Seleccionar entre distintas arquitecturas de redes neuronales convolucionales existentes en la literatura y repositorios tecnológicos    .
+	      \item Entrenar las redes convolucionales probando configuraciones de datasets.
+	      \item Evaluar el desempeño de las redes convolucionales con el uso de los distintos dataset. 
+	      \item Elegir la mejor configuración tanto de red convolucional como de conjunto de datos, teniendo en cuenta el desempeño obtenido.   
+	    \end{enumerate}
+
+%% =========================
+%% 2. MARCO TEORICO
+%% =========================
+
+\newpage\chapter{MARCO TEÓRICO}    
+     
+	%% =========================
+    %% 2.1 ESTRATIFICACION SOCIAL
+    %% =========================
+    
+	\section{ESTRATIFICACIÓN SOCIAL}
+    
+    “La estratificación social es un fenómeno presente en todas las sociedades. Los miembros se clasifican a sí mismos y a los otros basándose en jerarquías que vienen dadas por diversos factores”
+    \footnote[8]{GONZÁLEZ Vanessa. ¿Qué es la estratificación social? [en línea]. <\url{https://www.lifeder.com/estratificacion-social/}> [citado en 31 de mayo del 2018].} y no es algo nuevo, la antigua Mesopotamia contaba con una división social cuyos miembros iban desde el rey y su familia, en el estrato más alto, hasta los esclavos en el más bajo.
+    
+    Más que una simple división, la estratificación representa la desigualdad existente en una sociedad. Cada uno de los estratos, niveles o grupos sociales indica la capacidad de acceso a recursos, oportunidades, bienes y servicios por parte de las personas pertenecientes a cada nivel. Dicha estratificación es necesaria para la tarea que llevan a cabo los gobiernos en contra de la desigualdad, dado que se suelen crear programas que beneficien a las personas de los niveles más bajos y cobrar mayores impuestos a las personas de los niveles más altos.
+    
+    En el caso de Colombia, se maneja una estratificación de 6 niveles.
+
+	\leftskip1em
+	\rightskip\leftskip
+	{\footnotesize \hspace{\parindent} “De éstos 6, los estratos 1, 2 y 3 corresponden a estratos bajos que albergan a los usuarios con menores recursos, los cuales son beneficiarios de subsidios en los servicios públicos domiciliarios; los estratos 5 y 6 corresponden a estratos altos que albergan a los usuarios con mayores recursos económicos, los cuales deben pagar sobrecostos (contribución) sobre el valor de los servicios públicos domiciliarios. El estrato 4 no es beneficiario de subsidios, ni debe pagar sobrecostos, paga exactamente el valor que la empresa defina como costo de prestación del servicio.”\footnote[9]{DANE, Estratificación - Preguntas frecuentes. Op. cit., p. 1.}}
+	
+	\leftskip0em
+	\rightskip0em
+    Dicha estratificación no es tarea fácil. Se requiere gran cantidad de variables por cada vivienda, como las características de la zona en la que se ubica, el tamaño, materiales en que fue fabricada, entre otras. Lo que conlleva a una tarea de recolección de datos bastante amplia.
+    
+    %% ================================
+    %% MACHINE LEARNING
+    %% ================================
+    
+    \section{MACHINE LEARNING}
+    
+    \leftskip1em
+    \rightskip\leftskip
+    {\footnotesize \hspace{\parindent}
+    “Machine learning es una disciplina científica del ámbito de la Inteligencia Artificial que crea sistemas que aprenden automáticamente. Aprender en este contexto quiere decir identificar patrones complejos en millones de datos. La máquina que realmente aprende es un algoritmo que revisa los datos y es capaz de predecir comportamientos futuros. Automáticamente, también en este contexto, implica que estos sistemas se mejoran de forma autónoma con el tiempo, sin intervención humana.”\footnote[10]{GONZÁLEZ  Andrés. ¿Qué es Machine Learning? [en línea]. <\url{http://cleverdata.io/que-es-machine-learning-big-data/}> [citado en 10 Octubre 2017]}}
+
+    \leftskip0em
+    \rightskip0em
+    Se han llevado muchos desarrollos y avances en distintos campos usando técnicas de machine learning. Uno de las más recientes y populares fue la máquina de Google AlphaGo que venció al mejor jugador a nivel mundial de GO, Ke Jie. Wikipedia usa técnicas de machine learning para detectar saboteos en su enciclopedia. Otros usos de machine learning consisten en la detección de objetos, patrones o enfermedades incluso predicción de tráfico urbano y precios de bienes.
+    
+    Aunque en el fondo, independientemente del campo en el que se trabaje, las técnicas de machine learning son las mismas, existen tareas mucho más complejas que otras. Por ejemplo, hoy en día, es mucho más fácil predecir el valor de una casa que predecir el valor del dólar. Esta dificultad se debe a que cada tarea requiere “ajustar” los datos y los algoritmos para que se puedan realizar predicciones o detecciones con un nivel de tolerancia aceptable.
+    
+    \subsection{REDES NEURONALES} es una de las técnicas o algoritmos de machine learning que se pueden emplear en las tareas de predicción o detección. “Una red neuronal es un modelo simplificado que emula el modo en que el cerebro humano procesa la información: Funciona simultaneando un número elevado de unidades de procesamiento interconectadas que parecen versiones abstractas de neuronas”\footnote[11]{IBM. El modelo de redes neuronales [en línea]. <\url{https://www.ibm.com/support/knowledgecenter/es/SS3RA7_18.0.0/modeler_mainhelp_client_ddita/components/neuralnet/neuralnet_model.html> [citado en 31 de Mayo de 2018]} }
+    
+  
+  \figura{img/red.jpg}{Diagrama de red neuronal}{0.8}{VÍLCHEZ GARCÍA, Víctor Gabriel.\textit{Estimación y clasificación de daños en materiales utilizando modelos AR y redes neuronales para la evaluaciónno destructiva con ultrasonidos.} [en línea]. <\url{http://ceres.ugr.es/~alumnos/esclas/}> [citado en 24 Mayo 2018]}
+
+  Una red neuronal está constituida por una serie de capas que se activan con determinadas entradas generando determinadas salidas que podrían ser tomadas o no por otras capas, dependiendo de la “profundidad” de la red. Utilizar redes neuronales consiste en hacer que la misma aprenda examinando las entradas, prediciendo las salidas y haciendo ajustes a los distintos parámetros de la misma, este proceso se repite muchas veces hasta que la red sea capaz de predecir o clasificar con un margen de error tolerable.
+  
+  La idea del proyecto es obtener la configuración de una red neuronal que sea capaz de predecir el nivel socioeconómico de una zona urbana, para esto se planea alimentar la red con imágenes satelitales e información extra de dichas zonas urbanas. Con esta información, ajustes en los parámetros y bastantes iteraciones la red neuronal aprenderá. Los cambios en los parámetros, profundidad y datos usados en la red neuronal son realizados para encontrar la configuración de red neuronal que mejor desempeño presente para la tarea propuesta. Dado que los datos a utilizar son imágenes, es recomendable utilizar “redes neuronales convolucionales” (CNN).
+  
+ \subsection{REDES NEURONALES CONVOLUCIONALES}   
+son un tipo de red neuronal que se adapta mejor al uso de imágenes dado que “las CNN eliminan la necesidad de una extracción de características manual, por lo que no es necesario identificar las características utilizadas para clasificar las imágenes. La CNN funciona mediante la extracción de características directamente de las imágenes. Las características relevantes no se entrenan previamente; se aprenden mientras la red se entrena con una colección de imágenes”\footnote[12]{MATHWORKS. Aprendizaje profundo [en línea]. <\url{https://es.mathworks.com/discovery/deep-learning.html}> [citado en 31 de Mayo de 2018]} 
+
+\figura{img/Typical_cnn.png}{Arquitectura tipica de una CNN}{0.9}{MATHWORKS. Architecture of a CNN. [en línea] \url{https://la.mathworks.com/solutions/deep-learning/convolutional-neural-network.html} [Citado en 30 de junio de 2018]} 
+
+Las CNN pueden contar con un sin número de capas (Neuronas), sin embargo, existen 3 tipos de neuronas fundamentales. Las \textbf{Neuronas convolucionales}, \textbf{Neuronas de reducción de muestreo} y \textbf{Neuronas de clasificación}.   
+
+Las \textbf{neuronas convolucionales}  son funciones que se encargan de extraer características de cada imagen que pasa por la red, estas características se toman realizando operaciones de convolución, de ahí el nombre de la red, a cada imagen. Un ejemplo de convolución es la detección de bordes.  
+
+\figura{img/conv.png}{Detección de bordes mediante una convolución}{1} 
+
+La salida de cada neurona convolucional puede conectarse a otra neurona convolucional o a una neurona de reducción de muestreo o \textit{Pooling layer}. Las \textbf{neuronas de reducción de muestreo} se encargan de reducir o 'resumir' las características obtenidas en las neuronas convolucionales optimizando así el aprendizaje y futura clasificación. Esta reducción de características es realizada con funciones como \textit{max-pooing}, la cual selecciona el valor máximo de un conjunto de datos. 
+
+\figura{img/pool.png}{Max pooling with a 2x2 filter and stride = 2}{0.7}{Aphex34. Max pooling with a 2x2 filter and stride = 2 [en línea] \url{https://upload.wikimedia.org/wikipedia/commons/e/e9/Max_pooling.png} [citado en 30 de julio de 2018]} 
+
+la salida de una neurona de reducción de muestreo puede conectarse con una neurona convolucional, otra neurona de reducción de muestreo o con una neurona de clasificación. Las \textbf{neuronas de clasificación} se encargan de asignar una etiqueta o clase a cada imagen que entra en la red. Esta asignación se consigue gracias al aprendizaje de las características obtenidas en las capas anteriores durante el proceso de entrenamiento de la red. La salida de una neurona de clasificación puede ser un valor que representa una clase, un vector de valores que indican el porcentaje de pertenencia de cada clase o como es el caso de la segmentación semántica una matriz de valores. 
+
+\subsection{SEGMENTACION SEMANTICA} es un problema de visión por computador el cual consiste en asignar a cada pixel de una imagen una etiqueta o clase, obteniendo una nueva imagen de 2 dimensiones, donde se puede observar la delimitación de cada clase en la imagen. 
+
+\figura{img/seg.png}{Problemas de visión por computador}{1}{VENTURA Royo Carles Ventura. La segmentación semántica y sus benchmarks [en línea] \url{http://informatica.blogs.uoc.edu/2016/05/26/la-segmentacion-semantica-y-sus-benchmarks/} [citado en 30 de julio de 2018]} 
+
+Las tareas de segmentación semántica usando machine learning consisten en realizar la predicción de dicha imagen segmentada, como se mencionó anteriormente para esta tarea se usan redes neuronales convolucionales, sin embargo, estas redes convolucionales para segmentación semántica tienen una estructura algo diferente. Estas redes cuentan con una sección de 'convolución' (\textit{Encode}) y 'deconvolución' (\textit{Decode}), esto para obtener una imagen con las dimensiones de la imagen original y con el problemas de segmentación resuelto. Estas redes con sección de convolución y deconvolución toman el nombre de autoencoders. 
+
+\figura{img/autp.png}{Red Neuroranl con arquitectura de convolución y deconvolución}{0.8}{KENDALL Alex, BADRINARAYANAN Vijay, CIPOLLA Roberto. SegNet [en línea] \url{http://mi.eng.cam.ac.uk/projects/segnet/} [citado en 30 de julio de 2018]} 
+
+%% ==========================================
+%% DESARROLLO DEL PROYECTO
+%% ========================================== 
+ 
+\newpage\chapter{DESARROLLO DEL PROYECTO} 
+
+Está claro que la recolección de datos mediante encuestas a vivienda es una metodología que conlleva bastante tiempo y que el cálculo del estrato debe tener en cuenta un sin número de variables. Como alternativa se propone usar imágenes satelitales dado que se puede obtener mucha información socioeconómica con el análisis de las mismas. Se pueden identificar patrones, detectar construcciones específicas, clasificar materiales de construcción en los tejados y más, todos estos análisis son variables usadas en el cálculo del estrato.
+  
+Como se mencionó existe un par de trabajos sobre el nivel socioeconómico usando técnicas de machine learning. El trabajo de Neal Jean usa redes neuronales convoluciones y Transfer Learning para lograr una predicción de la pobreza en 5 países de áfrica. El trabajo de la EAFIT usa técnicas de machine learning para detectar características que puedan dar a conocer el nivel socioeconómico de una zona. Hay que tener en cuenta que en ambos trabajos la principal fuente de datos son las imágenes satelitales.
+ 
+A grandes rasgos lo que se planteó realizar con las imágenes satelitales, la información aumentada, la información de los estratos y las redes neuronales, se muestra en las siguientes figuras.
+
+\figura{img/datos.png}{Datos a usar en el proyecto}{0.7} {}
+\figura{img/modelo.png}{Modelo a usar en el proyecto}{0.8}{}
+
+El proyecto se desarrolló encontrando fuentes de datos, generando dataset con imágenes satelitales, información aumentada y distintos niveles de zoom, seleccionando redes neuronales y realizando pruebas para determinar la mejor manera de predecir el estrato social. Hay que mencionar que el desarrollo del proyecto está documentado en el siguiente repositorio de GitHub \url{https://github.com/DaielChom/proyecto_uis}. El desarrollo se llevó de la siguiente manera.
+
+%% ==========================================
+%% FUENTES DE DATOS
+%% ==========================================
+ 
+ \section{FUENTES DE DATOS}
+ 
+ Era necesario tener imágenes satelitales, imágenes con los estratos sociales e imágenes con información extra que correspondan geográficamente y que tengan distintos niveles de zoom, como se muestran en la Figura \ref{fig:Datos a usar en el proyecto}. Se usan distintos niveles de zoom para determinar si esto influye en la predicción del estrato social. Existen muchas plataformas para obtener imágenes satelitales tanto de alta como baja resolución, varias de estas plataformas tienen la opción de insertar información en dichos mapas en forma de marcador, polígono o línea. Esta información por lo general son archivos en formato kml o shp. Gracias a la política de datos abiertos\footnote[13]{GOBIERNO DIGITAL. Datos Abiertos [en linea] <\url{http://estrategia.gobiernoenlinea.gov.co/623/w3-article-9407.html}> [citado en 30 de Mayo de 2018]} es posible encontrar archivos kml o shp en distintas páginas web del gobierno. sin embargo no todos los departamentos o ciudades cuentan con la misma cantidad de datos disponibles y menos con datos del estrato social. El único portal web donde se encontró una buena cantidad de información, incluyendo la del estrato social fue en el portal de mapas de Bogotá, disponible en \url{http://mapas.bogota.gov.co}.
+ 
+ No fue posible descargar los archivos kml mostrados en la plataforma, por ende, y aprovechando la licencia Creative Commons que presentan los datos, se crearon nuevos archivos kml usando los mapas de la plataforma como guía. Los archivos kml realizados están disponibles en \url{https://drive.google.com/open?id=15VnvN6ZRTbsqqd9kl3ukNWBj3oqADsy0}. se crearon dos kml, uno con información de los estratos sociales y otro con los índices de condiciones de seguridad nocturna por localidad que tienen las mujeres, mas específicamente los datos de la categoría \textit{riesgo alto} de dicho mapa. 
+
+%% ==========================================
+%% DATASET
+%% ==========================================
+
+ \section{DATASET}
+ Como en la mayoría de trabajos de machine learning se debe tener un dataset, un conjunto de datos organizados y con una estructura dividida en train (datos para entrenamiento) y test (datos para pruebas) con los cuales se entrena o prueba un algoritmo de aprendizaje. El dataset que se construyó lleva por nombre OVERLAECOBO y cuenta con 3 tipos imágenes (Figura \ref{fig:Datos a usar en el proyecto}) geográficamente correspondidas y de distintos niveles de zoom o acercamiento satelital. Las imágenes del dataset fueron obtenidas usando el software Ruso SASplanet\footnote[14]{Disponible en http://www.sasgis.org/}, los archivos kml diseñados y \textit{Bing maps} como fuente de imágenes satelitales, fuente ofrecida en SASplanet. Se tomo el mapa de Bogotá y se trazó una línea que dividiera la ciudad en dos partes, de tal manera que en ambas hubiera información de todos los estratos, una parte se escogió para train y otra la para test, como se muestra en la siguiente imagen.
+ 
+ \figura{img/train-test.png}{Division de Train y Test}{0.3}{}
+ 
+  Se extrajeron imágenes de 7 Zooms diferentes, del 13 al 20,  cada nivel de zoom cuenta con imágenes satelitales (\textit{SIMPLE}), satelitales + información extra (Riesgo nocturno para las mujeres) (\textit{COMPOUND}) y de estrato social, las cuales son usadas como \textit{Ground Truth} (\textit{LABEL}). Cada nivel está dividido en train y test. OVERLAECOBO cuenta con la siguiente estructura.
+ 
+ \figura{img/estructura.png}{Estrucutra OVERLAECOBO}{0.2}{}
+ 
+\begin{table}[H]
+		\begin{minipage}{1\textwidth}
+			\caption[Cantidad de Imágenes en OVERLAECOBO]{ \raggedright Cantidad de Imágenes en OVERLAECOBO}
+			\label{tabla:interfaces}
+			\begin{center}
+				%	%	%	%	Acá va la tabla como tal
+				\begin{tabular}{@{}llll@{}}
+					\toprule
+					\multicolumn{3}{c}{Cantidad de Imágenes en OVERLAECOBO} &            \\ \cmidrule(r){1-4}
+					    ZOOM	& Configuración 1 & Train & Test \\
+					    13   & SIMPLE & 7 & 2 \\
+					    13   & COMOUND & 7 & 2 \\
+					    13   & LABEL & 7 & 2 \\
+						14   & SIMPLE & 24 & 24\\
+						14   & COMOUND & 24 & 24 \\
+						14   & LABEL & 24 & 24 \\
+					    15  & SIMPLE & 98 & 90\\
+					    15   & COMPOUND & 98 & 90 \\
+					    15   & LABEL & 98 & 90 \\
+					    16   & SIMPLE & 347 & 321\\
+					    16   & COMPOUND & 347 & 321 \\
+					     16   & LABEL & 347 & 321 \\
+					    17   & SIMPLE & 1338 & 1203 \\
+					    17   & COMPOUND & 1338&1203 \\
+					    17   & LABEL & 1338&1203 \\\bottomrule
+					\end{tabular} \\
+			\end{center} %\vspace{0.1em}
+		\end{minipage}
+	\end{table}
+ 
+ 
+%% ====================== 
+
+\begin{table}[H]
+		\begin{minipage}{1\textwidth}
+			\caption[Proporción de cada clase en Train - OVERLAECOBO]{ \raggedright Proporción de cada clase en Train - OVERLAECOBO}
+			\label{tabla:interfaces}
+			\begin{center}
+				%	%	%	%	Acá va la tabla como tal
+				\begin{tabular}{@{}lllllllll@{}}
+					\toprule
+					\multicolumn{7}{c}{Proporción de cada clase en Train - OVERLAECOBO} &            \\ \cmidrule(r){1-8}					    
+		Zoom & No Definido & Estrato 1 & Estrato 2 & Estrato 3 &	Estrato 4 & Estrato 5 &	Estrato 6\\
+ 		13 &	41.495 & 	7.423 &	21.502 &	25.908 &	2.605 &	1.067 &	0.001\\
+ 		14 &	54.759 &	5.254 &	10.547 &	15.508 &	6.889 &	3.953 &	3.091\\
+ 		15 &	52.886 &	5.690 &	11.388 &	16.564 &	6.038 &	3.621 &	3.815\\
+ 		16 &	50.778 &	6.418 &	11.745 &	17.078 &	6.330 &	3.311 &	4.340\\
+ 		17 &	47.853 &	6.898 &	12.553 &	18.316 &	6.388 &	3.322 &	4.669\\\bottomrule
+					\end{tabular} \\
+			\end{center} %\vspace{0.1em}
+		\end{minipage}
+	\end{table}
+	
+%% =========================
+
+ \begin{table}[H]
+		\begin{minipage}{1\textwidth}
+			\caption[Proporción de cada clase en Test - OVERLAECOBO]{ \raggedright Proporción de cada clase en Test - OVERLAECOBO}
+			\label{tabla:interfaces}
+			\begin{center}
+				%	%	%	%	Acá va la tabla como tal
+				\begin{tabular}{@{}lllllllll@{}}
+					\toprule
+					\multicolumn{7}{c}{Proporción de cada clase en Test - OVERLAECOBO} &            \\ \cmidrule(r){1-8}					    
+		Zoom & No Definido & Estrato 1 & Estrato 2 & Estrato 3 &	Estrato 4 & Estrato 5 &	Estrato 6\\
+ 		13 &	66.858 &	2.897 &	12.080 &	13.635 &	3.168 &	0.955 &	0.407\\
+ 		14 &	58.255 &	3.074 &	14.557 &	16.085 &	3.692 &	2.585 &	1.752\\
+ 		15 &	56.453 &	2.623 &	14.526 &	16.844 &	4.660 &	2.877 &	2.018\\
+ 		16 &	52.951 &	2.924 &	15.380 &	18.017 &	5.250 &	3.092 &	2.386\\
+ 		17 &	51.200 &	2.928 &	15.571 &	19.340 &	5.689 &	2.851 &	2.421\\\bottomrule
+					\end{tabular} \\
+			\end{center} %\vspace{0.1em}
+		\end{minipage}
+	\end{table}
+ 
+ \figura{img/simple.png}{Imágenes SIMPLE de OVERLAECOBO}{0.9}{}
+ 
+  \figura{img/comp.png}{Imágenes COMPOUND de OVERLAECOBO}{0.9}{}
+ 
+  \figura{img/label.png}{Imágenes LABEL de OVERLAECOBO}{0.9}{}
+ 
+  \figura{img/geo.png}{Correspondenica geográfica de OVERLAECOBO}{0.9}{}
+  
+ 
+ Una vez el dataset estuvo elaborado se prosiguió con la búsqueda de redes neuronales y posteriormente pruebas para determinar la mejor configuración para la detección del estrato social.
+ 
+%% ==========================================
+%% REDES NEURONALES
+%% ==========================================
+
+\section{REDES NEURONALES}
+Hay que mencionar que la metodología que se usó para la detección del estrato social se conoce en machine learning como Segmentación Semántica (Figura \ref{fig:Segmentación Semantica}), la cual consiste en segmentar una imagen con el fin de delimitar un objeto o diferenciar entre elementos. En Segmentación semántica, en el proceso de entrenamiento se tienen dos imágenes, la imagen que se quiere segmentar (Xtrain) y la imagen segmentada (ytrain) y con estas se realiza el aprendizaje. En el proceso de pruebas con imágenes que se requieren segmentar (Xtest) se crea una nueva imagen segmentada, luego en el proceso de medición del error con las imágenes segmentadas creadas se comparan con las imágenes segmentadas de dataset (ytest). En otras palabras, cada pixel RGB de una imagen tiene su propia etiqueta. La segmentación semántica es una técnica muy utilizada en el campo de la conducción autónoma, ya que representa una buena metodología para descubrir los distintos objetos que percibe la cámara del vehículo y así tomar decisiones.
+  
+  \figura{img/segmentacion.jpg}{Segmentación Semantica}{0.9}{ABHIJIT Kundu, VIBHAV Vineet, and VLANDLEN Koltun Feature Space Optimization for Semantic Video Segmentation [en linea] <\url{http://vladlen.info/publications/feature-space-optimization-for-semantic-video-segmentation/} [citado en 01 de junio de 2018]}
+  
+Existe muchas redes neuronales convolucionales con las que se puede aplicar Segmentación semántica, entre ellas SegNet, uNet, DenseNet, AlexNet, cada una de ellas con diferentes arquitecturas que les dan ventajas o desventajas a la hora de solucionar un problema de segmentación semántica. En GitHub hay varios repositorios con implementaciones de estas redes; como es de esperarse estos repositorios, aunque implementen la misma red neuronal, tienen varias diferencias; implementados en distintos lenguajes, usan diferentes librerías e incluso entrenan con diferentes dataset, sin embargo, cumplen la tarea de Segmentación semántica que proponen. Tras una búsqueda y selección entre varios repositorios para seleccionar la mejor red neuronal o la mejor implementación se encontró un Framework que permite usar distintas redes neuronales para la misma tarea. Dicho framework está disponible en el siguiente enlace \url{https://github.com/GeorgeSeif/Semantic-Segmentation-Suite} y es el que se usó para las pruebas.
+ 
+%% ==========================================
+%% DETECCION DEL ESTRATO SOCIAL
+%% ==========================================
+
+\section{DETECCION DEL ESTRATO SOCIAL}
+
+\subsection{DATOS.}
+Para los entrenamientos de las distintas redes usadas Se utilizaron 3 niveles de ZOOM para las pruebas y cada nivel se entrenó con imágenes \textit{SIMPLE} y \textit{COMPOUND} (satelital, satelital + información aumentada).
+
+\figura{img/zooms.png}{Niveles de ZOOM usados}{1}{} 
+
+\subsection{REDES.}
+
+
+ Para cada configuración del dataset se realizaron 11 pruebas variando la red neuronal y los parámetros \textit{epoch} y \textit{batch size}. En total se realizaron 66 pruebas.  
+
+
+
+\begin{table}[H]
+		\begin{minipage}{1\textwidth}
+			\caption[Pruebas]{ \raggedright Pruebas realizadas por cada configuración de dataset}
+			\label{tabla:interfaces}
+			\begin{center}
+				%	%	%	%	Acá va la tabla como tal
+				\begin{tabular}{@{}llll@{}}
+					\toprule
+					\multicolumn{3}{c}{Pruebas} &            \\ \cmidrule(r){1-4}
+					    N°	& RED 1 & EPOCH & BATCH SIZE \\
+					    1   & FC-DenseNet56 & 50 & 1 \\
+						2   & FC-DenseNet56 & 70 & 1\\
+					    3   & Encoder-Decoder & 70 & 1\\
+					    4   & Encoder-Decoder & 70 & 2\\
+					    5   & Encoder-Decoder-Skip & 70&1 \\
+					    6   & Encoder-Decoder-Skip & 70 &2\\
+					    7   & FRRN-A & 70 &1\\
+					    8   & MobileUNet & 70 &1 \\
+					    9   & MobileUNet & 70 &2\\
+					    10  & MobileUNet-Skip & 70 &1 \\
+                    	11	& MobileUNet-Skip & 70 &2 \\\bottomrule
+					\end{tabular} \\
+			\end{center} %\vspace{0.1em}
+		\end{minipage}
+	\end{table}
+	
+\subsubsection{FC-DenseNet56}\footnote[15]{JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en línea] <\url{https://arxiv.org/abs/1611.09326}> [citado en 31 de julio de 2018]} Es una red neuronal que aprovecha las ventajas de la arquitectura DenseNet\footnote[16]{HUANG Gao, LUI Zhuang, VAN DER Maaten Laurens, Q. Weinberger Kilian. Densely Connected Convolutional Networks [en línea] <\url{https://arxiv.org/abs/1608.06993}> [citado en 31 de julio de 2018]} y las combina con las propiedades de las redes Fully Convolutional\footnote[17]{SHELHAMER Evan, LONG Jonathan, DARRELL Trevor. Fully Convolutional Networks for Semantic Segmentation [en línea] <\url{https://arxiv.org/abs/1605.06211}> [citado en 31 de julio de 2018]}, como se puede ver en la imagen utiliza bloques densos y saltos de encoder a decoder, elementos clásicos de la arquitectura DenseNet. 
+
+\figura{img/DenseNet2.jpg}{Arquitectura FC-DenseNet}{0.3}{JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en línea] <\url{https://arxiv.org/abs/1611.09326}> [citado en 31 de julio de 2018]} 
+
+\subsubsection{Encoder-Decoder} Red neuronal diseñada en base a la arquitectura SegNet\footnote[18]{KENDALL Alex, BADRINARAYANAN Vijay, CIPOLLA Roberto. SegNet [en línea] \url{http://mi.eng.cam.ac.uk/projects/segnet/} [citado en 30 de julio de 2018].} la cual cuenta con una sección de convolución seguida por una de deconvolución, como se muestra en la siguiente figura 
+
+\figura{img/autp.png}{Arquitectura SegNet}{0.8}{KENDALL Alex, BADRINARAYANAN Vijay, CIPOLLA Roberto. SegNet [en línea] \url{http://mi.eng.cam.ac.uk/projects/segnet/} [citado en 30 de julio de 2018]} 
+
+\subsubsection{Encoder-Decoder-Skip} De igual manera está basada en SegNet con una sección de convolución seguida por una de deconvolución, la diferencia es que esta cuenta con la capacidad de 'saltarse' alguna capa entre la convolución y la deconvolución. 
+
+\figura{img/skip.png}{Ejemplo de 'saltos' en una red neuronal}{0.9}{H.Abdulnabi Abrar, WINKLER Stefan, WANG Gang. Beyond Forward Shortcuts: Fully Convolutional Master-Slave Networks (MSNets) with Backward Skip Connections for Semantic Segmentation [en línea] <\url{https://arxiv.org/abs/1707.05537}> [citado en 31 de julio de 2018]} 
+
+
+\subsubsection{FRRN-A}\footnote[19]{POHLEN Tobias, HERMANS Alexander, MATHIAS Markus, LEIBE Bastian. Full-Resolution Residual Networks for Semantic Segmentation in Street Scenes [en línea] <\url{https://arxiv.org/abs/1611.08323}> [citado en 31 de julio de 2018]} Es una red neuronal con una arquitectura de doble flujo que utiliza las propiedades de ResNet, los cuales son bloques de capas diseñados para ayudar en el aprendizaje y diseño de las redes. En la siguiente imagen se puede observar la arquitectura de FRRN. 
+
+\figura{img/frrna.png}{Arquitectura FRRN}{1}{POHLEN Tobias, HERMANS Alexander, MATHIAS Markus, LEIBE Bastian. Full-Resolution Residual Networks for Semantic Segmentation in Street Scenes [en línea] <\url{https://aarxiv.org/abs/1611.08323}> [citado en 31 de julio de 2018]} 
+
+\subsubsection{MobileUNet} Red diseñada en base a las redes Unet\footnote[20]{RONNEBERGER Olaf, FISCHER Philipp, BROX Thomas. U-Net: Convolutional Networks for Biomedical Image Segmentation [en línea] <\url{https://arxiv.org/abs/1505.04597}> [citado en 31 de julio de 2018]} y MobileNet\footnote[21]{G. Howard Andrew, ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry,WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en línea] <\url{https://arxiv.org/abs/1704.04861}> [citado en 31 de julio de 2018]}, esta combinación de arquitecturas logra una alta velocidad y buenos resultados con valores de parámetros bajos. A continuación, se puede observar la arquitectura de UNet. 
+
+\figura{img/unet.png}{Arquitectura UNet}{0.8}{RONNEBERGER Olaf, FISCHER Philipp, BROX Thomas. U-Net: Convolutional Networks for Biomedical Image Segmentation [en línea] <\url{https://arxiv.org/abs/1505.04597}> [citado en 31 de julio de 2018]} 
+
+\subsubsection{MobileUNet-Skip} Usa la misma arquitectura de MobileUnet pero con la posibilidad de 'saltos', tal cual se describió anteriormente. 
+
+\subsection{METRICA}
+Todas las pruebas fueron realizadas en la misma máquina, la cual cuenta con un procesador Intel Core i7, una Tarjeta gráfica NVIDIA GEFORCE 940MX y 8GBs de RAM, las pruebas fueron ejecutadas sobre el Sistema Operativo Xubuntu 18-04. Una vez realizado el entrenamientos de cada red neuronal se midió la capacidad de cada una para predecir el estrato social (generar aproximaciónes a las imágenes \textit{LABEL}) utilizando el índice de jaccard, más conocido como  \textit{IoU  - Intersection over Union}, una métrica\footnote[22]{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/}> [citado en 17 de Julio de 2018]} muy utilizada en la detección de objetos y la segmentación. El índice de jaccard consiste en encontrar el grado de similitud entre dos conjuntos, en este caso entre dos imágenes, calculando el cociente entre la intersección y unión de los dos conjuntos. En el caso de segmentación semántica se usan las áreas cubierta por cada clase en las imágenes predichas y \textit{test} para calcular dicho cociente.  
+
+\figura{img/iou.png}{Ecuación IoU}{0.5}{ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/} [citado en 17 de julio de 2018]} 
+
+\figura{img/metrica.png}{Ejemplo de predicción}{0.8}{}
+
+Cada red entrenada generó una cantidad de imágenes equivalente a las de \textit{test} del dataset con el que se entrenó. Con estas imágenes generadas y las imágenes del dataset se calculó el índice de jaccard para cada una de las 66 pruebas. Como se mencionó dichos procesos se pueden observar en el repositorio del proyecto. \url{https://github.com/DaielChom/proyecto_uis/}. Las pruebas entregaron los siguientes resultados. 
+
+\figura{img/todos.png}{Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}{1}{}
+
+Analizando la Figura \ref{fig:Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}, se observa como el aumento del nivel de ZOOM provoca un incremento en la variable IoU, lo que significa un aumento en la precisión de cada predicción. Aunque los valores de IoU son bajos (puesto que se esperan valores cercanos a 1) este resultado no es extraño dado a la cantidad de imágenes de cada configuración de dataset y a los valores bajos de \textit{Epoch} y \textit{Batch Size}, los cuales son debido a los recursos computacionales con los que se cuenta. A excepción de una prueba, se puede observar el aumento de IoU en el uso de capas de información extra, como es el caso de la configuración \textit{COMPOUND}. También se puede decir que el modelo que mejor se acopla a la tarea de predicción del nivel socio económico de una zona urbana es FC-DensetNet56\footnote[23]{JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en Linea]<\url{https://arxiv.org/abs/1611.09326}>[citado en 23 de Julio de 2018]}, mientras que MobileUNet\footnote[24]{HOWARD Andrew G., ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry, WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en línea]<\url{https://arxiv.org/abs/1704.04861}> [citado en 23 de Julio de 2018]} no es recomendable. 
+
+\figura{img/tiempo.png}{Resultados - Duración de Entrenamiento y Testeo para cada prueba, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}{1}{}
+
+Como era de esperarse y como lo demuestra la gráfica la cantidad de imágenes usadas en el entrenamiento afecta la duración del proceso de entrenamiento y testeo, siendo las configuraciones con más imágenes las que más tiempo gastan. Hay que aclarar que la duración de cada prueba se ve afectada por el poder computacional con el que se cuenta.
+
+
+
+\figura{img/epoch.png}{Resultados - IoU para diferentes valores de 'Epoch'}{1}{}
+
+Aunque se hicieron pocas pruebas con distintos valores de \textit{Epoch}, se puede observar una mejora en el IoU con el incremento de dicha variable, resultado que era de esperarse dado que se recomiendan\footnote[25]{SHARMA Sagar. Epoch vs Batch Size vs Iterations [en linea]<\url{https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9}>[citado en 23 Julio de 2018]} valores altos para este parámetro. Un número mayor de 70 podría generar mejores resultados, aunque también podría sobre entrenar el modelo. 
+
+\figura{img/peor.png}{Resultados - IoU de cada nivel de ZOOM para la prueba 'Prueba 8'}{1}{}
+
+Como se mencionó anteriormente la peor configuración para la tarea propuesta corresponde al modelo MobileUNet, el cual registra los valores más bajos de IoU para las distintas configuraciones de dataset, como se puede observar en la Figura  \ref{fig:Resultados - IoU de cada nivel de ZOOM agrupados por modelo, a la izquierda 'Prueba 1', a la derecha 'Prueba 11'}. Sin embargo, se puede notar el incremento de IoU con el uso de configuraciones con mayor cantidad de imágenes. 
+
+\figura{img/mejor.png}{Resultados - IoU de cada nivel de ZOOM 'Prueba 2'}{1}{}
+
+Contrario a MobileUnet, FC-DenseNet56 presenta los mejores valores de IoU en las distintas configuraciones. FC-DenseNet56 fue la mejor red para la tarea propuesta. De igual manera se puede observar el incremento de la métrica IoU con el aumento de imágenes usadas en entrenamiento y testeo. De la Figura \ref{fig:Resultados - IoU para diferentes valores de 'Epoch'} se conoce la mejoría de IoU con el incremento del parámetro \textit{Epoch} usando esta misma red neuronal. 
+
+\figura{img/pro.png}{Predicción para una misma zona urbana con diferente nivel de acercamiento satelital para las pruebas 2 y 8}{0.7}{} 
+
+La Figura \ref{fig:Predicción para una misma zona urbana con diferente nivel de acercamiento satelital para las pruebas 2 y 8} se puede observar la predicción de FC-DenseNet (Prueba 2) y de MobileUNet (Prueba 8) mostrando sus diferencias a la hora de predecir el estrato social. En las predicciones de la prueba 8 se observa una mala predicción de la clase \textit{NO DEFINIDO} a pesar de ser esta clase la más común en el dataset y la que en las imágenes de entrenamiento es simplemente el color blanco. Las predicciones de la prueba 2 tienen mejor resultado, logra identificar muy bien la clase \textit{NO DEFINIDO}, sin embargo tiene problemas en la diferenciación de los demás estratos. Hay que mencionar que tanto para la prueba 2 y la prueba 8 la calidad de la predicción mejora cuando se trata de niveles de zoom mayores. 
+
+
+\figura{img/por_clase.png}{Resultados - IoU por clase de la mejor configuración}{1}{}
+
+Con la Figura \ref{fig:Resultados - IoU por clase de la mejor configuración} se puede realizar un mayor análisis de los resultados generados por la red FC-DenseNet56. dicha grafica muestra el IoU de cada una de las clases presente en el dataset, en otras palabras, se muestra la capacidad de FC-DenseNet56 para predecir cada uno de los distintos estratos. Este valor de IoU se ve reflejado tanto por la cantidad de imágenes usadas como por la presencia de los distintos estratos en dichas imágenes. Como se puede ver en la siguiente tabla las zonas sin estrato o clase 'NO DEFINIDO' cuenta con una presencia casi del 50 por ciento del dataset, lo que se refleja en su IoU, siendo este el mayor entre todas las clases. 
+
+
+\begin{table}[H]
+		\begin{minipage}{1\textwidth}
+			\caption[Presencia de cada clase en el dataset]{ \raggedright Presencia de cada clase en el dataset}
+			\label{tabla:interfaces}
+			\begin{center}
+				%	%	%	%	Acá va la tabla como tal
+				\begin{tabular}{@{}lll@{}}
+					\toprule
+					\multicolumn{2}{c}{Porcentaje por clase} &            \\ \cmidrule(r){1-3}
+					    CLASE	& PORCENTAJE \\
+					    Estrato 1 & 0.061223 \\
+					    Estrato 2 & 0.144790 \\
+					    Estrato 3 & 0.193266 \\
+					    Estrato 4 & 0.051771 \\
+					    Estrato 5 & 0.028800 \\
+					    Estrato 6 & 0.023021 \\
+					    No Definido & 0.497130\\\bottomrule
+					\end{tabular} \\
+			\end{center} %\vspace{0.1em}
+		\end{minipage}
+	\end{table}
+
+En cambio, el 'ESTRATO 6' que tiene menor presencia en el dataset cuenta con el menor valor de IoU. Hay que aclarar que no se usaron técnicas para modificar los pesos de cada clase, ya que esto suele ser una alternativa para mejorar la calidad de las predicciónes ante la ausencia o presencia de las clases. 
+
+%% ===============================================
+%% CONCLUSIONES
+%% ===============================================  
+
+\newpage\chapter{CONCLUSIONES}
+
+\begin{itemize}
+\item La mejor manera de predecir el nivel socio económico de una zona urbana usando imágenes satelitales es utilizar niveles de acercamiento satelital altos, capas de información extra en las imágenes satelitales y la red neuronal FC-DenseNet56 con valores de \textit{Epoch} y \textit{Batch-size} mayores o iguales a 70 y 1 respectivamente. 
+
+
+
+\item Con los archivos KML que se crearon y usando el software ruso SASplanet se crea un dataset nombrado OVERLAECOBO, el cual consta de imágenes satelitales de 5 diferentes niveles de acercamiento satelital. El dataset cuenta con dos tipos de imágenes satelitales (\textit{SIMPLE} y \textit{COMPOUND}) e imágenes \textit{Ground Truth} (\textit{LABEL}) todas geográficamente correspondidas. las imágenes \textit{COMPOUND} son imágenes satelitales con un canal extra el cual consiste en información sobre el riesgo que corren las mujeres en horarios nocturnos de las distintas localidades de Bogotá. 
+
+\item Como método de predicción para el nivel socio económico de zonas urbanas se utiliza segmentación semántica, redes neuronales convoluciones y el Framework Semantic-Segmentation-Suite disponible en \url{https://github.com/GeorgeSeif/Semantic-Segmentation-Suite} el cual facilita el trabajo con los datos que se poseen. 
+
+\item El uso de niveles de acercamiento satelital más amplios genera una mayor calidad en la predicción, esto es debido a que los \textit{ZOOM} más grandes cuentan con un número mayor de imagines y a la vez una mayor cantidad de información de la cual el modelo puede aprender. 
+
+\item Como lo enuncia la teoría el uso de valores altos en la variable \textit{Epoch} genera mejores resultados y el porcentaje de presencia de las clases en el dataset también afecta la predicción. 
+\end{itemize}
+
+%% ===============================================
+%% RECOMENDACIONES
+%% ===============================================  
+
+\newpage\chapter{RECOMENDACIONES Y TRABAJO FUTURO}
+	
+	\begin{itemize}
+	
+	\item Utilizar maquinas con mayor poder computacional. 
+
+    \item Realizar entrenamiento con FC-DenseNet56 variando los valores de \textit{Epoch} y \textit{Batch-size}, usando los \textit{ZOOM} 16 o 17. 
+
+    \item Dar más peso a las clases que tienen menor presencia en el dataset. 
+
+    \item Cambiar de Framework dado a las limitaciones del mismo respecto a las capas de información extra. 
+
+    \item Entrenar las redes neuronales con imágenes satelitales con más de una capa de información extra. 
+	
+	
+	\end{itemize}
+  
+
+%% ===============================================
+%% LIMITACIONES
+%% ===============================================   
+
+    
+\newpage\chapter{LIMITACIONES Y PROBLEMAS} 
+
+	\begin{itemize}
+		\item Los datos en el formato necesario no están disponibles en las páginas del gobierno, ni en alguna otra página en internet, debido a esto se crearon varios archivos KML de la ciudad de Bogotá, los cuales quedan disponibles para el público. Esta falta de datos generó retrasos en la elaboración del proyecto. 
+
+        \item{El Framework únicamente permite el uso de imágenes con 4 canales.} 
+
+        \item{El poder computacional con el que se contaba} 	
+	
+	\end{itemize}
+        
+    
+    
+%% ==============================
+%% BIBLIOGRAFIA
+%% ==============================
+
+
+    
+\newpage\chapter*{BIBLIOGRAFIA}
+
+DANE. Estratificación - Preguntas frecuentes. [en línea]. <\url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf}> [citado en 25 de Mayo de 2018]
+    
+DANE. Metodología de estratificación. [en línea].
+ <\url{http://www.dane.gov.co/index.php/servicios-al-ciudadano/servicios-de-informacion/estratificacion-socioeconomica}> [citado en 25 de Mayo de 2018]
+
+DANE. Procedimiento del cálculo. [en línea].
+ <\url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf}>.
+ [citado en 25 de Mayo de 2018].
+ 
+NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Linea]. <\url{http://sustain.stanford.edu/predicting-poverty/}> [citado en 25 de Mayo de 2018].
+
+NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en linea]. <\url{https://github.com/nealjean/predicting-poverty}> [citado en 25 de Mayo de 2018]
+
+NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016
+
+EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en linea]. <\url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx}> [citado en 25 de Mayo de 2018]
+
+GONZÁLEZ Vanessa. ¿Qué es la estratificación social? [en línea]. <\url{https://www.lifeder.com/estratificacion-social/}> [citado en 31 de Mayo del 2018].
+
+GONZÁLEZ  Andrés. ¿Qué es Machine Learning? [en línea]. <\url{http://cleverdata.io/que-es-machine-learning-big-data/}> [citado en 10 de Octubre de 2018]
+
+IBM. El modelo de redes neuronales [en línea]. <\url{https://www.ibm.com/support/knowledgecenter/es/SS3RA7_18.0.0/modeler_mainhelp_client_ddita/components/neuralnet/neuralnet_model.html}> [citado en 31 de Mayo de 2018]
+
+VÍLCHEZ GARCÍA, Víctor Gabriel.Estimación y clasificación de daños en materiales utilizando modelos AR y redes neuronales para la evaluaciónno destructiva con ultrasonidos. [en linea].  <\url{http://ceres.ugr.es/~alumnos/esclas/}> [citado en 24 de Mayo de 2018]
+
+MATHWORKS. Aprendizaje profundo [en línea]. <\url{https://es.mathworks.com/discovery/deep-learning.html}> [citado en 31 de Mayo de 2018]
+
+MATHWORKS. Architecture of a CNN. [en linea] \url{https://la.mathworks.com/solutions/deep-learning/convolutional-neural-network.html} [Citado en 30 de junio de 2018]
+
+Aphex34. Max pooling with a 2x2 filter and stride = 2 [en linea] \url{https://upload.wikimedia.org/wikipedia/commons/e/e9/Max_pooling.png} [citado en 30 de julio de 2018]
+
+VENTURA Royo Carles Ventura. La segmentación semántica y sus benchmarks [en linea] \url{http://informatica.blogs.uoc.edu/2016/05/26/la-segmentacion-semantica-y-sus-benchmarks/} [citado en 30 de julio de 2018]
+
+KENDALL Alex, BADRINARAYANAN Vijay, CIPOLLA Roberto. SegNet [en linea] \url{http://mi.eng.cam.ac.uk/projects/segnet/} [citado en 30 de julio de 2018]
+
+GOBIERNO DIGITAL. Datos Abiertos [en linea] <\url{http://estrategia.gobiernoenlinea.gov.co/623/w3-article-9407.html}> [citado en 30 de Mayo de 2018]
+
+ABHIJIT Kundu, VIBHAV Vineet, and VLANDLEN Koltun Feature Space Optimization for Semantic Video Segmentation [en linea] <\url{http://vladlen.info/publications/feature-space-optimization-for-semantic-video-segmentation/}> [citado en 01 de junio de 2018]
+
+JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1611.09326}> [citado en 31 de julio de 2018]
+
+HUANG Gao, LUI Zhuang, VAN DER Maaten Laurens, Q. Weinberger Kilian. Densely Connected Convolutional Networks [en linea] <\url{https://arxiv.org/abs/1608.06993}> [citado en 31 de julio de 2018]
+
+SHELHAMER Evan, LONG Jonathan, DARRELL Trevor. Fully Convolutional Networks for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1605.06211}> [citado en 31 de julio de 2018]
+
+JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1611.09326}> [citado en 31 de julio de 2018]
+
+KENDALL Alex, BADRINARAYANAN Vijay, CIPOLLA Roberto. SegNet [en linea] \url{http://mi.eng.cam.ac.uk/projects/segnet/} [citado en 30 de julio de 2018]
+
+H. Abdulnabi Abrar, WINKLER Stefan, WANG Gang. Beyond Forward Shortcuts: Fully Convolutional Master-Slave Networks (MSNets) with Backward Skip Connections for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1707.05537}> [citado en 31 de julio de 2018]
+
+POHLEN Tobias, HERMANS Alexander, MATHIAS Markus, LEIBE Bastian. Full-Resolution Residual Networks for Semantic Segmentation in Street Scenes [en linea] <\url{https://arxiv.org/abs/1611.08323}> [citado en 31 de julio de 2018]
+
+POHLEN Tobias, HERMANS Alexander, MATHIAS Markus, LEIBE Bastian. Full-Resolution Residual Networks for Semantic Segmentation in Street Scenes [en linea] <\url{https://aarxiv.org/abs/1611.08323}> [citado en 31 de julio de 2018]
+
+RONNEBERGER Olaf, FISCHER Philipp, BROX Thomas. U-Net: Convolutional Networks for Biomedical Image Segmentation [en linea] <\url{https://arxiv.org/abs/1505.04597}> [citado en 31 de julio de 2018]
+
+G. Howard Andrew, ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry,WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en linea] <\url{https://arxiv.org/abs/1704.04861}> [citado en 31 de julio de 2018]
+
+RONNEBERGER Olaf, FISCHER Philipp, BROX Thomas. U-Net: Convolutional Networks for Biomedical Image Segmentation [en linea] <\url{https://arxiv.org/abs/1505.04597}> [citado en 31 de julio de 2018]
+
+ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/}> [citado en 17 de Julio de 2018]
+
+JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en Linea]<\url{https://arxiv.org/abs/1611.09326}>[citado en 23 de Julio de 2018]
+
+HOWARD Andrew G., ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry, WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en linea]<\url{https://arxiv.org/abs/1704.04861}> [citado en 23 de Julio de 2018]
+
+SHARMA Sagar. Epoch vs Batch Size vs Iterations [en linea] <\url{https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9}> [citado en 23 Julio de 2018]
+
+
+\end{document}

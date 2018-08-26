@@ -1,0 +1,58 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {spanish}{}
+\defcounter {refsection}{0}\relax 
+\bfseries \hfill p\IeC {\'a}g.\par \normalfont 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{INTRODUCCION}{13}{chapter*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}OBJETIVOS}{14}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}OBJETIVO GENERAL}{14}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}OBJETIVOS ESPECIFICOS}{14}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}MARCO TE\IeC {\'O}RICO}{15}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}ESTRATIFICACI\IeC {\'O}N SOCIAL}{15}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}MACHINE LEARNING}{16}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}REDES NEURONALES}{16}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}REDES NEURONALES CONVOLUCIONALES}{18}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}SEGMENTACION SEMANTICA}{20}{subsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}DESARROLLO DEL PROYECTO}{22}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}FUENTES DE DATOS}{23}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}DATASET}{24}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}REDES NEURONALES}{29}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}DETECCION DEL ESTRATO SOCIAL}{30}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4.1}DATOS.}{30}{subsection.3.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4.2}REDES.}{31}{subsection.3.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.4.2.1}FC-DenseNet56}{31}{subsubsection.3.4.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.4.2.2}Encoder-Decoder}{32}{subsubsection.3.4.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.4.2.3}Encoder-Decoder-Skip}{33}{subsubsection.3.4.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.4.2.4}FRRN-A}{34}{subsubsection.3.4.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.4.2.5}MobileUNet}{35}{subsubsection.3.4.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.4.2.6}MobileUNet-Skip}{35}{subsubsection.3.4.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4.3}METRICA}{36}{subsection.3.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}CONCLUSIONES}{46}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}RECOMENDACIONES Y TRABAJO FUTURO}{47}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}LIMITACIONES Y PROBLEMAS}{48}{chapter.6}
