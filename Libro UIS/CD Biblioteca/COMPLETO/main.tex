@@ -58,29 +58,32 @@
 %% ===========================
 %% RESUMEN
 %% ===========================
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 	\newpage\chapter*{RESUMEN}
-    \textbf{TITULO:} DETECCIÓN AUTOMÁTICA DEL NIVEL DE ESTRATIFICACIÓN SOCIOECONÓMICO URBANO USANDO REDES NEURONALES CONVOLUCIONALES SOBRE IMÁGENES SATELITALES CON INFORMACIÓN AUMENTADA.
-    
-    \textbf{AUTORES:} DANIEL ALCIDES CARVAJAL PATIÑO.
-    
-    \textbf{PALABRAS CLAVE:} DANE, Machine learning, Deep Learning, Red Neuronal Convolucional, .	
-    
-    \textbf{DESCRIPCION:} Aplicando segmentación semántica para un dataset de imágenes satelitales de la ciudad de Bogotá se consiguió un nivel de predicción del estrato socioeconómico de las zonas urbanas de la ciudad. Con el dataset, denominado OVERLAECOBO, el cual fue elaborado durante el desarrollo del proyecto debido a la baja disponibilidad de la información en el formato requerido para la segmentación, se consigue una predicción con un valor de IoU de 0.34. La elaboración del dataset se realizó usando el software SASplanet junto con archivos KML creados en base a la información del nivel socioeconómico disponible en el portal de mapas de la ciudad de Bogotá. Con dicho software se obtuvieron 3 tipos de imágenes satelitales geográficamente correspondidas entre sí y con 5 niveles de acercamiento (\textit{ZOOM}), los 3 tipos de imágenes se denominaron como \textit{SIMPLE}, \textit{COMPOUND} y \textit{LABEL}. Las imágenes \textit{SIMPLE} son imágenes satelitales con 3 canales (RGB), las imágenes \textit{COMPOUND} son imágenes satelitales con 4 canales (RGB + Información extra) donde el cuarto canal es el nivel de riesgo que tienen las mujeres durante horarios nocturnos en las distintas localidades de la ciudad, las imágenes LABEL son imágenes de 3 canales (RGB) pero únicamente con 7 colores, donde cada color representa un estrato social. El proceso de segmentación semántica se hizo entrenando las redes neuronales convolucionales ofrecidas por el Framework Semantic-Segmentation-Suite del usuario de github @GeorgeSeif. Se realizaron en total 66 pruebas, las cuales indican que la mejor red para determinar el nivel socioeconómico de una zona urbana es FC-DenseNet56, la cual obtuvo el mejor IoU con un valor de 0.34. Para las pruebas se usaron varias redes neuronales modificando los parámetros de Epoch y batchsize junto con 3 de los zooms disponibles por el dataset. 
+
+	
+    \textbf{TITULO:} DETECCIÓN AUTOMÁTICA DEL NIVEL DE ESTRATIFICACIÓN SOCIOECONÓMICO URBANO USANDO REDES NEURONALES CONVOLUCIONALES SOBRE IMÁGENES SATELITALES CON INFORMACIÓN AUMENTADA. 
+    \footnote{Trabajo de grado}
+    \textbf{AUTORES:} DANIEL ALCIDES CARVAJAL PATIÑO. \footnote{Facultad de Ingenierías Físico-Mecánicas.  Escuela de Ingenieria de Sistemas. Director: Fabio Martínez}\\
+\textbf{PALABRAS CLAVE:} DANE, Machine learning, Deep Learning, Red Neuronal Convolucional, .	\\
+\textbf{DESCRIPCION:}    Aplicando segmentación semántica para un dataset de imágenes satelitales de la ciudad de Bogotá se consiguió un nivel de predicción del estrato socioeconómico de las zonas urbanas de la ciudad. Con el dataset, denominado OVERLAECOBO, el cual fue elaborado durante el desarrollo del proyecto debido a la baja disponibilidad de la información en el formato requerido para la segmentación, se consigue una predicción con un valor de IoU de 0.34. La elaboración del dataset se realizó usando el software SASplanet junto con archivos KML creados en base a la información del nivel socioeconómico disponible en el portal de mapas de la ciudad de Bogotá. Con dicho software se obtuvieron 3 tipos de imágenes satelitales geográficamente correspondidas entre sí y con 5 niveles de acercamiento (\textit{ZOOM}), los 3 tipos de imágenes se denominaron como \textit{SIMPLE}, \textit{COMPOUND} y \textit{LABEL}. Las imágenes \textit{SIMPLE} son imágenes satelitales con 3 canales (RGB), las imágenes \textit{COMPOUND} son imágenes satelitales con 4 canales (RGB + Información extra) donde el cuarto canal es el nivel de riesgo que tienen las mujeres durante horarios nocturnos en las distintas localidades de la ciudad, las imágenes LABEL son imágenes de 3 canales (RGB) pero únicamente con 7 colores, donde cada color representa un estrato social. El proceso de segmentación semántica se hizo entrenando las redes neuronales convolucionales ofrecidas por el Framework Semantic-Segmentation-Suite del usuario de github @GeorgeSeif. Se realizaron en total 66 pruebas, las cuales indican que la mejor red para determinar el nivel socioeconómico de una zona urbana es FC-DenseNet56, la cual obtuvo el mejor IoU con un valor de 0.34. Para las pruebas se usaron varias redes neuronales modificando los parámetros de Epoch y batchsize junto con 3 de los zooms disponibles por el dataset. 
  
  %% =============================
  %% ABSTRACT
  %% =============================   
-  
+\setcounter{footnote}{0}
 	\newpage\chapter*{ABSTRACT}
-    \textbf{TITLE:} AUTOMATIC DETECTION OF THE URBAN SOCIOECONOMIC STRATIFICATION LEVEL USING CONVOLUTIONAL NEURAL NETWORKS ON SATELLITE IMAGES WITH INCREASED INFORMATION.
+    \textbf{TITLE:} AUTOMATIC DETECTION OF THE URBAN SOCIOECONOMIC STRATIFICATION LEVEL USING CONVOLUTIONAL NEURAL NETWORKS ON SATELLITE IMAGES WITH INCREASED INFORMATION.\footnote{Bachelor Thesis}
     
-    \textbf{AUTHORS:} DANIEL ALCIDES CARVAJAL PATIÑO.
+    \textbf{AUTHORS:} DANIEL ALCIDES CARVAJAL PATIÑO.\footnote{Facultad de Ingenierías Físico-Mecánicas.  Escuela de Ingenieria de Sistemas. Director: Fabio Martínez
+}
     
     \textbf{KEYWORDS:} Container, Cloud Computing, OpenStack, modules and services.
     
     \textbf{DESCRIPTION:} A level of prediction was obtained using semantic segmentation for a dataset of satellite images from Bogota city.  The dataset was named OVERLAECOBO and was created with information from the maps web page of Bogotá. OVERLACOBO have 3 types of satellite image, SIMPLE, COMPUND and LABEL, The SIMPLE image is RGB satellite image,  the COMPOUND image are image with 4 channels, RGB + extra information, in this case the night danger for the women and the LABEL image are color maps where a color is a class for the prediction. The metric IoU (Intersection over Union) is used for determining the quality of predictions. The maximum IoU of the different test was 0.34 and the model used for this value was FC-DenseNet56 with a value of 70 for epoch and 1 for batch-size. The test was elaborated with the Framework Semantic-Segmentation-Suite of the GitHub user @GeorgeSeif. 
-    
+   
+     \renewcommand{\thefootnote}{\arabic{footnote}}   
 %% =======================
 %% INTRODUCCION
 %% =======================
@@ -532,6 +535,10 @@ En cambio, el 'ESTRATO 6' que tiene menor presencia en el dataset cuenta con el 
 
     
 \newpage\chapter*{BIBLIOGRAFIA}
+\addcontentsline{toc}{chapter}{BIBLIOGRAFIA}
+ABHIJIT Kundu, VIBHAV Vineet, and VLANDLEN Koltun Feature Space Optimization for Semantic Video Segmentation [en linea] <\url{http://vladlen.info/publications/feature-space-optimization-for-semantic-video-segmentation/}> [citado en 01 de junio de 2018]
+
+APHEX34. Max pooling with a 2x2 filter and stride = 2 [en linea] \url{https://upload.wikimedia.org/wikipedia/commons/e/e9/Max_pooling.png} [citado en 30 de julio de 2018]
 
 DANE. Estratificación - Preguntas frecuentes. [en línea]. <\url{https://www.dane.gov.co/files/geoestadistica/Preguntas_frecuentes_estratificacion.pdf}> [citado en 25 de Mayo de 2018]
     
@@ -541,66 +548,67 @@ DANE. Metodología de estratificación. [en línea].
 DANE. Procedimiento del cálculo. [en línea].
  <\url{http://www.dane.gov.co/files/geoestadistica/estratificacion/procedimientoDeCalculo.pdf}>.
  [citado en 25 de Mayo de 2018].
+
+EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en linea]. <\url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx}> [citado en 25 de Mayo de 2018] 
+
+G. Howard Andrew, ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry,WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en linea] <\url{https://arxiv.org/abs/1704.04861}> [citado en 31 de julio de 2018] 
  
-NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Linea]. <\url{http://sustain.stanford.edu/predicting-poverty/}> [citado en 25 de Mayo de 2018].
-
-NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en linea]. <\url{https://github.com/nealjean/predicting-poverty}> [citado en 25 de Mayo de 2018]
-
-NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016
-
-EAFIT. Con imágenes satelitales miden los índices de pobreza en Medellín. [en linea]. <\url{http://www.eafit.edu.co/investigacion/revistacientifica/edicion-167/Paginas/con-imagenes-satelitales-miden-los-indices-de-pobreza-en-medellin.aspx}> [citado en 25 de Mayo de 2018]
+GOBIERNO DIGITAL. Datos Abiertos [en linea] <\url{http://estrategia.gobiernoenlinea.gov.co/623/w3-article-9407.html}> [citado en 30 de Mayo de 2018] 
+ 
+GONZÁLEZ  Andrés. ¿Qué es Machine Learning? [en línea]. <\url{http://cleverdata.io/que-es-machine-learning-big-data/}> [citado en 10 de Octubre de 2018]
 
 GONZÁLEZ Vanessa. ¿Qué es la estratificación social? [en línea]. <\url{https://www.lifeder.com/estratificacion-social/}> [citado en 31 de Mayo del 2018].
 
-GONZÁLEZ  Andrés. ¿Qué es Machine Learning? [en línea]. <\url{http://cleverdata.io/que-es-machine-learning-big-data/}> [citado en 10 de Octubre de 2018]
+H. Abdulnabi Abrar, WINKLER Stefan, WANG Gang. Beyond Forward Shortcuts: Fully Convolutional Master-Slave Networks (MSNets) with Backward Skip Connections for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1707.05537}> [citado en 31 de julio de 2018]
+
+HOWARD Andrew G., ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry, WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en linea]<\url{https://arxiv.org/abs/1704.04861}> [citado en 23 de Julio de 2018]
+
+HUANG Gao, LUI Zhuang, VAN DER Maaten Laurens, Q. Weinberger Kilian. Densely Connected Convolutional Networks [en linea] <\url{https://arxiv.org/abs/1608.06993}> [citado en 31 de julio de 2018]
 
 IBM. El modelo de redes neuronales [en línea]. <\url{https://www.ibm.com/support/knowledgecenter/es/SS3RA7_18.0.0/modeler_mainhelp_client_ddita/components/neuralnet/neuralnet_model.html}> [citado en 31 de Mayo de 2018]
 
-VÍLCHEZ GARCÍA, Víctor Gabriel.Estimación y clasificación de daños en materiales utilizando modelos AR y redes neuronales para la evaluaciónno destructiva con ultrasonidos. [en linea].  <\url{http://ceres.ugr.es/~alumnos/esclas/}> [citado en 24 de Mayo de 2018]
+JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1611.09326}> [citado en 31 de julio de 2018]
+
+KENDALL Alex, BADRINARAYANAN Vijay, CIPOLLA Roberto. SegNet [en linea] \url{http://mi.eng.cam.ac.uk/projects/segnet/} [citado en 30 de julio de 2018]
 
 MATHWORKS. Aprendizaje profundo [en línea]. <\url{https://es.mathworks.com/discovery/deep-learning.html}> [citado en 31 de Mayo de 2018]
 
 MATHWORKS. Architecture of a CNN. [en linea] \url{https://la.mathworks.com/solutions/deep-learning/convolutional-neural-network.html} [Citado en 30 de junio de 2018]
 
-Aphex34. Max pooling with a 2x2 filter and stride = 2 [en linea] \url{https://upload.wikimedia.org/wikipedia/commons/e/e9/Max_pooling.png} [citado en 30 de julio de 2018]
+NEAL jean. Combining satellite imagery and machine learning to predict poverty. [en Linea]. <\url{http://sustain.stanford.edu/predicting-poverty/}> [citado en 25 de Mayo de 2018].
 
-VENTURA Royo Carles Ventura. La segmentación semántica y sus benchmarks [en linea] \url{http://informatica.blogs.uoc.edu/2016/05/26/la-segmentacion-semantica-y-sus-benchmarks/} [citado en 30 de julio de 2018]
-
-KENDALL Alex, BADRINARAYANAN Vijay, CIPOLLA Roberto. SegNet [en linea] \url{http://mi.eng.cam.ac.uk/projects/segnet/} [citado en 30 de julio de 2018]
-
-GOBIERNO DIGITAL. Datos Abiertos [en linea] <\url{http://estrategia.gobiernoenlinea.gov.co/623/w3-article-9407.html}> [citado en 30 de Mayo de 2018]
-
-ABHIJIT Kundu, VIBHAV Vineet, and VLANDLEN Koltun Feature Space Optimization for Semantic Video Segmentation [en linea] <\url{http://vladlen.info/publications/feature-space-optimization-for-semantic-video-segmentation/}> [citado en 01 de junio de 2018]
-
-JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1611.09326}> [citado en 31 de julio de 2018]
-
-HUANG Gao, LUI Zhuang, VAN DER Maaten Laurens, Q. Weinberger Kilian. Densely Connected Convolutional Networks [en linea] <\url{https://arxiv.org/abs/1608.06993}> [citado en 31 de julio de 2018]
-
-SHELHAMER Evan, LONG Jonathan, DARRELL Trevor. Fully Convolutional Networks for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1605.06211}> [citado en 31 de julio de 2018]
-
-JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1611.09326}> [citado en 31 de julio de 2018]
-
-KENDALL Alex, BADRINARAYANAN Vijay, CIPOLLA Roberto. SegNet [en linea] \url{http://mi.eng.cam.ac.uk/projects/segnet/} [citado en 30 de julio de 2018]
-
-H. Abdulnabi Abrar, WINKLER Stefan, WANG Gang. Beyond Forward Shortcuts: Fully Convolutional Master-Slave Networks (MSNets) with Backward Skip Connections for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1707.05537}> [citado en 31 de julio de 2018]
+NEAL Jean, MARSHALL Burke, † MICHAEL Xie, W. Matthew Davis, DAVID B. Lobell, STEFANO Ermon. Combining satellite imagery and machine learning to predict poverty. Science 353 (6301), p. 790-794. 2016
 
 POHLEN Tobias, HERMANS Alexander, MATHIAS Markus, LEIBE Bastian. Full-Resolution Residual Networks for Semantic Segmentation in Street Scenes [en linea] <\url{https://arxiv.org/abs/1611.08323}> [citado en 31 de julio de 2018]
-
-POHLEN Tobias, HERMANS Alexander, MATHIAS Markus, LEIBE Bastian. Full-Resolution Residual Networks for Semantic Segmentation in Street Scenes [en linea] <\url{https://aarxiv.org/abs/1611.08323}> [citado en 31 de julio de 2018]
-
-RONNEBERGER Olaf, FISCHER Philipp, BROX Thomas. U-Net: Convolutional Networks for Biomedical Image Segmentation [en linea] <\url{https://arxiv.org/abs/1505.04597}> [citado en 31 de julio de 2018]
-
-G. Howard Andrew, ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry,WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en linea] <\url{https://arxiv.org/abs/1704.04861}> [citado en 31 de julio de 2018]
 
 RONNEBERGER Olaf, FISCHER Philipp, BROX Thomas. U-Net: Convolutional Networks for Biomedical Image Segmentation [en linea] <\url{https://arxiv.org/abs/1505.04597}> [citado en 31 de julio de 2018]
 
 ROSEBROCK Adrian. Intersection over Union (IoU) for object detection [en linea] <\url{https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/}> [citado en 17 de Julio de 2018]
 
-JEGOU Simon, DROZDZAL Michal, VAZQUEZ David, ROMERO Adriana, BENGIO Yoshua. The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation [en Linea]<\url{https://arxiv.org/abs/1611.09326}>[citado en 23 de Julio de 2018]
-
-HOWARD Andrew G., ZHU Menglong, CHEN Bo, KALENICHENKO Dmitry, WANG Weijun, WEYAND Tobias, ANDREETTO Marco, ADAM Hartwig. MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [en linea]<\url{https://arxiv.org/abs/1704.04861}> [citado en 23 de Julio de 2018]
-
 SHARMA Sagar. Epoch vs Batch Size vs Iterations [en linea] <\url{https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9}> [citado en 23 Julio de 2018]
+
+SHELHAMER Evan, LONG Jonathan, DARRELL Trevor. Fully Convolutional Networks for Semantic Segmentation [en linea] <\url{https://arxiv.org/abs/1605.06211}> [citado en 31 de julio de 2018]
+
+VENTURA Royo Carles Ventura. La segmentación semántica y sus benchmarks [en linea] \url{http://informatica.blogs.uoc.edu/2016/05/26/la-segmentacion-semantica-y-sus-benchmarks/} [citado en 30 de julio de 2018]
+
+VÍLCHEZ GARCÍA, Víctor Gabriel.Estimación y clasificación de daños en materiales utilizando modelos AR y redes neuronales para la evaluaciónno destructiva con ultrasonidos. [en linea].  <\url{http://ceres.ugr.es/~alumnos/esclas/}> [citado en 24 de Mayo de 2018]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}

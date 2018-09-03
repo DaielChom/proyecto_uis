@@ -56,3 +56,5 @@
 \contentsline {chapter}{\numberline {5}RECOMENDACIONES Y TRABAJO FUTURO}{47}{chapter.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}LIMITACIONES Y PROBLEMAS}{48}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{BIBLIOGRAFIA}{49}{chapter*.44}
